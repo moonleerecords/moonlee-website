@@ -7,7 +7,7 @@ machine:
   # Version of ruby to use
   ruby:
     version:
-      2.2.2p95
+      2.2.2
 
   # Add some environment variables
   environment:
