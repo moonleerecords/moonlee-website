@@ -1,24 +1,55 @@
-## README
+## Moonlee website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Circle CI](https://circleci.com/gh/moonleerecords/moonlee-website.svg?style=svg)](https://circleci.com/gh/moonleerecords/moonlee-website)
 
-Things you may want to cover:
+### Setup 
 
-* Ruby version
+#### Install gems
 
-* System dependencies
+```
+$ bundle install
+```
 
-* Configuration
+#### Setup database
 
-* Database creation
+TODO: 
 
-* Database initialization
+```
+$ rails db:create
+$ rails db:seed
+$ rails db:migrate
+```
 
-* How to run the test suite
+#### Debugging
 
-* Services (job queues, cache servers, search engines, etc.)
+Simply drop
 
-* Deployment instructions
+    byebug
 
-* ...
+wherever you want to start debugging and the execution will stop there.
+
+#### Run
+
+```
+$ rails s
+```
+
+### Deployment
+
+TODO
+
+### Other
+
+* config files
+* credentials for admin
+
+
+### Sections
+
+#### Records
+
+[www.moonleerecords.com](www.moonleerecords.com)
+
+#### Booking
+
+[booking.moonleerecords.com](booking.moonleerecords.com)

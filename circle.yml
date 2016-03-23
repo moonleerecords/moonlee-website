@@ -1,0 +1,15 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Europe/Ljubljana # Set the timezone
+
+  # Version of ruby to use
+  ruby:
+    version:
+      2.2.2p95
+
+  # Add some environment variables
+  environment:
+    CIRCLE_ENV: test
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/moonlee_test
