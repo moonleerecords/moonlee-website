@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Moonlee Records
+    = csrf_meta_tags
+    / TODO: deal with action cable later
+    /= action_cable_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  body
+    / TODO: add flash massages
+    = render partial: 'records/layouts/header'
+    = yield
+    = render partial: 'records/layouts/footer'

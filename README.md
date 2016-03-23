@@ -12,13 +12,15 @@ $ bundle install
 
 #### Setup database
 
-TODO: 
-
 ```
 $ rails db:create
 $ rails db:seed
 $ rails db:migrate
 ```
+
+#### Config file
+
+There is a `application.yml.dist` file in `config` directory. Be sure you rename it to `application.yml` and then set parameters according to your local environment.
 
 #### Debugging
 
@@ -34,15 +36,27 @@ wherever you want to start debugging and the execution will stop there.
 $ rails s
 ```
 
+#### Credentials
+
+### Administration (local environment)
+
+Go to `localhost:3000\admin`
+
+TODO: add fixtures for these
+
+```
+Username: admin@example.com
+Password: password
+```
+
 ### Deployment
 
-TODO
+TODO: there is no production server at this point
 
-### Other
+### TODO
 
-* config files
-* credentials for admin
-
+* check all the TODO's (env files etc)
+* seeds
 
 ### Sections
 

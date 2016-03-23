@@ -6,6 +6,21 @@ gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma'
+# Slim templating
+gem 'slim'
+# activeadmin for administration and its dependencies
+# TODO: change this to 1.0.0 when it's released. also adapt other dependencies
+# TODO: dependencies: all of these + rspec-rails,
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'devise',      '> 4.x'
+gem 'ransack',    github: 'activerecord-hackery/ransack'
+gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'cancancan'
+gem 'draper',     github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587'
+# To fix a Draper deprecation error
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'pundit'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,12 +41,14 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# TODO: remove unused gems
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # testing framework
+  gem 'rspec-rails', '>= 3.5.0.beta1'
+  gem 'better_errors'
 end
 
 group :development do
