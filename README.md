@@ -30,13 +30,17 @@ Simply drop
 
 wherever you want to start debugging and the execution will stop there.
 
+#### Tests
+
+```
+$ bundle exec rspec spec
+```
+
 #### Run
 
 ```
 $ rails s
 ```
-
-#### Credentials
 
 ### Administration (local environment)
 
