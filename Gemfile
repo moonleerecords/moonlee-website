@@ -48,6 +48,7 @@ group :development, :test do
   gem 'byebug'
   # testing framework
   gem 'rspec-rails', '>= 3.5.0.beta1'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
   gem 'better_errors'
 end
 

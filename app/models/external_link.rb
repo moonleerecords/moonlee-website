@@ -3,9 +3,9 @@ class ExternalLink < ApplicationRecord
 
   validates :artist, presence: true
   validates :url, presence: true
-  validates :type, inclusion: { in: :types }
+  validates :url_type, inclusion: { in: :allowed_url_types }
 
-  def self.types
+  def allowed_url_types
     ['website', 'facebook', 'twitter', 'lastfm', 'bandcamp', 'soundcloud', 'discogs']
   end
 end

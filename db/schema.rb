@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 20160324160241) do
 
   create_table "external_links", force: :cascade do |t|
     t.integer  "artist_id"
-    t.string   "type"
     t.string   "url"
+    t.string   "url_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
