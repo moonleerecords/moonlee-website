@@ -1,0 +1,2 @@
+module Records::ReleasesHelper
+end

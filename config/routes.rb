@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'records/home#index'
 
   resources :artists, only: [:index, :show]
+  resources :releases, only: [:index, :show]
 
   # booking.moonleerecords.com
   constraints subdomain: 'booking' do
