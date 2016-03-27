@@ -1,0 +1,2 @@
+module Booking::HomeHelper
+end

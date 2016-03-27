@@ -1,0 +1,2 @@
+module Booking::ArtistsHelper
+end
