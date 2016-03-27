@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   scope module: 'records' do
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
+    resources :events, only: [:index]
   end
 
   # booking.moonleerecords.com
