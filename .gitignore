@@ -1,6 +1,9 @@
 # editor
 .idea
 
+# random
+routes.txt
+
 # Ignore bundler config.
 /.bundle
 

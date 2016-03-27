@@ -1,0 +1,3 @@
+module Records::ArtistsHelper
+
+end
