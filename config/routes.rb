@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   # www.moonleerecords.com
   root to: 'records/home#index'
 
-  resources :artists, only: [:index, :show]
-  resources :releases, only: [:index, :show]
+  scope module: 'records' do
+    resources :artists, only: [:index, :show]
+    resources :releases, only: [:index, :show]
+  end
 
   # booking.moonleerecords.com
   constraints subdomain: 'booking' do
