@@ -1,4 +1,4 @@
-class Records::EventsController < ApplicationController
+class Records::EventsController < Records::BaseController
   def index
 
   end

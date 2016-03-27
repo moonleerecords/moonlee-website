@@ -1,6 +1,5 @@
 class Records::HomeController < Records::BaseController
   def index
-    # TODO: news
-    # TODO: sidebars data and stuff, load in base controller
+    # TODO: news, shows, recente records etc.
   end
 end

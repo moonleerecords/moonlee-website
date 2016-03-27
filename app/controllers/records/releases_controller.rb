@@ -4,6 +4,6 @@ class Records::ReleasesController < Records::BaseController
   end
 
   def show
-    puts 'aa'
+
   end
 end

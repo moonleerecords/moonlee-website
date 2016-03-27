@@ -1,0 +1,2 @@
+module Records::HomeHelper
+end
