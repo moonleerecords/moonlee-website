@@ -1,0 +1,2 @@
+module Records::EventsHelper
+end
