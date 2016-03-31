@@ -5,7 +5,10 @@ class CreateReleaseReviews < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :url
       t.text :quote
-      t.boolean :visible
+      t.integer :rating
+      t.integer :max_rating
+      t.string :language
+      t.boolean :visible, default: true
 
       t.timestamps
     end

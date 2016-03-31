@@ -101,13 +101,16 @@ ActiveRecord::Schema.define(version: 20160324160241) do
   end
 
   create_table "release_reviews", force: :cascade do |t|
-    t.string   "title"
     t.integer  "release_id"
+    t.string   "title"
     t.string   "url"
     t.text     "quote"
-    t.boolean  "visible"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "rating"
+    t.integer  "max_rating"
+    t.string   "language"
+    t.boolean  "visible",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "release_reviews", ["release_id"], name: "index_release_reviews_on_release_id", using: :btree
@@ -118,7 +121,9 @@ ActiveRecord::Schema.define(version: 20160324160241) do
     t.date     "release_date"
     t.text     "description"
     t.text     "tracklist"
+    t.string   "for_fans_of"
     t.string   "bandcamp_url"
+    t.text     "bandcamp_player"
     t.text     "additional_info"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

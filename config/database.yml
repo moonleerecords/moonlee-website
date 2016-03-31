@@ -5,11 +5,9 @@ default: &default
   timeout: 5000
   host: <%= ENV["MOONLEE_POSTGRESQL_HOST"] %>
   port: <%= ENV["MOONLEE_POSTGRESQL_PORT"] %>
-  database: moonlee_dev
+  database: <%= ENV["MOONLEE_POSTGRESQL_DATABASE"] %>
   username: <%= ENV["MOONLEE_POSTGRESQL_USERNAME"] %>
-  password: postgres
-
-# TODO: ENV is empty on create
+  password: <%= ENV["MOONLEE_POSTGRESQL_PASSWORD"] %>
 
 development:
   <<: *default
