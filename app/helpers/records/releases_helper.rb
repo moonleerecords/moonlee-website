@@ -1,2 +1,4 @@
-module Records::ReleasesHelper
+module Records
+  module ReleasesHelper
+  end
 end

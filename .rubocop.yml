@@ -1,0 +1,16 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'db/migrate/*'
+    - 'bin/setup'
+    - 'bin/update'
+
+Metrics/LineLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false

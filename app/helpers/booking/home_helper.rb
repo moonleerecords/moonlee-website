@@ -1,2 +1,4 @@
-module Booking::HomeHelper
+module Booking
+  module HomeHelper
+  end
 end

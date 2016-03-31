@@ -13,7 +13,7 @@ module MoonleeWebsite
       env_file = File.join(Rails.root, 'config', 'application.yml')
       YAML.load(File.open(env_file)).each do |key, value|
         ENV[key.to_s] = value.to_s
-      end if File.exists?(env_file)
+      end if File.exist?(env_file)
     end
 
     # TODO: config.autoload_paths += %W(#{config.root}/lib) # add this line

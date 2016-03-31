@@ -1,3 +1,4 @@
-module Records::ArtistsHelper
-
+module Records
+  module ArtistsHelper
+  end
 end

@@ -7,5 +7,4 @@ class Artist < ApplicationRecord
   validates :name, presence: true
   # TODO: has_many :events
   # TODO: images
-
 end

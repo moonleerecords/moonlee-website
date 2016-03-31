@@ -1,2 +1,4 @@
-module Records::HomeHelper
+module Records
+  module HomeHelper
+  end
 end

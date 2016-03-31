@@ -1,2 +1,4 @@
-module Booking::EventsHelper
+module Booking
+  module EventsHelper
+  end
 end

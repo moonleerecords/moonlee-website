@@ -1,2 +1,4 @@
-module Booking::ArtistsHelper
+module Booking
+  module ArtistsHelper
+  end
 end

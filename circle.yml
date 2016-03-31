@@ -9,6 +9,10 @@ machine:
     version:
       2.2.2
 
+  test:
+    post:
+      - bundle exec rubocop -R
+
   # Add some environment variables
   environment:
     CIRCLE_ENV: test
