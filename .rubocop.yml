@@ -3,11 +3,11 @@ Rails:
 
 AllCops:
   Exclude:
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-    - 'db/migrate/*'
-    - 'bin/setup'
-    - 'bin/update'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
 
 Metrics/LineLength:
   Enabled: false
