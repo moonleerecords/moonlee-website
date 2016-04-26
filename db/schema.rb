@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324160241) do
+ActiveRecord::Schema.define(version: 20160331184858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,34 @@ ActiveRecord::Schema.define(version: 20160324160241) do
 
   add_index "release_reviews", ["release_id"], name: "index_release_reviews_on_release_id", using: :btree
 
+  create_table "release_type_main_buy_links", force: :cascade do |t|
+    t.integer  "release_type_id"
+    t.string   "buy_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "release_type_main_buy_links", ["release_type_id"], name: "index_release_type_main_buy_links_on_release_type_id", using: :btree
+
+  create_table "release_type_other_buy_links", force: :cascade do |t|
+    t.integer  "release_type_id"
+    t.string   "title"
+    t.string   "buy_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "release_type_other_buy_links", ["release_type_id"], name: "index_release_type_other_buy_links_on_release_type_id", using: :btree
+
+  create_table "release_types", force: :cascade do |t|
+    t.integer  "release_id"
+    t.string   "format"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "release_types", ["release_id"], name: "index_release_types_on_release_id", using: :btree
+
   create_table "releases", force: :cascade do |t|
     t.string   "title"
     t.string   "catalog_number"
@@ -135,4 +163,7 @@ ActiveRecord::Schema.define(version: 20160324160241) do
   add_foreign_key "artist_releases", "releases"
   add_foreign_key "external_links", "artists"
   add_foreign_key "release_reviews", "releases"
+  add_foreign_key "release_type_main_buy_links", "release_types"
+  add_foreign_key "release_type_other_buy_links", "release_types"
+  add_foreign_key "release_types", "releases"
 end

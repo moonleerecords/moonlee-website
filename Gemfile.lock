@@ -106,6 +106,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (7.0.0)
@@ -164,6 +165,10 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -312,6 +317,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari!
+  letter_opener
   listen (~> 3.0.5)
   pg
   puma
