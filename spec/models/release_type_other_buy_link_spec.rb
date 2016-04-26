@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ReleaseTypeOtherBuyLink, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   before(:context) do
     @release = Release.new
     @release.title = 'Dobrodošli na okean'
@@ -11,16 +10,17 @@ RSpec.describe ReleaseTypeOtherBuyLink, type: :model do
 
     @release_type = ReleaseType.new
     @release_type.release = @release
-    @release_type.format = 'lp'
+    @release_type.format = 'cd'
     @release_type.save
   end
 
   context 'on saving' do
     it 'should save ReleaseTypeOtherBuyLink if all validations pass' do
-      release_type_main_buy_link = ReleaseTypeOtherBuyLink.new
-      release_type_main_buy_link.release_type = @release_type
-      release_type_main_buy_link.buy_url = ''
-      release_type_main_buy_link.save
+      release_type_other_buy_link = ReleaseTypeOtherBuyLink.new
+      release_type_other_buy_link.release_type = @release_type
+      release_type_other_buy_link.title = 'Interpunk.com'
+      release_type_other_buy_link.buy_url = 'http://interpunk.com/item.cfm?Item=208203'
+      release_type_other_buy_link.save
 
       expect(ReleaseTypeOtherBuyLink.count).to eq(1)
     end

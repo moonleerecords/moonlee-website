@@ -1,6 +1,5 @@
 ## Customize the test machine
 machine:
-
   timezone:
     Europe/Ljubljana # Set the timezone
 

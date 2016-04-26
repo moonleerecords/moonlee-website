@@ -58,6 +58,7 @@ ReleaseTypeMainBuyLink.create(
 )
 
 ReleaseTypeOtherBuyLink.create(
+  title: 'Interpunk.com',
   release_type: dobrodosli_na_okean_cd,
   buy_url: 'http://interpunk.com/item.cfm?Item=208203'
 )

@@ -5,7 +5,6 @@ class ReleaseType < ApplicationRecord
   validates :format, presence: true, inclusion: { in: :allowed_formats }
 
   def allowed_formats
-    %w(cd, lp, 7inch, download, lp_cd, download_merch)
     # TODO: translations
     # cd - CD
     # lp - LP
@@ -13,5 +12,6 @@ class ReleaseType < ApplicationRecord
     # download - Download
     # lp_cd - LP + CD
     # download_and_merch - Download + Merch
+    ['cd', 'lp', '7inch', 'download', 'lp_cd', 'download_merch']
   end
 end

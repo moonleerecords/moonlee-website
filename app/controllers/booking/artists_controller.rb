@@ -1,4 +1,4 @@
-class Booking::ArtistsController < ApplicationController
+class Booking::ArtistsController < Booking::BaseController
   def index
   end
 

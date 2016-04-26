@@ -36,6 +36,8 @@ wherever you want to start debugging and the execution will stop there.
 $ bundle exec rspec spec
 ```
 
+Tests are also running on each build (Circle CI).
+
 #### Rubocop
 
 We use Rubocop in order to find code inconsistency. Rubocop runs on every build (Circle CI) but you can also run it locally.
