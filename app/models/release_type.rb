@@ -12,6 +12,6 @@ class ReleaseType < ApplicationRecord
     # download - Download
     # lp_cd - LP + CD
     # download_and_merch - Download + Merch
-    ['cd', 'lp', '7inch', 'download', 'lp_cd', 'download_merch']
+    %w(cd lp 7inch download lp_cd download_merch)
   end
 end

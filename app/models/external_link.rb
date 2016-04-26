@@ -6,6 +6,6 @@ class ExternalLink < ApplicationRecord
   validates :url_type, inclusion: { in: :allowed_url_types }
 
   def allowed_url_types
-    ['website', 'facebook', 'twitter', 'lastfm', 'bandcamp', 'soundcloud', 'discogs']
+    %w(website facebook twitter lastfm bandcamp soundcloud discogs)
   end
 end
