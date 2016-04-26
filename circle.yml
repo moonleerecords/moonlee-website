@@ -9,11 +9,11 @@ machine:
     version:
       2.2.2
 
-  test:
-    post:
-      - bundle exec rubocop -R
-
   # Add some environment variables
   environment:
     CIRCLE_ENV: test
     DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/moonlee_test
+
+test:
+  post:
+    - bundle exec rubocop -R
