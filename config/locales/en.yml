@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  cd: "CD"
+  lp: "LP"
+  7inch: '7"'
+  download: "Download"
+  lp_cd: "LP + CD"
+  donwnload_merch: "Download + Merch"
