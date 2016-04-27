@@ -1,6 +1,11 @@
 # editor
 .idea
 
+# frontend
+node_modules
+bower_components
+vendor/assets/components
+
 # random
 routes.txt
 

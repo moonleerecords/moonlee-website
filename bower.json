@@ -1,0 +1,23 @@
+{
+  "name": "moonlee-website",
+  "homepage": "http://www.moonleerecords.com",
+  "authors": [
+    "Drazen Peric <peric.drazhen@gmail.com>"
+  ],
+  "description": "Website for Moonlee Records",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "jquery-ujs": "^1.2.1",
+    "bootstrap": "^3.3.6"
+  }
+}

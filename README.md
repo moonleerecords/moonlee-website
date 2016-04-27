@@ -4,10 +4,21 @@
 
 ### Setup 
 
+#### Prerequisites 
+
+##### Bower
+
+We are using Bower as a package manager for the frontend libraries. In order to use it, it should be installed globally.
+
+```
+$ npm install -g bower
+```
+
 #### Install gems
 
 ```
 $ bundle install
+$ bower install
 ```
 
 #### Setup database
@@ -66,11 +77,8 @@ Password: password
 ### Deployment
 
 TODO: there is no production server at this point
-
-### TODO
-
-* check all the TODO's (env files etc)
-* seeds
+TODO: set up deployment
+TODO: check all the todo's :)
 
 ### Sections
 
