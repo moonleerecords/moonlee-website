@@ -6,18 +6,18 @@
 
 #### Prerequisites 
 
-##### Bower
-
-We are using Bower as a package manager for the frontend libraries. In order to use it, it should be installed globally.
-
-```
-$ npm install -g bower
-```
+[Node and NPM](https://docs.npmjs.com/getting-started/installing-node). You need that in order to locally install Bower, which we use as a package manager for a frontend libraries.
 
 #### Install gems
 
 ```
 $ bundle install
+```
+
+#### Setup assets
+
+```
+$ npm install
 $ bower install
 ```
 
@@ -78,6 +78,7 @@ Password: password
 
 TODO: there is no production server at this point
 TODO: set up deployment
+TODO: set up bower on deployment/build
 TODO: check all the todo's :)
 
 ### Sections

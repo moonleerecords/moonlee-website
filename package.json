@@ -1,0 +1,11 @@
+{
+  "name": "moonlee-website",
+  "devDependencies": {
+    "bower": "~1.7.9"
+  },
+  "dependencies": {},
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
