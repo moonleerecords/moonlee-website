@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '>= 5.0.0.beta4', '< 5.1'
 # Postgres as the database for active record
 gem 'pg'
 # Use Puma as the app server
@@ -55,6 +55,15 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   gem 'letter_opener'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+end
+
+group :production do
+  # TODO:
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
