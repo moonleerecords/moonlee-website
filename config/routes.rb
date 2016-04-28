@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   end
 
   # booking.moonleerecords.com
-  namespace :booking do
-    constraints subdomain: 'booking' do
-      scope module: 'booking' do
-        root to: 'home#index', as: 'root'
-        resources :artists, only: [:index, :show]
-        resources :events, only: [:index]
-      end
+  constraints subdomain: 'booking' do
+    scope module: 'booking', as: 'booking' do
+      root to: 'home#index', as: 'root'
+      resources :artists, only: [:index, :show]
+      resources :events, only: [:index]
     end
   end
 end
