@@ -5,18 +5,20 @@ Rails.application.routes.draw do
   # www.moonleerecords.com
   root to: 'records/home#index'
 
-  scope module: 'records' do
+  scope module: 'records', as: 'records' do
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
     resources :events, only: [:index]
   end
 
   # booking.moonleerecords.com
-  constraints subdomain: 'booking' do
-    scope module: 'booking' do
-      root to: 'home#index'
-      resources :artists, only: [:index, :show]
-      resources :events, only: [:index]
+  namespace :booking do
+    constraints subdomain: 'booking' do
+      scope module: 'booking' do
+        root to: 'home#index', as: 'root'
+        resources :artists, only: [:index, :show]
+        resources :events, only: [:index]
+      end
     end
   end
 end

@@ -1,21 +1,34 @@
 div
-  = "TODO: Logo here"
+  = link_to 'TODO: logo here', root_path
 
 ul
-  li Booking
-  li Shop
+  li
+    = link_to 'Booking', booking_root_path
+  li
+    = link_to 'Shop', 'http://store.moonleerecords.com'
 
 ul
-  li News
-  li Releases
-  li Artists
-  li Shows
-  li About
+  li
+    = link_to 'News', root_path
+  li
+    = link_to 'Releases', records_releases_path
+  li
+    = link_to 'Artists', records_artists_path
+  li
+    = link_to 'Shows', records_events_path
+  li TODO: static pages (About)
+/li
+/  = link_to _path, 'About'
 
 ul
-  li Facebook
-  li Twitter
-  li Bandcamp
-  li Youtube
-  li Instagram
+  li
+    = link_to 'Facebook', 'https://www.facebook.com/moonleerecords/'
+  li
+    = link_to 'Twitter', 'https://twitter.com/moonleerecords'
+  li
+    = link_to 'Bandcamp', 'https://moonleerecords.bandcamp.com/'
+  li
+    = link_to 'Youtube', 'https://www.youtube.com/user/moonleerecords'
+  li
+    = link_to 'Instagram', 'https://www.instagram.com/moonleerecords/'
 br
