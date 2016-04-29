@@ -1,7 +1,7 @@
 set :repo_url, 'git@github.com:moonleerecords/moonlee-website.git'
 set :application, 'moonlee-website'
-set :puma_threads, [4, 16]
-set :puma_workers, 0
+set :puma_threads, [1, 6]
+set :puma_workers, 1
 
 # Don't change these unless you know what you're doing
 set :pty,             true
