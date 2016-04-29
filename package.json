@@ -1,11 +1,25 @@
 {
   "name": "moonlee-website",
-  "devDependencies": {
-    "bower": "~1.7.9"
+  "version": "0.0.0",
+  "description": "Moonlee website",
+  "directories": {
+    "test": "test"
   },
-  "dependencies": {},
-  "license": "MIT",
-  "engines": {
-    "node": ">= 0.10"
-  }
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/moonleerecords/moonlee-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moonleerecords/moonlee-website/issues"
+  },
+  "homepage": "https://github.com/moonleerecords/moonlee-website"
 }
