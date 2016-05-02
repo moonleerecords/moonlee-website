@@ -1,2 +1,4 @@
-module Records::StaticsHelper
+module Records
+  module StaticsHelper
+  end
 end
