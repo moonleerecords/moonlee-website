@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
     resources :events, only: [:index]
+    get 'about', to: 'statics#about'
   end
 
   # booking.moonleerecords.com

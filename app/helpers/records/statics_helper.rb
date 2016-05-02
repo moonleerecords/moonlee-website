@@ -1,0 +1,2 @@
+module Records::StaticsHelper
+end
