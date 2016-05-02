@@ -6,7 +6,8 @@
 
 #### Prerequisites 
 
-[Node and NPM](https://docs.npmjs.com/getting-started/installing-node). You need that in order to locally install Bower, which we use as a package manager for a frontend libraries.
+- [Node and NPM](https://docs.npmjs.com/getting-started/installing-node). You need that in order to locally install Bower, which we use as a package manager for a frontend libraries.
+- [Bower](http://bower.io/)
 
 #### Install gems
 
@@ -43,8 +44,16 @@ wherever you want to start debugging and the execution will stop there.
 
 #### Tests
 
+Run all the tests
+
 ```
 $ bundle exec rspec spec
+```
+
+Or, run a single test
+
+```
+$ bundle exec rspec /home/drazen/dev/moonlee-website/spec/controllers/booking/artists_controller_spec.rb
 ```
 
 Tests are also running on each build (Circle CI).
@@ -76,10 +85,9 @@ Password: password
 
 ### Deployment
 
-TODO: there is no production server at this point
-TODO: set up deployment
-TODO: set up bower on deployment/build
-TODO: check all the todo's :)
+```
+$ cap production deploy
+```
 
 ### Sections
 
