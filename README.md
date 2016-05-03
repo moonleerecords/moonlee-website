@@ -6,8 +6,8 @@
 
 #### Prerequisites 
 
-- [Node and NPM](https://docs.npmjs.com/getting-started/installing-node). You need that in order to locally install Bower, which we use as a package manager for a frontend libraries.
-- [Bower](http://bower.io/)
+- [Node and NPM](https://docs.npmjs.com/getting-started/installing-node) (you need that in order to locally install Bower, which we use as a package manager for a frontend libraries)
+- [Bower](http://bower.io/) (for frontend dependencies)
 
 #### Install gems
 
