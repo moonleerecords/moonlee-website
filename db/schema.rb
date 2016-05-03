@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331184858) do
+ActiveRecord::Schema.define(version: 20160503182212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,10 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -44,10 +43,9 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "artist_members", force: :cascade do |t|
     t.integer  "artist_id"
@@ -55,20 +53,18 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.string   "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_members_on_artist_id", using: :btree
+    t.index ["member_id"], name: "index_artist_members_on_member_id", using: :btree
   end
-
-  add_index "artist_members", ["artist_id"], name: "index_artist_members_on_artist_id", using: :btree
-  add_index "artist_members", ["member_id"], name: "index_artist_members_on_member_id", using: :btree
 
   create_table "artist_releases", force: :cascade do |t|
     t.integer  "artist_id"
     t.integer  "release_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_releases_on_artist_id", using: :btree
+    t.index ["release_id"], name: "index_artist_releases_on_release_id", using: :btree
   end
-
-  add_index "artist_releases", ["artist_id"], name: "index_artist_releases_on_artist_id", using: :btree
-  add_index "artist_releases", ["release_id"], name: "index_artist_releases_on_release_id", using: :btree
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -84,15 +80,29 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.datetime "updated_at",                         null: false
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  end
+
   create_table "external_links", force: :cascade do |t|
     t.integer  "artist_id"
     t.string   "url"
     t.string   "url_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_external_links_on_artist_id", using: :btree
   end
-
-  add_index "external_links", ["artist_id"], name: "index_external_links_on_artist_id", using: :btree
 
   create_table "members", force: :cascade do |t|
     t.string   "name"
@@ -111,18 +121,16 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.boolean  "visible",    default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["release_id"], name: "index_release_reviews_on_release_id", using: :btree
   end
-
-  add_index "release_reviews", ["release_id"], name: "index_release_reviews_on_release_id", using: :btree
 
   create_table "release_type_main_buy_links", force: :cascade do |t|
     t.integer  "release_type_id"
     t.string   "buy_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["release_type_id"], name: "index_release_type_main_buy_links_on_release_type_id", using: :btree
   end
-
-  add_index "release_type_main_buy_links", ["release_type_id"], name: "index_release_type_main_buy_links_on_release_type_id", using: :btree
 
   create_table "release_type_other_buy_links", force: :cascade do |t|
     t.integer  "release_type_id"
@@ -130,18 +138,16 @@ ActiveRecord::Schema.define(version: 20160331184858) do
     t.string   "buy_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["release_type_id"], name: "index_release_type_other_buy_links_on_release_type_id", using: :btree
   end
-
-  add_index "release_type_other_buy_links", ["release_type_id"], name: "index_release_type_other_buy_links_on_release_type_id", using: :btree
 
   create_table "release_types", force: :cascade do |t|
     t.integer  "release_id"
     t.string   "format"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["release_id"], name: "index_release_types_on_release_id", using: :btree
   end
-
-  add_index "release_types", ["release_id"], name: "index_release_types_on_release_id", using: :btree
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"

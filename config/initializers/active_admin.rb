@@ -1,8 +1,4 @@
 ActiveAdmin.setup do |config|
-  # TODO: custom configuration
-  # TODO: custom menu http://activeadmin.info/docs/2-resource-customization.html#customize-the-menu
-  # TODO: http://activeadmin.info/docs/documentation.html
-
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -13,14 +9,15 @@ ActiveAdmin.setup do |config|
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = '/admin'
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
   #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
-  # config.site_title_image = "logo.png"
+  # TODO: change this
+  config.site_title_image = 'admin_logo.png'
 
   # == Default Namespace
   #
@@ -161,7 +158,8 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  # config.favicon = 'favicon.ico'
+  # TODO: change
+  config.favicon = 'favicon.ico'
 
   # == Meta Tags
   #
@@ -197,6 +195,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+  config.register_javascript 'ckeditor/init.js'
 
   # == CSV options
   #
@@ -230,6 +229,45 @@ ActiveAdmin.setup do |config|
   #              html_options: { target: :blank }
   #   end
   # end
+
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      admin.add_current_user_to_menu  menu
+      admin.add_logout_button_to_menu menu
+    end
+  end
+
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Records', priority: 3
+      menu.add label: 'Booking', priority: 4
+
+      # Example
+      menu.add label: "Sites" do |sites|
+        sites.add label: "Google",   url: "http://google.com", html_options: { target: :blank }
+        sites.add label: "Facebook", url: "http://facebook.com"
+        sites.add label: "Github",   url: "http://github.com"
+      end
+    end
+  end
+
+  # TODO:
+  # config.register News do
+  #   menu label: 'News', priority: 0
+  # end
+
+  # config.register Artist do
+  #   menu label: 'Artist', priority: 1
+  # end
+
+  # config.register Event, as: 'shows' do
+  #   menu label: 'Shows', priority: 2
+  # end
+
+  # TODO: permit_params, strong params
+  # TODO: disabling actions
+  # TODO: ActiveAdmin.register Post, as: "Article"
+  # ActiveAdmin.register Post, namespace: :today
 
   # == Download Links
   #
