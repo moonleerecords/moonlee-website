@@ -4,4 +4,10 @@ en:
   7inch: '7"'
   download: "Download"
   lp_cd: "LP + CD"
-  donwnload_merch: "Download + Merch"
+  download_merch: "Download + Merch"
+  date:
+    formats:
+      custom_short: "%d.%m.%Y"
+  time:
+    formats:
+      custom_short: "%d.%m.%Y %H:%M:%S"
