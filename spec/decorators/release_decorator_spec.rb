@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe ReleaseDecorator do
-  # TODO:
+  # TODO: test it
 end

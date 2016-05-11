@@ -1,5 +1,5 @@
 class ReleaseType < ApplicationRecord
-  ALLOWED_FORMATS = %w(cd lp 7inch download lp_cd download_merch)
+  ALLOWED_FORMATS = %w(cd lp 7inch download lp_cd download_merch).freeze
 
   belongs_to :release
   has_many :release_type_main_buy_links, dependent: :destroy

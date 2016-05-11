@@ -299,6 +299,8 @@ ActiveAdmin.setup do |config|
   # config.include_default_association_filters = true
 end
 
-module ActiveAdmin::ViewHelpers
-  include Records::ReleasesHelper
+module ActiveAdmin
+  module ViewHelpers
+    include Records::ReleasesHelper
+  end
 end
