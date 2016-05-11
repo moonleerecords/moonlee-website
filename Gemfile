@@ -12,7 +12,7 @@ gem 'slim'
 # TODO: change this to 1.0.0 when it's released. also adapt other dependencies
 # TODO: dependencies: all of these + rspec-rails,
 gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'flattened_active_admin'
+gem 'active_skin'
 gem 'devise',      '> 4.x'
 gem 'ransack',    github: 'activerecord-hackery/ransack'
 gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'

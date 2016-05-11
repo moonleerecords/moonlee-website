@@ -4,6 +4,7 @@ class CreateArtistMembers < ActiveRecord::Migration[5.0]
       t.references :artist, foreign_key: true
       t.references :member, foreign_key: true
       t.string :role
+      t.boolean :active, default: true
 
       t.timestamps
     end

@@ -154,7 +154,7 @@ ActiveAdmin.setup do |config|
   # To understand how to localize your app with I18n, read more at
   # https://github.com/svenfuchs/i18n/blob/master/lib%2Fi18n%2Fbackend%2Fbase.rb#L52
   #
-  config.localize_format = :long
+  config.localize_format = :custom_short
 
   # == Setting a Favicon
   #
@@ -239,35 +239,17 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'Records', priority: 3
-      menu.add label: 'Booking', priority: 4
-
-      # Example
-      menu.add label: "Sites" do |sites|
-        sites.add label: "Google",   url: "http://google.com", html_options: { target: :blank }
-        sites.add label: "Facebook", url: "http://facebook.com"
-        sites.add label: "Github",   url: "http://github.com"
+      menu.add label: 'TODO: News', priority: 2
+      menu.add label: 'TODO: Shows', priority: 4
+      menu.add label: 'Records', priority: 5 do |records|
+        records.add label: 'TODO: Slider'
       end
+      menu.add label: 'Booking', priority: 6 do |booking|
+        booking.add label: 'TODO: Slider'
+      end
+      menu.add label: 'TODO: Shop', priority: 7
     end
   end
-
-  # TODO:
-  # config.register News do
-  #   menu label: 'News', priority: 0
-  # end
-
-  # config.register Artist do
-  #   menu label: 'Artist', priority: 1
-  # end
-
-  # config.register Event, as: 'shows' do
-  #   menu label: 'Shows', priority: 2
-  # end
-
-  # TODO: permit_params, strong params
-  # TODO: disabling actions
-  # TODO: ActiveAdmin.register Post, as: "Article"
-  # ActiveAdmin.register Post, namespace: :today
 
   # == Download Links
   #
@@ -315,4 +297,8 @@ ActiveAdmin.setup do |config|
   # of those filters by default here.
   #
   # config.include_default_association_filters = true
+end
+
+module ActiveAdmin::ViewHelpers
+  include Records::ReleasesHelper
 end
