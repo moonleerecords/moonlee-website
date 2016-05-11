@@ -13,7 +13,7 @@ gem 'slim'
 # TODO: dependencies: all of these + rspec-rails,
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'active_skin'
-gem 'devise',      '> 4.x'
+gem 'devise', '> 4.x'
 gem 'ransack',    github: 'activerecord-hackery/ransack'
 gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
 gem 'formtastic', github: 'justinfrench/formtastic'

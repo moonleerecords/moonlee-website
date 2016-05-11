@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 20160503182212) do
     t.index ["member_id"], name: "index_artist_members_on_member_id", using: :btree
   end
 
+  create_table "artist_releases", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.integer  "release_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_releases_on_artist_id", using: :btree
+    t.index ["release_id"], name: "index_artist_releases_on_release_id", using: :btree
+  end
+
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.text     "description"

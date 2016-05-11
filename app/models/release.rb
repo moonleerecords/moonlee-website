@@ -4,7 +4,8 @@ class Release < ApplicationRecord
 
   has_many :release_types, dependent: :destroy
   has_many :release_reviews, dependent: :destroy
-  has_and_belongs_to_many :artists
+  has_many :artist_releases
+  has_many :artists, through: :artist_releases
 
   accepts_nested_attributes_for :release_types, allow_destroy: true
   accepts_nested_attributes_for :release_reviews, allow_destroy: true

@@ -34,7 +34,7 @@ ActiveAdmin.register Artist do
         # TODO: either "add new below dropdown", either redirect to separate page for adding
         artist_member.input :member,
                             as: :select,
-                            collection: Member.all.collect {|member| [member.name, member.id]}
+                            collection: Member.all.collect { |member| [member.name, member.id] }
         artist_member.input :role
         artist_member.input :active
       end

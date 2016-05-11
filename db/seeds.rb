@@ -126,9 +126,20 @@ politika = Release.create(
   internal_release: true
 )
 
-analena.releases << carbon_based
-repetitor.releases << dobrodosli_na_okean
-bernays_propaganda.releases << politika
+# Artist releases
+ArtistRelease.create(
+  artist: analena,
+  release: carbon_based
+)
+ArtistRelease.create(
+  artist: repetitor,
+  release: dobrodosli_na_okean
+)
+ArtistRelease.create(
+  artist: bernays_propaganda,
+  release: politika
+)
+
 # TODO: other releases
 
 # Release reviews

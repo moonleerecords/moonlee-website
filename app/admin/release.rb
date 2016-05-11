@@ -49,7 +49,7 @@ ActiveAdmin.register Release do
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
         release_type.input :format,
                            as: :select,
-                           collection: ReleaseType.allowed_formats.collect {|format| [translate(format), format]}
+                           collection: ReleaseType.allowed_formats.collect { |format| [translate(format), format] }
         release_type.has_many :release_type_main_buy_links,
                               heading: 'Main buy link',
                               allow_destroy: true do |main_buy_link|
