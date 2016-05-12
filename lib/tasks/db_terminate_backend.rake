@@ -1,7 +1,7 @@
 # http://stackoverflow.com/questions/5108876/kill-a-postgresql-session-connection
 namespace :db do
   desc "Fix 'database is being accessed by other users'"
-  task :terminate => :environment do
+  task terminate: :environment do
     ActiveRecord::Base.connection.execute <<-SQL
       SELECT
         pg_terminate_backend(pid)
