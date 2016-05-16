@@ -13,4 +13,10 @@ class Release < ApplicationRecord
   validates :title, presence: true
   validates :catalog_number, presence: true
   validates :release_date, presence: true
+
+  # release can be added, but maybe you don't want to show it on the frontend
+  default_scope { where(active: true).order('release_date ASC') }
+  scope :upcoming, -> { where('release_date > ?', Date.today) }
+  scope :fresh, -> { where('release_date <= ? AND release_date >= ?', Date.today, Date.today - 1.month) }
+  scope :latest, -> { where('release_date <= ?', Date.today) }
 end

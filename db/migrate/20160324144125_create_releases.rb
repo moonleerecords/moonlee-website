@@ -10,6 +10,7 @@ class CreateReleases < ActiveRecord::Migration[5.0]
       t.string :bandcamp_url
       t.text :bandcamp_player
       t.boolean :internal_release, default: true
+      t.boolean :active, default: true
 
       t.timestamps
     end

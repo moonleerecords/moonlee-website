@@ -45,6 +45,7 @@ ActiveAdmin.register Release do
       f.input :bandcamp_url
       f.input :bandcamp_player
       f.input :internal_release
+      f.input :active
       # TODO: custom add button label
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
         release_type.input :format,

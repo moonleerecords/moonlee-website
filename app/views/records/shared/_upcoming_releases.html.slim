@@ -1,0 +1,5 @@
+- if @upcoming_releases.count > 0
+  p Upcoming releases
+  ul
+    - @upcoming_releases.each do |release|
+      li = release.title

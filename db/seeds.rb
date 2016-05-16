@@ -84,8 +84,11 @@ ArtistMember.create(
   role: 'drums'
 )
 
-# External links
 
+
+# External links
+# TODO: add external links
+# TODO: add possibility to add new members
 
 # TODO: other band members
 # TODO: other band links

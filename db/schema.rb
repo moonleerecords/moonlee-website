@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160503182212) do
     t.string   "bandcamp_url"
     t.text     "bandcamp_player"
     t.boolean  "internal_release", default: true
+    t.boolean  "active",           default: true
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end

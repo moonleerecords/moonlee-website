@@ -1,0 +1,5 @@
+- if @latest_releases.count > 0
+  p Latest releases
+  ul
+    - @latest_releases.each do |release|
+      li = release.title
