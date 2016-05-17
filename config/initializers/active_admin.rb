@@ -301,6 +301,7 @@ end
 
 module ActiveAdmin
   module ViewHelpers
-    include Records::ReleasesHelper
+    include ReleasesHelper
+    include ExternalLinksHelper
   end
 end

@@ -5,6 +5,14 @@ en:
   download: "Download"
   lp_cd: "LP + CD"
   download_merch: "Download + Merch"
+  website: "Website"
+  facebook: "Facebook"
+  twitter: "Twitter"
+  instagram: "Instagram"
+  lastfm: "Last.fm"
+  bandcamp: "Bandcamp"
+  soundcloud: "Soundcloud"
+  discogs: "Discogs"
   date:
     formats:
       custom_short: "%d.%m.%Y"

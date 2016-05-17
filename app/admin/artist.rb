@@ -29,6 +29,12 @@ ActiveAdmin.register Artist do
       f.input :songkick_artist_id, label: 'Songkick artist ID'
       f.input :booking, label: 'Under the Moonlee booking'
       f.input :active, label: 'Actively playing'
+      f.has_many :external_links, heading: 'Links', allow_destroy: true do |external_link|
+        external_link.input :url_type,
+                            as: :select,
+                            collection: ExternalLink.allowed_url_types.collect { |type| [translate(type), type] }
+        external_link.input :url
+      end
       f.has_many :artist_members, heading: 'Members', allow_destroy: true do |artist_member|
         # TODO: possibility to additional members (new ones)
         # TODO: either "add new below dropdown", either redirect to separate page for adding
@@ -56,21 +62,30 @@ ActiveAdmin.register Artist do
       row :songkick_artist_id
       row :active
       row :booking
-      panel 'Members' do
-        if artist.artist_members.active.count > 0
-          h3 'Active'
-          artist.artist_members.active.each do |artist_member|
-            ul do
+      if artist.external_links.count > 0
+        panel 'Links' do
+          ul do
+            artist.external_links.each do |external_link|
+              li linked_icon(external_link)
+            end
+          end
+        end
+      end
+      if artist.artist_members.active.count > 0
+        panel 'Active members' do
+          ul do
+            artist.artist_members.active.each do |artist_member|
               li do
                 "#{artist_member.member.name} - #{artist_member.role}"
               end
             end
           end
         end
-        if artist.artist_members.former.count > 0
-          h3 'Former'
-          artist.artist_members.former.each do |artist_member|
-            ul do
+      end
+      if artist.artist_members.former.count > 0
+        panel 'Past members' do
+          ul do
+            artist.artist_members.former.each do |artist_member|
               li do
                 "#{artist_member.member.name} - #{artist_member.role}"
               end

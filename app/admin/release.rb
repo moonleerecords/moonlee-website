@@ -106,7 +106,7 @@ ActiveAdmin.register Release do
       row 'Reviews' do
         ul do
           release.release_reviews.each do |release_type|
-            li render_review(release_type.title, release_type.url, release_type.rating, release_type.max_rating, release_type.language)
+            li render_review(release_type)
           end
         end
       end

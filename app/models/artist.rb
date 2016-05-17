@@ -8,6 +8,7 @@ class Artist < ApplicationRecord
   validates :name, presence: true
 
   accepts_nested_attributes_for :artist_members, allow_destroy: true
+  accepts_nested_attributes_for :external_links, allow_destroy: true
 
   def to_s
     name
