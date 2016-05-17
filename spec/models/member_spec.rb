@@ -5,9 +5,8 @@ RSpec.describe Member, type: :model do
     it 'should save Member if all validations pass' do
       member = Member.new
       member.name = 'Boris Vlastelica'
-      member.save
 
-      expect(Member.count).to eq(1)
+      expect(member.valid?).to eq(true)
     end
   end
 end

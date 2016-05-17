@@ -20,9 +20,10 @@ RSpec.describe ReleaseTypeOtherBuyLink, type: :model do
       release_type_other_buy_link.release_type = @release_type
       release_type_other_buy_link.title = 'Interpunk.com'
       release_type_other_buy_link.buy_url = 'http://interpunk.com/item.cfm?Item=208203'
-      release_type_other_buy_link.save
 
-      expect(ReleaseTypeOtherBuyLink.count).to eq(1)
+      expect(Release.count).to eq(1)
+      expect(ReleaseType.count).to eq(1)
+      expect(release_type_other_buy_link.valid?).to eq(true)
     end
   end
 end

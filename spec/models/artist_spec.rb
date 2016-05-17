@@ -5,9 +5,8 @@ RSpec.describe Artist, type: :model do
     it 'should save Artist if all validations pass' do
       artist = Artist.new
       artist.name = 'Repetitor'
-      artist.save
 
-      expect(Artist.count).to eq(1)
+      expect(artist.valid?).to eq(true)
     end
   end
 end

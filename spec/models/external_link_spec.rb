@@ -13,10 +13,9 @@ RSpec.describe ExternalLink, type: :model do
       external_link.artist = @artist
       external_link.url = 'https://www.facebook.com/repetitorbgd'
       external_link.url_type = 'facebook'
-      external_link.save
 
       expect(Artist.count).to eq(1)
-      expect(ExternalLink.count).to eq(1)
+      expect(external_link.valid?).to eq(true)
     end
   end
 end

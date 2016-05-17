@@ -19,9 +19,10 @@ RSpec.describe ReleaseReview, type: :model do
       release_review.release = @release
       release_review.title = 'Some Will Never Know'
       release_review.url = 'http://www.swnk.org/reviews/repetitor-dobrodosli-na-okean/'
-      release_review.save
 
-      expect(ReleaseReview.count).to eq(1)
+      expect(Artist.count).to eq(1)
+      expect(Release.count).to eq(1)
+      expect(release_review.valid?).to eq(true)
     end
   end
 end

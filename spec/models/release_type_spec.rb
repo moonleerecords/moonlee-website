@@ -14,9 +14,8 @@ RSpec.describe ReleaseType, type: :model do
       release_type = ReleaseType.new
       release_type.release = @release
       release_type.format = 'download'
-      release_type.save
 
-      expect(ReleaseType.count).to eq(1)
+      expect(release_type.valid?).to eq(true)
     end
   end
 end

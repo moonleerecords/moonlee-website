@@ -16,11 +16,10 @@ RSpec.describe ArtistMember, type: :model do
       artist_member = ArtistMember.new
       artist_member.artist = @artist
       artist_member.member = @member
-      artist_member.save
 
       expect(Artist.count).to eq(1)
       expect(Member.count).to eq(1)
-      expect(ArtistMember.count).to eq(1)
+      expect(artist_member.valid?).to eq(true)
     end
   end
 end

@@ -19,9 +19,10 @@ RSpec.describe ReleaseTypeMainBuyLink, type: :model do
       release_type_main_buy_link = ReleaseTypeMainBuyLink.new
       release_type_main_buy_link.release_type = @release_type
       release_type_main_buy_link.buy_url = 'https://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean'
-      release_type_main_buy_link.save
 
-      expect(ReleaseTypeMainBuyLink.count).to eq(1)
+      expect(Release.count).to eq(1)
+      expect(ReleaseType.count).to eq(1)
+      expect(release_type_main_buy_link.valid?).to eq(true)
     end
   end
 end
