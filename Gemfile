@@ -50,6 +50,8 @@ group :development, :test do
   gem 'rspec-rails', '>= 3.5.0.beta1'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
   gem 'better_errors'
+  gem 'teaspoon-jasmine'
+  gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
 end
 
 group :development do

@@ -1,10 +1,15 @@
 # editor
 .idea
 
-# frontend
-node_modules
-bower_components
-vendor/assets/components
+# frontend jspm
+/node_modules
+/assets/jspm_packages/*/**
+/public/assets/
+/assets/**/*.map
+/assets/**/*.min.js
+# frontend bower
+/bower_components
+/vendor/assets/components
 
 # random
 routes.txt

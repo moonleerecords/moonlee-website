@@ -9,8 +9,11 @@
 
 #### Prerequisites 
 
-- [Node and NPM](https://docs.npmjs.com/getting-started/installing-node) (you need that in order to locally install Bower, which we use as a package manager for a frontend libraries)
-- [Bower](http://bower.io/) (for frontend dependencies)
+- [Node and NPM](https://docs.npmjs.com/getting-started/installing-node)
+TODO: 
+- [Bower](http://bower.io)
+- [jspm](http://jspm.io/docs/getting-started.html)
+- [PhantomJS](http://phantomjs.org/)
 
 #### Install gems
 
@@ -20,9 +23,13 @@ $ bundle install
 
 #### Setup assets
 
+TODO: describe what we are using on the frontend - jspm, bower and ...
+TODO: and why (bower css, jspm javascript)
+
 ```
 $ npm install
 $ bower install
+$ jspm install
 ```
 
 #### Setup database
@@ -47,6 +54,8 @@ wherever you want to start debugging and the execution will stop there.
 
 #### Tests
 
+##### Backend tests
+
 Run all the tests
 
 ```
@@ -57,6 +66,12 @@ Or, run a single test
 
 ```
 $ bundle exec rspec /home/drazen/dev/moonlee-website/spec/controllers/booking/artists_controller_spec.rb
+```
+
+##### Frontend/Javascript tests
+
+```
+rake teaspoon
 ```
 
 Tests are also running on each build (Circle CI).
@@ -101,3 +116,11 @@ $ cap production deploy
 #### Booking
 
 [booking.moonleerecords.com](booking.moonleerecords.com)
+
+#### TODO: jspm
+
+* TODO: setup jspm for capistrano 
+* frontend tests on circleci -> rake teaspoon
+* prepare for production - bundle it into one file -> http://jspm.io/docs/production-workflows.html
+* FOR PRODUCTION: jspm bundle-sfx --minify src/main bundle.min.js
+* jspm bundle-sfx --minify javascripts/records/app.js assets/javascripts/records/app.min.js
