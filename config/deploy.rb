@@ -68,5 +68,5 @@ namespace :deploy do
   after  :finishing,    :restart
 end
 
-before 'deploy:updated', ' jspm:bundle_sfx[javascripts/records/app.js,assets/javascripts/records/app.min.js]'
+before 'deploy:updated', 'jspm:bundle_sfx[javascripts/records/app.js,assets/javascripts/records/app.min.js]'
 # TODO: add for booking
