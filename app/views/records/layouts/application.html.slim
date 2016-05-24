@@ -5,13 +5,15 @@ html
     = csrf_meta_tags
     / TODO: meta tags
     = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'jspm'
+    /= javascript_include_tag 'jspm'
     // TODO: write better solution for this?
     - if Rails.env == 'development'
       javascript:
+        console.log("#{Rails.env}");
         System.import('javascripts/records/app.js');
     - else
       javascript:
+        console.log("#{Rails.env}");
         System.import('javascripts/records/app.min.js');
   body
     = render partial: 'records/layouts/header'
