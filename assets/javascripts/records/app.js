@@ -1,4 +1,4 @@
-System.import('javascripts/records/releases.js');
+System.import('./releases.js');
 
 // TODO: load jQuery and other stuff???
 // console.log($('#test'));
