@@ -23,8 +23,7 @@ $ bundle install
 
 #### Setup assets
 
-TODO: describe what we are using on the frontend - jspm, bower and ...
-TODO: and why (bower css, jspm javascript)
+On the frontend, we are using bower and jspm. Bower mostly for the 3rd party CSS libraries and jspm for JavaScript (ES6).
 
 ```
 $ npm install
@@ -116,11 +115,3 @@ $ cap production deploy
 #### Booking
 
 [booking.moonleerecords.com](booking.moonleerecords.com)
-
-#### TODO: jspm
-
-* TODO: setup jspm for capistrano 
-* frontend tests on circleci -> rake teaspoon
-* prepare for production - bundle it into one file -> http://jspm.io/docs/production-workflows.html
-* FOR PRODUCTION: jspm bundle-sfx --minify src/main bundle.min.js
-* jspm bundle-sfx --minify javascripts/records/app.js assets/javascripts/records/app.min.js
