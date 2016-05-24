@@ -66,6 +66,13 @@ GIT
       activesupport (> 5.x)
       builder (~> 3.1)
 
+GIT
+  remote: https://github.com/peric/capistrano-jspm.git
+  revision: 0677ed90da5095103d63d6ff981ffcec9be0a8b4
+  specs:
+    capistrano-jspm (1.0.0)
+      capistrano (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -367,6 +374,7 @@ DEPENDENCIES
   capistrano
   capistrano-bower
   capistrano-bundler
+  capistrano-jspm!
   capistrano-rails
   capistrano-rails-db
   capistrano-rvm

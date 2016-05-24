@@ -16,3 +16,4 @@ machine:
 test:
   post:
     - bundle exec rubocop -R
+    - rake teaspoon

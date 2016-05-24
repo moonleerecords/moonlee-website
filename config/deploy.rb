@@ -69,6 +69,10 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
+  before 'deploy:updated', 'jspm:bundle_sfx' do
+    invoke 'jspm:bundle_sfx',
+           'javascripts/records/app.js',
+           'public/assets/javascripts/records/app.min.js'
+  end
+  # TODO: add jspm:bundle_sfx for booking
 end
-
-# TODO: add for booking
