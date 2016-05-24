@@ -1,4 +1,6 @@
-import "./releases";
+import releases from "./releases";
+
+releases();
 
 //import defaultMember from "module-name";
 //import * as name from "module-name";
