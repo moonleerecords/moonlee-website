@@ -1,7 +1,9 @@
-System.import('javascripts/records/releases.js');
+//System.import('javascripts/records/releases.js');
+
+console.log('taaa');
 
 // TODO: load jQuery and other stuff???
-//console.log($('#test'));
+// console.log($('#test'));
 // var $ = require('jquery');
 // import $ from 'jquery';
 
