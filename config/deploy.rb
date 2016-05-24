@@ -12,6 +12,9 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true # Change to false when not using ActiveRecord
 
+# uncomment this in order to deploy local copy
+# set :deploy_via, :copy
+
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
@@ -68,5 +71,4 @@ namespace :deploy do
   after  :finishing,    :restart
 end
 
-before 'deploy:updated', 'jspm:bundle_sfx[javascripts/records/app.js,assets/javascripts/records/app.min.js]'
 # TODO: add for booking
