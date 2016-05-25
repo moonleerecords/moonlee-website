@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
 
-  # www.moonleerecords.com
-  root to: 'records/home#index'
-
   scope module: 'records', as: 'records' do
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
@@ -21,4 +18,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index]
     end
   end
+
+  # www.moonleerecords.com
+  root to: 'records/home#index'
 end

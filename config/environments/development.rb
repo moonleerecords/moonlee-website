@@ -62,5 +62,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_dispatch.tld_length = 0
+
   config.assets.precompile += %w(spec_helper.js)
 end
