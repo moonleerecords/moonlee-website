@@ -1,5 +1,5 @@
 module ExternalLinksHelper
-  def linked_icon(external_url, target='_blank')
+  def linked_icon(external_url, target = '_blank')
     # TODO: rewrite this after jspm
     # TODO: bandcamp icon, discogs icon
     unless external_url.url_type == ''
