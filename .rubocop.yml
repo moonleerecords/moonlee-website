@@ -9,6 +9,9 @@ AllCops:
     - 'bin/**/*'
     - 'log/**/*'
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/LineLength:
   Enabled: false
 

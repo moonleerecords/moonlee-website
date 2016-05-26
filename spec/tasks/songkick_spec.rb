@@ -3,7 +3,6 @@ require 'rake'
 
 describe 'Songkick' do
   describe 'songkick:fetch_events' do
-
     before do
       load File.expand_path('../../../lib/tasks/songkick.rake', __FILE__)
       Rake::Task.define_task(:environment)

@@ -7,16 +7,15 @@ namespace :songkick do
 
     artists.each do |artist|
       songkick_events = remote.artist_events(artist.songkick_id)
+      next unless songkick_events.status == 'ok' && songkick_events.results.count > 0
 
-      if songkick_events.status == 'ok' && songkick_events.results.count > 0
-        songkick_events.results.each do |songkick_event|
-          venue = find_or_create_venue(songkick_event)
-          venue.save
-          event = find_or_create_event(songkick_event, venue)
-          event.save
-          artist_event = find_or_create_artist_event(artist, event)
-          artist_event.save
-        end
+      songkick_events.results.each do |songkick_event|
+        venue = find_or_create_venue(songkick_event)
+        venue.save
+        event = find_or_create_event(songkick_event, venue)
+        event.save
+        artist_event = find_or_create_artist_event(artist, event)
+        artist_event.save
       end
     end
 
