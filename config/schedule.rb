@@ -1,4 +1,4 @@
-set :output, '/log/cron_log.log'
+set :output, '/var/log/cron_log.log'
 
 every 12.hours do
   runner 'Fetch upcoming events from Songkick'
