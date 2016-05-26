@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503182212) do
+ActiveRecord::Schema.define(version: 20160526125047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20160503182212) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "artist_events", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_artist_events_on_artist_id", using: :btree
+    t.index ["event_id"], name: "index_artist_events_on_event_id", using: :btree
   end
 
   create_table "artist_members", force: :cascade do |t|
@@ -101,6 +110,20 @@ ActiveRecord::Schema.define(version: 20160503182212) do
     t.datetime "updated_at",                   null: false
     t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.integer  "songkick_id"
+    t.string   "type"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "songkick_url"
+    t.string   "facebook_url"
+    t.string   "lastfm_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
   end
 
   create_table "external_links", force: :cascade do |t|
@@ -172,8 +195,21 @@ ActiveRecord::Schema.define(version: 20160503182212) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "venues", force: :cascade do |t|
+    t.integer  "songkick_id"
+    t.string   "name"
+    t.string   "songkick_url"
+    t.string   "city"
+    t.string   "country_code"
+    t.string   "lng"
+    t.string   "lat"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   add_foreign_key "artist_members", "artists"
   add_foreign_key "artist_members", "members"
+  add_foreign_key "events", "venues"
   add_foreign_key "external_links", "artists"
   add_foreign_key "release_reviews", "releases"
   add_foreign_key "release_type_main_buy_links", "release_types"
