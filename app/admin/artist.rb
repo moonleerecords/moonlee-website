@@ -7,7 +7,7 @@ ActiveAdmin.register Artist do
                 :genre,
                 :formed,
                 :disbanded,
-                :songkick_artist_id,
+                :songkick_id,
                 :active,
                 :booking,
                 artist_members_attributes: [
@@ -26,7 +26,7 @@ ActiveAdmin.register Artist do
       f.input :genre
       f.input :formed
       f.input :disbanded
-      f.input :songkick_artist_id, label: 'Songkick artist ID'
+      f.input :songkick_id, label: 'Songkick artist ID'
       f.input :booking, label: 'Under the Moonlee booking'
       f.input :active, label: 'Actively playing'
       f.has_many :external_links, heading: 'Links', allow_destroy: true do |external_link|
@@ -59,7 +59,7 @@ ActiveAdmin.register Artist do
       row :genre
       row :formed
       row :disbanded
-      row :songkick_artist_id
+      row :songkick_id
       row :active
       row :booking
       if artist.external_links.count > 0

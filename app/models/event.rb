@@ -5,4 +5,6 @@ class Event < ApplicationRecord
 
   validates :venue, presence: true
   validates :start_date, presence: true
+
+  scope :active, -> { where(active: true) }
 end

@@ -5,6 +5,7 @@ class CreateVenues < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :songkick_url
       t.string :city
+      t.string :country
       t.string :country_code
       t.string :lng
       t.string :lat

@@ -11,6 +11,8 @@ class Artist < ApplicationRecord
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true
 
+  scope :with_songkick_id, -> { where.not(songkick_id: nil) }
+
   def to_s
     name
   end

@@ -8,7 +8,7 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string :genre
       t.string :formed
       t.string :disbanded
-      t.integer :songkick_artist_id
+      t.integer :songkick_id
       t.boolean :active, default: true
       t.boolean :booking, default: false
 

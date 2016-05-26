@@ -83,11 +83,11 @@ ActiveRecord::Schema.define(version: 20160526125047) do
     t.string   "genre"
     t.string   "formed"
     t.string   "disbanded"
-    t.integer  "songkick_artist_id"
-    t.boolean  "active",             default: true
-    t.boolean  "booking",            default: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "songkick_id"
+    t.boolean  "active",      default: true
+    t.boolean  "booking",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "artists_releases", id: false, force: :cascade do |t|
@@ -115,14 +115,15 @@ ActiveRecord::Schema.define(version: 20160526125047) do
   create_table "events", force: :cascade do |t|
     t.integer  "venue_id"
     t.integer  "songkick_id"
-    t.string   "type"
+    t.string   "event_type"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "songkick_url"
     t.string   "facebook_url"
     t.string   "lastfm_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "active",       default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
   end
 
@@ -200,6 +201,7 @@ ActiveRecord::Schema.define(version: 20160526125047) do
     t.string   "name"
     t.string   "songkick_url"
     t.string   "city"
+    t.string   "country"
     t.string   "country_code"
     t.string   "lng"
     t.string   "lat"

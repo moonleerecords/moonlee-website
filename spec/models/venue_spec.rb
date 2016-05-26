@@ -8,6 +8,7 @@ RSpec.describe Venue, type: :model do
       venue.city = 'Ljubljana'
       venue.lng = '14.50575'
       venue.lat = '46.05695'
+      venue.country = 'Slovenia'
       venue.country_code = 'SI'
 
       expect(venue.valid?).to eq(true)
