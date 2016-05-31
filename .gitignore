@@ -27,3 +27,4 @@ routes.txt
 .byebug_history
 
 /config/application.yml
+/config/application_production_local.yml

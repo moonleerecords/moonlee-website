@@ -4,7 +4,7 @@ class Artist < ApplicationRecord
   has_many :external_links, dependent: :destroy
   has_many :artist_releases
   has_many :releases, through: :artist_releases
-  has_many :events, through: :artist_events
+  has_many :events
 
   validates :name, presence: true
 

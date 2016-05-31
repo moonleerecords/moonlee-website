@@ -1,10 +1,11 @@
 class Event < ApplicationRecord
+  belongs_to :artist
   belongs_to :venue
-  has_many :artist_events
-  has_many :artists, through: :artist_event
 
+  validates :artist, presence: true
   validates :venue, presence: true
   validates :start_date, presence: true
 
-  scope :active, -> { where(active: true) }
+  default_scope { where(active: true) }
+  scope :upcoming, -> { where('start_date >= ?', Time.zone.today) }
 end

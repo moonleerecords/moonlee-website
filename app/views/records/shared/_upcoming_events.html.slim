@@ -1,0 +1,9 @@
+- if @upcoming_events.count > 0
+  p Shows
+  ul
+    - @upcoming_events.each do |artist, events|
+      h3 = artist
+      div
+        - events.each do |event|
+          = render_event(event)
+          br

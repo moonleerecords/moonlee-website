@@ -9,7 +9,7 @@ class Records::HomeController < Records::BaseController
     @fresh_releases = Release.fresh
     @latest_releases = (Release.latest - @fresh_releases).take(5)
 
-    # TODO: @upcoming_shows = Event.all
+    @upcoming_events = upcoming_events_by_artist(5)
     # TODO: latest adds to the store
   end
 end
