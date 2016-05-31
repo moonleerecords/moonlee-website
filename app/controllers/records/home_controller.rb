@@ -1,6 +1,6 @@
 class Records::HomeController < Records::BaseController
   # TODO: before_filter :search_deal, :only => [:showcase, :buy_stuff, ...]
-  # TODO: upcoming releases, shown on more pages?
+  # TODO: upcoming releases, shown on more pages, but different count
 
   def index
     # TODO: @latest_news = News.all
@@ -11,6 +11,5 @@ class Records::HomeController < Records::BaseController
 
     @upcoming_events = upcoming_events_by_artist(5)
     # TODO: latest adds to the store
-    
   end
 end
