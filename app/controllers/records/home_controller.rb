@@ -11,5 +11,6 @@ class Records::HomeController < Records::BaseController
 
     @upcoming_events = upcoming_events_by_artist(5)
     # TODO: latest adds to the store
+    
   end
 end
