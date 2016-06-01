@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# TODO: remove this after it's released in prod. This is here so that db can be dropped in production env
+ActiveRecord::Base.protected_environments = %w()
+
 module MoonleeWebsite
   class Application < Rails::Application
     # we set environmental variables here since they don't work in some cases when you set them in initializers
