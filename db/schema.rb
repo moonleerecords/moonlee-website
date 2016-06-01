@@ -69,16 +69,23 @@ ActiveRecord::Schema.define(version: 20160526124843) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
+    t.string   "slug"
     t.text     "description"
     t.string   "origin"
     t.string   "genre"
     t.string   "formed"
     t.string   "disbanded"
     t.integer  "songkick_id"
-    t.boolean  "active",      default: true
-    t.boolean  "booking",     default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "active",             default: true
+    t.boolean  "records",            default: false
+    t.boolean  "booking",            default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
   end
 
   create_table "artists_releases", id: false, force: :cascade do |t|

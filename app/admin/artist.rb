@@ -2,6 +2,7 @@ ActiveAdmin.register Artist do
   menu label: 'Artists', priority: 3
   config.sort_order = 'name_asc'
   permit_params :name,
+                :image,
                 :description,
                 :origin,
                 :genre,
@@ -9,6 +10,7 @@ ActiveAdmin.register Artist do
                 :disbanded,
                 :songkick_id,
                 :active,
+                :records,
                 :booking,
                 artist_members_attributes: [
                   :id,
@@ -21,12 +23,14 @@ ActiveAdmin.register Artist do
     f.semantic_errors
     f.inputs do
       f.input :name
+      f.input :image, as: :file
       f.input :description, as: :ckeditor
       f.input :origin
       f.input :genre
       f.input :formed
       f.input :disbanded
       f.input :songkick_id, label: 'Songkick artist ID'
+      f.input :records, label: 'Under the Moonlee records'
       f.input :booking, label: 'Under the Moonlee booking'
       f.input :active, label: 'Actively playing'
       f.has_many :external_links, heading: 'Links', allow_destroy: true do |external_link|
@@ -52,6 +56,9 @@ ActiveAdmin.register Artist do
     attributes_table do
       row :id
       row :name
+      row :image do
+        image_tag(artist.image.url(:thumb))
+      end
       row :description do
         raw artist.description
       end
@@ -60,8 +67,9 @@ ActiveAdmin.register Artist do
       row :formed
       row :disbanded
       row :songkick_id
-      row :active
+      row :records
       row :booking
+      row :active
       if artist.external_links.count > 0
         panel 'Links' do
           ul do
@@ -115,8 +123,9 @@ ActiveAdmin.register Artist do
     column :name
     column :origin
     column :genre
-    column :active
+    column :records
     column :booking
+    column :active
     actions
   end
 end

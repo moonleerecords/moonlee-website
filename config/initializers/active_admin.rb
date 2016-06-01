@@ -298,6 +298,20 @@ ActiveAdmin.setup do |config|
   # config.include_default_association_filters = true
 end
 
+# This solves problem with FriendlyId
+ActiveAdmin::ResourceController.class_eval do
+  def find_resource
+    id_field = 'id'
+    received_id = Integer(params[:id]) rescue nil
+
+    if scoped_collection.is_a?(FriendlyId) && received_id.nil?
+      id_field = scoped_collection.friendly_id_config.query_field
+    end
+
+    scoped_collection.find_by! id_field => params[:id]
+  end
+end
+
 module ActiveAdmin
   module ViewHelpers
     include ReleasesHelper

@@ -39,6 +39,8 @@ gem 'whenever', require: false
 gem 'songkickr'
 # countries
 gem 'countries', require: 'countries/global'
+# for cleaner urls
+gem 'friendly_id', '~> 5.1.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'

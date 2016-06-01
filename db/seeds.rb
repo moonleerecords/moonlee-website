@@ -3,16 +3,19 @@
 # TODO: treat songkick id as other platforms?
 # TODO: add complete description
 # TODO: update description style
+# TODO: add images (check analena example)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 # Analena
 analena = Artist.create(
   name: 'Analena',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena.jpg"),
   description: 'TODO',
   origin: 'Croatia, Slovenia',
   songkick_id: 399989,
   active: true,
   formed: '1997',
+  records: true,
   booking: true,
   genre: 'post-punk / screamo / emo'
 )
@@ -91,6 +94,7 @@ bernays_propaganda = Artist.create(
   songkick_id: 2459271,
   active: true,
   formed: '2007',
+  records: true,
   booking: true,
   genre: 'post-punk / indie / alternative rock'
 )
@@ -133,6 +137,7 @@ repetitor = Artist.create(
   songkick_id: 1956778,
   active: true,
   formed: '2005',
+  records: true,
   booking: true,
   genre: "post-punk / alternative rock / rock'n'roll"
 )
@@ -229,6 +234,7 @@ xaxaxa = Artist.create(
   active: false,
   formed: '2009',
   disbanded: '2015',
+  records: true,
   booking: false,
   genre: 'punk rock / post-punk / indie'
 )

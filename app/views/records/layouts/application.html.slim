@@ -16,9 +16,8 @@ html
   body
     = render partial: 'records/layouts/header'
     = yield
+    = render partial: 'records/shared/upcoming_releases'
+    = render partial: 'records/shared/fresh_releases'
+    = render partial: 'records/shared/latest_releases'
+    = render partial: 'records/shared/upcoming_events'
     = render partial: 'records/layouts/footer'
-
-//javascript:
-//  System.import('javascripts/modules/welcome').then(function(m){
-//    m.welcome('Someone');
-//  });

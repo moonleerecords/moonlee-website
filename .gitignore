@@ -5,8 +5,8 @@
 /node_modules
 /assets/jspm_packages/*/**
 /public/assets/
+/public/system/
 /assets/**/*.map
-/assets/**/*.min.js
 # frontend bower
 /bower_components
 /vendor/assets/components
