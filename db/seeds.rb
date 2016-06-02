@@ -4,6 +4,7 @@
 # TODO: add complete description
 # TODO: update description style
 # TODO: add images (check analena example)
+# TODO: buy links, reviews etc.
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 # Analena
@@ -38,6 +39,11 @@ ExternalLink.create(
   artist: analena,
   url_type: 'twitter',
   url: 'https://twitter.com/analenafire'
+)
+ExternalLink.create(
+  artist: analena,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/415253-Analena'
 )
 ana_franjic = Member.create(
   name: 'Ana Franjić'
@@ -98,6 +104,30 @@ bernays_propaganda = Artist.create(
   booking: true,
   genre: 'post-punk / indie / alternative rock'
 )
+kristina_gorovska = Member.create(
+  name: 'Kristina Gorovska'
+)
+vasko_atanasoski = Member.create(
+  name: 'Vasko Atanasoski'
+)
+deni_krstev = Member.create(
+  name: 'Deni Krstev'
+)
+ArtistMember.create(
+  artist: bernays_propaganda,
+  member: kristina_gorovska,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: bernays_propaganda,
+  member: vasko_atanasoski,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: bernays_propaganda,
+  member: deni_krstev,
+  role: 'rhythm programming and synthesizer'
+)
 ExternalLink.create(
   artist: bernays_propaganda,
   url_type: 'lastfm',
@@ -113,6 +143,11 @@ ExternalLink.create(
   url_type: 'facebook',
   url: 'https://www.facebook.com/bernayspropaganda/'
 )
+ExternalLink.create(
+  artist: bernays_propaganda,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1393536-Bernays-Propaganda'
+)
 politika = Release.create(
   title: 'Politika',
   catalog_number: 'HMRL039',
@@ -127,6 +162,56 @@ politika = Release.create(
 ArtistRelease.create(
   artist: bernays_propaganda,
   release: politika
+)
+
+# Damir Avdić
+damir_avdic = Artist.create(
+  name: 'Damir Avdić',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena.jpg"),
+  description: 'TODO',
+  origin: 'Bosnia and Herzegovina',
+  songkick_id: 3641561,
+  active: true,
+  records: true,
+  booking: true,
+  genre: 'hardcore / punk / blues'
+)
+ExternalLink.create(
+  artist: damir_avdic,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Damir+Avdi%C4%87'
+)
+ExternalLink.create(
+  artist: damir_avdic,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1194965-Damir-Avdi%C4%87'
+)
+ExternalLink.create(
+  artist: damir_avdic,
+  url_type: 'bandcamp',
+  url: 'https://damiravdic.bandcamp.com/'
+)
+damir_avdic_member = Member.create(
+  name: 'Damir Avdić'
+)
+ArtistMember.create(
+  artist: damir_avdic,
+  member: damir_avdic_member,
+  role: 'guitar, vocals'
+)
+zivot_je_raj = Release.create(
+  title: 'Život je Raj',
+  catalog_number: 'HMRL019',
+  release_date: Date.new(2010, 05, 05),
+  description: "<p>The third album by Damir Avdić was entirely created by Damir himself – if you liked “Mrtvi su mrtvi”, you already know that his songs don’t need the “basic” rock line-up to sound complete and full blooded in the punk manner. Penetrating voice and electric guitar so dense it fills every pore of silence are more than enough for Diplomatz to express himself and carve your brain with painful and bloody words which strip the skin and burn the flesh. And believe us when we tell you that these words say everything you hate and makes you nervous – and it’s so loud and clear that at first you won’t even know what hit you. That’s what Damir Avdić, Diplomatz of hardcore school really is – straightforward and serious with a very poisonous tongue – a modern anti-singer/songwriter who speaks about the world in a very special way.</p>",
+  tracklist: "1. Kuda sestro<br>2. Umreži se<br>3. Život je raj<br>4. Svetac možda<br>5. Kakvo lijepo cvijeće raste<br>6. Imam dvadeset i dvije<br>7. Reci zlato<br>8. Tepaj mi<br>9. Gotovo je<br>10. Gdje si majko<br>11. Bratsvo i jedinstvo<br>12. Dođi dušo",
+  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/ivot-je-raj-2',
+  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3053604513/size=large/bgcol=dbdcdc/linkcol=3E813D/tracklist=false/artwork=small/transparent=true/" width="300" height="150" seamless=""><a href="http://moonleerecords.bandcamp.com/album/ivot-je-raj-2">Život je raj by DAMIR AVDIĆ</a></iframe>',
+  internal_release: true
+)
+ArtistRelease.create(
+  artist: damir_avdic,
+  release: zivot_je_raj
 )
 
 # Repetitor
@@ -165,6 +250,11 @@ ExternalLink.create(
   artist: repetitor,
   url_type: 'instagram',
   url: 'https://www.instagram.com/repetitor_bgd/'
+)
+ExternalLink.create(
+  artist: repetitor,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1271681-Repetitor'
 )
 dobrodosli_na_okean = Release.create(
   title: 'Dobrodošli na Okean',
