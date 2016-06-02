@@ -38,18 +38,6 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
-  remote: git://github.com/audionerd/draper.git
-  revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
-  ref: e816e0e587
-  branch: rails5
-  specs:
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
-
-GIT
   remote: git://github.com/justinfrench/formtastic.git
   revision: 9b0bf2442f0610172cdd605810df104256cb4b5f
   specs:
@@ -182,6 +170,11 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -401,7 +394,7 @@ DEPENDENCIES
   countries
   database_cleaner (~> 1.5, >= 1.5.1)
   devise (> 4.x)
-  draper!
+  draper
   font-awesome-rails
   formtastic!
   friendly_id (~> 5.1.0)

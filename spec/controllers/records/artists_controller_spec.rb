@@ -9,8 +9,14 @@ RSpec.describe Records::ArtistsController, type: :controller do
   end
 
   describe 'GET #show' do
+    before do
+      artist = Artist.new
+      artist.name = 'Repetitor'
+      artist.save
+    end
+
     it 'returns http success' do
-      get :show, params: { id: 1 }
+      get :show, params: { id: 'repetitor' }
       expect(response).to have_http_status(:success)
     end
   end

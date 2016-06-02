@@ -18,7 +18,7 @@ gem 'ransack',    github: 'activerecord-hackery/ransack'
 gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'cancancan'
-gem 'draper', github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587'
+gem 'draper'
 # To fix a Draper deprecation error
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'ckeditor'

@@ -10,10 +10,10 @@ class Artist < ApplicationRecord
   has_many :events
 
   # TODO: change styles
-  has_attached_file :image, styles: {medium: '300x300>', thumb: '100x100>'}, default_url: '/assets/missing.png'
+  has_attached_file :image, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/assets/missing.png'
 
   validates :name, presence: true
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: %r(/\Aimage\/.*\Z/)
 
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true

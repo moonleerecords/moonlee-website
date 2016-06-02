@@ -167,7 +167,7 @@ ArtistRelease.create(
 # Damir Avdić
 damir_avdic = Artist.create(
   name: 'Damir Avdić',
-  image: File.new("#{Rails.root}/app/assets/images/artists/analena.jpg"),
+  image: File.new("#{Rails.root}/app/assets/images/artists/damir_avdic.jpg"),
   description: 'TODO',
   origin: 'Bosnia and Herzegovina',
   songkick_id: 3641561,

@@ -24,7 +24,7 @@ namespace :songkick do
 
   def find_or_create_venue(songkick_event)
     venue = Venue.find_or_create_by(songkick_id: songkick_event.venue.id)
-    venue.name = songkick_event.venue.display_name
+    venue.name = venue_name(songkick_event)
     venue.songkick_url = songkick_event.venue.uri
     venue.city = songkick_event.location.city.split(',')[0]
     venue.country = songkick_event.venue.metro_area.country
@@ -42,6 +42,10 @@ namespace :songkick do
     event.start_date = songkick_event.start.to_date
     event.songkick_url = songkick_event.uri
     event
+  end
+
+  def venue_name(songkick_event)
+    songkick_event.type == 'Festival' ? songkick_event.display_name : songkick_event.venue.display_name
   end
 
   def country_code(country_name)

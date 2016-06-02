@@ -302,7 +302,11 @@ end
 ActiveAdmin::ResourceController.class_eval do
   def find_resource
     id_field = 'id'
-    received_id = Integer(params[:id]) rescue nil
+    begin
+      received_id = Integer(params[:id])
+    rescue ArgumentError
+      received_id = nil
+    end
 
     if scoped_collection.is_a?(FriendlyId) && received_id.nil?
       id_field = scoped_collection.friendly_id_config.query_field

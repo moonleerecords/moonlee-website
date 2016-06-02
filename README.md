@@ -10,7 +10,6 @@
 #### Prerequisites 
 
 - [Node and NPM](https://docs.npmjs.com/getting-started/installing-node)
-TODO: 
 - [Bower](http://bower.io)
 - [jspm](http://jspm.io/docs/getting-started.html)
 - [PhantomJS](http://phantomjs.org/)
