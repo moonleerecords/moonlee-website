@@ -38,9 +38,9 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
-  remote: git://github.com/drapergem/draper.git
-  revision: 57a514133bc241e74cc4e8877d014cad4e1f12c6
-  branch: master
+  remote: git://github.com/audionerd/draper.git
+  revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
+  branch: rails5
   specs:
     draper (2.1.0)
       actionpack (>= 3.0)
