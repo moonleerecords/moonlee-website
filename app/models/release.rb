@@ -33,17 +33,9 @@ class Release < ApplicationRecord
 
   def released_formats
     released_formats = []
-    self.release_types.each do |release_type|
+    release_types.each do |release_type|
       released_formats << release_type.release_format
     end
     released_formats.join(' / ')
-  end
-
-  def main_buy_links
-
-  end
-
-  def other_buy_links
-
   end
 end

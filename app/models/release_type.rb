@@ -1,7 +1,7 @@
 class ReleaseType < ApplicationRecord
   default_scope { order('position ASC') }
 
-  ALLOWED_FORMATS = {cd: 1, lp: 2, '7inch': 3, lp_cd: 4, download: 5, download_merch: 6}.stringify_keys.freeze
+  ALLOWED_FORMATS = { 'cd' => 1, 'lp' => 2, '7inch' => 3, 'lp_cd' => 4, 'download' => 5, 'download_merch' => 6 }.stringify_keys.freeze
 
   belongs_to :release
   has_many :release_type_main_buy_links, dependent: :destroy
@@ -22,6 +22,6 @@ class ReleaseType < ApplicationRecord
   private
 
   def assign_position
-    self.position = ALLOWED_FORMATS[self.release_format]
+    self.position = ALLOWED_FORMATS[release_format]
   end
 end
