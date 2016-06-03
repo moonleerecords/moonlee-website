@@ -8,6 +8,6 @@ class Venue < ApplicationRecord
   validates :country, presence: true
   validates :country_code, presence: true
 
-  # TODO: get list of countries and country codes
+  # TODO: get list of countries and country codes, for admin
   # TODO: automatically find lng/lat for self added events
 end

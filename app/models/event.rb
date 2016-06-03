@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  default_scope { where(active: true) }
+
   belongs_to :artist
   belongs_to :venue
 
@@ -6,7 +8,6 @@ class Event < ApplicationRecord
   validates :venue, presence: true
   validates :start_date, presence: true
 
-  default_scope { where(active: true) }
   scope :upcoming, -> { where('start_date >= ?', Time.zone.today) }
   scope :records, -> { joins(:artist).where('artists.records', true) }
   scope :booking, -> { joins(:artist).where('artists.booking', true) }

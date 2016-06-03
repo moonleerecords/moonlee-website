@@ -3,6 +3,7 @@ ActiveAdmin.register Release do
   decorate_with ReleaseDecorator
   config.sort_order = 'catalog_number_asc'
   permit_params :title,
+                :cover,
                 :catalog_number,
                 :release_date,
                 :description,
@@ -37,6 +38,7 @@ ActiveAdmin.register Release do
               required: true,
               collection: Artist.order(:name)
       f.input :title
+      f.input :cover
       f.input :catalog_number
       f.input :release_date
       f.input :description, as: :ckeditor
@@ -74,6 +76,7 @@ ActiveAdmin.register Release do
         release.artists_names
       end
       row :title
+      row :cover
       row :catalog_number
       row :release_date
       row :description do
@@ -90,7 +93,7 @@ ActiveAdmin.register Release do
       row :internal
       row 'Formats' do
         release.release_types.each do |release_type|
-          div translate(release_type.format) do
+          div translate(release_type.release_format) do
             ul do
               release_type.release_type_main_buy_links.each do |main_buy_link|
                 li link_to 'Internal store', main_buy_link.buy_url, target: '_blank'

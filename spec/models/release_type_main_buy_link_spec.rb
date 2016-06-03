@@ -10,7 +10,7 @@ RSpec.describe ReleaseTypeMainBuyLink, type: :model do
 
     @release_type = ReleaseType.new
     @release_type.release = @release
-    @release_type.format = 'lp'
+    @release_type.release_format = 'lp'
     @release_type.save
   end
 

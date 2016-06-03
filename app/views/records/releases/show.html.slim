@@ -1,2 +1,22 @@
-h1 Records::Releases#show
-p Find me in app/views/records/releases/show.html.erb
+div
+  h2 = @release.title
+  p = @release.released_formats
+  p = image_tag(@release.cover.url(:thumb))
+  p = @release.catalog_number
+  p = localize(@release.release_date)
+  p = raw(@release.description)
+  p = raw(@release.tracklist)
+  p = @release.for_fans_of
+  p = @release.bandcamp_url
+  p = @release.bandcamp_player
+  ul
+    - @release.release_types.each do |release_type|
+      li = release_type.release_format
+      ul
+        - release_type.release_type_main_buy_links.each do |main_buy_link|
+          li = "#{main_buy_link.buy_url} (main)"
+        - release_type.release_type_other_buy_links.each do |other_buy_link|
+          li = "#{other_buy_link.buy_url} (other)"
+  ul
+    - @release.release_reviews.each do |review|
+      li = review.url

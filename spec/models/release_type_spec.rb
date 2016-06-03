@@ -13,7 +13,7 @@ RSpec.describe ReleaseType, type: :model do
     it 'should save ReleaseType if all validations pass' do
       release_type = ReleaseType.new
       release_type.release = @release
-      release_type.format = 'download'
+      release_type.release_format = 'download'
 
       expect(release_type.valid?).to eq(true)
     end

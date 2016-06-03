@@ -1,5 +1,7 @@
 class ReleaseType < ApplicationRecord
-  ALLOWED_FORMATS = %w(cd lp 7inch download lp_cd download_merch).freeze
+  default_scope { order('position ASC') }
+
+  ALLOWED_FORMATS = {cd: 1, lp: 2, '7inch': 3, lp_cd: 4, download: 5, download_merch: 6}.stringify_keys.freeze
 
   belongs_to :release
   has_many :release_type_main_buy_links, dependent: :destroy
@@ -9,9 +11,17 @@ class ReleaseType < ApplicationRecord
   accepts_nested_attributes_for :release_type_other_buy_links, allow_destroy: true
 
   validates :release, presence: true
-  validates :format, presence: true, inclusion: { in: ALLOWED_FORMATS }
+  validates :release_format, presence: true, inclusion: { in: ALLOWED_FORMATS.keys }
+
+  before_save :assign_position
 
   def self.allowed_formats
-    ALLOWED_FORMATS
+    ALLOWED_FORMATS.keys
+  end
+
+  private
+
+  def assign_position
+    self.position = ALLOWED_FORMATS[self.release_format]
   end
 end

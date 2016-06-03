@@ -4,5 +4,5 @@ h1 Artists
   ul
     - @artists.each do |artist|
       li
-        = image_tag artist.image.url
+        = image_tag artist.image.url(:thumb)
         = link_to artist.name, records_artist_path(artist)

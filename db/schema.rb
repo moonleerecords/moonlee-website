@@ -175,14 +175,16 @@ ActiveRecord::Schema.define(version: 20160526124843) do
 
   create_table "release_types", force: :cascade do |t|
     t.integer  "release_id"
-    t.string   "format"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "release_format"
+    t.integer  "position"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["release_id"], name: "index_release_types_on_release_id", using: :btree
   end
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"
+    t.string   "slug"
     t.string   "catalog_number"
     t.date     "release_date"
     t.text     "description"
@@ -190,10 +192,15 @@ ActiveRecord::Schema.define(version: 20160526124843) do
     t.string   "for_fans_of"
     t.string   "bandcamp_url"
     t.text     "bandcamp_player"
-    t.boolean  "internal",        default: true
-    t.boolean  "active",          default: true
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "internal",           default: true
+    t.boolean  "active",             default: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.index ["slug"], name: "index_releases_on_slug", unique: true, using: :btree
   end
 
   create_table "venues", force: :cascade do |t|

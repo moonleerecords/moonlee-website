@@ -10,7 +10,7 @@ RSpec.describe ReleaseTypeOtherBuyLink, type: :model do
 
     @release_type = ReleaseType.new
     @release_type.release = @release
-    @release_type.format = 'cd'
+    @release_type.release_format = 'cd'
     @release_type.save
   end
 

@@ -1,2 +1,8 @@
-h1 Records::Releases#index
-p Find me in app/views/records/releases/index.html.erb
+h1 Releases
+- if @releases.count > 0
+  h2 List of Releases
+  ul
+    - @releases.each do |release|
+      li
+        = image_tag release.cover.url(:thumb)
+        = link_to release.title, records_release_path(release)
