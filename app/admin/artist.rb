@@ -109,7 +109,7 @@ ActiveAdmin.register Artist do
             end
             column :title
             column :release_date
-            column :internal_release
+            column :internal
           end
         end
       end

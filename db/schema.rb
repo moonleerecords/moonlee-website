@@ -190,10 +190,10 @@ ActiveRecord::Schema.define(version: 20160526124843) do
     t.string   "for_fans_of"
     t.string   "bandcamp_url"
     t.text     "bandcamp_player"
-    t.boolean  "internal_release", default: true
-    t.boolean  "active",           default: true
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.boolean  "internal",        default: true
+    t.boolean  "active",          default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "venues", force: :cascade do |t|

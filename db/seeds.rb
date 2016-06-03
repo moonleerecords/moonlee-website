@@ -85,7 +85,7 @@ carbon_based = Release.create(
   tracklist: "1. Carbon Based Organisms<br>2. Dream Amplifiers<br>3. Work In Progress<br>4. Wiederholungszwang<br>5. Notturno<br>6. Spilt Milk<br>7. In Theory And Practice<br>8. From Automatic To Manual<br>9. Ropewalk Adventures<br>10. Rainy Night In Warsaw",
   bandcamp_url: 'https://moonleerecords.bandcamp.com/album/carbon-based',
   bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1343652965/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=none/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/carbon-based">Carbon Based by ANALENA</a></iframe>',
-  internal_release: true
+  internal: true
 )
 ArtistRelease.create(
   artist: analena,
@@ -157,7 +157,7 @@ politika = Release.create(
   for_fans_of: 'The Notwist, New Order, Handsome Furs',
   bandcamp_url: 'https://moonleerecords.bandcamp.com/album/politika',
   bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=459661104/size=large/bgcol=dbdcdc/linkcol=3E813D/tracklist=false/artwork=small/transparent=true/" width="300" height="150" seamless=""><a href="http://moonleerecords.bandcamp.com/album/politika">Politika by BERNAYS PROPAGANDA</a></iframe>',
-  internal_release: true
+  internal: true
 )
 ArtistRelease.create(
   artist: bernays_propaganda,
@@ -207,7 +207,7 @@ zivot_je_raj = Release.create(
   tracklist: "1. Kuda sestro<br>2. Umreži se<br>3. Život je raj<br>4. Svetac možda<br>5. Kakvo lijepo cvijeće raste<br>6. Imam dvadeset i dvije<br>7. Reci zlato<br>8. Tepaj mi<br>9. Gotovo je<br>10. Gdje si majko<br>11. Bratsvo i jedinstvo<br>12. Dođi dušo",
   bandcamp_url: 'https://moonleerecords.bandcamp.com/album/ivot-je-raj-2',
   bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3053604513/size=large/bgcol=dbdcdc/linkcol=3E813D/tracklist=false/artwork=small/transparent=true/" width="300" height="150" seamless=""><a href="http://moonleerecords.bandcamp.com/album/ivot-je-raj-2">Život je raj by DAMIR AVDIĆ</a></iframe>',
-  internal_release: true
+  internal: true
 )
 ArtistRelease.create(
   artist: damir_avdic,
@@ -265,7 +265,7 @@ dobrodosli_na_okean = Release.create(
   for_fans_of: 'Obojeni Program, Ought, Metz',
   bandcamp_url: 'https://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean',
   bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=823079048/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=none/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean">Dobrodošli na okean by REPETITOR</a></iframe>',
-  internal_release: true
+  internal: true
 )
 ArtistRelease.create(
   artist: repetitor,

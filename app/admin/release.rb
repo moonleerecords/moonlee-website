@@ -10,7 +10,7 @@ ActiveAdmin.register Release do
                 :for_fans_of,
                 :bandcamp_url,
                 :bandcamp_player,
-                :internal_release,
+                :internal,
                 artist_ids: [],
                 release_types_attributes: [
                   :id,
@@ -44,7 +44,7 @@ ActiveAdmin.register Release do
       f.input :for_fans_of
       f.input :bandcamp_url
       f.input :bandcamp_player
-      f.input :internal_release
+      f.input :internal
       f.input :active
       # TODO: custom add button label
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
@@ -87,7 +87,7 @@ ActiveAdmin.register Release do
         link_to release.bandcamp_url, release.bandcamp_url, target: '_blank'
       end
       row :bandcamp_player
-      row :internal_release
+      row :internal
       row 'Formats' do
         release.release_types.each do |release_type|
           div translate(release_type.format) do
@@ -118,7 +118,7 @@ ActiveAdmin.register Release do
     column 'Catalog number', :catalog_number, sortable: :catalog_number
     column 'Artist', :artists_names, sortable: 'artists.name'
     column 'Title', :title, sortable: :title
-    column 'Internal', :internal_release, sortable: :internal_release
+    column 'Internal', :internal, sortable: :internal
     column 'Release date', :release_date, sortable: :release_date
     actions
   end

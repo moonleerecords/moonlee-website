@@ -15,7 +15,7 @@ en:
   discogs: "Discogs"
   date:
     formats:
-      custom_short: "%d.%m.%Y"
+      default: "%d.%m.%Y"
   time:
     formats:
-      custom_short: "%d.%m.%Y %H:%M:%S"
+      default: "%d.%m.%Y %H:%M:%S"
