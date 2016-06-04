@@ -1,9 +1,8 @@
 - if @upcoming_events.count > 0
   h2 Shows
-  ul
-    - @upcoming_events.each do |artist, events|
-      h3 = artist
-      div
+  - @upcoming_events.each do |artist, events|
+    h3 = artist
+    div
+      ul
         - events.each do |event|
-          = render_event(event)
-          br
+          li = render_event(event)

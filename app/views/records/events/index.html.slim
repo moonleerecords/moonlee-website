@@ -1,2 +1,9 @@
-h1 Records::Events#index
-p Find me in app/views/records/events/index.html.erb
+h1 Events
+- if @events.count > 0
+  h2 List of Events
+  - @events.each do |artist, events|
+    h3 = artist
+    div
+      ul
+        - events.each do |event|
+          li = render_event(event)
