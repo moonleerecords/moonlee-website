@@ -1,6 +1,4 @@
-# TODO: structure this file
 # TODO: update info, update info style
-# TODO: treat songkick id as other platforms?
 # TODO: add complete description
 # TODO: update description style
 # TODO: add images (check analena example)

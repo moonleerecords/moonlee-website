@@ -10,7 +10,6 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :songkick_url
       t.string :facebook_url
       t.string :lastfm_url
-      t.boolean :active, default: true
 
       t.timestamps
     end

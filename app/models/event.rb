@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  default_scope { where(active: true) }
+  default_scope { order('start_date ASC') }
 
   belongs_to :artist
   belongs_to :venue

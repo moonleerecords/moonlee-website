@@ -17,7 +17,7 @@ export default {};
 // var $ = require('jquery');
 // import $ from 'jquery';
 
-// TODO: example
+//EXAMPLE
 //import React from 'react';
 //import ReactDOM from 'react-dom';
 //import CartItem from './cartItem.jsx!';

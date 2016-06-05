@@ -92,8 +92,6 @@ $ rails s
 
 Go to `localhost:3000\admin`
 
-TODO: add fixtures for these
-
 ```
 Username: admin@example.com
 Password: password

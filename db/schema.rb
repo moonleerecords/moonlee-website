@@ -120,9 +120,8 @@ ActiveRecord::Schema.define(version: 20160526124843) do
     t.string   "songkick_url"
     t.string   "facebook_url"
     t.string   "lastfm_url"
-    t.boolean  "active",       default: true
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["artist_id"], name: "index_events_on_artist_id", using: :btree
     t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
   end

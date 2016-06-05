@@ -3,8 +3,8 @@ div
   p = image_tag @artist.image.url(:thumb)
   p = raw(@artist.description)
   p = @artist.origin
-  p = @artist.formed
-  p = @artist.disbanded
+  p
+    = "Years active: #{years_active(@artist.formed, @artist.disbanded)}"
   ul
     - @artist.members.each do |member|
       li = member.name
@@ -17,4 +17,3 @@ div
   ul
     - @artist.events.each do |event|
       li = event.venue.name
-  /TODO: years active

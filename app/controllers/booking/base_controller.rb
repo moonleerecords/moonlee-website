@@ -2,7 +2,6 @@ class Booking::BaseController < ApplicationController
   # layout 'booking/layouts/application'
 
   def upcoming_events(per_artist = 5)
-    # TODO: finish this
     upcoming_events = Event.records.upcoming.group_by { |event| event.artist.name }
     if per_artist
       upcoming_events.each do |key, _|

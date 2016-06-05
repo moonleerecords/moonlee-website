@@ -13,12 +13,12 @@ namespace :songkick do
         venue = find_or_create_venue(songkick_event)
         venue.save
         event = find_or_create_event(songkick_event, venue, artist)
-        event.save
+        save_or_destroy_event(event, songkick_event)
       end
     end
 
     # TODO: deal with festival end date and date when band is actually performing
-    # TODO: check for cancelled events and then do not show them anymore
+    # TODO: remove unexisting event
     # TODO: write test
   end
 
@@ -42,6 +42,14 @@ namespace :songkick do
     event.start_date = songkick_event.start.to_date
     event.songkick_url = songkick_event.uri
     event
+  end
+
+  def save_or_destroy_event(event, songkick_event)
+    if songkick_event.status == 'cancelled' && event.persisted?
+      event.destroy
+    else
+      event.save
+    end
   end
 
   def venue_name(songkick_event)
