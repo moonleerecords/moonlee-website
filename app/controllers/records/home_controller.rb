@@ -7,6 +7,5 @@ class Records::HomeController < Records::BaseController
   def index
     # TODO: @latest_news = News.all.records
     # TODO: latest adds to the store
-
   end
 end
