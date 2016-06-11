@@ -28,3 +28,6 @@ routes.txt
 
 /config/application.yml
 /config/application_production_local.yml
+
+#
+bin/scss-lint
