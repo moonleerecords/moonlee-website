@@ -149,8 +149,8 @@ ActiveRecord::Schema.define(version: 20160612143510) do
     t.boolean  "records",            default: false
     t.boolean  "booking",            default: false
     t.datetime "published_at"
-    t.string   "tags",                                            array: true
-    t.string   "categories",                                      array: true
+    t.string   "tags",               default: [],                 array: true
+    t.string   "categories",         default: [],                 array: true
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.string   "image_file_name"

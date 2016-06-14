@@ -25,16 +25,21 @@ ActiveAdmin.register Release do
   form do |f|
     f.semantic_errors
     f.inputs do
-      # TODO: use multiple selection dropdown, or select2
       f.input :artists,
-              as: :check_boxes,
+              as: :select,
               multiple: true,
               required: true,
               collection: Artist.order(:name)
       f.input :title
       f.input :cover, as: :file, hint: image_tag(f.object.cover.url(:small))
       f.input :catalog_number
-      f.input :release_date
+      f.input :release_date,
+              as: :date_time_picker,
+              picker_options: {
+                timepicker: false,
+                format: 'd.m.Y',
+                value: localize(f.object.release_date)
+              }
       f.input :description, as: :ckeditor
       f.input :tracklist, as: :ckeditor
       f.input :for_fans_of

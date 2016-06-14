@@ -8,8 +8,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.boolean :records, default: false
       t.boolean :booking, default: false
       t.datetime :published_at
-      t.string :tags, array: true
-      t.string :categories, array: true
+      t.string :tags, array: true, default: []
+      t.string :categories, array: true, default: []
 
       t.timestamps
     end

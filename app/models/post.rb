@@ -23,15 +23,15 @@ class Post < ApplicationRecord
   before_save :assign_published_at
 
   def tags_raw
-    read_attribute(:tags).join(', ') unless read_attribute(:tags).nil?
+    self.tags.join(', ') unless self.tags.nil?
   end
 
   def tags_raw=(values)
-    write_attribute(:tags, values.split(',').map(&:strip))
+    self.tags = values.split(',').map(&:strip)
   end
 
   def validate_categories
-    invalid_categories = categories - AVAILABLE_CATEGORIES
+    invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
     if invalid_categories.count > 0
       errors.add(:categories, 'Not all the categories are valid')
     end
@@ -52,8 +52,6 @@ class Post < ApplicationRecord
   end
 
   def assign_published_at
-    if published_at.nil?
-      self.published_at = self.created_at
-    end
+    self.published_at = created_at if published_at.nil?
   end
 end

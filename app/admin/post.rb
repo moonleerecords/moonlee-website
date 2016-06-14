@@ -21,7 +21,13 @@ ActiveAdmin.register Post do
               as: :check_boxes,
               collection: Post.available_categories.collect { |category| [translate(category), category] }
       f.input :body, as: :ckeditor
-      f.input :published_at, as: :date_time_picker
+      f.input :published_at,
+              as: :date_time_picker,
+              picker_options: {
+                format: 'd.m.Y H:i',
+                step: 30,
+                value: localize(f.object.published_at)
+              }
       f.input :visibility,
               as: :select,
               collection: Post.visibility_options.collect { |option| [translate(option), option] }
@@ -54,7 +60,7 @@ ActiveAdmin.register Post do
         post.tags_raw
       end
       row :categories do
-        post.categories.map {|category| translate(category) }.join(', ')
+        post.categories.map { |category| translate(category) }.join(', ')
       end
       row :created_at
       row :updated_at
@@ -71,7 +77,7 @@ ActiveAdmin.register Post do
       localize(post.published_at)
     end
     column :categories do |post|
-      post.categories.map {|category| translate(category) }.join(', ')
+      post.categories.map { |category| translate(category) }.join(', ')
     end
     column :tags do |post|
       post.tags.join(', ')
