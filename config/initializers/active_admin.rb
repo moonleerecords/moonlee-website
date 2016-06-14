@@ -238,7 +238,6 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'TODO: Sliders', priority: 5
       menu.add label: 'TODO: Shop', priority: 6
     end
   end

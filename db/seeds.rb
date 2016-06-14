@@ -355,5 +355,19 @@ Post.create(
   categories: ['news']
 )
 
+# Sliders
+Slider.create(
+  title: '',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
+  url: 'https://www.facebook.com/events/572159672937185/',
+  position: 1
+)
+Slider.create(
+  title: '',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
+  url: 'https://moonleerecords.bandcamp.com/album/politika',
+  position: 2
+)
+
 # TODO: news import from XML
 # TODO: album cover, band photos etc

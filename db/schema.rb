@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160612143510) do
+ActiveRecord::Schema.define(version: 20160614153248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,21 @@ ActiveRecord::Schema.define(version: 20160612143510) do
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
     t.index ["slug"], name: "index_releases_on_slug", unique: true, using: :btree
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "position"
+    t.boolean  "active",             default: true
+    t.boolean  "records",            default: false
+    t.boolean  "booking",            default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "venues", force: :cascade do |t|

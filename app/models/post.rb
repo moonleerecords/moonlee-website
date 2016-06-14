@@ -20,7 +20,7 @@ class Post < ApplicationRecord
   scope :records, -> { where(records: true) }
   scope :booking, -> { where(booking: true) }
 
-  before_save :assign_published_at
+  before_validation :assign_published_at
 
   def tags_raw
     tags.join(', ') unless tags.nil?
@@ -28,13 +28,6 @@ class Post < ApplicationRecord
 
   def tags_raw=(values)
     self.tags = values.split(',').map(&:strip)
-  end
-
-  def validate_categories
-    invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
-    if invalid_categories.count > 0
-      errors.add(:categories, 'Not all the categories are valid')
-    end
   end
 
   def self.visibility_options
@@ -53,5 +46,12 @@ class Post < ApplicationRecord
 
   def assign_published_at
     self.published_at = created_at if published_at.nil?
+  end
+
+  def validate_categories
+    invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
+    if invalid_categories.count > 0
+      errors.add(:categories, 'Not all the categories are valid')
+    end
   end
 end
