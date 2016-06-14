@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526124843) do
+ActiveRecord::Schema.define(version: 20160612143510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,26 @@ ActiveRecord::Schema.define(version: 20160526124843) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.string   "visibility"
+    t.boolean  "records",            default: false
+    t.boolean  "booking",            default: false
+    t.datetime "published_at"
+    t.string   "tags",                                            array: true
+    t.string   "categories",                                      array: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["categories"], name: "index_posts_on_categories", using: :gin
+    t.index ["tags"], name: "index_posts_on_tags", using: :gin
   end
 
   create_table "release_reviews", force: :cascade do |t|

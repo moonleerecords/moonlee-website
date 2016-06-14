@@ -6,6 +6,10 @@ class Records::HomeController < Records::BaseController
 
   def index
     # TODO: @latest_news = News.all.records
+    # TODO: use this for private posts
+    # if admin_user_signed_in?
+    #   puts 'hello mr. admin'
+    # end
     # TODO: latest adds to the store
   end
 end

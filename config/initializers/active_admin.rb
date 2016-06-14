@@ -238,15 +238,8 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'TODO: News', priority: 2
-      menu.add label: 'TODO: Shows', priority: 4
-      menu.add label: 'Records', priority: 5 do |records|
-        records.add label: 'TODO: Slider'
-      end
-      menu.add label: 'Booking', priority: 6 do |booking|
-        booking.add label: 'TODO: Slider'
-      end
-      menu.add label: 'TODO: Shop', priority: 7
+      menu.add label: 'TODO: Sliders', priority: 5
+      menu.add label: 'TODO: Shop', priority: 6
     end
   end
 
@@ -322,3 +315,15 @@ module ActiveAdmin
     include ExternalLinksHelper
   end
 end
+
+# Datetimepicker default options
+datetime_picker_input = Formtastic::Inputs::StringInput::DateTimePickerInput
+
+# This if for front-end javascript side
+datetime_picker_input.default_datetime_picker_options = {
+  format: 'd.m.Y H:i',
+  step: 30 # minutes
+}
+
+# This if for backend (Ruby)
+datetime_picker_input.format = "%d.%m.%Y %H:%M"

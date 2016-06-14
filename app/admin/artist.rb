@@ -23,7 +23,7 @@ ActiveAdmin.register Artist do
     f.semantic_errors
     f.inputs do
       f.input :name
-      f.input :image, as: :file
+      f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
       f.input :description, as: :ckeditor
       f.input :origin
       f.input :genre
@@ -57,7 +57,7 @@ ActiveAdmin.register Artist do
       row :id
       row :name
       row :image do
-        image_tag(artist.image.url(:thumb))
+        image_tag(artist.image.url(:small))
       end
       row :description do
         raw artist.description

@@ -10,7 +10,7 @@ class Artist < ApplicationRecord
   has_many :events
 
   # TODO: change styles
-  has_attached_file :image, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/assets/missing.png'
+  has_attached_file :image, styles: { medium: '300x300>', small: '100x100>' }, default_url: '/assets/missing.png'
 
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true

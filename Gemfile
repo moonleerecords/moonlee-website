@@ -24,6 +24,7 @@ gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'ckeditor'
 gem 'pundit'
+gem 'activeadmin_addons'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -42,7 +43,6 @@ gem 'songkickr'
 gem 'countries', require: 'countries/global'
 # for cleaner urls
 gem 'friendly_id', '~> 5.1.0'
-
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

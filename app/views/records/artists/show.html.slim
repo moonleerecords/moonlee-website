@@ -1,6 +1,6 @@
 div
   h2 = @artist.name
-  p = image_tag @artist.image.url(:thumb)
+  p = image_tag @artist.image.url(:small)
   p = raw(@artist.description)
   p = @artist.origin
   p

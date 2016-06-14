@@ -344,4 +344,16 @@ ExternalLink.create(
   url: 'https://xaxaxa.bandcamp.com/'
 )
 
+# Posts
+Post.create(
+  title: 'Politika – a new album by Bernays Propaganda',
+  body: 'Macedonian activist musicians Bernays Propaganda have released their fourth album “Politika” today, March 14th 2016. Their new album, which sets an important milestone in band’s career, is released on the Slovenian independent label Moonlee Records available in the CD and LP formats, as well as a free download.',
+  visibility: 'public',
+  records: true,
+  published_at: Time.new(2016, 03, 14, 11, 34, 00),
+  tags: ['2016', 'bernays propaganda', 'cd', 'european', 'macedonia', 'moonlee', 'notwist', 'politika', 'tour', 'vinyl'],
+  categories: ['news']
+)
+
+# TODO: news import from XML
 # TODO: album cover, band photos etc

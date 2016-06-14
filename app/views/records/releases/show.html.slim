@@ -1,7 +1,7 @@
 div
   h2 = @release.title
   p = @release.released_formats
-  p = image_tag(@release.cover.url(:thumb))
+  p = image_tag(@release.cover.url(:small))
   p = @release.catalog_number
   p = localize(@release.release_date)
   p = raw(@release.description)

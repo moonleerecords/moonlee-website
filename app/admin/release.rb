@@ -22,12 +22,6 @@ ActiveAdmin.register Release do
                   release_type_other_buy_links_attributes: [:id, :title, :buy_url, :release_type, :_destroy]
                 ]
 
-  controller do
-    def scoped_collection
-      Release.includes(:artists)
-    end
-  end
-
   form do |f|
     f.semantic_errors
     f.inputs do
@@ -38,7 +32,7 @@ ActiveAdmin.register Release do
               required: true,
               collection: Artist.order(:name)
       f.input :title
-      f.input :cover
+      f.input :cover, as: :file, hint: image_tag(f.object.cover.url(:small))
       f.input :catalog_number
       f.input :release_date
       f.input :description, as: :ckeditor
@@ -50,7 +44,7 @@ ActiveAdmin.register Release do
       f.input :active
       # TODO: custom add button label
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
-        release_type.input :format,
+        release_type.input :release_format,
                            as: :select,
                            collection: ReleaseType.allowed_formats.collect { |format| [translate(format), format] }
         release_type.has_many :release_type_main_buy_links,
@@ -76,7 +70,9 @@ ActiveAdmin.register Release do
         release.artists_names
       end
       row :title
-      row :cover
+      row :cover do
+        image_tag(release.cover.url(:small))
+      end
       row :catalog_number
       row :release_date
       row :description do
@@ -121,8 +117,9 @@ ActiveAdmin.register Release do
     column 'Catalog number', :catalog_number, sortable: :catalog_number
     column 'Artist', :artists_names, sortable: 'artists.name'
     column 'Title', :title, sortable: :title
-    column 'Internal', :internal, sortable: :internal
     column 'Release date', :release_date, sortable: :release_date
+    column 'Internal', :internal, sortable: :internal
+    column 'Active', :active, sortable: :active
     actions
   end
 

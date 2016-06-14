@@ -1,3 +1,4 @@
+//= require activeadmin_addons/all
 // SASS variable overrides must be declared before loading up Active Admin's styles.
 //
 // To view the variables that Active Admin provides, take a look at
@@ -20,6 +21,6 @@
 //   .status_tag { background: #6090DB; }
 
 .cke_chrome {
-  width: 79.5% !important;
   overflow: hidden;
+  width: 79.5% !important;
 }
