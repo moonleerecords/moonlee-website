@@ -52,7 +52,7 @@ ActiveAdmin.register Slider do
 
   collection_action :sort, method: :post do
     params[:slider].each_with_index do |id, index|
-      Slider.update(id, { position: index+1 })
+      Slider.update(id, position: index + 1)
     end
     render nothing: true
   end
