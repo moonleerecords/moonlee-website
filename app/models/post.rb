@@ -23,7 +23,7 @@ class Post < ApplicationRecord
   before_save :assign_published_at
 
   def tags_raw
-    self.tags.join(', ') unless self.tags.nil?
+    tags.join(', ') unless tags.nil?
   end
 
   def tags_raw=(values)
