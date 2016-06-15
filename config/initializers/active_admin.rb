@@ -113,7 +113,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'posts#index'
 
   # == Admin Comments
   #
@@ -231,6 +231,9 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu :utility_navigation do |menu|
+      menu.add label: 'Moonlee Records',
+               url: 'http://www.moonleerecords.com',
+               html_options: { target: :blank }
       admin.add_current_user_to_menu  menu
       admin.add_logout_button_to_menu menu
     end
