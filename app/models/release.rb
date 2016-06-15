@@ -21,15 +21,15 @@ class Release < ApplicationRecord
   validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\Z}
 
   scope :internal_releases, -> { where(internal: true) }
-  scope :upcoming, -> { internal.where('release_date > ?', Time.zone.today) }
+  scope :upcoming, -> { internal_releases.where('release_date > ?', Time.zone.today) }
   scope :fresh, lambda {
-    internal.where(
+    internal_releases.where(
       'release_date <= ? AND release_date >= ?',
       Time.zone.today,
       Time.zone.today - 1.month
     )
   }
-  scope :latest, -> { internal.where('release_date <= ?', Time.zone.today) }
+  scope :latest, -> { internal_releases.where('release_date <= ?', Time.zone.today) }
 
   def released_formats
     released_formats = []

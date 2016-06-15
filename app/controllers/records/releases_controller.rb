@@ -5,7 +5,7 @@ class Records::ReleasesController < Records::BaseController
   end
 
   def index
-    @releases = Release.internal
+    @releases = Release.internal_releases
   end
 
   def show
