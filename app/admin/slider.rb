@@ -9,6 +9,9 @@ ActiveAdmin.register Slider do
                 :booking,
                 :active
 
+  scope 'Records', :on_records, default: true
+  scope 'Booking', :on_booking
+
   form do |f|
     f.semantic_errors
     f.inputs do
@@ -44,8 +47,6 @@ ActiveAdmin.register Slider do
     selectable_column
     column :title
     column :url
-    column :records
-    column :booking
     column :active
     actions
   end

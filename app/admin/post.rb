@@ -11,6 +11,9 @@ ActiveAdmin.register Post do
                 :tags_raw,
                 categories: []
 
+  scope 'Records', :on_records, default: true
+  scope 'Booking', :on_booking
+
   form do |f|
     f.semantic_errors
     f.inputs do
@@ -82,8 +85,6 @@ ActiveAdmin.register Post do
     column :tags do |post|
       post.tags.join(', ')
     end
-    column :records
-    column :booking
     actions
   end
 end

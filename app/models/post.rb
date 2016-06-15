@@ -17,8 +17,8 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :records, -> { where(records: true) }
-  scope :booking, -> { where(booking: true) }
+  scope :on_records, -> { where(records: true) }
+  scope :on_booking, -> { where(booking: true) }
 
   before_validation :assign_published_at
 

@@ -19,6 +19,9 @@ ActiveAdmin.register Artist do
                   :_destroy
                 ]
 
+  scope 'Records', :on_records, default: true
+  scope 'Booking', :on_booking
+
   form do |f|
     f.semantic_errors
     f.inputs do
@@ -123,8 +126,6 @@ ActiveAdmin.register Artist do
     column :name
     column :origin
     column :genre
-    column :records
-    column :booking
     column :active
     actions
   end

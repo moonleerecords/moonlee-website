@@ -5,7 +5,7 @@ class Records::EventsController < Records::BaseController
   end
 
   def index
-    @events = Event.records.upcoming.group_by { |event| event.artist.name }
+    @events = Event.on_records.upcoming.group_by { |event| event.artist.name }
   end
 
   def show

@@ -359,13 +359,29 @@ Post.create(
 Slider.create(
   title: '',
   image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
-  url: 'https://www.facebook.com/events/572159672937185/',
+  url: 'https://www.facebook.com/events/572159672937185&records=true',
+  records: true,
   position: 1
 )
 Slider.create(
   title: '',
   image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
-  url: 'https://moonleerecords.bandcamp.com/album/politika',
+  url: 'https://moonleerecords.bandcamp.com/album/politika&records=true',
+  records: true,
+  position: 2
+)
+Slider.create(
+  title: '',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
+  url: 'https://www.facebook.com/events/572159672937185&booking=true',
+  booking: true,
+  position: 1
+)
+Slider.create(
+  title: '',
+  image: File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg"),
+  url: 'https://moonleerecords.bandcamp.com/album/politika&booking=true',
+  booking: true,
   position: 2
 )
 

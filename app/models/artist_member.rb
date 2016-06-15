@@ -5,6 +5,6 @@ class ArtistMember < ApplicationRecord
   validates :artist, presence: true
   validates :member, presence: true
 
-  scope :active, -> { where(active: true) }
-  scope :former, -> { where(active: false) }
+  scope :active_members, -> { where(active: true) }
+  scope :former_members, -> { where(active: false) }
 end

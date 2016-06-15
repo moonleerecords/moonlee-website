@@ -5,7 +5,7 @@ class Records::ArtistsController < Records::BaseController
   end
 
   def index
-    @artists = Artist.records
+    @artists = Artist.on_records
   end
 
   def show

@@ -20,7 +20,7 @@ class Release < ApplicationRecord
   validates :release_date, presence: true
   validates_attachment_content_type :cover, content_type: %r{\Aimage\/.*\Z}
 
-  scope :internal, -> { where(internal: true) }
+  scope :internal_releases, -> { where(internal: true) }
   scope :upcoming, -> { internal.where('release_date > ?', Time.zone.today) }
   scope :fresh, lambda {
     internal.where(

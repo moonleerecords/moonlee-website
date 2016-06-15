@@ -2,6 +2,7 @@ sendSortRequestOfModel = (model_name) ->
   formData = $('#index_table_' + model_name + ' tbody').sortable('serialize')
   formData += '&' + $('meta[name=csrf-param]').attr('content') +
       '=' + encodeURIComponent($('meta[name=csrf-token]').attr('content'))
+  console.log(formData)
   $.ajax
     type: 'post'
     data: formData

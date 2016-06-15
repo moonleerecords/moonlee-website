@@ -19,8 +19,8 @@ class Artist < ApplicationRecord
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
   scope :with_songkick_id, -> { where.not(songkick_id: nil) }
-  scope :records, -> { where(records: true) }
-  scope :booking, -> { where(booking: true) }
+  scope :on_records, -> { where(records: true) }
+  scope :on_booking, -> { where(booking: true) }
 
   def to_s
     name

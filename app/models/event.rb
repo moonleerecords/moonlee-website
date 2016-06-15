@@ -9,6 +9,6 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
 
   scope :upcoming, -> { where('start_date >= ?', Time.zone.today) }
-  scope :records, -> { joins(:artist).where('artists.records', true) }
-  scope :booking, -> { joins(:artist).where('artists.booking', true) }
+  scope :on_records, -> { joins(:artist).where('artists.records', true) }
+  scope :on_booking, -> { joins(:artist).where('artists.booking', true) }
 end
