@@ -5,11 +5,12 @@ class Records::HomeController < Records::BaseController
   end
 
   def index
-    # TODO: @latest_news = Post.on_records
+    @news = Post.on_records
+    @slides = Slide.on_records
     # TODO: use this for private posts
     # if admin_user_signed_in?
     #   puts 'hello mr. admin'
     # end
-    # TODO: latest adds to the store
+    # TODO: latest adds to the store - use Magento api
   end
 end

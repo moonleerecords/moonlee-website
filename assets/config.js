@@ -18,6 +18,8 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@2.2.4",
+    "modernizr": "github:Modernizr/Modernizr@3.3.1",
+    "respond": "github:scottjehl/Respond@1.4.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.0"
     },

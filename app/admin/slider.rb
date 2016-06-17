@@ -1,4 +1,4 @@
-ActiveAdmin.register Slider do
+ActiveAdmin.register Slide do
   menu label: 'Sliders', priority: 5
   config.sort_order = 'position_asc'
   permit_params :title,
@@ -31,7 +31,7 @@ ActiveAdmin.register Slider do
       row :id
       row :title
       row :image do
-        image_tag(slider.image.url(:small))
+        image_tag(slide.image.url(:small))
       end
       row :url
       row :position
@@ -52,8 +52,8 @@ ActiveAdmin.register Slider do
   end
 
   collection_action :sort, method: :post do
-    params[:slider].each_with_index do |id, index|
-      Slider.update(id, position: index + 1)
+    params[:slide].each_with_index do |id, index|
+      Slide.update(id, position: index + 1)
     end
     render nothing: true
   end

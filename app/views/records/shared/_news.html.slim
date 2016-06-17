@@ -1,0 +1,6 @@
+- if @news.count > 0
+  section
+    h2 News
+    - @news.each do |article|
+      article
+        h3 = article.title

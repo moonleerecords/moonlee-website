@@ -222,7 +222,7 @@ ActiveRecord::Schema.define(version: 20160614153248) do
     t.index ["slug"], name: "index_releases_on_slug", unique: true, using: :btree
   end
 
-  create_table "sliders", force: :cascade do |t|
+  create_table "slides", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
     t.integer  "position"

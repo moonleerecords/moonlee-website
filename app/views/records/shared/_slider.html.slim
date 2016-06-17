@@ -1,0 +1,6 @@
+- if @slides.count > 0
+  section
+    h2 Slider
+    - @slides.each do |slide|
+      article
+        = image_tag(slide.image.url(:large))

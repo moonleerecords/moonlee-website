@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Slider, type: :model do
+RSpec.describe Slide, type: :model do
   context 'on saving' do
-    it 'should save Slider if all validations pass' do
-      slider = Slider.new
-      slider.image = File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg")
-      slider.url = 'https://www.facebook.com/moonleerecords/'
+    it 'should save Slide if all validations pass' do
+      slide = Slide.new
+      slide.image = File.new("#{Rails.root}/app/assets/images/artists/analena_01.jpg")
+      slide.url = 'https://www.facebook.com/moonleerecords/'
 
-      expect(slider.valid?).to eq(true)
+      expect(slide.valid?).to eq(true)
     end
   end
 end

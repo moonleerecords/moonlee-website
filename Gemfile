@@ -35,6 +35,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'paperclip'
 # font awesome
 gem 'font-awesome-rails'
+# normalize.css
+gem 'normalize-rails'
 # whenever for cron jobs
 gem 'whenever', require: false
 # songkick API wrapper

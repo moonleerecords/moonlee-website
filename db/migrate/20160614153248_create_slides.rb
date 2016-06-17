@@ -1,6 +1,6 @@
-class CreateSliders < ActiveRecord::Migration[5.0]
+class CreateSlides < ActiveRecord::Migration[5.0]
   def change
-    create_table :sliders do |t|
+    create_table :slides do |t|
       t.string :title
       t.string :url
       t.integer :position
@@ -10,6 +10,6 @@ class CreateSliders < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_attachment :sliders, :image
+    add_attachment :slides, :image
   end
 end

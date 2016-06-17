@@ -1,4 +1,4 @@
-class Slider < ApplicationRecord
+class Slide < ApplicationRecord
   default_scope { order('position ASC') }
 
   # TODO: change styles
