@@ -4,6 +4,6 @@ class Records::PostsController < Records::BaseController
   end
 
   def show
-    @post = @news.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 end

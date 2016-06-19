@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
       post.body = 'Macedonian activist musicians Bernays Propaganda have released their fourth album “Politika” today, March 14th 2016. Their new album, which sets an important milestone in band’s career, is released on the Slovenian independent label Moonlee Records available in the CD and LP formats, as well as a free download.'
       post.categories << 'news'
       post.visibility = 'public'
-      post.published_at = Time.new(2016, 03, 14, 11, 34, 00)
+      post.published_at = Time.zone.local(2016, 03, 14, 11, 34, 00)
 
       expect(post.valid?).to eq(true)
     end
