@@ -13,4 +13,6 @@ Rails.application.config.assets.paths << 'assets'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w(jspm.js)
 
+Rails.application.config.assets.precompile += %w(booking.scss records.scss)
+
 Rails.application.config.assets.initialize_on_precompile = false

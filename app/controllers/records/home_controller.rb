@@ -5,7 +5,7 @@ class Records::HomeController < Records::BaseController
   end
 
   def index
-    @news = Post.on_records
+    @posts = Post.on_records
     @slides = Slide.on_records
     # TODO: use this for private posts
     # if admin_user_signed_in?

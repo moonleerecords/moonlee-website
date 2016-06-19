@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :custom_slug, use: :slugged
 
+  default_scope { order('published_at ASC') }
+
   # TODO: change styles
   has_attached_file :image, styles: { medium: '300x300>', small: '100x100>' }, default_url: '/assets/missing.png'
 

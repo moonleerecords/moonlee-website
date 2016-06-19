@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   scope module: 'records', as: 'records' do
+    resources :posts, only: [:index, :show]
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
     resources :events, only: [:index]

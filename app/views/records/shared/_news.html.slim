@@ -1,6 +1,7 @@
-- if @news.count > 0
+- if @posts.count > 0
   section
     h2 News
-    - @news.each do |article|
+    - @posts.each do |post|
       article
-        h3 = article.title
+        = link_to post.title, records_posts_path(post)
+        / TODO: wrong link, /posts.2016-03-14-politika-a-new-album-by-bernays-propaganda
