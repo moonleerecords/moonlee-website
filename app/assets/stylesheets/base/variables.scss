@@ -1,1 +1,8 @@
 $color-gold: #ffd600;
+
+// screen sizes
+$breakpoints: (
+        'small': (max-width: 767px),
+        'medium': (min-width: 992px),
+        'large': (min-width: 1200px)
+);

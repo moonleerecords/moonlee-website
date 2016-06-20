@@ -82,10 +82,10 @@ ActiveAdmin.register Artist do
           end
         end
       end
-      if artist.artist_members.active.count > 0
+      if artist.artist_members.active_members.count > 0
         panel 'Active members' do
           ul do
-            artist.artist_members.active.each do |artist_member|
+            artist.artist_members.active_members.each do |artist_member|
               li do
                 "#{artist_member.member.name} - #{artist_member.role}"
               end
@@ -93,10 +93,10 @@ ActiveAdmin.register Artist do
           end
         end
       end
-      if artist.artist_members.former.count > 0
+      if artist.artist_members.former_members.count > 0
         panel 'Past members' do
           ul do
-            artist.artist_members.former.each do |artist_member|
+            artist.artist_members.former_members.each do |artist_member|
               li do
                 "#{artist_member.member.name} - #{artist_member.role}"
               end

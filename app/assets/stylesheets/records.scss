@@ -1,4 +1,4 @@
-@import 'normalize-rails';
+@import 'normalize-css/normalize';
 @import 'base/mixins.scss';
 @import 'base/variables.scss';
 @import 'base/globals.scss';
@@ -8,4 +8,15 @@ body {
   background-color: $color-gold;
 }
 
-// TODO: continue here
+@include respond-to(small) {
+  // TODO: only on small
+  body {
+    background-color: #000000;
+  }
+}
+@include respond-to(medium) {
+  // TODO: only on medium
+}
+@include respond-to(large) {
+  // TODO: only on large
+}
