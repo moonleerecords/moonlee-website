@@ -9,18 +9,8 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
-@import "active_admin/mixins";
-@import "active_admin/base";
-@import "active_admin_customs";
-@import "active_skin";
-@import "font-awesome";
-
-// Overriding any non-variable SASS must be done after the fact.
-// For example, to change the default status-tag color:
-//
-//   .status_tag { background: #6090DB; }
-
-.cke_chrome {
-  overflow: hidden;
-  width: 79.5% !important;
-}
+@import 'active_admin/mixins';
+@import 'active_admin/base';
+@import 'active_admin_customs';
+@import 'active_skin';
+@import 'font-awesome';

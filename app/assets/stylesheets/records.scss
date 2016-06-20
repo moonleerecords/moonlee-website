@@ -1,9 +1,11 @@
-@import "normalize-rails";
-@import "base/mixins.scss";
-@import "base/variables.scss";
-@import "base/globals.scss";
-@import "records/artists.scss";
+@import 'normalize-rails';
+@import 'base/mixins.scss';
+@import 'base/variables.scss';
+@import 'base/globals.scss';
+@import 'records/artists.scss';
 
 body {
   background-color: $color-gold;
 }
+
+// TODO: continue here

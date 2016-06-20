@@ -3,5 +3,4 @@
     h2 News
     - @posts.each do |post|
       article
-        = link_to post.title, records_posts_path(post)
-        / TODO: wrong link, /posts.2016-03-14-politika-a-new-album-by-bernays-propaganda
+        = link_to post.title, records_post_path(post)

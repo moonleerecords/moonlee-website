@@ -59,6 +59,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'teaspoon-jasmine'
   gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
+  gem 'scss_lint', require: false
 end
 
 group :development do
@@ -79,5 +80,4 @@ group :development do
   gem 'capistrano-bower', require: false
   gem 'capistrano-jspm', require: false
   gem 'capistrano-rails-console', require: false
-  gem 'scss_lint', require: false
 end

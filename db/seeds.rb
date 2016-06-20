@@ -4,6 +4,8 @@
 # TODO: add images (check analena example)
 # TODO: buy links, reviews etc.
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+# TODO: remove this before official release. be sure to drop database and add user by hand
+# TODO: main image in admin is not working
 
 # Analena
 analena = Artist.create(
