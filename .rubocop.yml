@@ -8,6 +8,7 @@ AllCops:
     - 'vendor/**/*'
     - 'bin/**/*'
     - 'log/**/*'
+    - 'config/deploy.rb'
 
 Metrics/AbcSize:
   Enabled: false

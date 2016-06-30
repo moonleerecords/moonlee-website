@@ -1,7 +1,9 @@
-class Booking::ArtistsController < Booking::BaseController
-  def index
-  end
+module Booking
+  class ArtistsController < Booking::BaseController
+    def index
+    end
 
-  def show
+    def show
+    end
   end
 end

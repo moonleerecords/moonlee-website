@@ -1,4 +1,6 @@
-class Booking::HomeController < Booking::BaseController
-  def index
+module Booking
+  class HomeController < Booking::BaseController
+    def index
+    end
   end
 end
