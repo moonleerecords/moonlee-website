@@ -81,10 +81,11 @@ ActiveAdmin.register Release do
       row :catalog_number
       row :release_date
       row :description do
-        raw release.description
+        # rubocop:disable Rails/OutputSafety
+        release.description.html_safe
       end
       row :tracklist do
-        raw release.tracklist
+        release.tracklist.html_safe
       end
       row :for_fans_of
       row :bandcamp_url do

@@ -63,7 +63,8 @@ ActiveAdmin.register Artist do
         image_tag(artist.image.url(:small))
       end
       row :description do
-        raw artist.description
+        # rubocop:disable Rails/OutputSafety
+        artist.description.html_safe
       end
       row :origin
       row :genre

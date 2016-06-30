@@ -49,7 +49,8 @@ ActiveAdmin.register Post do
         image_tag(post.image.url(:small))
       end
       row :body do
-        raw post.body
+        # rubocop:disable Rails/OutputSafety
+        post.body.html_safe
       end
       row :visibility do
         translate(post.visibility)
