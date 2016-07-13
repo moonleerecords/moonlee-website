@@ -15,6 +15,4 @@ Rails.application.config.assets.precompile += %w(jspm.js)
 
 Rails.application.config.assets.precompile += %w(booking.scss records.scss)
 
-Rails.application.config.assets.precompile += %w( teaspoon-jasmine.js jasmine/1.3.1.js teaspoon-teaspoon.js teaspoon.css )
-
 Rails.application.config.assets.initialize_on_precompile = false
