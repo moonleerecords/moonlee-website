@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.beta4', '< 5.1'
+gem 'rails', '>= 5.0.0', '< 5.1'
 # Postgres as the database for active record
 gem 'pg'
 # Use Puma as the app server
@@ -9,17 +9,15 @@ gem 'puma'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
-# TODO: change this to 1.0.0 when it's released. also adapt other dependencies
-# TODO: dependencies: all of these + rspec-rails,
-gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
 gem 'devise', '> 4.x'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'ransack',    github: 'activerecord-hackery/ransack'
 gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'cancancan'
-# TODO: change to official draper, when it's released
-gem 'draper', github: 'audionerd/draper', branch: 'rails5'
+gem 'draper', '> 3.x'
 # To fix a Draper deprecation error
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'ckeditor'
