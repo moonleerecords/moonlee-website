@@ -1,4 +1,6 @@
-import releases from "./releases";
+import "./releases";
+import "../base/slider";
+import {Slider} from "../base/slider";
 
 //import defaultMember from "module-name";
 //import * as name from "module-name";
@@ -12,7 +14,15 @@ import releases from "./releases";
 
 export default {};
 
-// TODO: load jQuery and other stuff???
+// TODO: use slider??
+var slider = new Slider();
+
+// slider.nextSlide();
+
+// export function welcome(name) {
+//     alert(greeter.greet(name));
+// }
+
 // console.log($('#test'));
 // var $ = require('jquery');
 // import $ from 'jquery';

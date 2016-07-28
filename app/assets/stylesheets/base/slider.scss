@@ -1,0 +1,86 @@
+.slider {
+  list-style-type: none;
+  margin: 0;
+  min-height: 650px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  .slide {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    width: 100%;
+    z-index: 10;
+
+    // TODO:
+    //font-size: 40px;
+    //padding: 40px;
+    //box-sizing: border-box;
+    //background: #333;
+    //color: #fff;
+    &.active {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  .slider-control {
+    background: $limed-spruce;
+    background: rgba($limed-spruce, 0.9);
+    cursor: pointer;
+    display: block;
+    height: 100px;
+    width: 125px;
+    z-index: 99;
+    @include vertical-align(absolute, 50px);
+    }
+  .slider-arrow {
+    border-bottom: 5px solid $color-gold;
+    border-right: 5px solid $color-gold;
+    height: 30px;
+    width: 30px;
+    @include vertical-align(absolute, 15px);
+    &.slider-arrow-previous {
+      right: 0;
+      transform: rotate(135deg);
+    }
+    &.slider-arrow-next {
+      left: 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .slider-control-previous {
+    left: -100px;
+  }
+
+  .slider-control-next {
+    right: -100px;
+  }
+}
+
+@include respond-to(small) {
+  .slider {
+    min-height: 450px;
+  }
+}
+@include respond-to(medium) {
+  .slider {
+    min-height: 550px;
+  }
+}
+@include respond-to(large) {
+  .slider {
+    min-height: 650px;
+  }
+}

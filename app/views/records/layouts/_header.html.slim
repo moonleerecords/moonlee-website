@@ -1,10 +1,10 @@
 header
-  /ul
-  /  li
-  /    / TODO: booking
-  /    = link_to 'TODO: Booking', booking_root_path
-  /  li
-  /    = link_to 'Shop', 'http://store.moonleerecords.com'
+  div.logo
+    | TODO: logo
+  div.nav-opener
+    span
+      | Menu
+    = image_tag 'base/icons/icon-menu.svg'
   nav
     ul
       li
@@ -19,16 +19,3 @@ header
         = link_to 'Shows', records_events_path
       li
         = link_to 'About', records_about_path
-
-  ul
-    li
-      = link_to 'Facebook', 'https://www.facebook.com/moonleerecords/'
-    li
-      = link_to 'Twitter', 'https://twitter.com/moonleerecords'
-    li
-      = link_to 'Bandcamp', 'https://moonleerecords.bandcamp.com/'
-    li
-      = link_to 'Youtube', 'https://www.youtube.com/user/moonleerecords'
-    li
-      = link_to 'Instagram', 'https://www.instagram.com/moonleerecords/'
-  br

@@ -1,6 +1,8 @@
-- if @slides.count > 0
-  section
-    h2 Slider
-    - @slides.each do |slide|
-      article
-        = image_tag(slide.image.url(:large))
+- if slides.count > 0
+  div.slider
+    - slides.each_with_index do |slide, index|
+      div.slide class=(index == 0 ? 'active' : '') style="background-image: url('#{slide.image.url(:large)}')"
+    div.slider-control.slider-control-previous
+      span.slider-arrow.slider-arrow-previous
+    div.slider-control.slider-control-next
+      span.slider-arrow.slider-arrow-next

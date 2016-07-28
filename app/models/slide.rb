@@ -1,9 +1,16 @@
 class Slide < ApplicationRecord
   default_scope { order('position ASC') }
 
-  # TODO: change styles
-  # TODO: set proper default size
-  has_attached_file :image, styles: { large: '300x300>', small: '100x100>' }, default_url: '/assets/missing.png'
+  has_attached_file :image,
+                    styles: {
+                      large: '1250x1250>',
+                      small: '100x100>'
+                    },
+                    default_url: '/assets/missing.png'
+
+  # TODO: deal with compression somehow
+  # TODO: http://stackoverflow.com/questions/28412310/rails-paperclip-tinypng-gem
+  # TODO: https://github.com/benmanns/tinypng
 
   validates :image, presence: true
   validates :url, presence: true

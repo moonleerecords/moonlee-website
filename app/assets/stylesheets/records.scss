@@ -1,17 +1,58 @@
 @import 'normalize-css/normalize';
 @import 'base/mixins.scss';
 @import 'base/variables.scss';
+@import 'base/colors.scss';
 @import 'base/globals.scss';
+@import 'base/slider.scss';
 @import 'records/artists.scss';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i';
 
 body {
   background-color: $color-gold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 0 100px;
+}
+
+header {
+  display: block;
+  height: 75px;
+
+  .logo {
+    float: left;
+  }
+
+  nav {
+    display: none;
+    //TODO: show on click
+  }
+
+  .nav-opener {
+    float: right;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      float: left;
+      margin-top: 27px;
+    }
+
+    img {
+      float: left;
+      margin-top: 21px;
+      padding-left: 10px;
+      width: 45px;
+    }
+  }
 }
 
 @include respond-to(small) {
   // TODO: only on small
   body {
-    background-color: #000000;
+    background-color: #000;
+    // TODO: remove
   }
 }
 @include respond-to(medium) {

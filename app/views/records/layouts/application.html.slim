@@ -19,10 +19,11 @@ html
     = stylesheet_link_tag 'records', media: 'all'
     = javascript_include_tag 'jspm'
   body
-    = render partial: 'records/layouts/header'
-    div role="main"
-      = yield
-    = render partial: 'records/layouts/footer'
+    .container
+      = render partial: 'records/layouts/header'
+      div role="main"
+        = yield
+      = render partial: 'records/layouts/footer'
 
 - if Rails.env == 'development'
   javascript:
