@@ -17,4 +17,4 @@ test:
   post:
     - bundle exec rubocop -R
     - bundle exec rspec spec
-    - bundle exec rake teaspoon
+#    - bundle exec rake teaspoon
