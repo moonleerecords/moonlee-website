@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# TODO: clean useless gems
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0', '< 5.1'
 # Postgres as the database for active record

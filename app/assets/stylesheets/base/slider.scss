@@ -5,6 +5,7 @@
   padding: 0;
   position: relative;
   width: 100%;
+  z-index: 1;
 
   .slide {
     background-position: left center;
@@ -20,17 +21,20 @@
     -webkit-transition: opacity 1s;
     transition: opacity 1s;
     width: 100%;
-    z-index: 10;
-
-    // TODO:
-    //font-size: 40px;
-    //padding: 40px;
-    //box-sizing: border-box;
-    //background: #333;
-    //color: #fff;
+    z-index: 2;
     &.active {
       opacity: 1;
-      z-index: 2;
+      z-index: 3;
+    }
+    .slide-text {
+      color: $white;
+      font-size: 60px;
+      font-weight: lighter;
+      margin: 0 auto;
+      position: absolute;
+      text-align: center;
+      top: 65%;
+      width: 100%;
     }
   }
 
@@ -41,7 +45,7 @@
     display: block;
     height: 100px;
     width: 125px;
-    z-index: 99;
+    z-index: 10;
     @include vertical-align(absolute, 50px);
     }
   .slider-arrow {
@@ -66,6 +70,29 @@
 
   .slider-control-next {
     right: -100px;
+  }
+
+  .slider-navigation {
+    bottom: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+    li {
+      border: 5px solid $limed-spruce;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-block;
+      height: 28px;
+      margin-right: 20px;
+      width: 28px;
+      &.active {
+        background-color: $white;
+      }
+    }
   }
 }
 

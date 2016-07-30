@@ -359,35 +359,35 @@ Post.create(
 
 # Slides
 Slide.create(
-  title: '',
+  title: 'Politika – a new album by Bernays Propaganda',
   image: File.new("#{Rails.root}/db/data/images/slides/bernays_propaganda_01.png"),
   url: '/artists/bernays-propaganda',
   records: true,
   position: 1
 )
 Slide.create(
-  title: '',
+  title: 'Repetitor on the tour',
   image: File.new("#{Rails.root}/db/data/images/slides/repetitor_01.png"),
   url: '/artists/repetitor',
   records: true,
   position: 2
 )
 Slide.create(
-  title: '',
+  title: 'Vlasta Popić touring Balkans',
   image: File.new("#{Rails.root}/db/data/images/slides/vlasta_popic_01.png"),
   url: '/artists/vlasta-popic',
   records: true,
   position: 3
 )
 Slide.create(
-  title: '',
+  title: 'Politika – a new album by Bernays Propaganda',
   image: File.new("#{Rails.root}/db/data/images/slides/bernays_propaganda_01.png"),
   url: '/artists/bernays-propaganda',
   booking: true,
   position: 1
 )
 Slide.create(
-  title: '',
+  title: 'Repetitor on the tour',
   image: File.new("#{Rails.root}/db/data/images/slides/repetitor_01.png"),
   url: '/artists/repetitor',
   booking: true,

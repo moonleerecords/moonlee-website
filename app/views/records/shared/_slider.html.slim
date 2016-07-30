@@ -2,6 +2,11 @@
   div.slider
     - slides.each_with_index do |slide, index|
       div.slide class=(index == 0 ? 'active' : '') style="background-image: url('#{slide.image.url(:large)}')"
+        div.slide-text
+          = slide.title
+    ul.slider-navigation
+      - slides.each_with_index do |slide, index|
+        li class=(index == 0 ? 'active' : '') data-navigate-to=index
     div.slider-control.slider-control-previous
       span.slider-arrow.slider-arrow-previous
     div.slider-control.slider-control-next
