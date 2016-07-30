@@ -9,26 +9,29 @@ export class Slider {
         this.currentSlide = 0;
         this.speed = speed;
 
-        this.slideInterval = setInterval(this.nextSlide.bind(this), this.speed);
+        if (this.slides.length > 1) {
+            // change automatically
+            this.slideInterval = setInterval(this.nextSlide.bind(this), this.speed);
 
-        // event listeners
-        this.previousButton[0].addEventListener('click', () => {
-            this.pauseSlideshow();
-            this.previousSlide();
-        });
-
-        this.nextButton[0].addEventListener('click', () => {
-            this.pauseSlideshow();
-            this.nextSlide();
-        });
-
-        for (var i=0; i<this.navigationButtons.length; i++) {
-            this.navigationButtons[i].addEventListener('click', (event) => {
-                let navigateTo = event.target.dataset.navigateTo;
-
+            // event listeners
+            this.previousButton[0].addEventListener('click', () => {
                 this.pauseSlideshow();
-                this.goToSlide(navigateTo);
+                this.previousSlide();
             });
+
+            this.nextButton[0].addEventListener('click', () => {
+                this.pauseSlideshow();
+                this.nextSlide();
+            });
+
+            for (var i=0; i<this.navigationButtons.length; i++) {
+                this.navigationButtons[i].addEventListener('click', (event) => {
+                    let navigateTo = event.target.dataset.navigateTo;
+
+                    this.pauseSlideshow();
+                    this.goToSlide(navigateTo);
+                });
+            }
         }
     }
 

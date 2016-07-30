@@ -92,6 +92,9 @@
       &.active {
         background-color: $white;
       }
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }
