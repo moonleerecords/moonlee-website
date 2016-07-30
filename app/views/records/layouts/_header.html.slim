@@ -1,21 +1,23 @@
 header
-  div.logo
-    | TODO: logo
-  div.header-nav-opener
-    span
-      | Menu
-    = image_tag 'base/icons/icon-menu.svg'
-  nav.header-nav
-    ul
-      li
-        = link_to 'Home', root_path
-      li
-        = link_to 'News', records_posts_path
-      li
-        = link_to 'Releases', records_releases_path
-      li
-        = link_to 'Artists', records_artists_path
-      li
-        = link_to 'Shows', records_events_path
-      li
-        = link_to 'About', records_about_path
+  div.nav-container
+    div.logo
+      | TODO: logo
+    a.header-nav-opener href='#'
+      span Menu
+      = inline_svg 'base/icons/icon-menu.svg'
+    nav.header-nav
+      ul
+        li
+          = link_to 'Home', root_path
+        li
+          = link_to 'News', records_posts_path
+        li
+          = link_to 'Releases', records_releases_path
+        li
+          = link_to 'Artists', records_artists_path
+        li
+          = link_to 'Shows', records_events_path
+        li
+          = link_to 'About', records_about_path
+  - if @slides.count > 0
+    = render partial: 'records/shared/slider', locals: { slides: @slides }

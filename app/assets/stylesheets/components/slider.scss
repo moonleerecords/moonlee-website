@@ -26,11 +26,8 @@
       opacity: 1;
       z-index: 3;
     }
-    .slide-text {
-      color: $white;
-      font-size: 60px;
-      font-weight: lighter;
-      margin: 0 auto;
+    h2 {
+      color: $color-white;
       position: absolute;
       text-align: center;
       top: 65%;
@@ -39,21 +36,20 @@
   }
 
   .slider-control {
-    background: $limed-spruce;
-    background: rgba($limed-spruce, 0.9);
-    cursor: pointer;
+    @include vertical-align(absolute, 50px);
+    background: $color-limed-spruce;
+    background: rgba($color-limed-spruce, 0.9);
     display: block;
     height: 100px;
     width: 125px;
     z-index: 10;
-    @include vertical-align(absolute, 50px);
     }
   .slider-arrow {
+    @include vertical-align(absolute, 15px);
     border-bottom: 5px solid $color-gold;
     border-right: 5px solid $color-gold;
     height: 30px;
     width: 30px;
-    @include vertical-align(absolute, 15px);
     &.slider-arrow-previous {
       right: 0;
       transform: rotate(135deg);
@@ -82,7 +78,7 @@
     width: 100%;
     z-index: 10;
     li {
-      border: 5px solid $limed-spruce;
+      border: 5px solid $color-limed-spruce;
       box-sizing: border-box;
       cursor: pointer;
       display: inline-block;
@@ -90,7 +86,7 @@
       margin-right: 20px;
       width: 28px;
       &.active {
-        background-color: $white;
+        background-color: $color-white;
       }
       &:last-child {
         margin: 0;

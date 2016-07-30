@@ -202,6 +202,10 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     i18n_data (0.7.0)
+    inline_svg (0.10.0)
+      activesupport (>= 4.0)
+      loofah (>= 2.0)
+      nokogiri (~> 1.6)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -407,6 +411,7 @@ DEPENDENCIES
   formtastic!
   friendly_id (~> 5.1.0)
   inherited_resources!
+  inline_svg
   jbuilder (~> 2.0)
   kaminari!
   letter_opener

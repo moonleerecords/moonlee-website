@@ -1,6 +1,0 @@
-- if @posts.count > 0
-  section
-    h2 News
-    - @posts.each do |post|
-      article
-        = link_to post.title, records_post_path(post)

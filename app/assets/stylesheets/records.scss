@@ -3,8 +3,9 @@
 @import 'base/variables.scss';
 @import 'base/colors.scss';
 @import 'base/globals.scss';
-@import 'base/slider.scss';
+@import 'components/slider.scss';
 @import 'records/artists.scss';
+@import 'records/posts.scss';
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i';
 
 body {
@@ -13,42 +14,67 @@ body {
 }
 
 .container {
-  margin: 0 100px;
+  padding: 0 100px;
+}
+
+.container-main {
+  background-color: $color-white;
+  margin: 0 -100px;
+  padding: 0 100px;
 }
 
 header {
-  display: block;
-  height: 75px;
-
-  .logo {
-    float: left;
-  }
-
-  .header-nav-opener {
-    cursor: pointer;
-    float: right;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    span {
-      display: block;
+  .nav-container {
+    height: 75px;
+    .logo {
       float: left;
-      margin-top: 30px;
     }
-    img {
-      float: left;
-      margin-top: 21px;
-      padding-left: 10px;
-      width: 45px;
+    .header-nav-opener {
+      float: right;
+      font-size: 12px;
+      font-weight: bold;
+      height: 100%;
+      position: relative;
+      text-transform: uppercase;
+      &:hover span {
+        color: $color-white;
+      }
+      &:hover svg {
+        fill: $color-white;
+      }
+      span {
+        @include vertical-align(relative, 6px);
+        color: $color-limed-spruce;
+        float: left;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      svg {
+        @include vertical-align(relative, 23px);
+        fill: $color-limed-spruce;
+        height: 46px;
+        width: 46px;
+      }
+    }
+    .header-nav {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      &.active {
+        display: block;
+      }
     }
   }
+}
 
-  .header-nav {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+.section-title {
+  color: $color-limed-spruce;
+  text-align: center;
+}
+
+footer {
+
 }
 
 @include respond-to(small) {

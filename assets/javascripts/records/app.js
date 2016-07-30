@@ -16,15 +16,24 @@ import {Slider} from "../base/slider";
 // variables
 var headerNavOpener = document.querySelector('.header-nav-opener');
 var headerNav = document.querySelector('.header-nav');
-
-// TODO: use slider??
-var slider = new Slider();
+var sliders = document.querySelectorAll('.slider');
 
 // events
-headerNavOpener.addEventListener('click', () => {
-    headerNav.style.display = 'block';
+headerNavOpener.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    headerNav.classList.toggle('active');
 });
 
+document.addEventListener('click', () => {
+    headerNav.classList.remove('active');
+});
+
+// other initializations
+if (sliders.length > 0) {
+    new Slider();
+}
 
 
 

@@ -1,3 +1,11 @@
-// Place all the styles related to the records/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.posts {
+  position: relative;
+  .section-title {
+    padding: 75px 0;
+  }
+  .open-more-posts {
+    @include vertical-align(absolute, 37px);
+    background-color: $color-gold;
+    right: 0;
+  }
+}

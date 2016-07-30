@@ -6,9 +6,9 @@ module Records
     end
 
     def index
-      @posts = Post.on_records
+      @news = Post.on_records.last(3)
       @slides = Slide.on_records
-      # TODO: use this for private posts
+      # TODO: use this for private (not published) posts
       # if admin_user_signed_in?
       #   puts 'hello mr. admin'
       # end
