@@ -2,6 +2,7 @@ import "./releases";
 import "../base/slider";
 import {Slider} from "../base/slider";
 
+// TODO: examples
 //import defaultMember from "module-name";
 //import * as name from "module-name";
 //import { member } from "module-name";
@@ -12,10 +13,20 @@ import {Slider} from "../base/slider";
 //import defaultMember, * as name from "module-name";
 //import "module-name";
 
-export default {};
+// variables
+var headerNavOpener = document.querySelector('.header-nav-opener');
+var headerNav = document.querySelector('.header-nav');
 
 // TODO: use slider??
 var slider = new Slider();
+
+// events
+headerNavOpener.addEventListener('click', () => {
+    headerNav.style.display = 'block';
+});
+
+
+
 
 // slider.nextSlide();
 
@@ -38,8 +49,3 @@ var slider = new Slider();
 //    initialQty: 3,
 //    price: 8
 //};
-//
-//ReactDOM.render(
-//<CartItem title={order.title} image={order.image} initialQty={order.initialQty} price={order.price}/>,
-//document.querySelector('.root')
-//);

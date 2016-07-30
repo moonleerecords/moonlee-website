@@ -24,21 +24,17 @@ header {
     float: left;
   }
 
-  nav {
-    display: none;
-    //TODO: show on click
-  }
-
-  .nav-opener {
+  .header-nav-opener {
+    cursor: pointer;
     float: right;
+    font-size: 12px;
+    font-weight: bold;
     text-transform: uppercase;
-
     span {
       display: block;
       float: left;
-      margin-top: 27px;
+      margin-top: 30px;
     }
-
     img {
       float: left;
       margin-top: 21px;
@@ -46,14 +42,17 @@ header {
       width: 45px;
     }
   }
+
+  .header-nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 @include respond-to(small) {
   // TODO: only on small
-  body {
-    background-color: #000;
-    // TODO: remove
-  }
 }
 @include respond-to(medium) {
   // TODO: only on medium
