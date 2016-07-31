@@ -24,11 +24,14 @@ body {
 }
 
 header {
+
   .nav-container {
     height: 75px;
+
     .logo {
       float: left;
     }
+
     .header-nav-opener {
       float: right;
       font-size: 12px;
@@ -36,31 +39,37 @@ header {
       height: 100%;
       position: relative;
       text-transform: uppercase;
+
       &:hover span {
         color: $color-white;
       }
+
       &:hover svg {
         fill: $color-white;
       }
-      span {
+
+      .opener-text {
         @include vertical-align(relative, 6px);
         color: $color-limed-spruce;
         float: left;
         font-size: 12px;
         margin-right: 10px;
       }
-      svg {
+
+      .opener-icon {
         @include vertical-align(relative, 23px);
         fill: $color-limed-spruce;
         height: 46px;
         width: 46px;
       }
     }
+
     .header-nav {
       display: none;
       position: absolute;
       right: 0;
       top: 0;
+
       &.active {
         display: block;
       }
@@ -80,9 +89,11 @@ footer {
 @include respond-to(small) {
   // TODO: only on small
 }
+
 @include respond-to(medium) {
   // TODO: only on medium
 }
+
 @include respond-to(large) {
   // TODO: only on large
 }

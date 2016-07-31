@@ -8,7 +8,7 @@
   z-index: 1;
 
   .slide {
-    background-position: left center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -22,17 +22,19 @@
     transition: opacity 1s;
     width: 100%;
     z-index: 2;
+
     &.active {
       opacity: 1;
       z-index: 3;
     }
-    h2 {
-      color: $color-white;
-      position: absolute;
-      text-align: center;
-      top: 65%;
-      width: 100%;
-    }
+  }
+
+  .slider-title {
+    color: $color-white;
+    position: absolute;
+    text-align: center;
+    top: 65%;
+    width: 100%;
   }
 
   .slider-control {
@@ -43,17 +45,20 @@
     height: 100px;
     width: 125px;
     z-index: 10;
-    }
+  }
+
   .slider-arrow {
     @include vertical-align(absolute, 15px);
     border-bottom: 5px solid $color-gold;
     border-right: 5px solid $color-gold;
     height: 30px;
     width: 30px;
+
     &.slider-arrow-previous {
       right: 0;
       transform: rotate(135deg);
     }
+
     &.slider-arrow-next {
       left: 0;
       transform: rotate(-45deg);
@@ -77,6 +82,7 @@
     text-align: center;
     width: 100%;
     z-index: 10;
+
     li {
       border: 5px solid $color-limed-spruce;
       box-sizing: border-box;
@@ -85,9 +91,11 @@
       height: 28px;
       margin-right: 20px;
       width: 28px;
+
       &.active {
         background-color: $color-white;
       }
+
       &:last-child {
         margin: 0;
       }
@@ -100,11 +108,13 @@
     min-height: 450px;
   }
 }
+
 @include respond-to(medium) {
   .slider {
     min-height: 550px;
   }
 }
+
 @include respond-to(large) {
   .slider {
     min-height: 650px;

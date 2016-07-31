@@ -1,8 +1,11 @@
 - if slides.count > 0
   div.slider
     - slides.each_with_index do |slide, index|
-      div.slide class=(index == 0 ? 'active' : '') style="background-image: url('#{slide.image.url(:large)}')"
-        h2
+      = link_to slide.url,
+                title: slide.title,
+                class: "slide #{(index == 0 ? ' active' : '')}",
+                style: "background-image: url('#{slide.image.url(:large)}')" do
+        h2.slider-title
           = slide.title
     - if slides.count > 1
       ul.slider-navigation

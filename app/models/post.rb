@@ -7,8 +7,13 @@ class Post < ApplicationRecord
 
   default_scope { order('published_at ASC') }
 
-  # TODO: change styles
-  has_attached_file :image, styles: { medium: '300x300>', small: '100x100>' }, default_url: '/assets/missing.png'
+  has_attached_file :image,
+                    styles: {
+                      large: '1250x1250>',
+                      medium: '400x400>',
+                      small: '100x100>'
+                    },
+                    default_url: '/assets/missing.png'
 
   validates :title, presence: true
   validates :body, presence: true
@@ -19,8 +24,8 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :on_records, -> { where(records: true) }
-  scope :on_booking, -> { where(booking: true) }
+  scope :on_records, -> { where('published_at <= ?', Time.zone.now).where(records: true) }
+  scope :on_booking, -> { where('published_at <= ?', Time.zone.now).where(booking: true) }
 
   before_validation :assign_published_at
 

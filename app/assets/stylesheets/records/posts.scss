@@ -1,11 +1,34 @@
 .posts {
   position: relative;
-  .section-title {
-    padding: 75px 0;
+
+  .section-heading {
+    position: relative;
+
+    .section-title {
+      padding: 75px 0;
+    }
+
+    .open-more-posts {
+      @include vertical-align(absolute, 27px);
+      background-color: $color-gold;
+      right: 0;
+    }
   }
-  .open-more-posts {
-    @include vertical-align(absolute, 37px);
-    background-color: $color-gold;
-    right: 0;
+
+  .post {
+    display: inline-block;
+    margin-right: 5%;
+    width: 30%;
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+
+    .post-image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 350px;
+    }
   }
 }

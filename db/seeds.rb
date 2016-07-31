@@ -349,11 +349,34 @@ ExternalLink.create(
 # Posts
 Post.create(
   title: 'Politika – a new album by Bernays Propaganda',
+  image: File.new("#{Rails.root}/db/data/images/posts/hmrl039-bernays-propaganda.jpg"),
   body: 'Macedonian activist musicians Bernays Propaganda have released their fourth album “Politika” today, March 14th 2016. Their new album, which sets an important milestone in band’s career, is released on the Slovenian independent label Moonlee Records available in the CD and LP formats, as well as a free download.',
   visibility: 'public',
   records: true,
   published_at: Time.new(2016, 03, 14, 11, 34, 00),
   tags: ['2016', 'bernays propaganda', 'cd', 'european', 'macedonia', 'moonlee', 'notwist', 'politika', 'tour', 'vinyl'],
+  categories: ['news']
+)
+
+Post.create(
+  title: 'Werefox announce new album! Watch video for "Triads" now!',
+  image: File.new("#{Rails.root}/db/data/images/posts/hmrl040-werefox.jpg"),
+  body: 'Werefox, an alternative rock four-piece from Slovenia, have shared the long-awaited video for the song “Triads” and announced the release of their sophomore album “Das Lied der Maschinen”, coming out on February 4th 2016 on Moonlee Records.',
+  visibility: 'public',
+  records: true,
+  published_at: Time.new(2016, 01, 28, 11, 34, 00),
+  tags: ['werefox', 'cd', 'release', 'triads', 'slovenia'],
+  categories: ['news']
+)
+
+Post.create(
+  title: 'Nikki Louder released "Trout"',
+  image: File.new("#{Rails.root}/db/data/images/posts/hmrl038-nikki-louder.jpg"),
+  body: 'Slovenian noise-rock trio Nikki Louder just released »Trout«, their fourth full-length, available both on CD and LP format and also as free download, which is result of cooperation between Moonlee Records and Založbe Radia Študent.',
+  visibility: 'public',
+  records: true,
+  published_at: Time.new(2015, 12, 15, 11, 34, 00),
+  tags: ['nikki louder', 'lp', 'vinyl', 'cd', 'slovenia'],
   categories: ['news']
 )
 

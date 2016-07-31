@@ -6,5 +6,8 @@
       - if more_button
         = link_to 'Read all news', records_posts_path, class: 'open-more-posts link-button'
     - posts.each do |post|
-      article
-        = link_to post.title, records_post_path(post)
+      article.post
+        div.post-image style="background-image: url('#{post.image.url(:medium)}')"
+        span.post-date
+          = post.published_at
+        = link_to post.title, records_post_path(post), class: 'post-title'
