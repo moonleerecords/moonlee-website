@@ -3,6 +3,7 @@
     - slides.each_with_index do |slide, index|
       = link_to slide.url,
                 title: slide.title,
+                target: '_blank',
                 class: "slide #{(index == 0 ? ' active' : '')}",
                 style: "background-image: url('#{slide.image.url(:large)}')" do
         h2.slider-title

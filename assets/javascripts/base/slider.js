@@ -1,6 +1,8 @@
 'use strict';
 export class Slider {
     constructor(options = {}) {
+        // TODO: support more sliders??? does it work??? some selector should be sent???
+
         this.slider = document.querySelector('.slider');
         this.slides = this.slider.querySelectorAll('.slide');
         this.previousButton = this.slider.querySelectorAll('.slider-control-previous');

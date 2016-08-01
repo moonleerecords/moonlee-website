@@ -1,13 +1,16 @@
 - more_button = false if local_assigns[:more_button].nil?
 - if posts.count > 0
-  section.posts
+  section.posts-boxes
     div.section-heading
-      h2.section-title = title
+      h2.section-title
+        = title
       - if more_button
         = link_to 'Read all news', records_posts_path, class: 'open-more-posts link-button'
     - posts.each do |post|
-      article.post
+      article.post-box
         div.post-image style="background-image: url('#{post.image.url(:medium)}')"
         span.post-date
-          = post.published_at
+          = localize(post.published_at.to_date)
         = link_to post.title, records_post_path(post), class: 'post-title'
+
+/ TODO: separate this into posts and post, move it somewhere else

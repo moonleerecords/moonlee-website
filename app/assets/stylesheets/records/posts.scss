@@ -1,26 +1,13 @@
-.posts {
+.posts-boxes {
+  padding-bottom: 75px;
   position: relative;
 
-  .section-heading {
-    position: relative;
-
-    .section-title {
-      padding: 75px 0;
-    }
-
-    .open-more-posts {
-      @include vertical-align(absolute, 27px);
-      background-color: $color-gold;
-      right: 0;
-    }
-  }
-
-  .post {
-    display: inline-block;
+  .post-box {
+    float: left;
     margin-right: 5%;
     width: 30%;
 
-    &:nth-of-type(3n) {
+    &:nth-of-type(3n+3) {
       margin-right: 0;
     }
 
@@ -29,6 +16,22 @@
       background-repeat: no-repeat;
       background-size: cover;
       height: 350px;
+    }
+
+    .post-date {
+      color: $color-limed-spruce;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .post-title {
+      color: $color-limed-spruce;
+      display: block;
+      font-size: 30px;
+      font-weight: lighter;
+      margin-top: 10px;
     }
   }
 }

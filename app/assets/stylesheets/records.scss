@@ -4,9 +4,11 @@
 @import 'base/colors.scss';
 @import 'base/globals.scss';
 @import 'components/slider.scss';
-@import 'records/artists.scss';
 @import 'records/posts.scss';
+@import 'records/releases.scss';
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i';
+
+//TODO: move general stuff to somewhere else???
 
 body {
   background-color: $color-gold;
@@ -77,10 +79,22 @@ header {
   }
 }
 
-.section-title {
-  color: $color-limed-spruce;
-  text-align: center;
+.section-heading {
+  position: relative;
+
+  .section-title {
+    color: $color-limed-spruce;
+    padding: 75px 0;
+    text-align: center;
+  }
+
+  .open-more-posts {
+    @include vertical-align(absolute, 27px);
+    background-color: $color-gold;
+    right: 0;
+  }
 }
+
 
 footer {
 

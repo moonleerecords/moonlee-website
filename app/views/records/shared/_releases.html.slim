@@ -1,0 +1,25 @@
+- if releases.count > 0
+  section.releases-boxes
+    div.section-heading
+      h2.section-title
+        = title
+      - if more_button
+        = link_to 'Read all news', records_posts_path, class: 'open-more-posts link-button'
+    - releases.each do |release|
+      article.release-box
+        h3 = release.title
+
+/ TODO: similar to slider
+/ TODO: add indicators like on slider???
+/ TODO: we have discussed it should be different - releases as boxes
+
+/HMRL039
+/BERNAYS PROPAGANDA
+/Politika
+/lp / cd / download
+/release date: 14.03.2016
+/Buy CD via:
+/Moonlee Store
+/Buy LP via:
+/Moonlee Store
+/ TODO: merge together with upcoming releases
