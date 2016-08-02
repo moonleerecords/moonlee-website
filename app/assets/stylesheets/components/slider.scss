@@ -40,7 +40,6 @@
   .slider-control {
     @include vertical-align(absolute, 50px);
     background: $color-limed-spruce;
-    background: rgba($color-limed-spruce, 0.9);
     display: block;
     height: 100px;
     width: 125px;

@@ -49,6 +49,8 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 # For inline svg images
 gem 'inline_svg'
+# Geo
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

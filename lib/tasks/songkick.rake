@@ -2,6 +2,7 @@ require 'songkickr'
 
 namespace :songkick do
   task fetch_upcoming_events: :environment do
+    # TODO: export this into a separate class
     songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
     artists = Artist.with_songkick_id
 
@@ -11,7 +12,7 @@ namespace :songkick do
 
       songkick_events.results.each do |songkick_event|
         venue = find_or_create_venue(songkick_event)
-        venue.save
+        venue.save!
         event = find_or_create_event(songkick_event, venue, artist)
         save_or_destroy_event(event, songkick_event)
       end
@@ -23,14 +24,14 @@ namespace :songkick do
   end
 
   def find_or_create_venue(songkick_event)
-    venue = Venue.find_or_create_by(songkick_id: songkick_event.venue.id)
+    songkick_id = songkick_event.venue.id.nil? ? songkick_event.venue.metro_area.id : songkick_event.venue.id
+    venue = Venue.find_or_create_by(songkick_id: songkick_id)
     venue.name = venue_name(songkick_event)
-    venue.songkick_url = songkick_event.venue.uri
+    venue.songkick_url = songkick_event.venue.uri.nil? ? songkick_event.venue.metro_area.uri : songkick_event.venue.url
     venue.city = songkick_event.location.city.split(',')[0]
     venue.country = songkick_event.venue.metro_area.country
     venue.country_code = country_code(songkick_event.venue.metro_area.country)
-    venue.lng = songkick_event.venue.lng
-    venue.lat = songkick_event.venue.lat
+    venue.lng, venue.lat = lat_lng(songkick_event)
     venue
   end
 
@@ -54,6 +55,17 @@ namespace :songkick do
 
   def venue_name(songkick_event)
     songkick_event.type == 'Festival' ? songkick_event.display_name : songkick_event.venue.display_name
+  end
+
+  def lat_lng(songkick_event)
+    if songkick_event.venue.lat.nil? && songkick_event.venue.lng.nil?
+      response = Geocoder.search(songkick_event.location.city.split(',')[0])
+      if response.nil?
+        return 0, 0
+      end
+      return response[0].data['geometry']['location']['lat'], response[0].data['geometry']['location']['lng']
+    end
+    return songkick_event.venue.lat, songkick_event.venue.lng
   end
 
   def country_code(country_name)
