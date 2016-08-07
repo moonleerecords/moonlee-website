@@ -6,7 +6,7 @@ section.social-boxes
   - items.each_with_index do |item, index|
     - if index == 0 || index == 5
       article.social-box
-        div.social-content style="background-image: url('assets/base/artists/analena_01.jpg')"
+        div.social-content style="background-image: url(#{image_path('base/artists/analena_01.jpg')})"
         // TODO: image, tweet, video
         div.social-type
           // icon and text
@@ -14,7 +14,7 @@ section.social-boxes
       article.social-box
         - items[1..items.count-2].each do |item|
           div.small-box
-            div.social-content style="background-image: url('assets/base/artists/analena_01.jpg')"
+            div.social-content style="background-image: url(#{image_path('base/artists/analena_01.jpg')})"
             // TODO: image, tweet, video
             div.social-type
               // icon and text
