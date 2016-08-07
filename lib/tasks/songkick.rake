@@ -27,7 +27,7 @@ namespace :songkick do
     songkick_id = songkick_event.venue.id.nil? ? songkick_event.venue.metro_area.id : songkick_event.venue.id
     venue = Venue.find_or_create_by(songkick_id: songkick_id)
     venue.name = venue_name(songkick_event)
-    venue.songkick_url = songkick_event.venue.uri.nil? ? songkick_event.venue.metro_area.uri : songkick_event.venue.url
+    venue.songkick_url = songkick_event.venue.uri.nil? ? songkick_event.venue.metro_area.uri : songkick_event.venue.uri
     venue.city = songkick_event.location.city.split(',')[0]
     venue.country = songkick_event.venue.metro_area.country
     venue.country_code = country_code(songkick_event.venue.metro_area.country)
@@ -67,7 +67,8 @@ namespace :songkick do
   end
 
   def country_code(country_name)
-    country = ISO3166::Country.find_country_by_name(country_name)
-    country.alpha2
+    response = Geocoder.search(country_name)
+    return nil if response.nil? || response.empty?
+    response[0].data['address_components'][0]['short_name']
   end
 end
