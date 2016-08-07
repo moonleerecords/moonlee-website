@@ -16,13 +16,13 @@ body {
 }
 
 .container {
-  padding: 0 100px;
+  padding: 0 50px;
 }
 
 .container-main {
   background-color: $color-white;
-  margin: 0 -100px;
-  padding: 0 100px;
+  margin: 0 -50px;
+  padding: 0 50px;
 }
 
 header {
@@ -94,7 +94,6 @@ header {
     right: 0;
   }
 }
-
 
 footer {
 
