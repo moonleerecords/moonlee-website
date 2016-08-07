@@ -30,8 +30,8 @@
   }
 
   .slider-title {
-    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: $color-white;
     padding: 0 200px;
@@ -39,6 +39,7 @@
     text-align: center;
     top: 65%;
     width: 100%;
+    //TODO: adapt for smaller screens
   }
 
   .slider-control {

@@ -1,6 +1,11 @@
 .posts-boxes {
-  padding-bottom: 75px;
-  position: relative;
+  background-color: $color-white;
+
+  .more-posts {
+    @include vertical-align(absolute, 27px);
+    background-color: $color-gold;
+    right: 0;
+  }
 
   .post-box {
     float: left;

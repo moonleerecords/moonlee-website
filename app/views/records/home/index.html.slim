@@ -2,4 +2,11 @@
          locals: { title: 'Discover My World', posts: @news, more_button: true }
 = render partial: 'records/shared/releases',
          locals: { title: "Moonlee's New Releases", releases: @latest_releases, more_button: true }
-= render partial: 'records/shared/upcoming_events'
+= render partial: 'records/shared/events',
+         locals: { title: 'My Bands Playing', events: @upcoming_events, more_button: true }
+= render partial: 'records/shared/store_items',
+         locals: { title: 'New Stuff In Store', items: [], more_button: true }
+
+
+/TODO: social
+/TODO: footer

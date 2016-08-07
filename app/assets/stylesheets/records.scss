@@ -4,8 +4,10 @@
 @import 'base/colors.scss';
 @import 'base/globals.scss';
 @import 'components/slider.scss';
+@import 'records/events.scss';
 @import 'records/posts.scss';
 @import 'records/releases.scss';
+@import 'records/store.scss';
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i';
 
 //TODO: move general stuff to somewhere else???
@@ -22,10 +24,19 @@ body {
 .container-main {
   background-color: $color-white;
   margin: 0 -50px;
-  padding: 0 50px;
+  padding: 0 50px 100px;
+
+  section {
+    margin-bottom: 100px;
+    position: relative;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
-header {
+.page-header {
 
   .nav-container {
     height: 75px;
@@ -86,16 +97,11 @@ header {
     color: $color-limed-spruce;
     padding: 75px 0;
     text-align: center;
-  }
-
-  .open-more-posts {
-    @include vertical-align(absolute, 27px);
-    background-color: $color-gold;
-    right: 0;
+    //TODO: adapt for smaller screens
   }
 }
 
-footer {
+.page-footer {
 
 }
 

@@ -218,6 +218,145 @@ ArtistRelease.create(
   release: zivot_je_raj
 )
 
+# Debeli Precjednik / Fat Prezident
+debeli_precjednik = Artist.create(
+  name: 'Debeli Precjednik / Fat Prezident',
+  image: File.new("#{Rails.root}/app/assets/images/base/artists/debeli_precjednik_01.jpg"),
+  description: 'TODO: ',
+  origin: 'Croatia',
+  songkick_id: 7171169,
+  active: true,
+  formed: '1994',
+  records: true,
+  booking: true,
+  genre: 'punk rock / melodic hardcore'
+)
+ExternalLink.create(
+  artist: debeli_precjednik,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Debeli+Precjednik'
+)
+ExternalLink.create(
+  artist: debeli_precjednik,
+  url_type: 'facebook',
+  url: 'https://www.facebook.com/debeliprecjednik/'
+)
+ExternalLink.create(
+  artist: debeli_precjednik,
+  url_type: 'discogs',
+  url: 'http://www.discogs.com/artist/Debeli+Precjednik'
+)
+ExternalLink.create(
+  artist: debeli_precjednik,
+  url_type: 'twitter',
+  url: 'https://twitter.com/fatprezident'
+)
+ExternalLink.create(
+  artist: debeli_precjednik,
+  url_type: 'bandcamp',
+  url: 'https://fatprezident.bandcamp.com/'
+)
+tin_kovacic = Member.create(
+  name: 'Tin Kovačić'
+)
+davor_bestvina = Member.create(
+  name: 'Davor Beštvina'
+)
+ivan_budaic = Member.create(
+  name: 'Ivan Budaić'
+)
+sinisa_rajkovic = Member.create(
+  name: 'Siniša Rajković'
+)
+igor_kovacevic = Member.create(
+  name: 'Igor Kovačević'
+)
+ArtistMember.create(
+  artist: debeli_precjednik,
+  member: tin_kovacic,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: debeli_precjednik,
+  member: davor_bestvina,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: debeli_precjednik,
+  member: ivan_budaic,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: debeli_precjednik,
+  member: igor_kovacevic,
+  role: 'bass'
+)
+ArtistMember.create(
+  artist: debeli_precjednik,
+  member: sinisa_rajkovic,
+  role: 'drums'
+)
+# TODO: add releases
+
+# Nikki Louder
+nikki_louder = Artist.create(
+  name: 'Nikki Louder',
+  image: File.new("#{Rails.root}/app/assets/images/base/artists/nikki_louder_01.jpg"),
+  description: 'TODO: ',
+  origin: 'Slovenia',
+  songkick_id: 3641541,
+  active: true,
+  formed: '2007',
+  records: true,
+  booking: true,
+  genre: 'noise rock / indie / post punk'
+)
+ExternalLink.create(
+  artist: nikki_louder,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Nikki+Louder'
+)
+ExternalLink.create(
+  artist: nikki_louder,
+  url_type: 'facebook',
+  url: 'https://www.facebook.com/Nikki-Louder-61342577710/'
+)
+ExternalLink.create(
+  artist: nikki_louder,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1777425-Nikki-Louder'
+)
+ExternalLink.create(
+  artist: nikki_louder,
+  url_type: 'bandcamp',
+  url: 'https://nikkilouder.bandcamp.com/'
+)
+blaz_sever = Member.create(
+  name: 'Blaž Sever'
+)
+petar_cerar = Member.create(
+  name: 'Petar Cerar'
+)
+luka_cerar = Member.create(
+  name: 'Luka Cerar'
+)
+ArtistMember.create(
+  artist: nikki_louder,
+  member: blaz_sever,
+  role: 'vocals, guitar'
+)
+ArtistMember.create(
+  artist: nikki_louder,
+  member: petar_cerar,
+  role: 'bass, synth'
+)
+ArtistMember.create(
+  artist: nikki_louder,
+  member: luka_cerar,
+  role: 'drums'
+)
+# TODO: add releases
+
 # Repetitor
 repetitor = Artist.create(
   name: 'Repetitor',
@@ -419,3 +558,4 @@ Slide.create(
 
 # TODO: news import from XML
 # TODO: album cover, band photos etc
+# TODO: short name for artist? "Debeli Precjednik / Fat Prezident" -> "Debeli Precjednik"

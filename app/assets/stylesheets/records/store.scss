@@ -1,0 +1,9 @@
+.store-boxes {
+  background-color: $color-white;
+
+  .more-store-items {
+    @include vertical-align(absolute, 27px);
+    background-color: $color-blue;
+    right: 0;
+  }
+}

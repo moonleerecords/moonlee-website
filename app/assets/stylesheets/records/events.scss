@@ -1,3 +1,73 @@
-// Place all the styles related to the Records::Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.events-boxes {
+  background-color: $color-green;
+
+  .more-events {
+    @include vertical-align(absolute, 27px);
+    background-color: $color-white;
+    right: 30px;
+  }
+
+  .event-box {
+    border-bottom: 1px solid $color-white;
+    display: table;
+    height: 90px;
+    width: 100%;
+
+    &:last-of-type {
+      padding-bottom: 50px;
+    }
+
+    div {
+      display: table-cell;
+      vertical-align: middle;
+
+      &.event-date {
+        text-align: center;
+        width: 5%;
+
+        span {
+          display: block;
+
+          &.event-date-month {
+            font-size: 15px;
+          }
+
+          &.event-date-day {
+            font-size: 30px;
+            font-weight: bold;
+          }
+
+          &.event-date-year {
+            font-size: 15px;
+          }
+        }
+      }
+
+      &.event-extra {
+        width: 10%
+      }
+
+      &.event-details {
+        width: 75%;
+
+        span {
+          display: block;
+
+          &.event-artist-name {
+            font-size: 30px;
+            font-weight: lighter;
+            text-transform: uppercase;
+          }
+
+          &.event-venue {
+            font-size: 15px;
+          }
+        }
+      }
+
+      &.event-links {
+        width: 10%;
+      }
+    }
+  }
+}

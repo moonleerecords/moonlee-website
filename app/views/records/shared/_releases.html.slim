@@ -4,13 +4,12 @@
       h2.section-title
         = title
       - if more_button
-        = link_to 'Read all news', records_posts_path, class: 'open-more-posts link-button'
+        = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
     - releases.each do |release|
       article.release-box
         h3 = release.title
+    // TODO: we have discussed it should be different - releases as boxes
 
-/ TODO: similar to slider
-/ TODO: add indicators like on slider???
 / TODO: we have discussed it should be different - releases as boxes
 
 /HMRL039

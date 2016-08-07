@@ -1,7 +1,8 @@
 .releases-boxes {
   background-color: $color-gold;
 
-  .release-box {
-
+  .more-releases {
+    @include vertical-align(absolute, 27px);
+    right: 30px;
   }
 }

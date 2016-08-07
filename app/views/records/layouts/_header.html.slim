@@ -1,4 +1,4 @@
-header
+header.page-header
   div.nav-container
     div.logo
       | TODO: logo
@@ -19,5 +19,5 @@ header
           = link_to 'Shows', records_events_path
         li
           = link_to 'About', records_about_path
-  - if @slides.count > 0
+  - unless @slides.nil?
     = render partial: 'records/shared/slider', locals: { slides: @slides }

@@ -1,9 +1,0 @@
-- if @upcoming_events.count > 0
-  section
-    h2 Shows
-    - @upcoming_events.each do |artist, events|
-      section
-        h3 = artist
-        - events.each do |event|
-          article
-            = render_event(event)
