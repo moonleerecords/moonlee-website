@@ -19,5 +19,4 @@ header.page-header
           = link_to 'Shows', records_events_path
         li
           = link_to 'About', records_about_path
-  - unless @slides.nil?
-    = render partial: 'records/shared/slider', locals: { slides: @slides }
+  = render partial: 'records/shared/slider', locals: { slides: @slides }

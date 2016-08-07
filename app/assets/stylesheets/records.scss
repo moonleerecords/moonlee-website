@@ -4,6 +4,8 @@
 @import 'base/colors.scss';
 @import 'base/globals.scss';
 @import 'components/slider.scss';
+@import 'records/_header.scss';
+@import 'records/_footer.scss';
 @import 'records/events.scss';
 @import 'records/posts.scss';
 @import 'records/releases.scss';
@@ -36,60 +38,6 @@ body {
   }
 }
 
-.page-header {
-
-  .nav-container {
-    height: 75px;
-
-    .logo {
-      float: left;
-    }
-
-    .header-nav-opener {
-      float: right;
-      font-size: 12px;
-      font-weight: bold;
-      height: 100%;
-      position: relative;
-      text-transform: uppercase;
-
-      &:hover span {
-        color: $color-white;
-      }
-
-      &:hover svg {
-        fill: $color-white;
-      }
-
-      .opener-text {
-        @include vertical-align(relative, 6px);
-        color: $color-limed-spruce;
-        float: left;
-        font-size: 12px;
-        margin-right: 10px;
-      }
-
-      .opener-icon {
-        @include vertical-align(relative, 23px);
-        fill: $color-limed-spruce;
-        height: 46px;
-        width: 46px;
-      }
-    }
-
-    .header-nav {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 0;
-
-      &.active {
-        display: block;
-      }
-    }
-  }
-}
-
 .section-heading {
   position: relative;
 
@@ -99,10 +47,6 @@ body {
     text-align: center;
     //TODO: adapt for smaller screens
   }
-}
-
-.page-footer {
-
 }
 
 @include respond-to(small) {

@@ -3,6 +3,7 @@ module Records
     before_action do
       promoted_releases(5)
       upcoming_events(5)
+      social_items
     end
 
     def index

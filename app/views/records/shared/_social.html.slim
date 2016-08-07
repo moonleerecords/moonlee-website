@@ -1,0 +1,33 @@
+- items = [0, 1, 2, 3, 4, 5]
+section.social-boxes
+  div.section-heading
+    h2.section-title
+      = title
+  - items.each_with_index do |item, index|
+    - if index == 0 || index == 5
+      article.social-box
+        div.social-content style="background-image: url('assets/base/artists/analena_01.jpg')"
+        // TODO: image, tweet, video
+        div.social-type
+          // icon and text
+    - elsif index == 1
+      article.social-box
+        - items[1..items.count-2].each do |item|
+          div.small-box
+            div.social-content style="background-image: url('assets/base/artists/analena_01.jpg')"
+            // TODO: image, tweet, video
+            div.social-type
+              // icon and text
+
+/ TODO: social links
+/ul
+/  li
+/    = link_to 'Facebook', 'https://www.facebook.com/moonleerecords/'
+/  li
+/    = link_to 'Twitter', 'https://twitter.com/moonleerecords'
+/  li
+/    = link_to 'Bandcamp', 'https://moonleerecords.bandcamp.com/'
+/  li
+/    = link_to 'Youtube', 'https://www.youtube.com/user/moonleerecords'
+/  li
+/    = link_to 'Instagram', 'https://www.instagram.com/moonleerecords/'

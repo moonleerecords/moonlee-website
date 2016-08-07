@@ -1,0 +1,54 @@
+.page-header {
+
+  .nav-container {
+    height: 75px;
+
+    .logo {
+      float: left;
+    }
+
+    .header-nav-opener {
+      float: right;
+      font-size: 12px;
+      font-weight: bold;
+      height: 100%;
+      position: relative;
+      text-transform: uppercase;
+
+      &:hover span {
+        color: $color-white;
+      }
+
+      &:hover svg {
+        fill: $color-white;
+      }
+
+      .opener-text {
+        @include vertical-align(relative, 6px);
+        color: $color-limed-spruce;
+        float: left;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+
+      .opener-icon {
+        @include vertical-align(relative, 23px);
+        fill: $color-limed-spruce;
+        height: 46px;
+        width: 46px;
+      }
+    }
+
+    .header-nav {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 20;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

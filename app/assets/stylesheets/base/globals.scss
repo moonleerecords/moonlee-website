@@ -1,17 +1,28 @@
 @import 'colors.scss';
 
+body {
+  color: $color-limed-spruce;
+}
+
 a,
 a:active {
-  color: $color-black;
+  color: $color-limed-spruce;;
   text-decoration: none;
 }
 
 a:hover {
-  color: $color-white;
+  color: $color-limed-spruce;;
 }
 
 h2 {
   font-size: 60px;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 30px;
   font-weight: lighter;
   margin: 0;
   padding: 0;

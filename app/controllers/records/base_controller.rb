@@ -21,5 +21,9 @@ module Records
       @fresh_releases = Release.fresh
       @latest_releases = (Release.latest - @fresh_releases).take(latest_count)
     end
+
+    def social_items(limit = 6)
+      @social_items = []
+    end
   end
 end

@@ -1,4 +1,4 @@
-- if slides.count > 0
+- unless slides.nil? || slides.empty?
   div.slider
     - slides.each_with_index do |slide, index|
       = link_to slide.url,
@@ -8,11 +8,11 @@
                 style: "background-image: url('#{slide.image.url(:large)}')" do
         h2.slider-title
           = slide.title
-    - if slides.count > 1
-      ul.slider-navigation
-        - slides.each_with_index do |slide, index|
-          li class=(index == 0 ? 'active' : '') data-navigate-to=index
-      a.slider-control.slider-control-previous href='#'
-        span.slider-arrow.slider-arrow-previous
-      a.slider-control.slider-control-next href='#'
-        span.slider-arrow.slider-arrow-next
+      - if slides.count > 1
+        ul.slider-navigation
+          - slides.each_with_index do |slide, index|
+            li class=(index == 0 ? 'active' : '') data-navigate-to=index
+        a.slider-control.slider-control-previous href='#'
+          span.slider-arrow.slider-arrow-previous
+        a.slider-control.slider-control-next href='#'
+          span.slider-arrow.slider-arrow-next

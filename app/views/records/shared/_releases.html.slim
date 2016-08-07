@@ -4,7 +4,7 @@
       h2.section-title
         = title
       - if more_button
-        = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
+      = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
     - releases.each do |release|
       article.release-box
         h3 = release.title
