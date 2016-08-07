@@ -49,7 +49,7 @@ namespace :songkick do
     if songkick_event.status == 'cancelled' && event.persisted?
       event.destroy
     else
-      event.save
+      event.save!
     end
   end
 
@@ -60,12 +60,10 @@ namespace :songkick do
   def lat_lng(songkick_event)
     if songkick_event.venue.lat.nil? && songkick_event.venue.lng.nil?
       response = Geocoder.search(songkick_event.location.city.split(',')[0])
-      if response.nil?
-        return 0, 0
-      end
+      return 0, 0 if response.nil? || response.empty?
       return response[0].data['geometry']['location']['lat'], response[0].data['geometry']['location']['lng']
     end
-    return songkick_event.venue.lat, songkick_event.venue.lng
+    [songkick_event.venue.lat, songkick_event.venue.lng]
   end
 
   def country_code(country_name)
