@@ -1,3 +1,4 @@
+@import 'font-awesome';
 @import 'colors.scss';
 
 body {
@@ -41,4 +42,8 @@ section {
   font-weight: bold;
   padding: 15px 10px;
   text-transform: uppercase;
+}
+
+.icon-white {
+  color: $color-white;
 }

@@ -1,3 +1,4 @@
+/ TODO: maybe move this, posts, and releases from shared???
 - more_button = false if local_assigns[:more_button].nil?
 - if events.count > 0
   section.events-boxes
@@ -10,18 +11,23 @@
       article.event-box
         div.event-date
           span.event-date-month
-            = 'AUG'
+            = Date::ABBR_MONTHNAMES[event.start_date.month]
           span.event-date-day
-            = '02'
+            = event.start_date.day
           span.event-date-year
-            = '2016'
+            = event.start_date.year
         div.event-extra
         div.event-details
           span.event-artist-name
-            = event.artist.name
+            = link_to event.artist.name, records_artist_path(event.artist)
           span.event-venue
             = "@ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
         div.event-links
-          = 'fb'
+          - if event.facebook_url
+            = link_to fa_icon('facebook-square 2x'), event.facebook_url, class: 'icon-white', target: '_blank'
+          - if event.lastfm_url
+            = link_to fa_icon('lastfm-square 2x'), event.lastfm_url, class: 'icon-white', target: '_blank'
+          - if event.songkick_url
+            = link_to "TODO: songkick", event.songkick_url, class: 'icon-white', target: '_blank'
 
 // TODO: link event to a separate page? link to artist events page?

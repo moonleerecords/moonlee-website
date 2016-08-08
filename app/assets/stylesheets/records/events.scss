@@ -30,6 +30,7 @@
 
           &.event-date-month {
             font-size: 15px;
+            text-transform: uppercase;
           }
 
           &.event-date-day {
@@ -67,6 +68,10 @@
 
       &.event-links {
         width: 10%;
+
+        a {
+          margin-right: 5px;
+        }
       }
     }
   }
