@@ -105,6 +105,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    airbrake (5.4.3)
+      airbrake-ruby (~> 1.4)
+    airbrake-ruby (1.4.4)
     airbrussh (1.1.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arbre (1.1.1)
@@ -390,6 +393,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre4)
   activeadmin_addons
   activemodel-serializers-xml!
+  airbrake (~> 5.4)
   better_errors
   byebug
   cancancan
