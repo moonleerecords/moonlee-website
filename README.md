@@ -25,7 +25,6 @@ $ bundle install
 On the frontend, we are using bower and jspm. Bower mostly for the 3rd party CSS libraries and jspm for JavaScript (ES6).
 
 ```
-$ npm install
 $ bower install
 $ jspm install
 ```
