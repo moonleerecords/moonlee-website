@@ -4,10 +4,10 @@
 Rails.application.config.assets.version = '1.0'
 
 # Add additional assets to the asset load path
-# bower - /vendor/assets/components
-Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
-# jsbm - /assets
+# jspm - /assets
 Rails.application.config.assets.paths << 'assets'
+# node_modules
+Rails.application.config.assets.paths << 'node_modules'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
