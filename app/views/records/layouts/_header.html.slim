@@ -1,14 +1,8 @@
 header.page-header
   div.nav-container
-    div.logo
-      | TODO: logo
-    a.header-nav-opener href='#'
-      span.opener-text Menu
-      = inline_svg 'base/icons/icon-menu.svg', class: 'opener-icon'
-    nav.header-nav
+    = link_to '', root_path, class: 'moonlee-logo'
+    nav.navigation.site-navigation
       ul
-        li
-          = link_to 'Home', root_path
         li
           = link_to 'News', records_posts_path
         li
@@ -19,4 +13,14 @@ header.page-header
           = link_to 'Shows', records_events_path
         li
           = link_to 'About', records_about_path
+    nav.navigation.section-navigation
+      ul
+        li
+          = link_to booking_root_path, target: '_blank' do
+            i.material-icons = 'airport_shuttle'
+            = 'Booking'
+        li
+          = link_to 'store.moonleerecords.com/', target: '_blank' do
+            i.material-icons = 'shopping_cart'
+            = 'Store'
   = render partial: 'records/shared/slider', locals: { slides: @slides }

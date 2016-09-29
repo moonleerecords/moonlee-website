@@ -1,5 +1,7 @@
+@import 'normalize-css/normalize';
 @import 'font-awesome';
-@import 'colors.scss';
+@import 'colors';
+@import 'fonts';
 
 body {
   color: $color-limed-spruce;

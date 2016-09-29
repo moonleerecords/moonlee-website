@@ -1,11 +1,11 @@
 # TODO: update info, update info style
 # TODO: add complete description
 # TODO: update description style
-# TODO: add images (check analena example)
 # TODO: buy links, reviews etc.
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 # TODO: remove this before official release. be sure to drop database and add user by hand
 # TODO: main image in admin is not working
+# TODO: add album types (cd, download etc)
 
 # Analena
 analena = Artist.create(
@@ -93,6 +93,79 @@ ArtistRelease.create(
   release: carbon_based
 )
 
+# Bilk
+bilk = Artist.create(
+  name: 'Bilk',
+  image: File.new("#{Rails.root}/app/assets/images/base/artists/bilk_01.jpg"),
+  description: 'TODO: ',
+  origin: 'Croatia',
+  active: false,
+  formed: '2007',
+  records: true,
+  booking: false,
+  genre: 'breakbeat / drum and bass'
+)
+edi_grubisic_cipla = Member.create(
+  name: 'Edi Grubišić Cipal'
+)
+tin_oberman = Member.create(
+  name: 'Tin Oberman'
+)
+luka_vrbanic = Member.create(
+  name: 'Luka Vrbanic'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: edi_grubisic_cipla,
+  role: 'drums'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: tin_oberman,
+  role: 'synths, guitar'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: luka_vrbanic,
+  role: 'bass'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'website',
+  url: 'http://www.bilkspace.com/'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'facebook',
+  url: 'https://www.facebook.com/bilkspace/'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Bilk'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1817099-Bilk'
+)
+this_bilk_is_radioactive = Release.create(
+  title: 'This Bilk Is Radioactive',
+  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_005.jpg"),
+  catalog_number: 'HMRL005',
+  release_date: Date.new(2006, 06, 03),
+  description: "TODO:",
+  tracklist: "1. Beyonce<br>2. Sunchano<br>3. Objects<br>4. Gone To Texas<br>5. Terminator<br>6. Phantom<br>7. Bloody Bill Anderson<br>8. R2D2",
+  for_fans_of: '',
+  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/this-bilk-is-radioactive',
+  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3423553635/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/this-bilk-is-radioactive">This Bilk Is Radioactive by BILK</a></iframe>',
+  internal: true
+)
+ArtistRelease.create(
+  artist: bilk,
+  release: this_bilk_is_radioactive
+)
+
 # Bernays Propaganda
 bernays_propaganda = Artist.create(
   name: 'Bernays Propaganda',
@@ -165,6 +238,151 @@ politika = Release.create(
 ArtistRelease.create(
   artist: bernays_propaganda,
   release: politika
+)
+
+# Chang Ffos
+chang_ffos = Artist.create(
+  name: 'Chang Ffos',
+  image: File.new("#{Rails.root}/app/assets/images/base/artists/chang_ffos_01.jpg"),
+  description: 'TODO:',
+  origin: 'Croatia',
+  active: false,
+  formed: '2007',
+  disbanded: '2011?',
+  records: true,
+  booking: false,
+  genre: 'rock / metal / psychedelic'
+)
+nikola_chang_ffos = Member.create(
+  name: 'Nikola'
+)
+ivan_chang_ffos = Member.create(
+  name: 'Ivan'
+)
+ashas_chang_ffos = Member.create(
+  name: 'Ashas'
+)
+alen_chang_ffos = Member.create(
+  name: 'Alen'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: nikola_chang_ffos,
+  role: 'drums'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: ivan_chang_ffos,
+  role: 'vocal'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: ashas_chang_ffos,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: alen_chang_ffos,
+  role: 'bass'
+)
+ExternalLink.create(
+  artist: chang_ffos,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Chang+Ffos'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1087188-Chang-Ffos'
+)
+trust_this_arcane_device = Release.create(
+  title: 'Trust This Arcane Device',
+  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_006.jpg"),
+  catalog_number: 'HMRL006',
+  release_date: Date.new(2006, 05, 08),
+  description: "TODO:",
+  tracklist: "1. Thy Doom Ape<br>2. Zen Rock Majik<br>3. Iron Icon<br>4. The Throne Of Sasquatch Ascending<br>5. … And All Things, Either Good Or Ungood<br>6. Jethro<br>7. Bowels Of The Beast Of The Matriarchate<br>8. Le Charmeur De Serpents<br>9. Ondjage",
+  for_fans_of: '',
+  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/trust-this-arcane-device',
+  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2162698928/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/trust-this-arcane-device">Trust This Arcane Device by CHANG FFOS</a></iframe>',
+  internal: true
+)
+ArtistRelease.create(
+  artist: chang_ffos,
+  release: trust_this_arcane_device
+)
+
+# Cog
+# TODO:
+cog = Artist.create(
+  name: 'Cog',
+  image: File.new("#{Rails.root}/app/assets/images/base/artists/chang_ffos_01.jpg"),
+  description: 'TODO:',
+  origin: 'Croatia',
+  active: false,
+  formed: '2007',
+  disbanded: '2011?',
+  records: true,
+  booking: false,
+  genre: 'rock / metal / psychedelic'
+)
+nikola_chang_ffos = Member.create(
+  name: 'Nikola'
+)
+ivan_chang_ffos = Member.create(
+  name: 'Ivan'
+)
+ashas_chang_ffos = Member.create(
+  name: 'Ashas'
+)
+alen_chang_ffos = Member.create(
+  name: 'Alen'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: nikola_chang_ffos,
+  role: 'drums'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: ivan_chang_ffos,
+  role: 'vocal'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: ashas_chang_ffos,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: chang_ffos,
+  member: alen_chang_ffos,
+  role: 'bass'
+)
+ExternalLink.create(
+  artist: chang_ffos,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Chang+Ffos'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1087188-Chang-Ffos'
+)
+trust_this_arcane_device = Release.create(
+  title: 'Trust This Arcane Device',
+  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_006.jpg"),
+  catalog_number: 'HMRL006',
+  release_date: Date.new(2006, 05, 08),
+  description: "TODO:",
+  tracklist: "1. Thy Doom Ape<br>2. Zen Rock Majik<br>3. Iron Icon<br>4. The Throne Of Sasquatch Ascending<br>5. … And All Things, Either Good Or Ungood<br>6. Jethro<br>7. Bowels Of The Beast Of The Matriarchate<br>8. Le Charmeur De Serpents<br>9. Ondjage",
+  for_fans_of: '',
+  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/trust-this-arcane-device',
+  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2162698928/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/trust-this-arcane-device">Trust This Arcane Device by CHANG FFOS</a></iframe>',
+  internal: true
+)
+ArtistRelease.create(
+  artist: chang_ffos,
+  release: trust_this_arcane_device
 )
 
 # Damir Avdić

@@ -43,19 +43,21 @@
   }
 
   .slider-control {
-    @include vertical-align(absolute, 50px);
+    @include vertical-align(50px);
     background: $color-limed-spruce;
     display: block;
     height: 100px;
+    position: absolute;
     width: 75px;
     z-index: 10;
   }
 
   .slider-arrow {
-    @include vertical-align(absolute, 15px);
+    @include vertical-align(15px);
     border-bottom: 5px solid $color-gold;
     border-right: 5px solid $color-gold;
     height: 30px;
+    position: absolute;
     width: 30px;
 
     &.slider-arrow-previous {
@@ -70,11 +72,11 @@
   }
 
   .slider-control-previous {
-    left: -50px;
+    left: 0;
   }
 
   .slider-control-next {
-    right: -50px;
+    right: 0;
   }
 
   .slider-navigation {

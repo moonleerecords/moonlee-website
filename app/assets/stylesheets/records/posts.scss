@@ -2,8 +2,9 @@
   background-color: $color-white;
 
   .more-posts {
-    @include vertical-align(absolute, 27px);
+    @include vertical-align(27px);
     background-color: $color-gold;
+    position: absolute;
     right: 0;
   }
 
@@ -12,8 +13,10 @@
     margin-right: 5%;
     width: 30%;
 
-    &:nth-of-type(3n+3) {
-      margin-right: 0;
+    // TODO: use consistent images/structure
+
+    &:last-child {
+      margin-right: 0
     }
 
     .post-image {

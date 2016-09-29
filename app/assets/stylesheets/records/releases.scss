@@ -2,7 +2,22 @@
   background-color: $color-gold;
 
   .more-releases {
-    @include vertical-align(absolute, 27px);
-    right: 30px;
+    background-color: $color-white;
+    position: absolute;
+    right: 0;
+    @include vertical-align(27px);
+  }
+
+  .release-box {
+    background-size: cover;
+    float: left;
+    height: 0;
+    margin-right: 5%;
+    padding-bottom: 30%;
+    width: 30%;
+
+    &:last-child {
+      margin-right: 0
+    }
   }
 }

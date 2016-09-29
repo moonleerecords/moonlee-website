@@ -1,4 +1,3 @@
-@import 'normalize-css/normalize';
 @import 'base/mixins.scss';
 @import 'base/variables.scss';
 @import 'base/globals.scss';
@@ -9,26 +8,17 @@
 @import 'records/posts.scss';
 @import 'records/releases.scss';
 @import 'records/store.scss';
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i';
-
-//TODO: move general stuff to somewhere else???
 
 body {
   background-color: $color-gold;
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
-  padding: 0 50px;
-}
-
 .container-main {
   background-color: $color-white;
-  margin: 0 -50px;
-  padding: 0 50px 100px;
 
   section {
-    margin-bottom: 100px;
+    padding: 0 50px 100px;
     position: relative;
 
     &:last-of-type {

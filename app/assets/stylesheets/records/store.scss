@@ -2,8 +2,9 @@
   background-color: $color-white;
 
   .more-store-items {
-    @include vertical-align(absolute, 27px);
+    @include vertical-align(27px);
     background-color: $color-blue;
+    position: absolute;
     right: 0;
   }
 }
