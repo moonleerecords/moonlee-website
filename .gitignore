@@ -7,9 +7,6 @@
 /public/assets/
 /public/system/
 /assets/**/*.map
-# frontend bower
-/bower_components
-/vendor/assets/components
 
 # random
 routes.txt

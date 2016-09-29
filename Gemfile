@@ -79,7 +79,6 @@ group :development do
   gem 'capistrano-rails-db', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma', require: false
-  gem 'capistrano-bower', require: false
   gem 'capistrano-jspm', require: false
   gem 'capistrano-rails-console', require: false
 end
