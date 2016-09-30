@@ -65,9 +65,8 @@ namespace :deploy do
     end
   end
 
-  after :updated,       'assets:precompile'
   before :starting,     :check_revision
-  # after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
   before 'deploy:updated', 'jspm:bundle_sfx' do
@@ -76,24 +75,4 @@ namespace :deploy do
            'public/assets/javascripts/records/app.min.js'
   end
   # TODO: add jspm:bundle_sfx for booking
-end
-
-namespace :deploy do
-  after :updated, "assets:precompile"
-end
-
-namespace :assets do
-  desc 'Precompile assets locally and then rsync to web servers'
-  task :precompile do
-    on roles(:web) do
-      rsync_host = host.to_s
-      run_locally do
-        with rails_env: fetch(:stage) do
-          execute :bundle, 'exec rake assets:precompile'
-        end
-        execute "rsync -av --delete ./public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/"
-        execute 'rm -rf public/assets'
-      end
-    end
-  end
 end
