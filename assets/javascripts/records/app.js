@@ -1,6 +1,6 @@
-import "./releases";
-import "../base/slider";
-import {Slider} from "../base/slider";
+import "./releases.js";
+import {Slider} from "../base/slider.js";
+// var Slider = require("javascripts/base/slider").Slider;
 
 // TODO: examples
 //import defaultMember from "module-name";

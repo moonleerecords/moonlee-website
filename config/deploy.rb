@@ -16,8 +16,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true # Change to false when not using ActiveRecord
 
-# uncomment this in order to deploy local copy
-# set :deploy_via, :copy
+set :jspm_build_flags, '--minify --skip-source-maps'
 
 ## Defaults:
 # set :scm,           :git
