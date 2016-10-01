@@ -1,2 +1,2 @@
-//= require jspm_packages/system.src.js
-//= require config.js
+//= require jspm_packages/system.js
+//= require jspm.config.js

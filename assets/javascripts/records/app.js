@@ -14,23 +14,11 @@ import {Slider} from "../base/slider";
 //import "module-name";
 
 // variables
-var headerNavOpener = document.querySelector('.header-nav-opener');
-var headerNav = document.querySelector('.header-nav');
 var sliders = document.querySelectorAll('.slider');
 
-// events
-headerNavOpener.addEventListener('click', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+// TODO: events here
 
-    headerNav.classList.toggle('active');
-});
-
-document.addEventListener('click', () => {
-    headerNav.classList.remove('active');
-});
-
-// other initializations
+// initializations
 if (sliders.length > 0) {
     new Slider();
 }
