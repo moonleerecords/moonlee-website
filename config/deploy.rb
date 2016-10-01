@@ -73,12 +73,12 @@ namespace :deploy do
   after :finishing, :cleanup
   after :finishing, :restart
   after :updated, 'assets:precompile'
-  after :updated, 'jspm:bundle_sfx' do
-    invoke 'jspm:bundle_sfx',
+  after :updated, 'jspm:build' do
+    invoke 'jspm:build',
            'javascripts/records/app.js',
            'public/assets/javascripts/records/app.min.js'
-    Rake::Task['jspm:bundle_sfx'].reenable
-    invoke 'jspm:bundle_sfx',
+    Rake::Task['jspm:build'].reenable
+    invoke 'jspm:build',
            'javascripts/booking/app.js',
            'public/assets/javascripts/booking/app.min.js'
   end
