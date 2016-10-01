@@ -8,10 +8,10 @@ set :puma_workers, 1
 # set :deploy_via, :copy
 
 # Don't change these unless you know what you're doing
-set :pty,             true
-set :use_sudo,        false
-set :stage,           :production
-set :deploy_via,      :remote_cache
+set :pty, true
+set :use_sudo, false
+set :stage, :production
+set :deploy_via, :remote_cache
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true # Change to false when not using ActiveRecord
@@ -28,7 +28,7 @@ set :puma_init_active_record, true # Change to false when not using ActiveRecord
 
 ## Linked Files & Directories (Default None):
 set :linked_files, %w(config/application.yml)
-set :linked_dirs,  %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets)
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets)
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -69,16 +69,19 @@ namespace :deploy do
     end
   end
 
-  after  :updated,      'assets:precompile'
-  before :starting,     :check_revision
-  after  :finishing,    :cleanup
-  after  :finishing,    :restart
-  before 'deploy:updated', 'jspm:bundle_sfx' do
+  before :starting, :check_revision
+  after :finishing, :cleanup
+  after :finishing, :restart
+  after :updated, 'assets:precompile'
+  after :updated, 'jspm:bundle_sfx' do
     invoke 'jspm:bundle_sfx',
            'javascripts/records/app.js',
            'public/assets/javascripts/records/app.min.js'
+    Rake::Task['jspm:bundle_sfx'].reenable
+    invoke 'jspm:bundle_sfx',
+           'javascripts/booking/app.js',
+           'public/assets/javascripts/booking/app.min.js'
   end
-  # TODO: add jspm:bundle_sfx for booking
 end
 
 namespace :assets do
