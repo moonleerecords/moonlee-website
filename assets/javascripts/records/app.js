@@ -1,6 +1,15 @@
-import "./releases.js";
-import {Slider} from "../base/slider.js";
-// var Slider = require("javascripts/base/slider").Slider;
+import $ from 'jquery';
+import './releases.js';
+import {Slider} from '../components/slider.js';
+
+// sticky navigation
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 1) {
+        $('.nav-container').addClass('sticky');
+    } else {
+        $('.nav-container').removeClass('sticky');
+    }
+});
 
 // TODO: examples
 //import defaultMember from "module-name";
@@ -22,7 +31,6 @@ var sliders = document.querySelectorAll('.slider');
 if (sliders.length > 0) {
     new Slider();
 }
-
 
 
 // slider.nextSlide();

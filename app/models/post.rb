@@ -57,8 +57,6 @@ class Post < ApplicationRecord
 
   def validate_categories
     invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
-    if invalid_categories.count > 0
-      errors.add(:categories, 'Not all the categories are valid')
-    end
+    errors.add(:categories, 'Not all the categories are valid') if invalid_categories.count > 0
   end
 end
