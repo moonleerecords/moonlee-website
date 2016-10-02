@@ -1,11 +1,12 @@
 .events-boxes {
   background-color: $color-green;
+  padding: 0 50px 50px !important;
 
   .more-events {
     @include vertical-align(27px);
     background-color: $color-white;
     position: absolute;
-    right: 30px;
+    right: 0;
   }
 
   .event-box {
@@ -15,7 +16,7 @@
     width: 100%;
 
     &:last-of-type {
-      padding-bottom: 50px;
+      border-bottom: 0;
     }
 
     div {
@@ -68,10 +69,16 @@
       }
 
       &.event-links {
+        text-align: right;
         width: 10%;
 
         a {
+          color: $color-white;
           margin-right: 5px;
+
+          &:hover {
+            color: $color-white;
+          }
         }
       }
     }
