@@ -1,7 +1,7 @@
 {
   "jspm": {
     "directories": {
-      "baseURL": "moonlee-website/assets"
+      "baseURL": "assets"
     },
     "dependencies": {
       "jquery": "npm:jquery@^2.2.4",

@@ -3,16 +3,16 @@
     "deps": {},
     "peerDeps": {}
   },
+  "npm:jquery@2.2.4": {
+    "deps": {},
+    "peerDeps": {}
+  },
   "npm:babel-runtime@5.8.38": {
     "deps": {},
     "peerDeps": {
       "core-js": "npm:core-js@^1.2.0",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
     }
-  },
-  "npm:jquery@2.2.4": {
-    "deps": {},
-    "peerDeps": {}
   },
   "npm:core-js@1.2.7": {
     "deps": {},
@@ -26,7 +26,7 @@
     "deps": {},
     "peerDeps": {}
   },
-  "github:Modernizr/Modernizr@3.3.1": {
+  "npm:systemjs-plugin-babel@0.0.15": {
     "deps": {},
     "peerDeps": {}
   },
@@ -44,7 +44,7 @@
     "deps": {},
     "peerDeps": {}
   },
-  "npm:systemjs-plugin-babel@0.0.15": {
+  "github:Modernizr/Modernizr@3.3.1": {
     "deps": {},
     "peerDeps": {}
   }
