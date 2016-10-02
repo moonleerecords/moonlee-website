@@ -2,7 +2,7 @@ class Release < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  default_scope { where(active: true).order('catalog_number ASC') }
+  default_scope { where(active: true).order('catalog_number DESC') }
 
   has_many :release_types, dependent: :destroy
   has_many :release_reviews, dependent: :destroy
