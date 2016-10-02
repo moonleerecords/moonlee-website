@@ -82,4 +82,5 @@ group :development do
   gem 'capistrano-npm', require: false
   gem 'capistrano-jspm', require: false
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano-bower', require: false
 end

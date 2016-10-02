@@ -1,0 +1,27 @@
+{
+  "name": "moonlee-website",
+  "description": "Moonlee website",
+  "main": "",
+  "authors": [
+    "Drazen Peric <peric.drazhen@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "moonlee",
+    "records",
+    "website"
+  ],
+  "homepage": "http://www.moonleerecords.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.2.0",
+    "material-design-icons-iconfont": "^3.0.0"
+  }
+}

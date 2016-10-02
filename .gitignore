@@ -1,12 +1,13 @@
 # editor
 .idea
 
-# frontend jspm
+# frontend
 /node_modules
 /assets/jspm_packages/*/**
 /public/assets/
 /public/system/
 /assets/**/*.map
+/vendor/assets/components/
 
 # random
 routes.txt

@@ -6,8 +6,9 @@ Rails.application.config.assets.version = '1.0'
 # Add additional assets to the asset load path
 # jspm - /assets
 Rails.application.config.assets.paths << Rails.root.join('assets')
-# node_modules
-Rails.application.config.assets.paths << Rails.root.join('node_modules')
+
+# bower frontend components
+Rails.application.config.assets.paths  << Rails.root.join('vendor', 'assets', 'components')
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.

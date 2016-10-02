@@ -131,6 +131,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
+    capistrano-bower (1.1.0)
+      capistrano (~> 3.0)
     capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
@@ -401,6 +403,7 @@ DEPENDENCIES
   byebug
   cancancan
   capistrano
+  capistrano-bower
   capistrano-bundler
   capistrano-jspm
   capistrano-npm

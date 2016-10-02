@@ -10,6 +10,7 @@
 #### Prerequisites 
 
 - [Node and NPM](https://docs.npmjs.com/getting-started/installing-node)
+- [bower](https://bower.io/)
 - [jspm](http://jspm.io/docs/getting-started.html)
 - [PhantomJS](http://phantomjs.org/)
 
@@ -21,11 +22,12 @@ $ bundle install
 
 #### Setup assets
 
-We are using npm and jspm to take care of the frontend packages. npm mostly for CSS libraries and to install jspm, and jspm in order to install and use JavaScript (ES6) libraries.
+We are using npm and jspm to take care of the JS frontend packages, and bower for CSS frontend packages.
 
 ```
 $ npm install
 $ jspm install
+$ bower install
 ```
 
 #### Setup database
