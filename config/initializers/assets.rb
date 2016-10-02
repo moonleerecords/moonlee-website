@@ -16,4 +16,7 @@ Rails.application.config.assets.precompile += %w(jspm.js)
 
 Rails.application.config.assets.precompile += %w(booking.scss records.scss)
 
+# precompile all the fonts
+Rails.application.config.assets.precompile << /\.(?:eot|woff|woff2|ttf)$/
+
 Rails.application.config.assets.initialize_on_precompile = false
