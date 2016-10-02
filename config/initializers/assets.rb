@@ -17,6 +17,9 @@ Rails.application.config.assets.precompile += %w(jspm.js)
 Rails.application.config.assets.precompile += %w(booking.scss records.scss)
 
 # precompile all the fonts
-Rails.application.config.assets.precompile += %w(*.svg *.eot *.ijmap *.woff *.woff2 *.ttf)
+# Rails.application.config.assets.precompile += %w(*.svg *.eot *.ijmap *.woff *.woff2 *.ttf)
+
+# precompile material design fonts
+Rails.application.config.assets.precompile << Proc.new { |path, fn| fn =~ /node_modules\/material-design-icons-iconfont/ && %w(.eot .ijmap .svg .ttf .woff .woff2).include?(File.extname(path)) }
 
 Rails.application.config.assets.initialize_on_precompile = false

@@ -1,9 +1,6 @@
 $material-design-icons-font-path: 'material-design-icons-iconfont/dist/fonts/' !default;
 $MD-icon-path-name: $material-design-icons-font-path + 'MaterialIcons-Regular' !default;
 
-// TODO: fix https://github.com/jossef/material-design-icons-iconfont/blob/master/dist/material-design-icons.scss
-//@import 'material-design-icons-iconfont/dist/material-design-icons.scss';
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
