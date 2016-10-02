@@ -7,7 +7,7 @@ Rails.application.config.assets.version = '1.0'
 # jspm - /assets
 Rails.application.config.assets.paths << Rails.root.join('assets')
 
-  # node_modules
+# node_modules
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # Precompile additional assets.
@@ -15,5 +15,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(jspm.js)
 
 Rails.application.config.assets.precompile += %w(booking.scss records.scss)
+
+# precompile all the fonts
+Rails.application.config.assets.precompile += %w(*.svg *.eot *.ijmap *.woff *.woff2 *.ttf)
 
 Rails.application.config.assets.initialize_on_precompile = false
