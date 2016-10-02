@@ -8,6 +8,7 @@ namespace :songkick do
 
     artists.each do |artist|
       songkick_events = songkick.artist_events(artist.songkick_id)
+
       next unless songkick_events.status == 'ok' && songkick_events.results.count > 0
 
       songkick_events.results.each do |songkick_event|
@@ -36,7 +37,7 @@ namespace :songkick do
   end
 
   def find_or_create_event(songkick_event, venue, artist)
-    event = Event.find_or_create_by(songkick_id: songkick_event.id)
+    event = Event.find_or_create_by(songkick_id: songkick_event.id, artist: artist)
     event.artist = artist
     event.venue = venue
     event.event_type = songkick_event.type
