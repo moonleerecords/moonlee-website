@@ -41,6 +41,7 @@
   "dependencies": {
     "jspm": "^0.17.0-beta.29",
     "material-design-icons-iconfont": "^3.0.0",
+    "materialize-css": "^0.97.7",
     "normalize-css": "^2.3.1"
   }
 }
