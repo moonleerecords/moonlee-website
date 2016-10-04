@@ -1,14 +1,23 @@
+"use strict";
+
 import $ from 'jquery';
 import './releases.js';
 import {Slider} from '../components/slider.js';
 
+var lastScrollTop = 0;
+var $navContainer = $('.nav-container');
+
 // sticky navigation
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 1) {
-        $('.nav-container').addClass('sticky');
+    var currentScrollTop = $(this).scrollTop();
+
+    if (currentScrollTop > lastScrollTop) {
+        $navContainer.addClass('nav-container-hidden');
     } else {
-        $('.nav-container').removeClass('sticky');
+        $navContainer.removeClass('nav-container-hidden');
     }
+
+    lastScrollTop = currentScrollTop;
 });
 
 // TODO: examples

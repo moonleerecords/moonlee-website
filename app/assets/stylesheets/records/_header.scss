@@ -4,18 +4,19 @@
   .nav-container {
     background-color: $color-gold;
     height: 74px;
+    overflow: hidden;
     position: fixed;
     top: 0;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    -webkit-transition: all .2s ease;
-    transition: all .2s ease;
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    -ms-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    transition: height 0.2s;
     width: 100%;
     z-index: 99;
-    // TODO: hide on scroll down, show on scroll up
 
-    &.sticky {
-      height: 50px;
+    &.nav-container-hidden {
+      height: 0;
     }
 
     .moonlee-logo {
@@ -26,6 +27,7 @@
       position: absolute;
       text-indent: -9999px;
       top: 0;
+      z-index: 99;
       width: 150px;
     }
 
