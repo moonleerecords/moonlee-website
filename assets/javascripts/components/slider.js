@@ -1,19 +1,20 @@
 'use strict';
 export class Slider {
-    constructor(options = {}) {
-        // TODO: support more sliders??? does it work??? some selector should be sent???
-
-        this.slider = document.querySelector('.slider');
+    constructor(slider, options = {}) {
+        this.slider = slider;
         this.slides = this.slider.querySelectorAll('.slide');
         this.previousButton = this.slider.querySelectorAll('.slider-control-previous');
         this.nextButton = this.slider.querySelectorAll('.slider-control-next');
         this.navigationButtons = this.slider.querySelectorAll('.slider-navigation > li');
         this.currentSlide = 0;
         this.speed = options.speed || 5000;
+        this.autoplay = options.autoplay || true;
 
         if (this.slides.length > 1) {
             // change automatically
-            this.slideInterval = setInterval(this.nextSlide.bind(this), this.speed);
+            if (this.autoplay) {
+                this.slideInterval = setInterval(this.nextSlide.bind(this), this.speed);
+            }
 
             // event listeners
             this.previousButton[0].addEventListener('click', (event) => {
@@ -44,11 +45,11 @@ export class Slider {
     }
 
     goToSlide(toSlide) {
-        this.slides[this.currentSlide].className = 'slide';
-        this.navigationButtons[this.currentSlide].className = '';
+        this.slides[this.currentSlide].classList.remove('active');
+        this.navigationButtons[this.currentSlide].classList.remove('active');
         this.currentSlide = (toSlide + this.slides.length) % this.slides.length;
-        this.slides[this.currentSlide].className = 'slide active';
-        this.navigationButtons[this.currentSlide].className = 'active';
+        this.slides[this.currentSlide].classList.add('active');
+        this.navigationButtons[this.currentSlide].classList.add('active');
     }
 
     previousSlide() {
