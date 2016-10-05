@@ -3,8 +3,7 @@ class Slide < ApplicationRecord
 
   has_attached_file :image,
                     styles: {
-                      large: '1250x1250>',
-                      small: '100x100>'
+                      large: '1250x1250>'
                     },
                     default_url: '/assets/missing.png'
 

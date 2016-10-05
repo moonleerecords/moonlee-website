@@ -1,45 +1,24 @@
+// basic slider
 .slider {
   list-style-type: none;
   margin: 0;
-  min-height: 550px;
+  min-height: 450px;
   padding: 0;
   position: relative;
   width: 100%;
   z-index: 1;
 
   .slide {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
     left: 0;
-    opacity: 0;
     position: absolute;
     top: 0;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
     width: 100%;
     z-index: 2;
 
     &.active {
-      opacity: 1;
       z-index: 3;
     }
-  }
-
-  .slider-title {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: $color-white;
-    padding: 0 200px;
-    position: absolute;
-    text-align: center;
-    top: 60%;
-    width: 100%;
-    //TODO: adapt for smaller screens
   }
 
   .slider-control {
@@ -78,6 +57,38 @@
   .slider-control-next {
     right: 0;
   }
+}
+
+// hero slider
+.slider-hero {
+  min-height: 550px;
+
+  .slide {
+    background: no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+
+    &.active {
+      opacity: 1;
+    }
+
+    .slide-title {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      color: $color-white;
+      padding: 0 200px;
+      position: absolute;
+      text-align: center;
+      top: 60%;
+      width: 100%;
+      //TODO: adapt for smaller screens
+    }
+  }
 
   .slider-navigation {
     bottom: 20px;
@@ -109,20 +120,32 @@
   }
 }
 
+// releases slider
+.slider-releases {
+  min-height: 380px;
+
+  .slide {
+
+    &.slide-release-cover {
+      @include vertical-align(190px);
+    }
+  }
+}
+
 @include respond-to(small) {
-  .slider {
+  .slider-hero {
     min-height: 450px;
   }
 }
 
 @include respond-to(medium) {
-  .slider {
+  .slider-hero {
     min-height: 550px;
   }
 }
 
 @include respond-to(large) {
-  .slider {
+  .slider-hero {
     min-height: 550px;
   }
 }

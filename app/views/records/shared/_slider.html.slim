@@ -1,12 +1,12 @@
 - unless slides.nil? || slides.empty?
-  div.slider
+  div.slider.slider-hero
     - slides.each_with_index do |slide, index|
       = link_to slide.url,
                 title: slide.title,
                 target: '_blank',
-                class: "slide #{(index == 0 ? ' active' : '')}",
+                class: "slide release-cover #{(index == 0 ? ' active' : '')}",
                 style: "background-image: url('#{slide.image.url(:large)}')" do
-        h2.slider-title
+        h2.slide-title
           = slide.title
     - if slides.count > 1
       ul.slider-navigation

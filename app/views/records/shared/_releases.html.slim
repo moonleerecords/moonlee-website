@@ -1,23 +1,22 @@
-- if releases.count > 0
+- unless releases.nil? || releases.empty?
   section.releases-boxes
     div.section-heading
       h2.section-title
         = title
       - if more_button
-      = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
-    - releases.first(3).each do |release|
-      article.release-box style="background-image: url('#{release.cover.url(:medium)}')"
-        h3 = release.title
-
-/HMRL039
-/BERNAYS PROPAGANDA
-/Politika
-/lp / cd / download
-/release date: 14.03.2016
-/Buy CD via:
-/Moonlee Store
-/Buy LP via:
-/Moonlee Store
-/ TODO: upcoming releases should be in slider
-/ TODO: change image sizes
-/ TODO: on hover
+        = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
+    div.slider.slider-releases
+      - releases.each_with_index do |release, index|
+        = link_to records_release_path(release),
+                 title: release.title,
+                 target: '_blank',
+                 class: "slide #{(index == 0 ? ' active' : '')}" do
+          = image_tag release.cover.url(:medium)
+      - if releases.count > 1
+        ul.slider-navigation
+          - releases.each_with_index do |release, index|
+            li class=(index == 0 ? 'active' : '') data-navigate-to=index
+        a.slider-control.slider-control-previous href='#'
+          span.slider-arrow.slider-arrow-previous
+        a.slider-control.slider-control-next href='#'
+          span.slider-arrow.slider-arrow-next

@@ -13,17 +13,14 @@
     margin-right: 5%;
     width: 30%;
 
-    // TODO: use consistent images/structure
-
     &:last-child {
       margin-right: 0
     }
 
     .post-image {
-      background-position: center center;
-      background-repeat: no-repeat;
+      background: no-repeat center center;
       background-size: cover;
-      height: 350px;
+      min-height: 350px;
     }
 
     .post-date {

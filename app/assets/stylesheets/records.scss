@@ -19,6 +19,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.moonlee-logo {
+  @extend .moonlee-logo;
+  background: image-url('base/moonlee-logo.svg') no-repeat;
+  text-indent: -9999px;
+}
+
 .container-main {
   background-color: $color-white;
 
