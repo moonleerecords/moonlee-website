@@ -55,6 +55,13 @@
     div {
       display: table-cell;
       width: 20%;
+
+      .moonlee-logo-footer {
+        background-size: 100px 100%;
+        height: 100px;
+        z-index: 99;
+        width: 100px;
+      }
     }
 
     .links {

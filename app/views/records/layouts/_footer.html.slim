@@ -2,9 +2,9 @@ footer.page-footer
   = render partial: 'records/shared/social',
            locals: { title: 'Moonlee On Social', items: @social_items }
   section.footer-links
-    div.logo
-      | TODO: logo
-      br
+    div
+      /= link_to '', root_path, class: 'moonlee-logo moonlee-logo-footer'
+      /br
       | Križevniška ulica 5, 1000 Ljubljana, Slovenia
     div
     div
