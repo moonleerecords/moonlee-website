@@ -7,8 +7,8 @@ export class Slider {
         this.nextButton = this.slider.querySelectorAll('.slider-control-next');
         this.navigationButtons = this.slider.querySelectorAll('.slider-navigation > li');
         this.currentSlide = 0;
-        this.speed = options.speed || 5000;
-        this.autoplay = options.autoplay || true;
+        this.speed = options.speed !== undefined ? options.speed : 5000;
+        this.autoplay = options.autoplay !== undefined ? options.autoplay : true;
 
         if (this.slides.length > 1) {
             // change automatically
