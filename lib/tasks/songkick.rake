@@ -1,8 +1,11 @@
 require 'songkickr'
 
 namespace :songkick do
+  desc 'Fetch upcoming events from Songkick'
   task fetch_upcoming_events: :environment do
     # TODO: export this into a separate class
+    # TODO: print status
+    # TODO: wrap in namespace
     songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
     artists = Artist.with_songkick_id
 
