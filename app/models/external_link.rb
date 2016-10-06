@@ -1,4 +1,6 @@
 class ExternalLink < ApplicationRecord
+  default_scope { order('url_type ASC') }
+
   ALLOWED_URL_TYPES = %w(website facebook twitter instagram lastfm bandcamp soundcloud discogs).freeze
 
   belongs_to :artist
