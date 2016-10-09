@@ -22,8 +22,9 @@ module Records
       @latest_releases = (Release.latest - @fresh_releases).take(latest_count)
     end
 
-    def social_items(limit = 6)
-      @social_items = []
+    def social_posts()
+      @social_posts = SocialPost.youtube.take(2)
+      @social_posts << SocialPost.instagram.take(4)
     end
   end
 end

@@ -6,6 +6,7 @@ class CreateSocialPosts < ActiveRecord::Migration[5.0]
       t.string :external_id
       t.text :text
       t.text :media
+      t.datetime :published_at
       t.boolean :active, default: true
 
       t.timestamps

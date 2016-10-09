@@ -4,8 +4,6 @@ namespace :songkick do
   desc 'Fetch upcoming events from Songkick'
   task fetch_upcoming_events: :environment do
     # TODO: export this into a separate class
-    # TODO: print status
-    # TODO: wrap in namespace
     songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
     artists = Artist.with_songkick_id
 
@@ -19,6 +17,7 @@ namespace :songkick do
         venue.save!
         event = find_or_create_event(songkick_event, venue, artist)
         save_or_destroy_event(event, songkick_event)
+        puts "Updated event `#{event.songkick_url}` for #{artist.name}"
       end
     end
 
@@ -26,6 +25,8 @@ namespace :songkick do
     # TODO: remove unexisting event
     # TODO: write test
   end
+
+  private
 
   def find_or_create_venue(songkick_event)
     songkick_id = songkick_event.venue.id.nil? ? songkick_event.venue.metro_area.id : songkick_event.venue.id

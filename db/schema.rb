@@ -242,9 +242,10 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.string   "external_id"
     t.text     "text"
     t.text     "media"
-    t.boolean  "active",      default: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "published_at"
+    t.boolean  "active",       default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["source", "external_id"], name: "index_social_posts_on_source_and_external_id", unique: true, using: :btree
   end
 
