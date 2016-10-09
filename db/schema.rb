@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614153248) do
+ActiveRecord::Schema.define(version: 20161008171548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -234,6 +234,18 @@ ActiveRecord::Schema.define(version: 20160614153248) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "social_posts", force: :cascade do |t|
+    t.string   "source"
+    t.string   "link"
+    t.string   "external_id"
+    t.text     "text"
+    t.text     "media"
+    t.boolean  "active",      default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["source", "external_id"], name: "index_social_posts_on_source_and_external_id", unique: true, using: :btree
   end
 
   create_table "venues", force: :cascade do |t|
