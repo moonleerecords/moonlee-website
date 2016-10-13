@@ -40,8 +40,13 @@ namespace :social do
     social_post.source = SocialPost::SOURCE_YOUTUBE
     social_post.link = sprintf('https://www.youtube.com/watch?v=%s', video.id)
     social_post.text = video.title
-    social_post.media = video.embed_html.gsub(/width="(\d+)"/, 'width="100%"').gsub(/height="(\d+)"/, 'height="100%"')
+    social_post.media = prepare_iframe(video.embed_html, video.id)
     social_post.published_at = video.published_at
     social_post
+  end
+
+  def prepare_iframe(embed_html, video_id)
+    embed_html.gsub!(/width="(\d+)"/, 'width="100%"').gsub!(/height="(\d+)"/, 'height="100%"')
+    embed_html.gsub!(video_id, "#{video_id}?modestbranding=1&autohide=1&showinfo=0&controls=0")
   end
 end

@@ -1,33 +1,22 @@
-- items = [0, 1, 2, 3, 4, 5]
+// TODO: finish this when order is specified
+- unless social_posts.nil? || social_posts.empty?
 section.social-boxes
   div.section-heading
     h2.section-title
       = title
-  - items.each_with_index do |item, index|
+  - social_posts.each_with_index do |social_post, index|
+    // youtube
     - if index == 0 || index == 5
       article.social-box
-        div.social-content style="background-image: url(#{image_path('base/artists/analena_01.jpg')})"
-        // TODO: image, tweet, video
+        div.social-content
+          = raw(social_post.media)
         div.social-type
-          // icon and text
+          // TODO: icon and text
+    // instagram
     - elsif index == 1
       article.social-box
-        - items[1..items.count-2].each do |item|
+        - social_posts[1..social_posts.count-2].each do |social_post|
           div.small-box
-            div.social-content style="background-image: url(#{image_path('base/artists/analena_01.jpg')})"
-            // TODO: image, tweet, video
+            div.social-content style="background-image: url(#{social_post.media})"
             div.social-type
-              // icon and text
-
-/ TODO: social links
-/ul
-/  li
-/    = link_to 'Facebook', 'https://www.facebook.com/moonleerecords/'
-/  li
-/    = link_to 'Twitter', 'https://twitter.com/moonleerecords'
-/  li
-/    = link_to 'Bandcamp', 'https://moonleerecords.bandcamp.com/'
-/  li
-/    = link_to 'Youtube', 'https://www.youtube.com/user/moonleerecords'
-/  li
-/    = link_to 'Instagram', 'https://www.instagram.com/moonleerecords/'
+              // TODO: icon and text
