@@ -45,11 +45,13 @@ export class Slider {
     }
 
     goToSlide(toSlide) {
+        var nextSlide = (toSlide + this.slides.length) % this.slides.length;
+
+        this.changeButtonStatus(this.currentSlide, nextSlide);
+
         this.slides[this.currentSlide].classList.remove('active');
-        this.navigationButtons[this.currentSlide].classList.remove('active');
-        this.currentSlide = (toSlide + this.slides.length) % this.slides.length;
+        this.currentSlide = nextSlide;
         this.slides[this.currentSlide].classList.add('active');
-        this.navigationButtons[this.currentSlide].classList.add('active');
     }
 
     previousSlide() {
@@ -58,6 +60,13 @@ export class Slider {
 
     nextSlide() {
         this.goToSlide(this.currentSlide + 1);
+    }
+
+    changeButtonStatus(currentSlide, nextSlide) {
+        if (this.navigationButtons && this.navigationButtons.length > 0) {
+            this.navigationButtons[currentSlide].classList.remove('active');
+            this.navigationButtons[nextSlide].classList.add('active');
+        }
     }
 
     pauseSlideshow() {

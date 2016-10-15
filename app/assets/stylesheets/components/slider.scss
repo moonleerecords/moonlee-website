@@ -125,10 +125,15 @@
   min-height: 380px;
 
   .slide {
+    opacity: 0;
     padding-left: 10px;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
 
-    &.slide-release-cover {
-      @include vertical-align(190px);
+    &.active {
+      opacity: 1;
     }
   }
 
