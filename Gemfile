@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0', '< 5.1'
 # Postgres as the database for active record
 gem 'pg'
-# Use Puma as the app server
-gem 'puma'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
@@ -74,7 +72,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-rails-db', require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma', require: false
+  gem 'capistrano-passenger', require: false
   gem 'capistrano-npm', require: false
   gem 'capistrano-jspm', require: false
   gem 'capistrano-rails-console', require: false
