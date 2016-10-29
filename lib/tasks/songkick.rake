@@ -13,11 +13,17 @@ namespace :songkick do
       next unless songkick_events.status == 'ok' && songkick_events.results.count > 0
 
       songkick_events.results.each do |songkick_event|
-        venue = find_or_create_venue(songkick_event)
-        venue.save!
-        event = find_or_create_event(songkick_event, venue, artist)
-        save_or_destroy_event(event, songkick_event)
-        puts "Updated event `#{event.songkick_url}` for #{artist.name}"
+        begin
+          venue = find_or_create_venue(songkick_event)
+          venue.save!
+          event = find_or_create_event(songkick_event, venue, artist)
+          save_or_destroy_event(event, songkick_event)
+          puts "Updated event `#{event.songkick_url}` for #{artist.name}"
+        rescue Exception => e
+          puts "An error of type `#{e.class}` happened, message is `#{e.message}`"
+          puts songkick_event.to_json
+          next
+        end
       end
     end
 
@@ -72,8 +78,15 @@ namespace :songkick do
   end
 
   def country_code(country_name)
+    country_name = country_mapper(country_name)
     response = Geocoder.search(country_name)
     return nil if response.nil? || response.empty?
     response[0].data['address_components'][0]['short_name']
+  end
+
+  def country_mapper(country_name)
+    {
+      'Macedonia, The Former Yugoslav Republic Of' => 'Macedonia'
+    }[country_name] || country_name
   end
 end
