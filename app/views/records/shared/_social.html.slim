@@ -1,22 +1,23 @@
-// TODO: finish this when order is specified
 - unless social_posts.nil? || social_posts.empty?
 section.social-boxes
   div.section-heading
     h2.section-title
       = title
   - social_posts.each_with_index do |social_post, index|
-    // youtube
+    // youtube x 2
     - if index == 0 || index == 5
       article.social-box
         div.social-content
           = raw(social_post.media)
-        div.social-type
-          // TODO: icon and text
-    // instagram
+    // instagram x 4
     - elsif index == 1
       article.social-box
         - social_posts[1..social_posts.count-2].each do |social_post|
           div.small-box
-            div.social-content style="background-image: url(#{social_post.media})"
-            div.social-type
-              // TODO: icon and text
+            = link_to social_post.url, title: social_post.text, target: '_blank' do
+              div.social-content style="background-image: url(#{social_post.media})"
+              = link_to fa_icon('instagram 2x', text: 'Instagram'),
+                       social_post.url,
+                       class: 'social-type icon-yellow-link',
+                       target: '_blank',
+                       title: social_post.text

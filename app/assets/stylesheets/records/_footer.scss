@@ -5,8 +5,9 @@
     .social-box {
       display: block;
       float: left;
-      height: 350px;
+      height: 400px;
       margin-right: 2%;
+      overflow: hidden;
       width: 32%;
 
       &:last-of-type {
@@ -15,9 +16,10 @@
 
       .small-box {
         float: left;
-        height: 164.5px;
-        margin-bottom: 21px;
+        height: 47%;
+        margin-bottom: 6%;
         margin-right: 6%;
+        position: relative;
         width: 47%;
 
         &:nth-of-type(2n+2) {
@@ -27,20 +29,24 @@
         &:nth-of-type(n+3) {
           margin-bottom: 0;
         }
+
+        &:hover .icon-yellow-link {
+          color: $color-white;
+        }
       }
 
       .social-content {
-        background-position: center center;
-        background-repeat: no-repeat;
+        background: no-repeat center center;
         background-size: cover;
         height: 100%;
         width: 100%;
       }
 
       .social-type {
-        bottom: 0;
-        left: 0;
+        bottom: 10px;
+        left: 10px;
         position: absolute;
+        z-index: 10;
       }
     }
   }
@@ -48,9 +54,6 @@
   .footer-links {
     border-top: 10px solid $color-white;
     display: table;
-    margin-top: 50px;
-    padding-top: 30px;
-    width: 100%;
 
     div {
       display: table-cell;
@@ -59,8 +62,8 @@
       .moonlee-logo-footer {
         background-size: 100px 100%;
         height: 100px;
-        z-index: 99;
         width: 100px;
+        z-index: 99;
       }
     }
 

@@ -53,6 +53,17 @@ section {
   text-transform: uppercase;
 }
 
-.icon-white {
+.icon-white-link {
   color: $color-white;
+}
+
+.icon-yellow-link {
+  color: $color-gold;
+  font-size: 10px;
+  line-height: 10px;
+
+  i {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
 }
