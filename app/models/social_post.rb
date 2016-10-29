@@ -7,7 +7,7 @@ class SocialPost < ApplicationRecord
   SOURCES = [SOURCE_TWITTER, SOURCE_INSTAGRAM, SOURCE_YOUTUBE].freeze
 
   validates :source, inclusion: { in: SOURCES }, presence: true
-  validates :link, presence: true
+  validates :url, presence: true
   validates :external_id, presence: true
   validates :published_at, presence: true
   validates_uniqueness_of :external_id, :scope => :source
