@@ -12,7 +12,7 @@
           span.event-date-month
             = Date::ABBR_MONTHNAMES[event.start_date.month]
           span.event-date-day
-            = event.start_date.day
+            = sprintf('%02i', event.start_date.day)
           span.event-date-year
             = event.start_date.year
         div.event-extra
@@ -25,17 +25,15 @@
           - if event.facebook_url
             = link_to fa_icon('facebook-square 2x'),
                       event.facebook_url,
-                      class: 'icon-white',
+                      class: 'icon-white-link',
                       target: '_blank',
                       title: 'Facebook event'
           - if event.lastfm_url
             = link_to fa_icon('lastfm-square 2x'),
                       event.lastfm_url,
-                      class: 'icon-white',
+                      class: 'icon-white-link',
                       target: '_blank',
                       title: 'Last.fm event'
           - if event.songkick_url
-            = link_to event.songkick_url, class: 'icon-white', target: '_blank', title: 'Songkick event' do
+            = link_to event.songkick_url, class: 'icon-white-link', target: '_blank', title: 'Songkick event' do
               i.fa.fa-2x.custom-songkick
-
-// TODO: link event to a separate page? link to artist events page?
