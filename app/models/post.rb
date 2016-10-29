@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   AVAILABLE_CATEGORIES = %w(news).freeze
 
   extend FriendlyId
+
   friendly_id :custom_slug, use: :slugged
 
   default_scope { order('published_at ASC') }
