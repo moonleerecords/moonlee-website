@@ -25,8 +25,8 @@ gem 'activeadmin_addons'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# airbrake
-gem 'airbrake', '~> 5.4'
+# Sentry
+gem 'sentry-raven'
 # file attachment management
 gem 'paperclip'
 # font awesome
