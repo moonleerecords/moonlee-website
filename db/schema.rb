@@ -238,10 +238,11 @@ ActiveRecord::Schema.define(version: 20161008171548) do
 
   create_table "social_posts", force: :cascade do |t|
     t.string   "source"
-    t.string   "link"
+    t.string   "url"
     t.string   "external_id"
     t.text     "text"
     t.text     "media"
+    t.text     "video_media"
     t.datetime "published_at"
     t.boolean  "active",       default: true
     t.datetime "created_at",                  null: false
