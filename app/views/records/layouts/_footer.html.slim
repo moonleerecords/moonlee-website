@@ -1,42 +1,35 @@
 footer.page-footer
   = render partial: 'records/shared/social',
            locals: { title: 'Moonlee On Social', social_posts: @social_posts }
-  section.footer-links
-    div
-      /= link_to '', root_path, class: 'moonlee-logo moonlee-logo-footer'
-      /br
-      | Križevniška ulica 5, 1000 Ljubljana, Slovenia
-    div
-    div
-    div
-    div.links
-      h3 Records
+  section.footer-info
+    .line
+    div.brand-info
+      | Ⓐ Moonlee Records 2004 (TODO)
+    div.social-media-links
       ul
         li
-          = link_to 'News', root_path
+          = link_to fa_icon('facebook-square 2x'),
+                   'https://www.facebook.com/moonleerecords/',
+                   target: '_blank',
+                   title: 'Facebook'
         li
-          = link_to 'Releases', root_path
+          = link_to fa_icon('twitter 2x'),
+                   'https://twitter.com/moonleerecords/',
+                   target: '_blank',
+                   title: 'Twitter'
         li
-          = link_to 'Artists', root_path
+          = link_to fa_icon('instagram 2x'),
+                   'https://www.instagram.com/moonleerecords/',
+                   target: '_blank',
+                   title: 'Instagram'
         li
-          = link_to 'Shows', root_path
+          = link_to fa_icon('youtube-play 2x'),
+                   'https://www.youtube.com/user/moonleerecords/',
+                   target: '_blank',
+                   title: 'Youtube'
         li
-          = link_to 'About', root_path
-        li
-          = link_to 'Store', root_path
-        li
-          = link_to 'Booking', root_path
+          = link_to fa_icon('bandcamp 2x'),
+                   'https://moonleerecords.bandcamp.com/',
+                   target: '_blank',
+                   title: 'Bandcamp'
   = render partial: 'records/shared/newsletter'
-
-/ TODO: social links to fotter
-/ul
-/  li
-/    = link_to 'Facebook', 'https://www.facebook.com/moonleerecords/'
-/  li
-/    = link_to 'Twitter', 'https://twitter.com/moonleerecords'
-/  li
-/    = link_to 'Bandcamp', 'https://moonleerecords.bandcamp.com/'
-/  li
-/    = link_to 'Youtube', 'https://www.youtube.com/user/moonleerecords'
-/  li
-/    = link_to 'Instagram', 'https://www.instagram.com/moonleerecords/'
