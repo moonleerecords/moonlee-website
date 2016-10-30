@@ -45,6 +45,8 @@ gem 'turbolinks', '~> 5.x'
 gem 'geocoder'
 # Youtube
 gem 'yt', '~> 0.26.3'
+# Gibbon for Mailchimp
+gem 'gibbon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -196,6 +196,9 @@ GEM
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     geocoder (1.4.0)
+    gibbon (2.2.4)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     has_scope (0.7.0)
@@ -229,6 +232,7 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -410,6 +414,7 @@ DEPENDENCIES
   formtastic!
   friendly_id (~> 5.1.0)
   geocoder
+  gibbon
   inherited_resources!
   kaminari!
   letter_opener
