@@ -7,6 +7,7 @@
 @import 'base/variables.scss';
 @import 'base/globals.scss';
 @import 'components/slider.scss';
+@import 'components/newsletter.scss';
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
 @import 'records/events.scss';
@@ -25,12 +26,11 @@ body {
   text-indent: -9999px;
 }
 
-.container-main {
+.content {
   background-color: $color-white;
 
   section {
     padding: 0 50px 100px;
-    position: relative;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -46,6 +46,13 @@ body {
     padding: 75px 0;
     text-align: center;
     //TODO: adapt for smaller screens
+  }
+}
+
+.page-footer {
+
+  section {
+    padding: 0 50px 100px;
   }
 }
 
