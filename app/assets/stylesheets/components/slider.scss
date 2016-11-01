@@ -135,6 +135,20 @@
     &.active {
       opacity: 1;
     }
+
+    .release {
+      div, img {
+        float: left;
+      }
+
+      .release-info {
+        padding: 30px 40px;
+
+        span {
+          display: block;
+        }
+      }
+    }
   }
 
   .slider-control {

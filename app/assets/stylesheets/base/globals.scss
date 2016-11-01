@@ -53,6 +53,21 @@ section {
   text-transform: uppercase;
 }
 
+input[type=submit].link-button {
+  @extend .link-button;
+}
+
+.link-button-large {
+  @extend .link-button;
+  font-size: 25px;
+  padding: 16px 30px;
+  vertical-align: top;
+}
+
+input[type=submit].link-button-large {
+  @extend .link-button-large;
+}
+
 .icon-white-link {
   color: $color-white;
 }

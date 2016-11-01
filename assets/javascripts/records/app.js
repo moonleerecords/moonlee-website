@@ -1,13 +1,16 @@
 "use strict";
 
+import $ from 'jquery';
 import './releases.js';
 import {Slider} from '../components/slider.js';
+import {Newsletter} from '../components/newsletter.js';
 
 // variables
 var lastScrollTop = 0;
 var navContainer = document.querySelector('.nav-container');
 var sliderHero = document.querySelector('.slider-hero');
 var sliderReleases = document.querySelector('.slider-releases');
+var newsletterForm = document.querySelector('.newsletter-form');
 
 //import defaultMember from "module-name";
 //import * as name from "module-name";
@@ -20,8 +23,8 @@ var sliderReleases = document.querySelector('.slider-releases');
 //import "module-name";
 
 // sticky navigation
-window.addEventListener('scroll', function() {
-    var currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop)  - (document.clientTop || 0);
+window.addEventListener('scroll', function () {
+    var currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
 
     if (currentScrollTop > lastScrollTop) {
         navContainer.classList.add('nav-container-hidden');
@@ -32,19 +35,14 @@ window.addEventListener('scroll', function() {
     lastScrollTop = currentScrollTop;
 });
 
-// initialize sliders
+// initialize components
 new Slider(sliderHero);
-new Slider(sliderReleases, { autoplay: false });
-
-// slider.nextSlide();
+new Slider(sliderReleases, {autoplay: false});
+new Newsletter(newsletterForm);
 
 // export function welcome(name) {
 //     alert(greeter.greet(name));
 // }
-
-// console.log($('#test'));
-// var $ = require('jquery');
-// import $ from 'jquery';
 
 //EXAMPLE
 //import React from 'react';

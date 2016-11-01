@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
 
+  post 'newsletter/subscribe', to: 'newsletter#subscribe'
+
+  # records
   scope module: 'records', as: 'records' do
     resources :posts, only: [:index, :show]
     resources :artists, only: [:index, :show]
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
     get 'about', to: 'statics#about'
   end
 
-  # booking.moonleerecords.com
+  # booking
   constraints subdomain: 'booking' do
     scope module: 'booking', as: 'booking' do
       root to: 'home#index', as: 'root'
