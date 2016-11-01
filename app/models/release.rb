@@ -1,5 +1,6 @@
 class Release < ApplicationRecord
   extend FriendlyId
+
   friendly_id :title, use: :slugged
 
   default_scope { where(active: true).order('catalog_number DESC') }
@@ -33,11 +34,19 @@ class Release < ApplicationRecord
   }
   scope :latest, -> { internal_releases.where('release_date <= ?', Time.zone.today) }
 
-  def released_formats
+  def released_formats(separator = '/')
     released_formats = []
     release_types.each do |release_type|
       released_formats << release_type.release_format
     end
-    released_formats.join(' / ')
+    released_formats.join(" #{separator} ")
+  end
+
+  def main_buy_links
+    main_buy_links = Hash.new
+    release_types.each do |release_type|
+      main_buy_links[release_type.release_format] = release_type.release_type_main_buy_link.buy_url
+    end
+    main_buy_links
   end
 end
