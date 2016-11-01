@@ -5,11 +5,19 @@ section.newsletter
   = form_tag newsletter_subscribe_path, method: :post, class: 'newsletter-form', novalidate: true do
     div.email-group
       input.input-email name='email' type='email' value='' title='Your e-mail address' placeholder='Your e-mail address'
-      div.validation-message.error-message-email data-message='Invalid e-mail address' data-message-general='We are sorry, but something went wrong. Maybe you should try again.' data-message-empty="You cannot leave empty e-mail address, c'mon."
+      div.validation-message.error-message-email[
+        data-message='Invalid e-mail address'
+        data-message-general='We are sorry, but something went wrong. Maybe you should try again.'
+        data-message-empty="You cannot leave empty e-mail address, c'mon."
+        data-message-exists="Hey, looks like you are already signed up to our newsletter."
+      ]
         = 'Invalid e-mail address'
     div.country-group
       input.input-country name='country' type='text' value='' title='Your country' placeholder='Your country'
-      div.validation-message.error-message-country data-message='Invalid country name' data-message-empty='Give me at least something.'
+      div.validation-message.error-message-country[
+        data-message='Invalid country name'
+        data-message-empty='Give me at least something.'
+      ]
         = 'Invalid country name'
     div.button-group
       = submit_tag 'Subscribe', title: 'Subscribe', class: 'link-button-large button-subscribe'

@@ -74,9 +74,12 @@ export class Newsletter {
         this.successMessage.classList.add('active');
     }
 
-    showErrorMessage() {
+    showErrorMessage(response) {
         // show error message in the same div as the one for e-mail
         this.emailError.innerHTML = this.emailError.dataset.messageGeneral;
+        if (response.responseJSON.message == 'Member Exists') {
+            this.emailError.innerHTML = this.emailError.dataset.messageExists;
+        }
         this.emailError.classList.add('active');
     }
 

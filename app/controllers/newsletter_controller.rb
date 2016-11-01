@@ -1,5 +1,15 @@
 class NewsletterController < ApplicationController
   def subscribe
+    response = subscribe_member
+
+    respond_to do |format|
+      format.json { render json: response, status: response[:status_code] }
+    end
+  end
+
+  private
+
+  def subscribe_member
     gibbon = Gibbon::Request.new
 
     response = {
@@ -7,25 +17,20 @@ class NewsletterController < ApplicationController
       status_code: 200
     }
 
-    subscriber_email_address = params[:email]
-    subscriber_country = params[:country]
-
     begin
       gibbon.lists(ENV['MAILCHIMP_LIST_ID']).members.create(
         body: {
-          email_address: subscriber_email_address,
+          email_address: params[:email],
           status: 'subscribed',
-          merge_fields: { COUNTRY: subscriber_country }
+          merge_fields: { COUNTRY: params[:country] }
         }
       )
     rescue => e
-      response[:message] = e.message
-      response[:status_code] = 500
       Raven.capture_exception(e)
+      response[:message] = e.title
+      response[:status_code] = 500
     end
 
-    respond_to do |format|
-      format.json { render json: response, status: response[:status_code] }
-    end
+    response
   end
 end

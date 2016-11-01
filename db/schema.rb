@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.string   "genre"
     t.string   "formed"
     t.string   "disbanded"
+    t.string   "booking_agent"
+    t.string   "quote"
     t.integer  "songkick_id"
     t.boolean  "active",             default: true
     t.boolean  "records",            default: false
