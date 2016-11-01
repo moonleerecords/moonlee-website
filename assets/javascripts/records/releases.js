@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 // Events
 $('h1').on('click', (e) => {
     console.log('kwaje!');

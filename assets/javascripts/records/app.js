@@ -1,6 +1,5 @@
 "use strict";
 
-import $ from 'jquery';
 import './releases.js';
 import {Slider} from '../components/slider.js';
 import {Newsletter} from '../components/newsletter.js';
