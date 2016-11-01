@@ -34,14 +34,14 @@ namespace :social do
     if media_item['videos']
       social_post.video_media = media_item['videos']['low_resolution']['url']
     end
-    social_post.published_at = Time.at(media_item['created_time'].to_i).to_datetime
+    social_post.published_at = Time.zone.at(media_item['created_time'].to_i).to_datetime
     social_post
   end
 
   def find_or_create_youtube_post(video)
     social_post = SocialPost.find_or_create_by(external_id: video.id)
     social_post.source = SocialPost::SOURCE_YOUTUBE
-    social_post.url = sprintf('https://www.youtube.com/watch?v=%s', video.id)
+    social_post.url = format('https://www.youtube.com/watch?v=%s', video.id)
     social_post.text = video.title
     social_post.media = prepare_iframe(video.embed_html, video.id)
     social_post.published_at = video.published_at

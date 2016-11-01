@@ -1,16 +1,16 @@
 class SocialPost < ApplicationRecord
   default_scope { order('source ASC, published_at DESC') }
 
-  SOURCE_TWITTER = 'twitter'
-  SOURCE_INSTAGRAM = 'instagram'
-  SOURCE_YOUTUBE = 'youtube'
+  SOURCE_TWITTER = 'twitter'.freeze
+  SOURCE_INSTAGRAM = 'instagram'.freeze
+  SOURCE_YOUTUBE = 'youtube'.freeze
   SOURCES = [SOURCE_TWITTER, SOURCE_INSTAGRAM, SOURCE_YOUTUBE].freeze
 
   validates :source, inclusion: { in: SOURCES }, presence: true
   validates :url, presence: true
   validates :external_id, presence: true
   validates :published_at, presence: true
-  validates_uniqueness_of :external_id, :scope => :source
+  validates :external_id, uniqueness: true, scope: :source
 
   scope :youtube, -> { where(source: SOURCE_YOUTUBE) }
   scope :instagram, -> { where(source: SOURCE_INSTAGRAM) }

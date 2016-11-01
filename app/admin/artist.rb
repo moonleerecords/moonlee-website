@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Artist do
   menu label: 'Artists', priority: 3
   config.sort_order = 'name_asc'
@@ -67,6 +68,7 @@ ActiveAdmin.register Artist do
         image_tag(artist.image.url(:small))
       end
       row :description do
+        # rubocop:disable Rails/OutputSafety
         artist.description.html_safe
       end
       row :origin

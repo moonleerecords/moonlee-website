@@ -9,6 +9,7 @@ class NewsletterController < ApplicationController
 
   private
 
+  # rubocop:disable Metrics/MethodLength
   def subscribe_member
     gibbon = Gibbon::Request.new
 

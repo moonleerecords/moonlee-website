@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Slide do
   menu label: 'Sliders', priority: 5
   config.sort_order = 'position_asc'

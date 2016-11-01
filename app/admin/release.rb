@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Release do
   menu label: 'Releases', priority: 4
   decorate_with ReleaseDecorator

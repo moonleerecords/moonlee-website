@@ -77,7 +77,7 @@ Tests are also running on each build (Circle CI).
 We use Rubocop in order to find code inconsistency. Rubocop runs on every build (Circle CI) but you can also run it locally.
 
 ```
-$ rubocop -R
+$ rubocop -R -D
 ```
 
 #### Run
@@ -100,6 +100,13 @@ Password: password
 ```
 $ cap production deploy
 ```
+
+### Integrations
+
+* Instagram
+* Youtube
+* Songkick
+* Mailchimp
 
 ### Sections
 

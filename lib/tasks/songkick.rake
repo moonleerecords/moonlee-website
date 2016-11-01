@@ -20,7 +20,7 @@ namespace :songkick do
           save_or_destroy_event(event, songkick_event)
           puts "Updated event `#{event.songkick_url}` for #{artist.name}"
         rescue => e
-          raise Exceptions::SongkickError.new("An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_event.to_json}")
+          raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_event.to_json}"
         ensure
           next
         end

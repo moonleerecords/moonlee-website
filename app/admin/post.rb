@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Post do
   menu label: 'News', priority: 2
   config.sort_order = 'published_at_asc'

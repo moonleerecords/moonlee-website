@@ -43,7 +43,7 @@ class Release < ApplicationRecord
   end
 
   def main_buy_links
-    main_buy_links = Hash.new
+    main_buy_links = {}
     release_types.each do |release_type|
       main_buy_links[release_type.release_format] = release_type.release_type_main_buy_link.buy_url
     end
