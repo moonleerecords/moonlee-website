@@ -8,6 +8,8 @@ ActiveAdmin.register Artist do
                 :genre,
                 :formed,
                 :disbanded,
+                :booking_agent,
+                :quote,
                 :songkick_id,
                 :active,
                 :records,
@@ -32,6 +34,8 @@ ActiveAdmin.register Artist do
       f.input :genre
       f.input :formed
       f.input :disbanded
+      f.input :booking_agent
+      f.input :quote
       f.input :songkick_id, label: 'Songkick artist ID'
       f.input :records, label: 'Under the Moonlee records'
       f.input :booking, label: 'Under the Moonlee booking'
@@ -63,7 +67,6 @@ ActiveAdmin.register Artist do
         image_tag(artist.image.url(:small))
       end
       row :description do
-        # rubocop:disable Rails/OutputSafety
         artist.description.html_safe
       end
       row :origin
