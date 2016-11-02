@@ -40,6 +40,8 @@
   input {
     background-color: $color-limed-spruce;
     border: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: $color-white;
     font-size: 30px;
