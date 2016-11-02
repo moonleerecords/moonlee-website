@@ -64,8 +64,8 @@
       a {
         color: $color-black;
 
-        &:hover {
-          opacity: .6;
+        &:hover, &.active {
+          opacity: .5;
         }
       }
     }

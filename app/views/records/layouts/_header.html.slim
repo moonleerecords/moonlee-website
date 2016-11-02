@@ -3,16 +3,11 @@ header.page-header
     = link_to '', root_path, class: 'moonlee-logo moonlee-logo-header'
     nav.navigation.site-navigation
       ul
-        li
-          = link_to 'News', records_posts_path
-        li
-          = link_to 'Releases', records_releases_path
-        li
-          = link_to 'Artists', records_artists_path
-        li
-          = link_to 'Shows', records_events_path
-        li
-          = link_to 'About', records_about_path
+        = navigation_link('News', records_posts_path)
+        = navigation_link('Releases', records_releases_path)
+        = navigation_link('Artists', records_artists_path)
+        = navigation_link('Shows', records_events_path)
+        = navigation_link('About', records_about_path)
     nav.navigation.section-navigation
       ul
         li
@@ -20,7 +15,7 @@ header.page-header
             i.material-icons = 'airport_shuttle'
             = 'Booking'
         li
-          = link_to 'store.moonleerecords.com/', target: '_blank' do
+          = link_to '//store.moonleerecords.com/', target: '_blank' do
             i.material-icons = 'shopping_cart'
             = 'Store'
   = render partial: 'records/shared/slider', locals: { slides: @slides }
