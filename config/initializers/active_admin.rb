@@ -241,7 +241,17 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'TODO: Shop', priority: 6
+      menu.add label: 'TODO: Shop',
+               priority: 6
+    end
+  end
+
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Shows',
+               priority: 7,
+               url: 'https://tourbox.songkick.com',
+               html_options: { target: :blank, title: 'Links to Songkick' }
     end
   end
 
