@@ -4,10 +4,10 @@ class ReleaseType < ApplicationRecord
   ALLOWED_FORMATS = { 'cd' => 1, 'lp' => 2, '7inch' => 3, 'lp_cd' => 4, 'download' => 5, 'download_merch' => 6 }.stringify_keys.freeze
 
   belongs_to :release
-  has_many :release_type_main_buy_links, dependent: :destroy
+  has_one :release_type_main_buy_link, dependent: :destroy
   has_many :release_type_other_buy_links, dependent: :destroy
 
-  accepts_nested_attributes_for :release_type_main_buy_links, allow_destroy: true
+  accepts_nested_attributes_for :release_type_main_buy_link, allow_destroy: true
   accepts_nested_attributes_for :release_type_other_buy_links, allow_destroy: true
 
   validates :release, presence: true
