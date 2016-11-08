@@ -37,6 +37,15 @@ h3 {
   padding: 0;
 }
 
+h4 {
+  // TODO: define other titles
+}
+
+.article-identifier {
+  font-size: 15px;
+  font-weight: bold;
+}
+
 section {
   overflow: auto;
 }
@@ -44,6 +53,8 @@ section {
 .link-button {
   background-color: transparent;
   border: 5px solid $color-limed-spruce;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: $color-limed-spruce;
   display: block;
@@ -59,8 +70,8 @@ input[type=submit].link-button {
 
 .link-button-large {
   @extend .link-button;
-  font-size: 25px;
-  padding: 16px 30px;
+  font-size: 24px;
+  padding: 14px 30px;
   vertical-align: top;
 }
 

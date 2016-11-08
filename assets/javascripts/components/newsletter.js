@@ -15,7 +15,7 @@ export class Newsletter {
         this.newsletter.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            this.resetErrorMessages();
+            this.resetMessages();
 
             if (this.valid()) {
                 var newsletterFormData = $(this.newsletter).serialize();
@@ -48,7 +48,7 @@ export class Newsletter {
         }
 
         if (!this.validCountry()) {
-            this.countryError.innerHTML = this.countryInput.dataset.message;
+            this.countryError.innerHTML = this.countryError.dataset.message;
             if (!this.countryInput.value) {
                 this.countryError.innerHTML = this.countryError.dataset.messageEmpty;
             }
@@ -85,7 +85,7 @@ export class Newsletter {
         this.emailError.classList.add('active');
     }
 
-    resetErrorMessages() {
+    resetMessages() {
         this.successMessage.classList.remove('active');
         this.emailError.classList.remove('active');
         this.countryError.classList.remove('active');
