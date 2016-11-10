@@ -117,3 +117,9 @@ $ cap production deploy
 #### Booking
 
 [booking.moonleerecords.com](booking.moonleerecords.com)
+
+### Credits
+
+Frontend and backend development: [Dražen Perić](https://echobehind.wordpress.com/)
+
+Design: [Antonio Karača](https://www.behance.net/antoniokaraca)
