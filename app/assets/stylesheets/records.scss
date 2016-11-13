@@ -8,6 +8,7 @@
 @import 'base/globals.scss';
 @import 'components/slider.scss';
 @import 'components/newsletter.scss';
+@import 'components/social.scss';
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
 @import 'records/events.scss';
@@ -18,6 +19,10 @@
 body {
   background-color: $color-gold;
   font-family: 'Roboto', sans-serif;
+}
+
+section {
+  padding: 0 50px;
 }
 
 .moonlee-logo {
@@ -50,9 +55,13 @@ body {
 }
 
 .page-footer {
+  .social-boxes {
+    padding-bottom: 70px;
+  }
 
-  section {
-    padding: 0 50px 100px;
+  .footer-links {
+    padding-bottom: 30px;
+    padding-top: 30px;
   }
 }
 

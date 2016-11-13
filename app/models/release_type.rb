@@ -1,7 +1,21 @@
 class ReleaseType < ApplicationRecord
   default_scope { order('position ASC') }
 
-  ALLOWED_FORMATS = { 'cd' => 1, 'lp' => 2, '7inch' => 3, 'lp_cd' => 4, 'download' => 5, 'download_merch' => 6 }.stringify_keys.freeze
+  FORMAT_CD = 'cd'
+  FORMAT_LP = 'lp'
+  FORMAT_7INCH = '7inch'
+  FORMAT_LP_CD = 'lp_cd'
+  FORMAT_DIGITAL = 'digital'
+  FORMAT_DIGITAL_MERCH = 'digital_merch'
+
+  ALLOWED_FORMATS = {
+    FORMAT_CD => 1,
+    FORMAT_LP => 2,
+    FORMAT_7INCH => 3,
+    FORMAT_LP_CD => 4,
+    FORMAT_DIGITAL => 5,
+    FORMAT_DIGITAL_MERCH => 6
+  }.stringify_keys.freeze
 
   belongs_to :release
   has_one :release_type_main_buy_link, dependent: :destroy

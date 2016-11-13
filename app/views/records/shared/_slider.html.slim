@@ -5,7 +5,7 @@
                 title: slide.title,
                 target: '_blank',
                 class: "slide release-cover #{(index == 0 ? ' active' : '')}",
-                style: "background-image: url('#{slide.image.url(:large)}')" do
+                style: "background-image: url('#{slide.image.url(:large)}'); z-index: #{slides.length - index}" do
         h2.slide-title
           = slide.title
     - if slides.count > 1
@@ -16,3 +16,4 @@
         span.slider-arrow.slider-arrow-previous
       a.slider-control.slider-control-next href='#'
         span.slider-arrow.slider-arrow-next
+/TODO: slider touch

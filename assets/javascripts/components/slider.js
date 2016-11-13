@@ -49,9 +49,12 @@ export class Slider {
 
         this.changeButtonStatus(this.currentSlide, nextSlide);
 
+
         this.slides[this.currentSlide].classList.remove('active');
         this.currentSlide = nextSlide;
         this.slides[this.currentSlide].classList.add('active');
+
+        this.adjustZIndexes();
     }
 
     previousSlide() {
@@ -66,6 +69,12 @@ export class Slider {
         if (this.navigationButtons && this.navigationButtons.length > 0) {
             this.navigationButtons[currentSlide].classList.remove('active');
             this.navigationButtons[nextSlide].classList.add('active');
+        }
+    }
+
+    adjustZIndexes() {
+        for (var i = 0; i < this.slides.length; i++) {
+            this.slides[(this.currentSlide + i) % this.slides.length].style.zIndex = this.slides.length - i;
         }
     }
 

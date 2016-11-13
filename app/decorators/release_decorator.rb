@@ -2,7 +2,7 @@ class ReleaseDecorator < Draper::Decorator
   delegate_all
 
   def artists_names
-    object.artists.pluck(:name).join(' / ')
+    split_release? ? artists_names : object.artists.pluck(:name).join(' / ')
   end
 
   def split_release?

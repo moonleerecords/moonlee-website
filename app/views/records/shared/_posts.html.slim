@@ -10,9 +10,9 @@
       article.post-box
         = link_to records_post_path(post), title: post.title do
           div.post-image style="background-image: url('#{post.image.url(:medium)}')"
-          span.post-date
+          time.post-date datetime=post.published_at
             = localize(post.published_at.to_date)
-          span.post-title
+          h3.post-title
             = post.title
 
 / TODO: separate this into posts and post, move it somewhere else

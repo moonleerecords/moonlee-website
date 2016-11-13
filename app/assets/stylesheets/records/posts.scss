@@ -23,18 +23,15 @@
     }
 
     .post-date {
+      @extend .article-identifier;
       color: $color-limed-spruce;
       display: block;
-      font-size: 15px;
-      font-weight: bold;
       margin-top: 30px;
     }
 
     .post-title {
       color: $color-limed-spruce;
       display: block;
-      font-size: 30px;
-      font-weight: lighter;
       margin-top: 10px;
     }
   }

@@ -3,8 +3,10 @@ en:
   lp: "LP"
   7inch: '7"'
   download: "Download"
+  digital: "Digital"
   lp_cd: "LP + CD"
   download_merch: "Download + Merch"
+  digital_merch: "Digital + Merch"
   website: "Website"
   facebook: "Facebook"
   twitter: "Twitter"

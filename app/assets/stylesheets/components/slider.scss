@@ -1,8 +1,8 @@
 // basic slider
 .slider {
+  height: auto;
   list-style-type: none;
   margin: 0;
-  min-height: 450px;
   padding: 0;
   position: relative;
   width: 100%;
@@ -61,7 +61,6 @@
 
 // hero slider
 .slider-hero {
-  min-height: 550px;
 
   .slide {
     background: no-repeat center center;
@@ -86,7 +85,6 @@
       text-align: center;
       top: 60%;
       width: 100%;
-      //TODO: adapt for smaller screens
     }
   }
 
@@ -122,30 +120,65 @@
 
 // releases slider
 .slider-releases {
-  min-height: 380px;
+  height: 380px;
 
   .slide {
-    opacity: 0;
-    padding-left: 10px;
+    border: 5px solid $color-gold;
+    height: 380px;
+    left: 70%;
     -moz-transition: opacity 1s;
     -o-transition: opacity 1s;
     -webkit-transition: opacity 1s;
     transition: opacity 1s;
+    width: 68%;
+    //TODO: hide text from the next one in slide
 
     &.active {
-      opacity: 1;
+      border: 5px solid $color-white;
+      left: 0;
     }
 
     .release {
-      div, img {
+      .release-cover {
         float: left;
+        height: 100%;
       }
 
       .release-info {
+        box-sizing: border-box;
+        float: left;
         padding: 30px 40px;
+        width: 50%;
 
-        span {
+        .release-number {
+          @extend .article-identifier;
           display: block;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+        }
+
+        .release-artists {
+          font-weight: bold;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+          word-wrap: break-word;
+        }
+
+        .release-title {
+          margin-bottom: 20px;
+        }
+
+        .release-buy-links {
+
+          .buy-link {
+            margin-right: 20px;
+
+            i {
+              margin-right: 5px;
+              margin-top: -3px;
+              vertical-align: middle;
+            }
+          }
         }
       }
     }
