@@ -3,21 +3,29 @@ section.social-boxes
   div.section-heading
     h2.section-title
       = title
-  - social_posts.each_with_index do |social_post, index|
-    // youtube x 2
-    - if index == 0 || index == 5
-      article.social-box
+  // twitter x1
+  article.social-box
+    div.medium-box.twitter-box
+      = link_to 'https://twitter.com/moonleerecords/', title: social_posts[0].text, target: '_blank' do
         div.social-content
-          = raw(social_post.media)
-    // instagram x 4
-    - elsif index == 1
-      article.social-box
-        - social_posts[1..social_posts.count-2].each do |social_post|
-          div.small-box
-            = link_to social_post.url, title: social_post.text, target: '_blank' do
-              div.social-content style="background-image: url(#{social_post.media})"
-              = link_to fa_icon('instagram 2x', text: 'Instagram'),
-                       social_post.url,
-                       class: 'social-type icon-yellow-link',
-                       target: '_blank',
-                       title: social_post.text
+          = raw(social_posts[0].text)
+        = link_to fa_icon('twitter 2x', text: 'Twitter'),
+                 'https://twitter.com/moonleerecords/',
+                 class: 'social-type icon-yellow-link',
+                 target: '_blank',
+                 title: social_posts[0].text
+    // instagram x2
+    - social_posts[1..2].each do |instagram|
+      div.small-box
+        = link_to instagram.url, title: instagram.text, target: '_blank' do
+          div.social-content style="background-image: url(#{instagram.media})"
+          = link_to fa_icon('instagram 2x', text: 'Instagram'),
+                   instagram.url,
+                   class: 'social-type icon-yellow-link',
+                   target: '_blank',
+                   title: instagram.text
+  - social_posts[3..social_posts.count-1].each do |youtube|
+    // youtube x2
+    article.social-box
+      div.social-content
+        = raw(youtube.media)

@@ -10,7 +10,12 @@ every 6.hours do
   rake 'social:fetch_instagram'
 end
 
-every 6.hours do
+every 6.hours, at: 10 do
   runner 'Fetch videos from Youtube'
   rake 'social:fetch_youtube'
+end
+
+every 6.hours, at: 20 do
+  runner 'Fetch posts from Twitter'
+  rake 'social:fetch_twitter'
 end

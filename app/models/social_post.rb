@@ -12,8 +12,9 @@ class SocialPost < ApplicationRecord
   validates :published_at, presence: true
   validates :external_id, uniqueness: { scope: :source }
 
-  scope :youtube, -> { where(source: SOURCE_YOUTUBE) }
   scope :instagram, -> { where(source: SOURCE_INSTAGRAM) }
+  scope :twitter, -> { where(source: SOURCE_TWITTER )}
+  scope :youtube, -> { where(source: SOURCE_YOUTUBE) }
 
   def self.sources
     SOURCES

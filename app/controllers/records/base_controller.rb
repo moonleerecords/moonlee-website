@@ -23,7 +23,7 @@ module Records
     end
 
     def social_posts
-      @social_posts = SocialPost.youtube.take(1) + SocialPost.instagram.take(4) + SocialPost.youtube.offset(1).take(1)
+      @social_posts = SocialPost.twitter.take(1) + SocialPost.instagram.take(2) + SocialPost.youtube.take(2)
     end
   end
 end

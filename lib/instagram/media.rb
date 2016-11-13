@@ -12,7 +12,15 @@ module Instagram
       media_url = format(MEDIA_ENDPOINT, @username)
       media_uri = URI(media_url)
 
-      JSON.parse(Net::HTTP.get(media_uri))
+      response = nil
+      5.times do
+        begin
+          response = JSON.parse(Net::HTTP.get(media_uri))
+        rescue StandardError
+          next
+        end
+      end
+      response
     end
   end
 end

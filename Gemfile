@@ -33,8 +33,6 @@ gem 'paperclip'
 gem 'font-awesome-rails'
 # whenever for cron jobs
 gem 'whenever', require: false
-# songkick API wrapper
-gem 'songkickr'
 # countries
 gem 'countries', require: 'countries/global'
 # for cleaner urls
@@ -43,8 +41,12 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'turbolinks', '~> 5.x'
 # Geo
 gem 'geocoder'
+# songkick API wrapper
+gem 'songkickr'
 # Youtube
 gem 'yt', '~> 0.26.3'
+# Twitter
+gem 'twitter'
 # Gibbon for Mailchimp
 gem 'gibbon'
 

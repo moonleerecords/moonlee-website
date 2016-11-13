@@ -26,7 +26,7 @@ class NewsletterController < ApplicationController
           merge_fields: { COUNTRY: params[:country] }
         }
       )
-    rescue => e
+    rescue StandardError => e
       Raven.capture_exception(e)
       response[:message] = e.title
       response[:status_code] = 500

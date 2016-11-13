@@ -1,0 +1,67 @@
+.social-boxes {
+
+  .social-box {
+    display: block;
+    float: left;
+    height: 400px;
+    margin-right: 2%;
+    overflow: hidden;
+    width: 32%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    .inner-box {
+      float: left;
+      height: 47%;
+      margin-bottom: 6%;
+      margin-right: 6%;
+      position: relative;
+      width: 100%;
+
+      &:hover .icon-yellow-link {
+        color: $color-white;
+      }
+    }
+
+    .medium-box {
+      @extend .inner-box;
+
+      &.twitter-box {
+        background-color: $color-summer-green;
+      }
+
+      .social-content {
+        padding: 20px;
+      }
+    }
+
+    .small-box {
+      @extend .inner-box;
+      margin-bottom: 0;
+      width: 47%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .social-content {
+      background: no-repeat center center;
+      background-size: cover;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-weight: lighter;
+      height: 100%;
+      width: 100%;
+    }
+
+    .social-type {
+      bottom: 10px;
+      left: 20px;
+      position: absolute;
+      z-index: 10;
+    }
+  }
+}

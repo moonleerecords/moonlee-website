@@ -5,10 +5,12 @@ namespace :social do
 
     media = instagram_media.media
 
-    media['items'].first(4).each do |media_item|
-      social_post = find_or_create_instagram_post(media_item)
-      social_post.save!
-      puts "Updated `#{social_post.url}` from Instagram"
+    if media
+      media['items'].first(4).each do |media_item|
+        social_post = find_or_create_instagram_post(media_item)
+        social_post.save!
+        puts "Updated `#{social_post.url}` from Instagram"
+      end
     end
   end
 
@@ -20,6 +22,19 @@ namespace :social do
       social_post = find_or_create_youtube_post(video)
       social_post.save!
       puts "Updated `#{social_post.url}` from Youtube"
+    end
+  end
+
+  desc 'Fetch latest posts from Twitter'
+  task fetch_twitter: :environment do
+    twitter = Twitter::TwitterClient.new
+
+    timeline = twitter.client.user_timeline(15644443, { count: 5 })
+
+    timeline.each do |post|
+      social_post = find_or_create_twitter_post(post)
+      social_post.save!
+      puts "Updated `#{social_post.url}` from Twitter"
     end
   end
 
@@ -45,6 +60,15 @@ namespace :social do
     social_post.text = video.title
     social_post.media = prepare_iframe(video.embed_html, video.id)
     social_post.published_at = video.published_at
+    social_post
+  end
+
+  def find_or_create_twitter_post(post)
+    social_post = SocialPost.find_or_create_by(external_id: post.id)
+    social_post.source = SocialPost::SOURCE_TWITTER
+    social_post.url = format('https://www.twitter.com/statuses/%s', post.id)
+    social_post.text = post.text
+    social_post.published_at = post.created_at
     social_post
   end
 
