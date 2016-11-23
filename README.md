@@ -86,6 +86,16 @@ $ rubocop -R -D
 $ rails s
 ```
 
+#### Random dev stuff
+
+* [How to resize existing paperclip images?](http://stackoverflow.com/a/2977610)
+
+##### Rebuild everything
+
+```
+rake db:drop db:create db:migrate db:seed songkick:fetch_upcoming_events social:fetch_instagram social:fetch_youtube social:fetch_twitter
+```
+
 ### Administration (local environment)
 
 Go to `localhost:3000\admin`
