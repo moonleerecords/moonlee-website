@@ -19,7 +19,7 @@ namespace :songkick do
           event = find_or_create_event(songkick_event, venue, artist)
           save_or_destroy_event(event, songkick_event)
           puts "Updated event `#{event.songkick_url}` for #{artist.name}"
-        rescue => e
+        rescue StandardError => e
           raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_event.to_json}"
         ensure
           next
@@ -28,7 +28,7 @@ namespace :songkick do
     end
 
     # TODO: deal with festival end date and date when band is actually performing
-    # TODO: remove unexisting event
+    # TODO: remove unexisting event - how?
     # TODO: write test
   end
 

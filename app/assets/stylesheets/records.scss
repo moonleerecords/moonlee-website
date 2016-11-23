@@ -6,6 +6,7 @@
 @import 'base/mixins.scss';
 @import 'base/variables.scss';
 @import 'base/globals.scss';
+@import 'base/grids.scss';
 @import 'components/slider.scss';
 @import 'components/newsletter.scss';
 @import 'components/social.scss';
@@ -50,7 +51,11 @@ section {
     color: $color-limed-spruce;
     padding: 75px 0;
     text-align: center;
-    //TODO: adapt for smaller screens
+
+    &.section-title-page {
+      padding: 150px 0 75px;
+      // TODO: need design
+    }
   }
 }
 

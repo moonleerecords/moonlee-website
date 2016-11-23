@@ -10,7 +10,7 @@ module ReleasesHelper
   def release_icon(release_format)
     release_icon = 'album'
     # TODO: other icons - vinyl, 7inch, lp + cd, digital + merch
-    if release_format == ReleaseType::FORMAT_DIGITAL || ReleaseType::FORMAT_DIGITAL_MERCH
+    if release_format == ReleaseType::FORMAT_DIGITAL || release_format == ReleaseType::FORMAT_DIGITAL_MERCH
       release_icon = 'library_music'
     end
     release_icon

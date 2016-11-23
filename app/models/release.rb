@@ -13,9 +13,8 @@ class Release < ApplicationRecord
   accepts_nested_attributes_for :release_types, allow_destroy: true
   accepts_nested_attributes_for :release_reviews, allow_destroy: true
 
-  # TODO: change styles
   has_attached_file :cover,
-                    styles: { large: '1250x1250>', medium: '380x380>', small: '100x100>' },
+                    styles: { large: '1250x1250>', medium: '450x450>', small: '100x100>' },
                     default_url: '/assets/missing.png'
 
   validates :title, presence: true

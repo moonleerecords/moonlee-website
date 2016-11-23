@@ -1,10 +1,11 @@
+- more_button = false if local_assigns[:more_button].nil?
 - unless releases.nil? || releases.empty?
-  section.releases-boxes
+  section.releases-slider
     div.section-heading
       h2.section-title
         = title
-      - if more_button
-        = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
+        - if more_button
+          = link_to 'See all releases', records_posts_path, class: 'link-button more-releases'
     div.slider.slider-releases
       - releases.each_with_index do |release, index|
         - release = release.decorate

@@ -1,10 +1,62 @@
-.releases-boxes {
+.release-info {
+  box-sizing: border-box;
+  float: left;
+
+  .release-number {
+    @extend .article-identifier;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .release-artists {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    word-wrap: break-word;
+  }
+
+  .release-title {
+    margin-bottom: 20px;
+  }
+
+  .release-buy-links {
+
+    .buy-link {
+      // TODO: make it look like a link
+      margin-right: 20px;
+
+      i {
+        margin-right: 5px;
+        margin-top: -3px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.releases-slider {
   background-color: $color-gold;
   overflow: hidden;
 
   .more-releases {
+    @include vertical-align(27px);
     position: absolute;
     right: 0;
-    @include vertical-align(27px);
+  }
+
+  .release-info {
+    padding: 30px 40px;
+    width: 50%;
+  }
+}
+
+.releases-list {
+  .release-cover {
+    width: 100%;
+  }
+
+  .release-info {
+    padding-top: 30px;
   }
 }

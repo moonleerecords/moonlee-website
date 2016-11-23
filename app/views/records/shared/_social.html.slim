@@ -1,31 +1,31 @@
-- unless social_posts.nil? || social_posts.empty?
-section.social-boxes
-  div.section-heading
-    h2.section-title
-      = title
-  // twitter x1
-  article.social-box
-    div.medium-box.twitter-box
-      = link_to 'https://twitter.com/moonleerecords/', title: social_posts[0].text, target: '_blank' do
-        div.social-content
-          = raw(social_posts[0].text)
-        = link_to fa_icon('twitter 2x', text: 'Twitter'),
-                 'https://twitter.com/moonleerecords/',
-                 class: 'social-type icon-yellow-link',
-                 target: '_blank',
-                 title: social_posts[0].text
-    // instagram x2
-    - social_posts[1..2].each do |instagram|
-      div.small-box
-        = link_to instagram.url, title: instagram.text, target: '_blank' do
-          div.social-content style="background-image: url(#{instagram.media})"
-          = link_to fa_icon('instagram 2x', text: 'Instagram'),
-                   instagram.url,
+- unless social_posts.nil? || social_posts.empty? || social_posts.count < 5
+  section.social-boxes
+    div.section-heading
+      h2.section-title
+        = title
+    // twitter x1
+    article.social-box
+      div.medium-box.twitter-box
+        = link_to 'https://twitter.com/moonleerecords/', title: social_posts[0].text, target: '_blank' do
+          div.social-content
+            = truncate(raw(social_posts[0].text), length: 160)
+          = link_to fa_icon('twitter 2x', text: 'Twitter'),
+                   'https://twitter.com/moonleerecords/',
                    class: 'social-type icon-yellow-link',
                    target: '_blank',
-                   title: instagram.text
-  - social_posts[3..social_posts.count-1].each do |youtube|
-    // youtube x2
-    article.social-box
-      div.social-content
-        = raw(youtube.media)
+                   title: social_posts[0].text
+      // instagram x2
+      - social_posts[1..2].each do |instagram|
+        div.small-box
+          = link_to instagram.url, title: instagram.text, target: '_blank' do
+            div.social-content style="background-image: url(#{instagram.media})"
+            = link_to fa_icon('instagram 2x', text: 'Instagram'),
+                     instagram.url,
+                     class: 'social-type icon-yellow-link',
+                     target: '_blank',
+                     title: instagram.text
+    - social_posts[3..social_posts.count-1].each do |youtube|
+      // youtube x2
+      article.social-box
+        div.social-content
+          = raw(youtube.media)

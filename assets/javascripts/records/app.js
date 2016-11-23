@@ -4,6 +4,8 @@ import './releases.js';
 import {Slider} from '../components/slider.js';
 import {Newsletter} from '../components/newsletter.js';
 
+// TODO: debugging jspm / system.js...fuck, shit, aaaaaaaa
+
 // variables
 var lastScrollTop = 0;
 var navContainer = document.querySelector('.nav-container');
@@ -35,9 +37,17 @@ window.addEventListener('scroll', function () {
 });
 
 // initialize components
-new Slider(sliderHero);
-new Slider(sliderReleases, {autoplay: false});
-new Newsletter(newsletterForm);
+if (sliderHero) {
+    new Slider(sliderHero);
+}
+
+if (sliderReleases) {
+    new Slider(sliderReleases, {autoplay: false});
+}
+
+if (newsletterForm) {
+    new Newsletter(newsletterForm);
+}
 
 // export function welcome(name) {
 //     alert(greeter.greet(name));

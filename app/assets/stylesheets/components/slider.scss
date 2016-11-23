@@ -138,49 +138,14 @@
       left: 0;
     }
 
+    // TODO: move
     .release {
       .release-cover {
         float: left;
         height: 100%;
+        width: 380px;
       }
 
-      .release-info {
-        box-sizing: border-box;
-        float: left;
-        padding: 30px 40px;
-        width: 50%;
-
-        .release-number {
-          @extend .article-identifier;
-          display: block;
-          margin-bottom: 5px;
-          text-transform: uppercase;
-        }
-
-        .release-artists {
-          font-weight: bold;
-          margin-bottom: 5px;
-          text-transform: capitalize;
-          word-wrap: break-word;
-        }
-
-        .release-title {
-          margin-bottom: 20px;
-        }
-
-        .release-buy-links {
-
-          .buy-link {
-            margin-right: 20px;
-
-            i {
-              margin-right: 5px;
-              margin-top: -3px;
-              vertical-align: middle;
-            }
-          }
-        }
-      }
     }
   }
 

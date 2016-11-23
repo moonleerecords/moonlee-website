@@ -58,8 +58,8 @@
 
     .site-navigation {
       margin: 0 auto;
-      position: relative;
       @include vertical-align(10px);
+      position: relative;
 
       a {
         color: $color-black;
@@ -71,10 +71,9 @@
     }
 
     .section-navigation {
+      @include vertical-align(10px);
       position: absolute;
       right: 50px;
-      top: 0;
-      @include vertical-align(10px);
 
       a {
         color: $color-black;

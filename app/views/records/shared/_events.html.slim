@@ -4,8 +4,8 @@
     div.section-heading
       h2.section-title
         = title
-      - if more_button
-        = link_to 'See all shows', records_events_path, class: 'link-button more-events'
+        - if more_button
+          = link_to 'See all shows', records_events_path, class: 'link-button more-events'
     - events.each do |event|
       article.event-box
         div.event-date

@@ -1,5 +1,4 @@
 .social-boxes {
-
   .social-box {
     display: block;
     float: left;
@@ -14,7 +13,8 @@
 
     .inner-box {
       float: left;
-      height: 47%;
+      height: 48%;
+      //TODO: this does not work on big screens
       margin-bottom: 6%;
       margin-right: 6%;
       position: relative;
