@@ -1,8 +1,14 @@
-h1 Artists
-- if @artists.count > 0
-  h2 List of Artists
-  ul
+- unless @artists.nil? || @artists.empty?
+  section.items-list.artists-list
     - @artists.each do |artist|
-      li
-        = image_tag artist.image.url(:small)
-        = link_to artist.name, records_artist_path(artist)
+      article.item-column.marginless.column-1-2
+        = link_to records_artist_path(artist),
+                  class: 'artist-box',
+                  style: "background-image: url('#{artist.image.url(:medium)}');",
+                  alt: artist.name,
+                  title: artist.name do
+          h2.artist-name
+            = artist.name
+          h3.artist-quote
+            = artist.quote
+/ TODO: separate active and disbanded artists

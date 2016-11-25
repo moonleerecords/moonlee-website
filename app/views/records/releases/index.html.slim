@@ -1,8 +1,5 @@
 - unless @releases.nil? || @releases.empty?
-  section.releases-list.items-list
-    div.section-heading
-      h2.section-title.section-title-page
-        = 'Releases'
+  section.items-list.releases-list
     - @releases.each do |release|
       - release = release.decorate
       article.item-column.column-1-3

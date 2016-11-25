@@ -12,18 +12,23 @@
 @import 'components/social.scss';
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
+@import 'records/artists.scss';
 @import 'records/events.scss';
 @import 'records/posts.scss';
 @import 'records/releases.scss';
 @import 'records/store.scss';
 
 body {
-  background-color: $color-gold;
+  background-color: $color-buttery-white;
   font-family: 'Roboto', sans-serif;
 }
 
 section {
   padding: 0 50px;
+}
+
+.container {
+  background-color: $color-gold;
 }
 
 .moonlee-logo {
