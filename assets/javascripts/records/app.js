@@ -27,7 +27,7 @@ var newsletterForm = document.querySelector('.newsletter-form');
 window.addEventListener('scroll', function () {
     var currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
 
-    if (currentScrollTop > lastScrollTop) {
+    if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
         navContainer.classList.add('nav-container-hidden');
     } else {
         navContainer.classList.remove('nav-container-hidden');

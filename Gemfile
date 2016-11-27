@@ -50,6 +50,8 @@ gem 'twitter'
 # Gibbon for Mailchimp
 gem 'gibbon'
 
+# TODO: compressions
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

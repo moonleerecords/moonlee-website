@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.text     "description"
     t.string   "origin"
     t.string   "genre"
-    t.string   "formed"
-    t.string   "disbanded"
+    t.integer  "formed"
+    t.integer  "disbanded"
     t.string   "booking_agent"
     t.string   "quote"
     t.integer  "songkick_id"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20161008171548) do
   create_table "artists_releases", id: false, force: :cascade do |t|
     t.integer "artist_id"
     t.integer "release_id"
+    t.index ["artist_id", "release_id"], name: "index_artists_releases_on_artist_id_and_release_id", unique: true, using: :btree
     t.index ["artist_id"], name: "index_artists_releases_on_artist_id", using: :btree
     t.index ["release_id"], name: "index_artists_releases_on_release_id", using: :btree
   end
@@ -211,7 +212,7 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.text     "tracklist"
     t.string   "for_fans_of"
     t.string   "bandcamp_url"
-    t.text     "bandcamp_player"
+    t.string   "bandcamp_id"
     t.boolean  "internal",           default: true
     t.boolean  "active",             default: true
     t.datetime "created_at",                        null: false

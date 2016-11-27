@@ -2,13 +2,17 @@
 .items-list {
   clear: both;
   margin: 0;
-  padding: 0;
 
   .item-column {
     display: block;
     float: left;
-    margin: 0 0 5% 1.8%;
+    //margin: 0 0 5% 1.8%;
+    margin: 0 0 0 1.8%;
     position: relative;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
 
     &.marginless {
       margin: 0;
@@ -54,6 +58,90 @@
   width: 50%;
 }
 
+.column-9-9 {
+  width: 100%;
+}
+
+.column-8-9 {
+  width: 88.68%;
+}
+
+.column-7-9 {
+  width: 77.37%;
+}
+
+.column-6-9 {
+  width: 66.06%;
+}
+
+.column-5-9 {
+  width: 54.75%;
+}
+
+.column-4-9 {
+  width: 43.44%;
+}
+
+.column-3-9 {
+  width: 32.13%;
+}
+
+.column-2-9 {
+  width: 20.82%;
+}
+
+.column-1-9 {
+  width: 9.511%;
+}
+
+.column-12-12 {
+  width: 100%;
+}
+
+.column-11-12 {
+  width: 91.51%;
+}
+
+.column-10-12 {
+  width: 83.03%;
+}
+
+.column-9-12 {
+  width: 74.55%;
+}
+
+.column-8-12 {
+  width: 66.06%;
+}
+
+.column-7-12 {
+  width: 57.58%;
+}
+
+.column-6-12 {
+  width: 49.1%;
+}
+
+.column-5-12 {
+  width: 40.61%;
+}
+
+.column-4-12 {
+  width: 32.13%;
+}
+
+.column-3-12 {
+  width: 23.65%;
+}
+
+.column-2-12 {
+  width: 15.16%;
+}
+
+.column-1-12 {
+  width: 6.683%;
+}
+
 @include respond-to(small) {
   .item-column {
     margin: 1% 0;
@@ -64,4 +152,6 @@
   .column-1-3 {
     width: 100%;
   }
+
+  // TODO: other
 }

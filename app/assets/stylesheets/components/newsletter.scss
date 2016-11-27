@@ -1,12 +1,11 @@
-.newsletter-form {
+.newsletter {
   background-color: $color-gorse;
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  margin-left: -50px;
-  opacity: 1;
   padding: 50px;
+}
+
+.newsletter-form {
+  opacity: 1;
+  overflow: hidden;
   position: relative;
   width: 100%;
 
@@ -15,7 +14,6 @@
   }
 
   div {
-    flex: 1;
     position: relative;
     -moz-transition: opacity .5s;
     -o-transition: opacity .5s;
@@ -23,21 +21,6 @@
     transition: opacity .5s;
     vertical-align: middle;
     z-index: 5;
-
-    &.title-group {
-      flex: 2;
-      margin-right: 2%;
-    }
-
-    &.email-group {
-      flex: 3;
-      margin-right: 1%;
-    }
-
-    &.country-group {
-      flex: 3;
-      margin-right: 1%;
-    }
 
     &.hidden {
       opacity: 0;
@@ -60,6 +43,7 @@
 
     &.button-subscribe {
       width: 100%;
+      padding: 14px 15px;
     }
 
     &:focus {
@@ -101,3 +85,4 @@
     }
   }
 }
+

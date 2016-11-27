@@ -1,8 +1,8 @@
 section.newsletter
-  = form_tag newsletter_subscribe_path, method: :post, class: 'newsletter-form', novalidate: true do
-    div.title-group
+  = form_tag newsletter_subscribe_path, method: :post, class: 'newsletter-form items-list', novalidate: true do
+    div.title-group.item-column.column-3-12
       h2.section-title = 'Newsletter'
-    div.email-group
+    div.email-group.item-column.column-4-12
       input.input-email name='email' type='email' value='' title='Your e-mail address' placeholder='Your e-mail address'
       div.validation-message.error-message-email[
         data-message='Invalid e-mail address'
@@ -11,14 +11,14 @@ section.newsletter
         data-message-exists="Hey, looks like you are already signed up to our newsletter."
       ]
         = 'Invalid e-mail address'
-    div.country-group
+    div.country-group.item-column.column-3-12
       input.input-country name='country' type='text' value='' title='Your country' placeholder='Your country'
       div.validation-message.error-message-country[
         data-message='Invalid country name'
         data-message-empty='Give me at least something'
       ]
         = 'Invalid country name'
-    div.button-group
+    div.button-group.item-column.column-2-12
       = submit_tag 'Subscribe', title: 'Subscribe', class: 'link-button-large button-subscribe'
     div.validation-message.success-message
       = 'You have been added to our newsletter.'

@@ -1,25 +1,21 @@
-# TODO: update info, update info style
-# TODO: add complete description
-# TODO: update description style
-# TODO: buy links, reviews etc.
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-# TODO: remove this before official release. be sure to drop database and add user by hand
-# TODO: main image in admin is not working
-# TODO: add album types (cd, download etc)
+require 'csv'
+require File.expand_path('../seeds/import', __FILE__)
 
-# Analena
-analena = Artist.create(
-  name: 'Analena',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/analena_01.jpg"),
-  description: 'TODO',
-  origin: 'Croatia, Slovenia',
-  songkick_id: 399989,
-  active: true,
-  formed: '1997',
-  records: true,
-  booking: true,
-  genre: 'post-punk / screamo / emo'
-)
+# TODO: buy links, reviews etc.
+
+# TODO: remove this before official release. be sure to drop database and add user by hand
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+# TODO: main image in admin is not working
+# TODO: add album types (cd, digital etc)
+
+importer = Import::Importer.new
+
+importer.artists
+importer.releases
+importer.artist_releases
+
+exit
+
 ExternalLink.create(
   artist: analena,
   url_type: 'lastfm',
@@ -77,108 +73,7 @@ ArtistMember.create(
   member: dubravko_dragojevic,
   role: 'drums'
 )
-carbon_based = Release.create(
-  title: 'Carbon Based',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_001.jpg"),
-  catalog_number: 'HMRL001',
-  release_date: Date.new(2004, 11, 15),
-  description: "In the case of ANALENA, one man’s hardcore is another man’s noise is another man’s punk. Diverse but steady, from bittersweet melodies and blistering hooks to pummeling and aggressive rhythms, ANALENA covers all the bases. Carbon Based is their’s second album, recorded and produced at Kozmo studio, Zagreb, by the members of the band themselves, with the noteworthy assistance provided by members of Lunar, another remarkable and friendly band from Zagreb. Carbon Based is a statement by a smart and mature band, an honest expression of determination and passion in full force. ANALENA follows its own instinct by merging charming melodies with intricate and shimmering rhythmic relentlessness. Stunning and flawless instrumentation combined with witty and poetic slogan-free lyrics takes care of the rest. See you in the pit or see you with your headphones on. You are invited. Until then, as the band itself proclaims in the moving Work In Progress: “Stay alert!”",
-  tracklist: "1. Carbon Based Organisms<br>2. Dream Amplifiers<br>3. Work In Progress<br>4. Wiederholungszwang<br>5. Notturno<br>6. Spilt Milk<br>7. In Theory And Practice<br>8. From Automatic To Manual<br>9. Ropewalk Adventures<br>10. Rainy Night In Warsaw",
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/carbon-based',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1343652965/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=none/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/carbon-based">Carbon Based by ANALENA</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: analena,
-  release: carbon_based
-)
 
-# Bilk
-bilk = Artist.create(
-  name: 'Bilk',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/bilk_01.jpg"),
-  description: 'TODO: ',
-  origin: 'Croatia',
-  active: false,
-  formed: '2007',
-  records: true,
-  booking: false,
-  genre: 'breakbeat / drum and bass'
-)
-edi_grubisic_cipla = Member.create(
-  name: 'Edi Grubišić Cipal'
-)
-tin_oberman = Member.create(
-  name: 'Tin Oberman'
-)
-luka_vrbanic = Member.create(
-  name: 'Luka Vrbanic'
-)
-ArtistMember.create(
-  artist: bilk,
-  member: edi_grubisic_cipla,
-  role: 'drums'
-)
-ArtistMember.create(
-  artist: bilk,
-  member: tin_oberman,
-  role: 'synths, guitar'
-)
-ArtistMember.create(
-  artist: bilk,
-  member: luka_vrbanic,
-  role: 'bass'
-)
-ExternalLink.create(
-  artist: bilk,
-  url_type: 'website',
-  url: 'http://www.bilkspace.com/'
-)
-ExternalLink.create(
-  artist: bilk,
-  url_type: 'facebook',
-  url: 'https://www.facebook.com/bilkspace/'
-)
-ExternalLink.create(
-  artist: bilk,
-  url_type: 'lastfm',
-  url: 'http://www.last.fm/music/Bilk'
-)
-ExternalLink.create(
-  artist: bilk,
-  url_type: 'discogs',
-  url: 'https://www.discogs.com/artist/1817099-Bilk'
-)
-this_bilk_is_radioactive = Release.create(
-  title: 'This Bilk Is Radioactive',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_005.jpg"),
-  catalog_number: 'HMRL005',
-  release_date: Date.new(2006, 6, 3),
-  description: "TODO:",
-  tracklist: "1. Beyonce<br>2. Sunchano<br>3. Objects<br>4. Gone To Texas<br>5. Terminator<br>6. Phantom<br>7. Bloody Bill Anderson<br>8. R2D2",
-  for_fans_of: '',
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/this-bilk-is-radioactive',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3423553635/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/this-bilk-is-radioactive">This Bilk Is Radioactive by BILK</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: bilk,
-  release: this_bilk_is_radioactive
-)
-
-# Bernays Propaganda
-bernays_propaganda = Artist.create(
-  name: 'Bernays Propaganda',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/bernays_propaganda_01.jpg"),
-  description: 'TODO: ',
-  origin: 'Macedonia',
-  songkick_id: 2459271,
-  active: true,
-  formed: '2007',
-  records: true,
-  booking: true,
-  genre: 'post-punk / indie / alternative rock'
-)
 kristina_gorovska = Member.create(
   name: 'Kristina Gorovska'
 )
@@ -223,36 +118,55 @@ ExternalLink.create(
   url_type: 'discogs',
   url: 'https://www.discogs.com/artist/1393536-Bernays-Propaganda'
 )
-politika = Release.create(
-  title: 'Politika',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_039.jpg"),
-  catalog_number: 'HMRL039',
-  release_date: Date.new(2016, 3, 14),
-  description: "<p>The politically engaged Macedonian post-punk band Bernays Propaganda, one of the most hard working live acts and prolific alternative forces in the region, return with the new album “Politika”. Their fourth album in a row indicates a dramatic change in their sound that will surely surprise fans, both old and new!</p>",
-  tracklist: "1. Politika<br>2. Armija<br>3. I dvete<br>4. Laži me, laži me<br>5. Jalova<br>6. Povekje<br>7. Ne sum vekje ubava<br>8. Sakav da se zaljubav<br>9. Politika II (kje dojde vreme)",
-  for_fans_of: 'The Notwist, New Order, Handsome Furs',
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/politika',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=459661104/size=large/bgcol=dbdcdc/linkcol=3E813D/tracklist=false/artwork=small/transparent=true/" width="300" height="150" seamless=""><a href="http://moonleerecords.bandcamp.com/album/politika">Politika by BERNAYS PROPAGANDA</a></iframe>',
-  internal: true
+
+
+
+edi_grubisic_cipla = Member.create(
+  name: 'Edi Grubišić Cipal'
 )
-ArtistRelease.create(
-  artist: bernays_propaganda,
-  release: politika
+tin_oberman = Member.create(
+  name: 'Tin Oberman'
+)
+luka_vrbanic = Member.create(
+  name: 'Luka Vrbanic'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: edi_grubisic_cipla,
+  role: 'drums'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: tin_oberman,
+  role: 'synths, guitar'
+)
+ArtistMember.create(
+  artist: bilk,
+  member: luka_vrbanic,
+  role: 'bass'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'website',
+  url: 'http://www.bilkspace.com/'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'facebook',
+  url: 'https://www.facebook.com/bilkspace/'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'lastfm',
+  url: 'http://www.last.fm/music/Bilk'
+)
+ExternalLink.create(
+  artist: bilk,
+  url_type: 'discogs',
+  url: 'https://www.discogs.com/artist/1817099-Bilk'
 )
 
-# Chang Ffos
-chang_ffos = Artist.create(
-  name: 'Chang Ffos',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/chang_ffos_01.jpg"),
-  description: 'TODO:',
-  origin: 'Croatia',
-  active: false,
-  formed: '2007',
-  disbanded: '2011?',
-  records: true,
-  booking: false,
-  genre: 'rock / metal / psychedelic'
-)
+
 nikola_chang_ffos = Member.create(
   name: 'Nikola'
 )
@@ -291,112 +205,61 @@ ExternalLink.create(
   url: 'http://www.last.fm/music/Chang+Ffos'
 )
 ExternalLink.create(
-  artist: bilk,
+  artist: chang_ffos,
   url_type: 'discogs',
   url: 'https://www.discogs.com/artist/1087188-Chang-Ffos'
 )
-trust_this_arcane_device = Release.create(
-  title: 'Trust This Arcane Device',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_006.jpg"),
-  catalog_number: 'HMRL006',
-  release_date: Date.new(2006, 5, 8),
-  description: "TODO:",
-  tracklist: "1. Thy Doom Ape<br>2. Zen Rock Majik<br>3. Iron Icon<br>4. The Throne Of Sasquatch Ascending<br>5. … And All Things, Either Good Or Ungood<br>6. Jethro<br>7. Bowels Of The Beast Of The Matriarchate<br>8. Le Charmeur De Serpents<br>9. Ondjage",
-  for_fans_of: '',
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/trust-this-arcane-device',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2162698928/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/trust-this-arcane-device">Trust This Arcane Device by CHANG FFOS</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: chang_ffos,
-  release: trust_this_arcane_device
-)
 
-# Cog
-# TODO:
-cog = Artist.create(
-  name: 'Cog',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/chang_ffos_01.jpg"),
-  description: 'TODO:',
-  origin: 'Croatia',
-  active: false,
-  formed: '2007',
-  disbanded: '2011?',
-  records: true,
-  booking: false,
-  genre: 'rock / metal / psychedelic'
+mario_majkic = Member.create(
+  name: 'Mario Majkić'
 )
-nikola_chang_ffos = Member.create(
-  name: 'Nikola'
+bojan_papic = Member.create(
+  name: 'Bojan Papić'
 )
-ivan_chang_ffos = Member.create(
-  name: 'Ivan'
-)
-ashas_chang_ffos = Member.create(
-  name: 'Ashas'
-)
-alen_chang_ffos = Member.create(
-  name: 'Alen'
+antun_bilos = Member.create(
+  name: 'Antun Biloš'
 )
 ArtistMember.create(
-  artist: chang_ffos,
-  member: nikola_chang_ffos,
-  role: 'drums'
+  artist: cog,
+  member: mario_majkic,
+  role: 'guitar, vocals'
 )
 ArtistMember.create(
-  artist: chang_ffos,
-  member: ivan_chang_ffos,
-  role: 'vocal'
-)
-ArtistMember.create(
-  artist: chang_ffos,
-  member: ashas_chang_ffos,
-  role: 'guitar'
-)
-ArtistMember.create(
-  artist: chang_ffos,
-  member: alen_chang_ffos,
+  artist: cog,
+  member: bojan_papic,
   role: 'bass'
 )
-ExternalLink.create(
-  artist: chang_ffos,
-  url_type: 'lastfm',
-  url: 'http://www.last.fm/music/Chang+Ffos'
-)
-ExternalLink.create(
-  artist: bilk,
-  url_type: 'discogs',
-  url: 'https://www.discogs.com/artist/1087188-Chang-Ffos'
-)
-trust_this_arcane_device = Release.create(
-  title: 'Trust This Arcane Device',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_006.jpg"),
-  catalog_number: 'HMRL006',
-  release_date: Date.new(2006, 5, 8),
-  description: "TODO:",
-  tracklist: "1. Thy Doom Ape<br>2. Zen Rock Majik<br>3. Iron Icon<br>4. The Throne Of Sasquatch Ascending<br>5. … And All Things, Either Good Or Ungood<br>6. Jethro<br>7. Bowels Of The Beast Of The Matriarchate<br>8. Le Charmeur De Serpents<br>9. Ondjage",
-  for_fans_of: '',
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/trust-this-arcane-device',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2162698928/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/trust-this-arcane-device">Trust This Arcane Device by CHANG FFOS</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: chang_ffos,
-  release: trust_this_arcane_device
+ArtistMember.create(
+  artist: cog,
+  member: antun_bilos,
+  role: 'drums'
 )
 
-# Damir Avdić
-damir_avdic = Artist.create(
-  name: 'Damir Avdić',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/damir_avdic_01.jpg"),
-  description: 'TODO',
-  origin: 'Bosnia and Herzegovina',
-  songkick_id: 3641561,
-  active: true,
-  records: true,
-  booking: true,
-  genre: 'hardcore / punk / blues'
+petra_drazic = Member.create(
+  name: 'Petra Dražić'
 )
+danijel_zec = Member.create(
+  name: 'Danijel Zec'
+)
+marko_knez = Member.create(
+  name: 'Marko Knez'
+)
+ArtistMember.create(
+  artist: cripple_and_casino,
+  member: petra_drazic,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: cripple_and_casino,
+  member: danijel_zec,
+  role: 'bass'
+)
+ArtistMember.create(
+  artist: cripple_and_casino,
+  member: marko_knez,
+  role: 'drums'
+)
+
 ExternalLink.create(
   artist: damir_avdic,
   url_type: 'lastfm',
@@ -420,35 +283,7 @@ ArtistMember.create(
   member: damir_avdic_member,
   role: 'guitar, vocals'
 )
-zivot_je_raj = Release.create(
-  title: 'Život je Raj',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_019.jpg"),
-  catalog_number: 'HMRL019',
-  release_date: Date.new(2010, 5, 5),
-  description: "<p>The third album by Damir Avdić was entirely created by Damir himself – if you liked “Mrtvi su mrtvi”, you already know that his songs don’t need the “basic” rock line-up to sound complete and full blooded in the punk manner. Penetrating voice and electric guitar so dense it fills every pore of silence are more than enough for Diplomatz to express himself and carve your brain with painful and bloody words which strip the skin and burn the flesh. And believe us when we tell you that these words say everything you hate and makes you nervous – and it’s so loud and clear that at first you won’t even know what hit you. That’s what Damir Avdić, Diplomatz of hardcore school really is – straightforward and serious with a very poisonous tongue – a modern anti-singer/songwriter who speaks about the world in a very special way.</p>",
-  tracklist: "1. Kuda sestro<br>2. Umreži se<br>3. Život je raj<br>4. Svetac možda<br>5. Kakvo lijepo cvijeće raste<br>6. Imam dvadeset i dvije<br>7. Reci zlato<br>8. Tepaj mi<br>9. Gotovo je<br>10. Gdje si majko<br>11. Bratsvo i jedinstvo<br>12. Dođi dušo",
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/ivot-je-raj-2',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3053604513/size=large/bgcol=dbdcdc/linkcol=3E813D/tracklist=false/artwork=small/transparent=true/" width="300" height="150" seamless=""><a href="http://moonleerecords.bandcamp.com/album/ivot-je-raj-2">Život je raj by DAMIR AVDIĆ</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: damir_avdic,
-  release: zivot_je_raj
-)
 
-# Debeli Precjednik / Fat Prezident
-debeli_precjednik = Artist.create(
-  name: 'Debeli Precjednik / Fat Prezident',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/debeli_precjednik_01.jpg"),
-  description: 'TODO: ',
-  origin: 'Croatia',
-  songkick_id: 7171169,
-  active: true,
-  formed: '1994',
-  records: true,
-  booking: true,
-  genre: 'punk rock / melodic hardcore'
-)
 ExternalLink.create(
   artist: debeli_precjednik,
   url_type: 'lastfm',
@@ -514,21 +349,235 @@ ArtistMember.create(
   member: sinisa_rajkovic,
   role: 'drums'
 )
-# TODO: add releases
 
-# Nikki Louder
-nikki_louder = Artist.create(
-  name: 'Nikki Louder',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/nikki_louder_01.jpg"),
-  description: 'TODO: ',
-  origin: 'Slovenia',
-  songkick_id: 3641541,
-  active: true,
-  formed: '2007',
-  records: true,
-  booking: true,
-  genre: 'noise rock / indie / post punk'
+neven_kamenski = Member.create(
+  name: 'Neven Kamenski'
 )
+ozren_mlinaric = Member.create(
+  name: 'Ozren Mlinarić'
+)
+sasa_relic = Member.create(
+  name: 'Saša Relić'
+)
+slobodan_alavanja = Member.create(
+  name: 'Slobodan Alavanja'
+)
+ArtistMember.create(
+  artist: dont_mess_with_texas,
+  member: neven_kamenski,
+  role: 'keys'
+)
+ArtistMember.create(
+  artist: dont_mess_with_texas,
+  member: ozren_mlinaric,
+  role: 'drums'
+)
+ArtistMember.create(
+  artist: dont_mess_with_texas,
+  member: sasa_relic,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: dont_mess_with_texas,
+  member: slobodan_alavanja,
+  role: 'bass'
+)
+
+patrik_entreat = Member.create(
+  name: 'Patrik'
+)
+matjaz_entreat = Member.create(
+  name: 'Matjaž'
+)
+milos_entreat = Member.create(
+  name: 'Miloš'
+)
+peter_entreat = Member.create(
+  name: 'Peter'
+)
+ArtistMember.create(
+  artist: entreat,
+  member: patrik_entreat,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: entreat,
+  member: matjaz_entreat,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: entreat,
+  member: milos_entreat,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: entreat,
+  member: peter_entreat,
+  role: 'drums'
+)
+
+el_chatedralico = Member.create(
+  name: 'El Chatedralico'
+)
+juan_pablo_pa_de_rigat = Member.create(
+  name: 'Juan Pablo Pe de Rigad'
+)
+gorgonzol_matadores = Member.create(
+  name: 'Gorgonzol Matadores'
+)
+senor_monsenor_jose = Member.create(
+  name: 'Senor monsenor Jose'
+)
+manolo_mago_porco = Member.create(
+  name: 'Manolo Mago Porco'
+)
+ArtistMember.create(
+  artist: hesus_attor,
+  member: el_chatedralico,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: hesus_attor,
+  member: juan_pablo_pa_de_rigat,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: hesus_attor,
+  member: gorgonzol_matadores,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: hesus_attor,
+  member: senor_monsenor_jose,
+  role: 'bass'
+)
+ArtistMember.create(
+  artist: hesus_attor,
+  member: manolo_mago_porco,
+  role: 'drums'
+)
+
+mich_decruyenaere = Member.create(
+  name: 'Mich Decruyenaere'
+)
+paul_lamont = Member.create(
+  name: 'Paul Lamont'
+)
+olivier_wychuyse = Member.create(
+  name: 'Olivier Wychuyse'
+)
+ArtistMember.create(
+  artist: hitch,
+  member: mich_decruyenaere,
+  role: 'guitar, vocals'
+)
+ArtistMember.create(
+  artist: hitch,
+  member: paul_lamont,
+  role: 'bass, vocals'
+)
+ArtistMember.create(
+  artist: hitch,
+  member: olivier_wychuyse,
+  role: 'drums'
+)
+
+marko_rusjan = Member.create(
+  name: 'Marko Rusjan'
+)
+jan_t_cernic = Member.create(
+  name: 'Jan T. Černic'
+)
+ivo_lozej = Member.create(
+  name: 'Ivo Lozej'
+)
+tomaz_usaj = Member.create(
+  name: 'Tomaž Ušaj'
+)
+ArtistMember.create(
+  artist: iamdisease,
+  member: marko_rusjan,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: iamdisease,
+  member: jan_t_cernic,
+  role: 'bass'
+)
+ArtistMember.create(
+  artist: iamdisease,
+  member: ivo_lozej,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: iamdisease,
+  member: tomaz_usaj,
+  role: 'drums'
+)
+
+dario_solenicki = Member.create(
+  name: 'Dario Solenički'
+)
+mateja_horvat = Member.create(
+  name: 'Máteja Horvat'
+)
+sasa_segula = Member.create(
+  name: 'Saša Šegula'
+)
+ArtistMember.create(
+  artist: insane,
+  member: dario_solenicki,
+  role: 'guitar, vocals'
+)
+ArtistMember.create(
+  artist: insane,
+  member: mateja_horvat,
+  role: 'bass, vocals'
+)
+ArtistMember.create(
+  artist: insane,
+  member: sasa_segula,
+  role: 'drums'
+)
+
+
+nikola_ursic = Member.create(
+  name: 'Nikola Uršić'
+)
+davor_bolant = Member.create(
+  name: 'Davor Bolant'
+)
+bojan_kotzmuth = Member.create(
+  name: 'Bojan Kotzmuth'
+)
+ArtistMember.create(
+  artist: lunar,
+  member: miodrag_gladovic,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: lunar,
+  member: davor_bolant,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: lunar,
+  member: nikola_ursic,
+  role: 'bass'
+)
+ArtistMember.create(
+  artist: lunar,
+  member: bojan_kotzmuth,
+  role: 'drums'
+)
+
+# TODO: members
+ArtistRelease.create(
+  artist: masinko,
+  release: godina_majmuna
+)
+
+
 ExternalLink.create(
   artist: nikki_louder,
   url_type: 'lastfm',
@@ -573,20 +622,63 @@ ArtistMember.create(
   member: luka_cerar,
   role: 'drums'
 )
-# TODO: add releases
 
-# Repetitor
-repetitor = Artist.create(
-  name: 'Repetitor',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/repetitor_01.jpg"),
-  description: "<p>For decades, throughout the Balkans and well beyond, Serbian capital Belgrade has been renowned for its creative and moving rock bands, who not only enjoyed great popularity during their heyday, but also became one of the fundamental carriers of contemporary culture. On this foundation today’s generation of musicians continue to seek for new musical expressions and as such comprise the Belgrade’s new rock scene.</p><p>One of the most prominent acts of this scene are Repetitor, founded in 2005 by Milena Milutinović (drums), Boris Vlastelica (guitar, vocals) and Ana-Marija Cupin (bass, vocals). They faithfully carved their signature sound, a blend of heavy rock’n’roll, post-punk and everything in between, and undoubtedly managed to raise the bar with their debut “Sve što vidim je prvi put” (Everything I See Is For The First Time), released by Odličan Hrčak in 2008. The album topped the charts, faced nothing less than extremely positive reviews, and regularly got pronounced as probably the most authentic and fresh album from the area in a long time. Needless to say, its successor has been much anticipated, and luckily the wait was shortened by numerous high-energy must-see live appearances, which are undoubtedly one of the band’s most powerful weapons of broadening the fan base.</p><p>And now, Moonlee Records proudly presents Repetitor‘s sophomore album, “Dobrodošli na okean“ (Welcome To The Ocean), a perfectly envisioned labour of love, diligently crafted over the years, and finally ready to unleash its groundbreaking energy and ingenuity. The album delivers nine tracks of cross-genre ecstasy, packed in a powerful, rocking-your-guts-out interplay of instruments, vocals and the distinctive wall of sound they create together. Attempts to find a direct musical influence may prove to be a difficult task, but an attentive listener will recognise similarities with variety of bands, from early Mudhoney, Šarlo Akrobata, Fugazi, Sonic Youth, Pixies and early Nirvana all the way to Black Sabbath or even Suicide. That may sound irreconcilable at first, but Repetitor does it with ease and brings a sonic experience that can hardly be more enjoyable. True rock to the core – with a completely twisted approach. The lyrics are in Serbian, mostly dealing with social topics, but presented in a less explicit manner through everyday situations. Possible incomprehensibility shouldn’t discourage you from listening, mainly because of the characteristic expression of Boris’ vocals.</p><p>“Dobrodošli na okean” was recorded by Primož Vozelj in Vrbas, Trbovlje and Ljubljana, and mixed by Goran Crevar in studio Digimedia in Belgrade during 2011 and 2012. Carl Saff mastered it in Chacago in October 2012, and Moonlee Records is set to release it on November 29th 2012 as a free download (name-your price), CD and LP in a rich, deluxe gatefold sleeve which will make the nice artwork by bass player Ana-Marija Cupin really stand out.</p><p>It’s no wonder Repetitor caught everybody’s attention early on, as they are a clear case of ideal people/place/time constellation, and we are thrilled to make Moonlee Records a part of it all. Perhaps it’s a bit too early, but not at all exaggerated to say that they are the ones who are now steadily becoming a part of some, yet unwritten chapter on rock history and culture from the region. Given the achieved recognition and the influence they already made, we can expect this sooner than later. “Dobrodošli na okean” only adds more meaning into this, and we hope that listening to the album will make you feel just like that.</p>",
-  origin: 'Serbia',
-  songkick_id: 1956778,
-  active: true,
-  formed: '2005',
-  records: true,
-  booking: true,
-  genre: "post-punk / alternative rock / rock'n'roll"
+melanija_fabcic = Member.create(
+  name: 'Melanija Fabčič'
+)
+jernej_savel = Member.create(
+  name: 'Jernej Šavel'
+)
+saso_benko = Member.create(
+  name: 'Sašo Benko'
+)
+janez_zlebcic = Member.create(
+  name: 'Sašo Benko'
+)
+ArtistMember.create(
+  artist: psycho_path,
+  member: melanija_fabcic,
+  role: 'vocals'
+)
+ArtistMember.create(
+  artist: psycho_path,
+  member: jernej_savel,
+  role: 'guitar, back vocals'
+)
+ArtistMember.create(
+  artist: psycho_path,
+  member: saso_benko,
+  role: 'guitar'
+)
+ArtistMember.create(
+  artist: psycho_path,
+  member: janez_zlebcic,
+  role: 'bass'
+)
+
+boris_vlastelica = Member.create(
+  name: 'Boris Vlastelica'
+)
+ana_marija_cupin = Member.create(
+  name: 'Ana-Marija Cupin'
+)
+milena_milutinovic = Member.create(
+  name: 'Milena Milutinović'
+)
+ArtistMember.create(
+  artist: repetitor,
+  member: boris_vlastelica,
+  role: 'guitar, vocals'
+)
+ArtistMember.create(
+  artist: repetitor,
+  member: ana_marija_cupin,
+  role: 'bass, vocals'
+)
+ArtistMember.create(
+  artist: repetitor,
+  member: milena_milutinovic,
+  role: 'drums'
 )
 ExternalLink.create(
   artist: repetitor,
@@ -618,22 +710,6 @@ ExternalLink.create(
   url_type: 'discogs',
   url: 'https://www.discogs.com/artist/1271681-Repetitor'
 )
-dobrodosli_na_okean = Release.create(
-  title: 'Dobrodošli na Okean',
-  cover: File.new("#{Rails.root}/app/assets/images/base/releases/hmrl_028.jpg"),
-  catalog_number: 'HMRL028',
-  release_date: Date.new(2012, 11, 29),
-  description: "<p>Repetitor from Belgrade, Serbia, present their second album “Dobrodošli na okean“, a perfectly envisioned labour of love, diligently crafted over the years, and finally ready to unleash its groundbreaking energy and ingenuity. The album delivers nine tracks of cross-genre ecstasy, packed in a powerful, rocking-your-guts-out interplay of instruments, vocals and the distinctive wall of sound they create together. Attempts to find a direct musical influence may prove to be a difficult task, but an attentive listener will recognize similarities with variety of bands, from early Mudhoney, Šarlo Akrobata, Fugazi, Sonic Youth, Pixies and early Nirvana all the way to Black Sabbath or even Suicide. That may sound irreconcilable at first, but Repetitor does it with ease and brings a sonic experience that can hardly be more enjoyable. Heavy and high-energy blend of garage rock, post-punk and everything in between.</p>",
-  tracklist: "1. Devojke idu u Minhen<br>2. Biću bolji<br>3. Šteta<br>4. U pravom trenutku<br>5. Dostupni i laki<br>6. Lica<br>7. Oktobarski salon<br>8. Laka zabava<br>9. Pripazi na ljude",
-  for_fans_of: 'Obojeni Program, Ought, Metz',
-  bandcamp_url: 'https://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean',
-  bandcamp_player: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=823079048/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=none/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean">Dobrodošli na okean by REPETITOR</a></iframe>',
-  internal: true
-)
-ArtistRelease.create(
-  artist: repetitor,
-  release: dobrodosli_na_okean
-)
 ReleaseReview.create(
   release: dobrodosli_na_okean,
   title: 'Some Will Never Know',
@@ -652,9 +728,9 @@ dobrodosli_na_okean_lp = ReleaseType.create(
   release: dobrodosli_na_okean,
   release_format: 'lp'
 )
-dobrodosli_na_okean_download = ReleaseType.create(
+dobrodosli_na_okean_digital = ReleaseType.create(
   release: dobrodosli_na_okean,
-  release_format: 'download'
+  release_format: 'digital'
 )
 ReleaseTypeMainBuyLink.create(
   release_type: dobrodosli_na_okean_cd,
@@ -670,28 +746,15 @@ ReleaseTypeOtherBuyLink.create(
   buy_url: 'http://interpunk.com/item.cfm?Item=208203'
 )
 ReleaseTypeMainBuyLink.create(
-  release_type: dobrodosli_na_okean_download,
+  release_type: dobrodosli_na_okean_digital,
   buy_url: 'https://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean'
 )
 ReleaseTypeOtherBuyLink.create(
   title: 'iTunes',
-  release_type: dobrodosli_na_okean_download,
+  release_type: dobrodosli_na_okean_digital,
   buy_url: 'https://itunes.apple.com/us/album/dobrodosli-na-okean/id583517090'
 )
 
-# Xaxaxa
-xaxaxa = Artist.create(
-  name: 'Xaxaxa',
-  image: File.new("#{Rails.root}/app/assets/images/base/artists/xaxaxa_01.jpg"),
-  description: 'TODO: ',
-  origin: 'Macedonia',
-  active: false,
-  formed: '2009',
-  disbanded: '2015',
-  records: true,
-  booking: false,
-  genre: 'punk rock / post-punk / indie'
-)
 ExternalLink.create(
   artist: xaxaxa,
   url_type: 'lastfm',
@@ -703,10 +766,12 @@ ExternalLink.create(
   url: 'https://xaxaxa.bandcamp.com/'
 )
 
+# TODO: posts with introduction text
+
 # Posts
 Post.create(
   title: 'Politika – a new album by Bernays Propaganda',
-  image: File.new("#{Rails.root}/db/data/images/posts/hmrl039-bernays-propaganda.jpg"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'posts', 'hmrl039-bernays-propaganda.jpg')),
   body: 'Macedonian activist musicians Bernays Propaganda have released their fourth album “Politika” today, March 14th 2016. Their new album, which sets an important milestone in band’s career, is released on the Slovenian independent label Moonlee Records available in the CD and LP formats, as well as a free download.',
   visibility: 'public',
   records: true,
@@ -717,7 +782,7 @@ Post.create(
 
 Post.create(
   title: 'Werefox announce new album! Watch video for "Triads" now!',
-  image: File.new("#{Rails.root}/db/data/images/posts/hmrl040-werefox.jpg"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'posts', 'hmrl040-werefox.jpg')),
   body: 'Werefox, an alternative rock four-piece from Slovenia, have shared the long-awaited video for the song “Triads” and announced the release of their sophomore album “Das Lied der Maschinen”, coming out on February 4th 2016 on Moonlee Records.',
   visibility: 'public',
   records: true,
@@ -728,7 +793,7 @@ Post.create(
 
 Post.create(
   title: 'Nikki Louder released "Trout"',
-  image: File.new("#{Rails.root}/db/data/images/posts/hmrl038-nikki-louder.jpg"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'posts', 'hmrl038-nikki-louder.jpg')),
   body: 'Slovenian noise-rock trio Nikki Louder just released »Trout«, their fourth full-length, available both on CD and LP format and also as free download, which is result of cooperation between Moonlee Records and Založbe Radia Študent.',
   visibility: 'public',
   records: true,
@@ -740,35 +805,35 @@ Post.create(
 # Slides
 Slide.create(
   title: 'Politika – a new album by Bernays Propaganda',
-  image: File.new("#{Rails.root}/db/data/images/slides/bernays_propaganda_01.png"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'bernays_propaganda_001.png')),
   url: '/artists/bernays-propaganda',
   records: true,
   position: 1
 )
 Slide.create(
   title: 'Repetitor on the tour',
-  image: File.new("#{Rails.root}/db/data/images/slides/repetitor_01.png"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'repetitor_001.png')),
   url: '/artists/repetitor',
   records: true,
   position: 2
 )
 Slide.create(
   title: 'Vlasta Popić touring Balkans',
-  image: File.new("#{Rails.root}/db/data/images/slides/vlasta_popic_01.png"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'vlasta_popic_001.png')),
   url: '/artists/vlasta-popic',
   records: true,
   position: 3
 )
 Slide.create(
   title: 'Politika – a new album by Bernays Propaganda',
-  image: File.new("#{Rails.root}/db/data/images/slides/bernays_propaganda_01.png"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'bernays_propaganda_001.png')),
   url: '/artists/bernays-propaganda',
   booking: true,
   position: 1
 )
 Slide.create(
   title: 'Repetitor on the tour',
-  image: File.new("#{Rails.root}/db/data/images/slides/repetitor_01.png"),
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'repetitor_001.png')),
   url: '/artists/repetitor',
   booking: true,
   position: 2

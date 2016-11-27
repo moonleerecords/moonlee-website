@@ -1,6 +1,9 @@
 class Release < ApplicationRecord
   extend FriendlyId
 
+  # TODO: prepare bandcamp_player on save
+  # <iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=823079048/size=large/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean">Dobrodošli na okean by REPETITOR</a></iframe>
+
   friendly_id :title, use: :slugged
 
   default_scope { where(active: true).order('catalog_number DESC') }
@@ -14,6 +17,11 @@ class Release < ApplicationRecord
   accepts_nested_attributes_for :release_reviews, allow_destroy: true
 
   has_attached_file :cover,
+                    styles: { large: '1250x1250>', medium: '450x450>', small: '100x100>' },
+                    default_url: '/assets/missing.png'
+
+  # TODO: do this for cover image
+  has_attached_file :cover_image,
                     styles: { large: '1250x1250>', medium: '450x450>', small: '100x100>' },
                     default_url: '/assets/missing.png'
 

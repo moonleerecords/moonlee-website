@@ -10,6 +10,7 @@
 @import 'components/slider.scss';
 @import 'components/newsletter.scss';
 @import 'components/social.scss';
+@import 'components/cover_image.scss';
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
 @import 'records/artists.scss';
@@ -24,11 +25,7 @@ body {
 }
 
 section {
-  padding: 0 50px;
-}
-
-.container {
-  background-color: $color-gold;
+  padding: 0 50px 100px;
 }
 
 .moonlee-logo {
@@ -39,14 +36,6 @@ section {
 
 .content {
   background-color: $color-buttery-white;
-
-  section {
-    padding: 0 50px 100px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
 }
 
 .section-heading {
@@ -65,6 +54,8 @@ section {
 }
 
 .page-footer {
+  background-color: $color-gold;
+
   .social-boxes {
     padding-bottom: 70px;
   }

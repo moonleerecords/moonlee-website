@@ -1,3 +1,16 @@
+.releases-list {
+  padding-top: 50px + 74px;
+
+  .release-cover {
+    width: 100%;
+  }
+
+  .release-info {
+    padding-top: 30px;
+  }
+}
+
+
 .release-info {
   box-sizing: border-box;
   float: left;
@@ -48,17 +61,5 @@
   .release-info {
     padding: 30px 40px;
     width: 50%;
-  }
-}
-
-.releases-list {
-  margin-top: 50px + 74px;
-
-  .release-cover {
-    width: 100%;
-  }
-
-  .release-info {
-    padding-top: 30px;
   }
 }

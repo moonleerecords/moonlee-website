@@ -11,7 +11,7 @@ ActiveAdmin.register Release do
                 :tracklist,
                 :for_fans_of,
                 :bandcamp_url,
-                :bandcamp_player,
+                :bandcamp_id,
                 :internal,
                 artist_ids: [],
                 release_types_attributes: [
@@ -45,7 +45,7 @@ ActiveAdmin.register Release do
       f.input :tracklist, as: :ckeditor
       f.input :for_fans_of
       f.input :bandcamp_url
-      f.input :bandcamp_player
+      f.input :bandcamp_id
       f.input :internal
       f.input :active
       # TODO: custom add button label
@@ -92,7 +92,7 @@ ActiveAdmin.register Release do
       row :bandcamp_url do
         link_to release.bandcamp_url, release.bandcamp_url, target: '_blank'
       end
-      row :bandcamp_player
+      row :bandcamp_id
       row :internal
       row 'Formats' do
         release.release_types.each do |release_type|
