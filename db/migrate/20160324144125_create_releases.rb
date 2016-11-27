@@ -9,7 +9,7 @@ class CreateReleases < ActiveRecord::Migration[5.0]
       t.text :tracklist
       t.string :for_fans_of
       t.string :bandcamp_url
-      t.text :bandcamp_player
+      t.string :bandcamp_id
       t.boolean :internal, default: true
       t.boolean :active, default: true
 
