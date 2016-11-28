@@ -213,6 +213,7 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.string   "for_fans_of"
     t.string   "bandcamp_url"
     t.string   "bandcamp_id"
+    t.text     "bandcamp_player"
     t.boolean  "internal",           default: true
     t.boolean  "active",             default: true
     t.datetime "created_at",                        null: false
