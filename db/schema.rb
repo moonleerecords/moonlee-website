@@ -177,21 +177,14 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.index ["release_id"], name: "index_release_reviews_on_release_id", using: :btree
   end
 
-  create_table "release_type_main_buy_links", force: :cascade do |t|
-    t.integer  "release_type_id"
-    t.string   "buy_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["release_type_id"], name: "index_release_type_main_buy_links_on_release_type_id", using: :btree
-  end
-
-  create_table "release_type_other_buy_links", force: :cascade do |t|
+  create_table "release_type_buy_links", force: :cascade do |t|
     t.integer  "release_type_id"
     t.string   "title"
+    t.string   "source"
     t.string   "buy_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["release_type_id"], name: "index_release_type_other_buy_links_on_release_type_id", using: :btree
+    t.index ["release_type_id"], name: "index_release_type_buy_links_on_release_type_id", using: :btree
   end
 
   create_table "release_types", force: :cascade do |t|
@@ -273,7 +266,6 @@ ActiveRecord::Schema.define(version: 20161008171548) do
   add_foreign_key "events", "venues"
   add_foreign_key "external_links", "artists"
   add_foreign_key "release_reviews", "releases"
-  add_foreign_key "release_type_main_buy_links", "release_types"
-  add_foreign_key "release_type_other_buy_links", "release_types"
+  add_foreign_key "release_type_buy_links", "release_types"
   add_foreign_key "release_types", "releases"
 end

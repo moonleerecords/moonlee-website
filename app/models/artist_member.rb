@@ -7,4 +7,6 @@ class ArtistMember < ApplicationRecord
 
   scope :active_members, -> { where(active: true) }
   scope :former_members, -> { where(active: false) }
+
+  # TODO: ordering by role
 end

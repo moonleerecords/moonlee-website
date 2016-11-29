@@ -16,10 +16,11 @@ div
     - @release.release_types.each do |release_type|
       li = release_type.release_format
       ul
-        - release_type.release_type_main_buy_links.each do |main_buy_link|
-          li = "#{main_buy_link.buy_url} (main)"
-        - release_type.release_type_other_buy_links.each do |other_buy_link|
-          li = "#{other_buy_link.buy_url} (other)"
+        /- release_type.release_type_main_buy_links.each do |main_buy_link|
+        /  li = "#{main_buy_link.buy_url} (main)"
+        /- release_type.release_type_other_buy_links.each do |other_buy_link|
+        /  li = "#{other_buy_link.buy_url} (other)"
+        // TODO: show only internal, by scope
   ul
     - @release.release_reviews.each do |review|
       li = review.url

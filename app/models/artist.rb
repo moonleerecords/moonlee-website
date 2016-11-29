@@ -23,7 +23,7 @@ class Artist < ApplicationRecord
   scope :on_records, -> { where(records: true) }
   scope :on_booking, -> { where(booking: true) }
 
-  def to_s
-    name
-  end
+  # def to_s
+  #   name
+  # end
 end

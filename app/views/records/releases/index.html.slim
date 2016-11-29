@@ -10,7 +10,9 @@
           h3.release-artists = release.artists_names
           h3.release-title = release.title
           div.release-buy-links
-            - release.main_buy_links.each do |release_format, buy_link|
+            - release.internal_buy_links.each do |release_format, buy_link|
               = link_to buy_link, target: '_blank', class: 'buy-link' do
                 i.material-icons = release_icon(release_format)
                 = release_format
+
+// TODO: translate release format

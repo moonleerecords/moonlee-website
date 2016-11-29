@@ -1,9 +1,6 @@
 class Release < ApplicationRecord
   extend FriendlyId
 
-  # TODO: prepare bandcamp_player on save
-  # <iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=823079048/size=large/bgcol=ffffff/linkcol=333333/transparent=true/" seamless><a href="http://moonleerecords.bandcamp.com/album/dobrodo-li-na-okean">Dobrodošli na okean by REPETITOR</a></iframe>
-
   friendly_id :title, use: :slugged
 
   default_scope { where(active: true).order('catalog_number DESC') }
@@ -41,19 +38,43 @@ class Release < ApplicationRecord
   }
   scope :latest, -> { internal_releases.where('release_date <= ?', Time.zone.today) }
 
+  before_save :generate_bandcamp_player
+
   def released_formats(separator = '/')
     released_formats = []
     release_types.each do |release_type|
       released_formats << release_type.release_format
     end
-    released_formats.join(" #{separator} ")
+    released_formats.join(' #{separator} ')
   end
 
-  def main_buy_links
-    main_buy_links = {}
+  def internal_buy_links
+    internal_buy_links = {}
     release_types.each do |release_type|
-      main_buy_links[release_type.release_format] = release_type.release_type_main_buy_link.buy_url
+      internal_buy_links[release_type.release_format] = release_type.release_type_buy_links.internal.first
     end
-    main_buy_links
+    internal_buy_links
+  end
+
+  def external_buy_links
+    external_buy_links = {}
+    release_types.each do |release_type|
+      external_buy_links[release_type.release_format] = release_type.release_type_buy_links.internal.first
+    end
+    external_buy_links
+  end
+
+  def bandcamp_url_http
+    uri = URI.parse(self.bandcamp_url)
+    if uri.scheme == 'https'
+      uri.scheme = 'http'
+    end
+    uri.to_s
+  end
+
+  private
+
+  def generate_bandcamp_player
+    self.bandcamp_player = "<iframe style=\"border: 0; width: 380px; height: 750px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
   end
 end

@@ -19,8 +19,7 @@ ActiveAdmin.register Release do
                   :release,
                   :format,
                   :_destroy,
-                  release_type_main_buy_links_attributes: [:id, :buy_url, :release_type, :_destroy],
-                  release_type_other_buy_links_attributes: [:id, :title, :buy_url, :release_type, :_destroy]
+                  release_type_buy_links_attributes: [:id, :title, :source, :buy_url, :release_type, :_destroy]
                 ]
 
   form do |f|
@@ -53,16 +52,12 @@ ActiveAdmin.register Release do
         release_type.input :release_format,
                            as: :select,
                            collection: ReleaseType.allowed_formats.collect { |format| [translate(format), format] }
-        release_type.has_many :release_type_main_buy_links,
-                              heading: 'Main buy link',
-                              allow_destroy: true do |main_buy_link|
-          main_buy_link.input :buy_url
-        end
-        release_type.has_many :release_type_other_buy_links,
-                              heading: 'Other buy links',
-                              allow_destroy: true do |other_buy_link|
-          other_buy_link.input :title
-          other_buy_link.input :buy_url
+        release_type.has_many :release_type_buy_links,
+                              heading: 'Buy links',
+                              allow_destroy: true do |buy_link|
+          buy_link.input :title
+          buy_link.input :source # TODO: dropdown?
+          buy_link.input :buy_url
         end
       end
     end
@@ -98,11 +93,8 @@ ActiveAdmin.register Release do
         release.release_types.each do |release_type|
           div translate(release_type.release_format) do
             ul do
-              release_type.release_type_main_buy_links.each do |main_buy_link|
-                li link_to 'Internal store', main_buy_link.buy_url, target: '_blank'
-              end
-              release_type.release_type_other_buy_links.each do |other_buy_link|
-                li link_to other_buy_link.title, other_buy_link.buy_url, target: '_blank'
+              release_type.release_type_buy_links.each do |buy_link|
+                li link_to "#{buy_link.source} (#{buy_link.title})", buy_link.buy_url, target: '_blank'
               end
             end
           end
