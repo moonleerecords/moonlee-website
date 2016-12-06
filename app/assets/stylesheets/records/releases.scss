@@ -8,6 +8,10 @@
   .release-info {
     padding-top: 30px;
   }
+
+  .item-column {
+    padding-bottom: 30px;
+  }
 }
 
 
@@ -33,11 +37,15 @@
     margin-bottom: 20px;
   }
 
-  .release-buy-links {
+  .release-formats {
 
-    .buy-link {
-      // TODO: make it look like a link
-      margin-right: 20px;
+    .release-format {
+      display: inline;
+      margin-right: 10px;
+
+      &.out-of-stock {
+        text-decoration: line-through;
+      }
 
       i {
         margin-right: 5px;

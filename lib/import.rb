@@ -126,8 +126,6 @@ module Import
 
           image_file = image_source ? File.new(open(image_source)) : nil
 
-          puts image_file
-
           Post.create(
             title: row['wp_post_title'],
             image: image_file,

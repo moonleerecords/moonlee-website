@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   friendly_id :custom_slug, use: :slugged
 
-  default_scope { order('published_at ASC') }
+  default_scope { order('published_at DESC') }
 
   has_attached_file :image,
                     styles: {

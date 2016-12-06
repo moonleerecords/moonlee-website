@@ -51,7 +51,8 @@ class Release < ApplicationRecord
   def internal_buy_links
     internal_buy_links = {}
     release_types.each do |release_type|
-      internal_buy_links[release_type.release_format] = release_type.release_type_buy_links.internal.first
+      buy_link = release_type.release_type_buy_links.internal.first
+      internal_buy_links[release_type.release_format] = buy_link.try(:buy_url)
     end
     internal_buy_links
   end
@@ -59,7 +60,8 @@ class Release < ApplicationRecord
   def external_buy_links
     external_buy_links = {}
     release_types.each do |release_type|
-      external_buy_links[release_type.release_format] = release_type.release_type_buy_links.internal.first
+      buy_link = release_type.release_type_buy_links.internal.first
+      external_buy_links[release_type.release_format] = buy_link.try(:buy_url)
     end
     external_buy_links
   end
