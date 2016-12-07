@@ -1,2 +1,6 @@
 - unless cover_image.nil?
-  div.cover-image style="background-image: url('#{cover_image.url(:large)}'); "
+  div.cover-image style="background-image: url('#{cover_image.url(:medium)}');"
+    /TODO: large
+    - unless release.nil?
+      div.bandcamp-player
+        = raw(release.bandcamp_player)

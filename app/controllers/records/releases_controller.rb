@@ -12,8 +12,7 @@ module Records
 
     def show
       @release = Release.friendly.find(params[:id])
-      @cover_image = @release.cover
-      # TODO: @release.cover_image
+      @cover_image = @release.artists.first.image
     end
   end
 end
