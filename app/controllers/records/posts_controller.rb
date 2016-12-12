@@ -7,7 +7,7 @@ module Records
     end
 
     def index
-      @news = Post.on_records
+      @news = Post.on_records.limit(10)
     end
 
     def show

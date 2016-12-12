@@ -1,6 +1,18 @@
-- if @news.count > 0
-  section
-    h2 News
+- unless @news.nil? || @news.empty?
+  section.items-list.posts-list
     - @news.each do |post|
-      article
-        h3 = post.title
+      article.post-item.items-list-group
+        div.item-column.column-2-3
+          = link_to records_post_path(post), title: post.title do
+            h3.post-title
+              = post.title
+          time.post-date datetime=post.published_at
+            = localize(post.published_at.to_date)
+          div.post-body
+            = truncate_html(post.body, length: 500, omission: '...')
+        div.item-column.column-1-3
+          div.post-image style="background-image: url(#{post.image.url(:medium)})"
+      div.clear
+
+/TODO: show links in text
+/TODO: paging

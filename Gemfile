@@ -51,6 +51,8 @@ gem 'yt', '~> 0.26.3'
 gem 'twitter'
 # Gibbon for Mailchimp
 gem 'gibbon'
+# Truncate HTML
+gem 'truncate_html'
 
 # TODO: compressions
 

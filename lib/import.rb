@@ -111,9 +111,7 @@ module Import
           next
         end
 
-        # TODO: extract video from html
-
-        content_html = Nokogiri::HTML(row['wp_post_content'])
+        content_html = Nokogiri::HTML.fragment(row['wp_post_content'])
 
         # if something fails, just ignore...
         begin
@@ -123,6 +121,15 @@ module Import
             image.remove
             break
           end
+
+          video_source = nil
+          content_html.search('iframe').each do |video|
+            video_source = video
+            video.remove
+            break
+          end
+
+          # TODO: attach video to post
 
           image_file = image_source ? File.new(open(image_source)) : nil
 
