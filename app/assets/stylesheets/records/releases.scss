@@ -20,6 +20,7 @@
   }
 
   .release-formats {
+    font-size: 16px;
 
     .release-format {
       display: inline;
@@ -58,6 +59,23 @@
   .release-info {
     overflow: hidden;
     padding-right: 50px;
+    padding-top: 50px;
+
+    .release-artists {
+      font-size: 56px;
+    }
+
+    .release-title {
+      font-size: 56px;
+    }
+
+    .release-formats {
+      margin-bottom: 20px;
+    }
+
+    .release-description {
+      font-weight: lighter;
+    }
   }
 
   .release-side {

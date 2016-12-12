@@ -3,7 +3,8 @@ section.release-show
   div.release-side
     br
   div.release-info
-    span.release-number = "#{release.catalog_number} (#{localize(release.release_date)})"
+    span.release-number = release.catalog_number
+    / TODO: localize(release.release_date)
     h3.release-artists = release.artists_names
     h3.release-title = release.title
     div.release-formats
