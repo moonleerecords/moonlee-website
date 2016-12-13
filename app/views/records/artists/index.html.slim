@@ -4,7 +4,7 @@
       article.item-column.marginless.column-1-2
         = link_to records_artist_path(artist),
                   class: 'artist-box',
-                  style: "background-image: url('#{artist.image.url(:medium)}');",
+                  style: "background-image: url('#{artist.image.url(:large)}');",
                   alt: artist.name,
                   title: artist.name do
           h2.artist-name
