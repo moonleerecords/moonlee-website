@@ -21,8 +21,5 @@ module MoonleeWebsite
         ENV[key.to_s] = value.to_s
       end if File.exist?(env_file)
     end
-
-    # additional autoload paths
-    Rails.application.config.autoload_paths << "#{Rails.root}/lib"
   end
 end
