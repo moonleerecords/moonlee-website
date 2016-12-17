@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # records
   scope module: 'records', as: 'records' do
-    resources :posts, only: [:index, :show]
+    resources :posts, path: 'news', only: [:index, :show]
     resources :artists, only: [:index, :show]
     resources :releases, only: [:index, :show]
     resources :events, only: [:index]
