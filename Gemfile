@@ -9,7 +9,7 @@ gem 'pg'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
-gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'devise', '> 4.x'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
