@@ -7,11 +7,7 @@ module Records
     end
 
     def index
-      @events = Event.on_records.upcoming.group_by { |event| event.artist.name }
-    end
-
-    def show
-      @event = Event.find(params[:id])
+      @events = Event.on_records.upcoming.group_by { |event| event.artist.name }.sort
     end
   end
 end

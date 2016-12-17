@@ -1,3 +1,61 @@
+.event-box {
+  border-bottom: 1px solid $color-white;
+}
+
+.event-location {
+  font-size: 15px;
+}
+
+.event-links {
+  text-align: right;
+
+  a {
+    color: $color-white;
+    margin-right: 5px;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+.events-list {
+  background-color: $color-green;
+
+  .event-box {
+    height: 50px;
+
+    &.event-box-artist-header {
+      margin-top: 50px;
+      text-transform: uppercase;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      .item-column {
+        margin-top: 0;
+        top: 0;
+
+        &.event-artist-name {
+          @include vertical-align(12px);
+          line-height: 24px;
+        }
+      }
+    }
+
+    .item-column {
+      @include vertical-align(9px);
+      line-height: 18px;
+    }
+
+    .event-date {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
+
 .events-boxes {
   background-color: $color-green;
   padding: 0 50px 50px !important;
@@ -9,7 +67,6 @@
   }
 
   .event-box {
-    border-bottom: 1px solid $color-white;
     display: table;
     height: 90px;
     width: 100%;
@@ -21,6 +78,7 @@
     div {
       display: table-cell;
       vertical-align: middle;
+      //TODO: use grids
 
       &.event-date {
         text-align: center;
@@ -63,25 +121,11 @@
               font-weight: lighter;
             }
           }
-
-          &.event-venue {
-            font-size: 15px;
-          }
         }
       }
 
       &.event-links {
-        text-align: right;
         width: 10%;
-
-        a {
-          color: $color-white;
-          margin-right: 5px;
-
-          &:hover {
-            color: $color-white;
-          }
-        }
       }
     }
   }

@@ -1,9 +1,34 @@
-h1 Events
-- if @events.count > 0
-  h2 List of Events
-  - @events.each do |artist, events|
-    h3 = artist
-    div
-      ul
-        - events.each do |event|
-          /li = render_event(event)
+- unless @events.nil? || @events.empty?
+  section.items-list.events-list
+    div.section-heading
+      h2.section-title
+        = 'Shows'
+    - @events.each do |artist, events|
+      article.event-box.event-box-artist-header.items-list-group
+        div.item-column.column-1-9
+        div.item-column.column-7-9.event-artist-name
+          = artist
+        div.item-column.column-1-9
+      - events.each do |event|
+        article.event-box.items-list-group
+          div.item-column.column-1-9.event-date
+            = localize(event.start_date)
+          div.item-column.column-7-9.event-location
+            = "@ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
+          div.item-column.column-1-9.event-links
+            - if event.facebook_url
+              = link_to fa_icon('facebook-square'),
+                       event.facebook_url,
+                       class: 'icon-white-link',
+                       target: '_blank',
+                       title: 'Facebook event'
+            - if event.lastfm_url
+              = link_to fa_icon('lastfm-square'),
+                       event.lastfm_url,
+                       class: 'icon-white-link',
+                       target: '_blank',
+                       title: 'Last.fm event'
+            - if event.songkick_url
+              = link_to event.songkick_url, class: 'icon-white-link', target: '_blank', title: 'Songkick event' do
+                i.fa.custom-songkick
+/TODO: sort by
