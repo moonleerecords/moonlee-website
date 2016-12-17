@@ -3,6 +3,8 @@ class Artist < ApplicationRecord
 
   friendly_id :name, use: :slugged
 
+  default_scope { order('name ASC') }
+
   has_many :artist_members, counter_cache: true, dependent: :destroy
   has_many :members, through: :artist_members
   has_many :external_links, dependent: :destroy

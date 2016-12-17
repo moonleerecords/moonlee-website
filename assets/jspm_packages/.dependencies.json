@@ -3,16 +3,16 @@
     "deps": {},
     "peerDeps": {}
   },
-  "npm:jquery@2.2.4": {
-    "deps": {},
-    "peerDeps": {}
-  },
   "npm:babel-runtime@5.8.38": {
     "deps": {},
     "peerDeps": {
       "core-js": "npm:core-js@^1.2.0",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
     }
+  },
+  "npm:jquery@2.2.4": {
+    "deps": {},
+    "peerDeps": {}
   },
   "npm:core-js@1.2.7": {
     "deps": {},
@@ -22,11 +22,11 @@
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
     }
   },
-  "github:scottjehl/Respond@1.4.2": {
+  "npm:systemjs-plugin-babel@0.0.15": {
     "deps": {},
     "peerDeps": {}
   },
-  "npm:systemjs-plugin-babel@0.0.15": {
+  "github:jspm/nodelibs-fs@0.2.0-alpha": {
     "deps": {},
     "peerDeps": {}
   },
@@ -36,11 +36,11 @@
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
     }
   },
-  "github:jspm/nodelibs-fs@0.2.0-alpha": {
+  "github:jspm/nodelibs-process@0.2.0-alpha": {
     "deps": {},
     "peerDeps": {}
   },
-  "github:jspm/nodelibs-process@0.2.0-alpha": {
+  "github:scottjehl/Respond@1.4.2": {
     "deps": {},
     "peerDeps": {}
   },
