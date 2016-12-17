@@ -41,8 +41,7 @@ namespace :social do
   private
 
   def find_or_create_instagram_post(media_item)
-    social_post = SocialPost.find_or_create_by(external_id: media_item['id'])
-    social_post.source = SocialPost::SOURCE_INSTAGRAM
+    social_post = SocialPost.find_or_create_by(external_id: media_item['id'], source: SocialPost::SOURCE_INSTAGRAM)
     social_post.url = media_item['link']
     social_post.text = media_item['caption']['text']
     social_post.media = media_item['images']['low_resolution']['url']
@@ -54,8 +53,7 @@ namespace :social do
   end
 
   def find_or_create_youtube_post(video)
-    social_post = SocialPost.find_or_create_by(external_id: video.id)
-    social_post.source = SocialPost::SOURCE_YOUTUBE
+    social_post = SocialPost.find_or_create_by(external_id: video.id, source: SocialPost::SOURCE_YOUTUBE)
     social_post.url = format('https://www.youtube.com/watch?v=%s', video.id)
     social_post.text = video.title
     social_post.media = prepare_iframe(video.embed_html, video.id)
@@ -64,8 +62,7 @@ namespace :social do
   end
 
   def find_or_create_twitter_post(post)
-    social_post = SocialPost.find_or_create_by(external_id: post.id)
-    social_post.source = SocialPost::SOURCE_TWITTER
+    social_post = SocialPost.find_or_create_by(external_id: post.id, source: SocialPost::SOURCE_TWITTER)
     social_post.url = format('https://www.twitter.com/statuses/%s', post.id)
     social_post.text = post.text
     social_post.published_at = post.created_at

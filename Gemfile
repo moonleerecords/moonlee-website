@@ -54,8 +54,6 @@ gem 'gibbon'
 # Truncate HTML
 gem 'truncate_html'
 
-# TODO: compressions
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
