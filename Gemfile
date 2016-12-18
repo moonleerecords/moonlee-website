@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0', '< 5.1'
+gem 'rails', '>= 5.0.1.rc2', '< 5.1'
 # Postgres as the database for active record
 gem 'pg'
 # Slim templating
@@ -51,8 +51,6 @@ gem 'yt', '~> 0.26.3'
 gem 'twitter'
 # Gibbon for Mailchimp
 gem 'gibbon'
-# Truncate HTML
-gem 'truncate_html'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
