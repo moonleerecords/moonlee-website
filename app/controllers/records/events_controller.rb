@@ -8,6 +8,7 @@ module Records
 
     def index
       @events = Event.on_records.upcoming.group_by { |event| event.artist.name }.sort
+      meta_tags('Shows', 'Upcoming shows from Moonlee artists')
     end
   end
 end

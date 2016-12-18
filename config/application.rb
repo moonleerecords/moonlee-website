@@ -23,7 +23,6 @@ module MoonleeWebsite
     end
 
     # additional autoload paths
-    Rails.application.config.enable_dependency_loading = true
     Rails.application.config.autoload_paths << "#{Rails.root}/lib"
   end
 end

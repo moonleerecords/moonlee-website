@@ -8,7 +8,7 @@
 
 .post-date {
   @extend .article-identifier;
-  color: $color-limed-spruce;
+  color: $color-gold;
   display: block;
   margin-top: 30px;
 }
@@ -47,7 +47,74 @@
 
     .post-body {
       font-weight: lighter;
+      line-height: 1.2em;
+      margin-right: -1em;
       margin-top: 30px;
+      max-height: 7.2em;
+      overflow: hidden;
+      padding-right: 1em;
+      position: relative;
+      text-align: justify;
+
+      &:before {
+        bottom: 0;
+        content: '...';
+        position: absolute;
+        right: 0;
+      }
+
+      &:after {
+        background-color: $color-white;
+        content: '';
+        height: 1em;
+        margin-top: .2em;
+        position: absolute;
+        right: 0;
+        width: 1em;
+      }
+    }
+  }
+}
+
+.post-show {
+  .post-main {
+    overflow: hidden;
+    padding-right: 50px;
+    padding-top: 50px;
+
+    .post-date {
+      color: $color-gold;
+      margin-top: 10px;
+    }
+  }
+
+  .post-side {
+    float: right;
+    padding-top: 50px;
+    width: 40%;
+
+    .latest-news {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      article {
+        border-bottom: 1px solid $color-limed-spruce;
+        margin-bottom: 20px;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          font-weight: lighter;
+        }
+
+        .post-date {
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+      }
     }
   }
 }

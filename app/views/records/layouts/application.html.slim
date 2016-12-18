@@ -9,12 +9,8 @@ html.no-js.ie8.oldie lang="en"
 html.no-js lang="en"
 html
   head
-    title Moonlee Records
-    meta charset="utf-8"
-    meta name="description" content=""
-    meta name="author" content=""
-    meta name="keywords" content=""
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = render partial: 'records/shared/meta_tags'
+    = content_for?(:meta_tags) ? yield(:meta_tags) : ''
     = stylesheet_link_tag 'records', media: 'all'
     = javascript_include_tag 'jspm'
     = csrf_meta_tags
@@ -31,6 +27,8 @@ html
 - else
   javascript:
     System.import('javascripts/records/app.min.js');
+
+script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-585565aed8066c03"
 
 /[if lt IE 7]
   script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"

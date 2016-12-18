@@ -40,12 +40,16 @@ class Release < ApplicationRecord
 
   before_save :generate_bandcamp_player
 
+  def artists_names
+    split_release? ? concat_artists_names : self.artists[0].name
+  end
+
   def released_formats(separator = '/')
     released_formats = []
     release_types.each do |release_type|
       released_formats << release_type.release_format
     end
-    released_formats.join(' #{separator} ')
+    released_formats.join(" #{separator} ")
   end
 
   def internal_buy_links
@@ -75,6 +79,14 @@ class Release < ApplicationRecord
   end
 
   private
+
+  def concat_artists_names
+    self.artists.pluck(:name).map! { |name| name.index('/') ? name.slice(0..name.index('/') - 1).strip : name }.join(' / ')
+  end
+
+  def split_release?
+    self.artists.count > 1
+  end
 
   def generate_bandcamp_player
     self.bandcamp_player = "<iframe style=\"border: 0; width: 380px; height: 750px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"

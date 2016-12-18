@@ -3,6 +3,7 @@ ActiveAdmin.register Post do
   menu label: 'News', priority: 2
   config.sort_order = 'published_at_asc'
   permit_params :title,
+                :youtube_video,
                 :image,
                 :body,
                 :visibility,
@@ -19,6 +20,7 @@ ActiveAdmin.register Post do
     f.semantic_errors
     f.inputs do
       f.input :title
+      f.input :youtube_video
       f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
       f.input :categories,
               multiple: true,
@@ -46,6 +48,7 @@ ActiveAdmin.register Post do
     attributes_table do
       row :id
       row :title
+      row :youtube_video
       row :image do
         image_tag(post.image.url(:small))
       end
@@ -75,6 +78,7 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     column :title
+    column :youtube_video
     column :visibility do |post|
       translate(post.visibility)
     end

@@ -8,10 +8,12 @@ module Records
 
     def index
       @artists = Artist.on_records
+      meta_tags('Artists', 'Label artists')
     end
 
     def show
       @artist = Artist.friendly.find(params[:id])
+      meta_tags(@artist.name, @artist.description, @artist.image.url(:large))
     end
   end
 end

@@ -1,0 +1,27 @@
+.pagination {
+  margin-top: 50px;
+  text-align: center;
+
+  .page {
+    &.current {
+      color: $color-gold;
+      //TODO: change color to links color
+    }
+  }
+
+  .first {
+    display: none;
+  }
+
+  .prev {
+    display: none;
+  }
+
+  .next {
+    display: none;
+  }
+
+  .last {
+    display: none;
+  }
+}

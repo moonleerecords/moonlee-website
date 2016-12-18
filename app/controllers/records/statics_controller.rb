@@ -7,6 +7,7 @@ module Records
     end
 
     def about
+      meta_tags('About', 'Get in touch with us!')
     end
   end
 end

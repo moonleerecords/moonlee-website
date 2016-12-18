@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :title
       t.string :slug
+      t.string :youtube_video
       t.text :body
       t.string :visibility
       t.boolean :records, default: false

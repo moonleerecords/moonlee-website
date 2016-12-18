@@ -1,7 +1,6 @@
 # rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Release do
   menu label: 'Releases', priority: 4
-  decorate_with ReleaseDecorator
   config.sort_order = 'catalog_number_asc'
   permit_params :title,
                 :cover,

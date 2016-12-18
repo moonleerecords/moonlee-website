@@ -8,7 +8,6 @@
           = link_to 'See all releases', records_releases_path, class: 'link-button more-releases'
     div.slider.slider-releases
       - releases.each_with_index do |release, index|
-        - release = release.decorate
         div.slide class=(index == 0 ? 'active' : '') style="z-index: #{releases.count - index}"
           div.release
             = link_to records_release_path(release) do

@@ -124,17 +124,23 @@ module Import
 
           video_source = nil
           content_html.search('iframe').each do |video|
-            video_source = video
-            video.remove
+            if video['src'].include?('youtube')
+              video_source = video['src']
+              video.remove
+            end
             break
           end
 
-          # TODO: attach video to post
+          puts video_source
 
           image_file = image_source ? File.new(open(image_source)) : nil
+          youtube_video = video_source
+
+          # TODO: find by title
 
           Post.create(
-            title: row['wp_post_title'],
+            title: strip_tags(row['wp_post_title']),
+            youtube_video: youtube_video,
             image: image_file,
             body: content_html,
             visibility: 'public',

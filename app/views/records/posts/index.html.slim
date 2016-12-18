@@ -9,8 +9,8 @@
           time.post-date datetime=post.published_at
             = localize(post.published_at.to_date)
           div.post-body
-            = truncate_html(post.body, length: 500, omission: '...')
+            = raw(post.body)
         div.item-column.column-1-3
-          div.post-image style="background-image: url(#{post.image.url(:medium)})"
-/TODO: show links in text
-/TODO: paging
+          = link_to records_post_path(post), title: post.title do
+            div.post-image style="background-image: url(#{post.image.url(:medium)})"
+    = paginate @news, left: 3, right: 3

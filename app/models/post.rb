@@ -3,8 +3,11 @@ class Post < ApplicationRecord
   AVAILABLE_CATEGORIES = %w(news).freeze
 
   extend FriendlyId
+  include YoutubeVideo
 
   friendly_id :custom_slug, use: :slugged
+
+  paginates_per 20
 
   default_scope { order('published_at DESC') }
 
@@ -29,6 +32,7 @@ class Post < ApplicationRecord
   scope :on_booking, -> { where('published_at <= ?', Time.zone.now).where(booking: true) }
 
   before_validation :assign_published_at
+  before_save :assign_default_image
 
   def tags_raw
     tags.join(', ') unless tags.nil?
@@ -54,6 +58,14 @@ class Post < ApplicationRecord
 
   def assign_published_at
     self.published_at = created_at if published_at.nil?
+  end
+
+  def assign_default_image
+    if self.youtube_video
+      # TODO: test this
+      youtube_video_id = youtube_video_id(self.youtube_video)
+      self.image = File.new(open("https://img.youtube.com/vi/#{youtube_video_id}/0.jpg"))
+    end
   end
 
   def validate_categories

@@ -1,0 +1,16 @@
+meta charset="utf-8"
+title
+  = @meta_tags[:title]
+meta name="description" content="Moonlee Records is an independent record label from Ljubljana, Slovenia. Established in 2004."
+meta name="author" content="Mr. Moonlee"
+meta name="keywords" content="moonlee, records, label, music, industry, business, vinyl, cd, lp, rock, indie, punk, repetitor, electronic, post"
+meta name="viewport" content="width=device-width, initial-scale=1.0"
+meta property='og:title' content="#{truncate(@meta_tags[:title], length: 70)}"
+meta property='og:description' content="#{truncate(@meta_tags[:description], length: 200)}"
+meta property='og:image' content="#{@meta_tags[:image]}"
+meta property='og:url' content="#{@meta_tags[:url]}"
+meta property='og:site_name' content="Moonlee Records"
+meta name='twitter:card' content="summary_large_image"
+meta name='twitter:image:alt' content="#{truncate(@meta_tags[:title], length: 70)}"
+/<meta property="fb:app_id" content="your_app_id" />
+/<meta name="twitter:site" content="@website-username">

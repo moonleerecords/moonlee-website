@@ -13,7 +13,7 @@ module Records
       # if admin_user_signed_in?
       #   puts 'hello mr. admin'
       # end
-      # TODO: latest adds to the store - use Magento api
+      meta_tags('', '')
     end
   end
 end
