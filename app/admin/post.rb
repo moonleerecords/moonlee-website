@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Post do
   menu label: 'News', priority: 2
-  config.sort_order = 'published_at_asc'
+  config.sort_order = 'published_at_desc'
   permit_params :title,
                 :youtube_video,
                 :image,
@@ -20,8 +20,8 @@ ActiveAdmin.register Post do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :youtube_video
       f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
+      f.input :youtube_video
       f.input :categories,
               multiple: true,
               as: :check_boxes,
@@ -43,6 +43,8 @@ ActiveAdmin.register Post do
     end
     f.actions
   end
+
+  # TODO: sort by published_at, edit news error
 
   show do
     attributes_table do
@@ -78,7 +80,6 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     column :title
-    column :youtube_video
     column :visibility do |post|
       translate(post.visibility)
     end

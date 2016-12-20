@@ -2,6 +2,7 @@ module Import
   class Importer
     require 'nokogiri'
     require 'open-uri'
+    include ActionView::Helpers::SanitizeHelper
 
     def artists
       csv = parse_csv_file('artists.csv')
@@ -131,12 +132,8 @@ module Import
             break
           end
 
-          puts video_source
-
-          image_file = image_source ? File.new(open(image_source)) : nil
+          image_file = image_source ? open(image_source) : nil
           youtube_video = video_source
-
-          # TODO: find by title
 
           Post.create(
             title: strip_tags(row['wp_post_title']),

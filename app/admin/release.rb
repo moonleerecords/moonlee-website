@@ -9,6 +9,7 @@ ActiveAdmin.register Release do
                 :description,
                 :tracklist,
                 :for_fans_of,
+                :quote,
                 :bandcamp_url,
                 :bandcamp_id,
                 :internal,
@@ -42,6 +43,7 @@ ActiveAdmin.register Release do
       f.input :description, as: :ckeditor
       f.input :tracklist, as: :ckeditor
       f.input :for_fans_of
+      f.input :quote
       f.input :bandcamp_url
       f.input :bandcamp_id
       f.input :internal
@@ -83,6 +85,7 @@ ActiveAdmin.register Release do
         release.tracklist.html_safe
       end
       row :for_fans_of
+      row :quote
       row :bandcamp_url do
         link_to release.bandcamp_url, release.bandcamp_url, target: '_blank'
       end

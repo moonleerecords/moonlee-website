@@ -62,9 +62,8 @@ class Post < ApplicationRecord
 
   def assign_default_image
     if self.youtube_video
-      # TODO: test this
       youtube_video_id = youtube_video_id(self.youtube_video)
-      self.image = File.new(open("https://img.youtube.com/vi/#{youtube_video_id}/0.jpg"))
+      self.image = open("https://img.youtube.com/vi/#{youtube_video_id}/0.jpg")
     end
   end
 

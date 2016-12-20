@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 20161008171548) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "slug"
+    t.string   "youtube_video"
     t.text     "body"
     t.string   "visibility"
     t.boolean  "records",            default: false
@@ -204,6 +205,7 @@ ActiveRecord::Schema.define(version: 20161008171548) do
     t.text     "description"
     t.text     "tracklist"
     t.string   "for_fans_of"
+    t.string   "quote"
     t.string   "bandcamp_url"
     t.string   "bandcamp_id"
     t.text     "bandcamp_player"
