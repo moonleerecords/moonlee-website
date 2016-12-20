@@ -1,16 +1,19 @@
 - unless @news.nil? || @news.empty?
-  section.items-list.posts-list
-    - @news.each do |post|
-      article.post-item.items-list-group
+  section.narrower.items-list.posts-list
+    - @news.each_with_index do |post, index|
+      article.post-item.items-list-group class=('painted' if index == 0)
         div.item-column.column-2-3
           = link_to records_post_path(post), title: post.title do
             h3.post-title
               = post.title
           time.post-date datetime=post.published_at
             = localize(post.published_at.to_date)
-          div.post-body
+          div.text-block.post-body
             = raw(post.body)
         div.item-column.column-1-3
           = link_to records_post_path(post), title: post.title do
             div.post-image style="background-image: url(#{post.image.url(:medium)})"
+              - if post.youtube_video
+                div.post-with-video
+                  i.material-icons = 'play_circle_outline'
     = paginate @news, left: 3, right: 3

@@ -3,7 +3,20 @@
   background-size: cover;
   height: 0;
   padding-bottom: 100%;
+  position: relative;
   width: 100%;
+
+  .post-with-video {
+    @include vertical-align(35px);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    .material-icons {
+      color: $color-white;
+      font-size: 70px;
+    }
+  }
 }
 
 .post-date {
@@ -30,7 +43,19 @@
 
 .posts-list {
   .post-item {
-    padding-top: 50px;
+    padding: 25px 0;
+
+    &.painted {
+      background-color: $color-gold;
+      margin: 0 -150px;
+      padding: 25px 150px;
+
+      .post-body {
+        &:before {
+          background-image: linear-gradient(to right, $color-transparent, $color-gold);
+        }
+      }
+    }
 
     .column-2-3 {
       box-sizing: border-box;
@@ -46,31 +71,21 @@
     }
 
     .post-body {
-      font-weight: lighter;
-      line-height: 1.2em;
       margin-right: -1em;
       margin-top: 30px;
-      max-height: 7.2em;
+      max-height: 180px;
       overflow: hidden;
       padding-right: 1em;
       position: relative;
-      text-align: justify;
 
       &:before {
+        background-image: linear-gradient(to right, $color-transparent, $color-buttery-white);
         bottom: 0;
-        content: '...';
+        content: ' ';
+        height: 30px;
         position: absolute;
         right: 0;
-      }
-
-      &:after {
-        background-color: $color-white;
-        content: '';
-        height: 1em;
-        margin-top: .2em;
-        position: absolute;
-        right: 0;
-        width: 1em;
+        width: 15%;
       }
     }
   }

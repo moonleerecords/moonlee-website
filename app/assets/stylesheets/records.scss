@@ -24,10 +24,32 @@ body {
   background-color: $color-buttery-white;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  font-weight: lighter;
+}
+
+.text-block {
+  line-height: 30px;
+
+  strong {
+    font-weight: normal;
+  }
+
+  a {
+    font-weight: lighter;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 section {
   padding: 0 50px 100px;
+
+  &.narrower {
+    padding: 0 150px 100px;
+  }
 }
 
 .moonlee-logo {

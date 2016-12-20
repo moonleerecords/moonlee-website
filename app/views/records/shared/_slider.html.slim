@@ -11,7 +11,7 @@
     - if slides.count > 1
       ul.slider-navigation
         - slides.each_with_index do |slide, index|
-          li class=(index == 0 ? 'active' : '') data-navigate-to=index
+          li class=('active' if index == 0) data-navigate-to=index
       a.slider-control.slider-control-previous href='#'
         span.slider-arrow.slider-arrow-previous
       a.slider-control.slider-control-next href='#'

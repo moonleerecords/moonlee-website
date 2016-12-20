@@ -1,9 +1,11 @@
-section.release-show
+section.narrower.release-show
   div.release-side
-    br
+    .release-date
+      = "Released: #{localize(@release.release_date)}"
+      /TODO: @release.for_fans_of
+      /TODO: genre?
   div.release-main.release-info
     span.release-number = @release.catalog_number
-    / TODO: localize(@release.release_date)
     h2.release-artists = @release.artists_names
     h2.release-title = @release.title
     div.release-formats
@@ -16,8 +18,7 @@ section.release-show
           div.release-format.out-of-stock title='Out of stock'
             i.material-icons = release_icon(release_format)
             = translate(release_format)
-    div.release-description
+    div.text-block.release-description
       = raw(@release.description)
-/TODO: @release.for_fans_of
 /TODO: release_reviews
 /TODO: links to other shops and digital releases

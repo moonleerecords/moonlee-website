@@ -8,7 +8,7 @@
           = link_to 'See all releases', records_releases_path, class: 'link-button more-releases'
     div.slider.slider-releases
       - releases.each_with_index do |release, index|
-        div.slide class=(index == 0 ? 'active' : '') style="z-index: #{releases.count - index}"
+        div.slide class=('active' if index == 0) style="z-index: #{releases.count - index}"
           div.release
             = link_to records_release_path(release) do
               = image_tag release.cover.url(:medium), class: 'release-cover', alt: release.title, title: release.title
