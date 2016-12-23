@@ -15,6 +15,9 @@ module Records
       @post = Post.friendly.find(params[:id])
       @latest_news = Post.on_records.limit(5)
       @cover_image = @post.image
+      if @post.youtube_video
+        @cover_video = @post.youtube_iframe('100%', '100%')
+      end
       meta_tags(@post.title, @post.body, @post.image.url(:large))
     end
   end

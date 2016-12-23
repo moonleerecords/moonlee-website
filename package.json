@@ -40,7 +40,6 @@
   },
   "dependencies": {
     "jspm": "^0.17.0-beta.29",
-    "material-design-icons-iconfont": "^3.0.0",
     "mdbootstrap": "^4.1.1",
     "normalize-css": "^2.3.1"
   }

@@ -10,14 +10,14 @@ header.page-header
         = navigation_link('About', records_about_path)
     nav.navigation.section-navigation
       ul
-        /TODO: coming soon
         /li
         /  = link_to booking_root_path, target: '_blank' do
-        /    i.material-icons = 'airport_shuttle'
+        /    i.fa.fa-custom-booking
         /    = 'Booking'
         li
           = link_to '//store.moonleerecords.com/', target: '_blank' do
-            i.material-icons = 'shopping_cart'
+            i.fa.fa-custom-store
             = 'Store'
   = render partial: 'records/shared/slider', locals: { slides: @slides }
-  = render partial: 'records/shared/cover_image', locals: { cover_image: @cover_image, release: @release }
+  = render partial: 'records/shared/cover_header',
+           locals: { cover_image: @cover_image, cover_video: @cover_video, release: @release }

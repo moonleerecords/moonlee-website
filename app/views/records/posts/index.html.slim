@@ -15,5 +15,5 @@
             div.post-image style="background-image: url(#{post.image.url(:medium)})"
               - if post.youtube_video
                 div.post-with-video
-                  i.material-icons = 'play_circle_outline'
+                  i.fa.fa-play-circle-o.fa-4x
     = paginate @news, left: 3, right: 3

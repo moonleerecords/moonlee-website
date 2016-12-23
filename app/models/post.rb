@@ -34,6 +34,13 @@ class Post < ApplicationRecord
   before_validation :assign_published_at
   before_save :assign_default_image
 
+  def youtube_iframe(width = '560', height = '315')
+    if self.youtube_video
+      youtube_video_id = youtube_video_id(self.youtube_video)
+      "<iframe width='#{width}' height='#{height}' src='https://www.youtube.com/embed/#{youtube_video_id}?modestbranding=1&autohide=1&showinfo=0&controls=0' frameborder='0' allowfullscreen></iframe>"
+    end
+  end
+
   def tags_raw
     tags.join(', ') unless tags.nil?
   end

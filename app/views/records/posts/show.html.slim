@@ -1,4 +1,4 @@
-section.post-show
+section.narrower.post-show
   div.post-side
     h4
       = 'Latest News'
@@ -15,6 +15,5 @@ section.post-show
       = @post.title
     time.post-date datetime=@post.published_at
       = localize(@post.published_at.to_date)
-    div.post-body
+    div.text-block.post-body
       = simple_format(@post.body)
-/TODO: if video, show video

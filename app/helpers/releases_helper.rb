@@ -14,5 +14,6 @@ module ReleasesHelper
       release_icon = 'library_music'
     end
     release_icon
+
   end
 end

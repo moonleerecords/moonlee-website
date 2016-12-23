@@ -1,20 +1,24 @@
-/TODO: text-block
-div
-  h2 = @artist.name
-  p = image_tag @artist.image.url(:small)
-  p = raw(@artist.description)
-  p = @artist.origin
-  p
-    = "Years active: #{years_active(@artist.formed, @artist.disbanded)}"
-  ul
-    - @artist.members.each do |member|
-      li = member.name
-  ul
-    - @artist.releases.each do |release|
-      li = release.title
-  ul
-    - @artist.external_links.each do |link|
-      li = link.url
-  ul
-    - @artist.events.each do |event|
-      li = event.venue.name
+section.narrower.artist-show
+  div.section-heading
+    h2.section-title
+      = @artist.name
+  article
+    p = image_tag @artist.image.url(:small)
+    p = raw(@artist.description)
+    p = @artist.origin
+    p
+      = "Years active: #{years_active(@artist.formed, @artist.disbanded)}"
+    ul
+      - @artist.members.each do |member|
+        li = member.name
+    ul
+      - @artist.releases.each do |release|
+        li = release.title
+    ul
+      - @artist.external_links.each do |link|
+        li = link.url
+    ul
+      - @artist.events.each do |event|
+        li = event.venue.name
+
+/TODO: need design, use grids

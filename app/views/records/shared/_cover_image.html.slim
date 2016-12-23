@@ -1,6 +1,0 @@
-- unless cover_image.nil?
-  div.cover-image style="background-image: url('#{cover_image.url(:large)}');"
-    - unless release.nil?
-      div.bandcamp-player.holds-the-iframe
-        = raw(release.bandcamp_player)
-/ TODO: try duotone

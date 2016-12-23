@@ -1,0 +1,8 @@
+- if cover_video
+  div.cover-header
+    = raw(cover_video)
+- elsif cover_image
+  div.cover-header style="background-image: url('#{cover_image.url(:large)}');"
+    - unless release.nil?
+      div.bandcamp-player.holds-the-iframe
+        = raw(release.bandcamp_player)
