@@ -3,7 +3,8 @@
     - @releases.each do |release|
       article.item-column.column-1-3
         = link_to records_release_path(release), title: "#{release.artists_names} - #{release.title}" do
-          = image_tag release.cover.url(:medium), class: 'release-cover', alt: "#{release.artists_names} - #{release.title}"
+          .test
+            = image_tag release.cover.url(:medium), class: 'release-cover hvr-glow', alt: "#{release.artists_names} - #{release.title}"
           div.release-info
             span.release-number = release.catalog_number
             h3.release-artists = release.artists_names
@@ -13,11 +14,11 @@
                 - if buy_link
                   - title = release_format == 'digital' ? 'Listen' : "Buy #{release_format}"
                   = link_to buy_link, target: '_blank', class: 'release-format buy-link', title: title do
-                    i class="fa fa-custom-#{release_format}"
+                    i class="fa fa-custom-#{release_icon_format(release_format)}"
                     = translate(release_format)
                 - else
                   div.release-format.out-of-stock title='Out of stock'
-                    i class="fa fa-custom-#{release_format}"
+                    i class="fa fa-custom-#{release_icon_format(release_format)}"
                     = translate(release_format)
 
 // TODO: images size - insane?

@@ -48,7 +48,7 @@
 
       .post-body {
         &:before {
-          background-image: linear-gradient(to right, $color-transparent, $color-gold);
+          background-image: linear-gradient(to right, $color-transparent-rgba, $color-gold);
         }
       }
     }
@@ -75,7 +75,7 @@
       position: relative;
 
       &:before {
-        background-image: linear-gradient(to right, $color-transparent, $color-buttery-white);
+        background-image: linear-gradient(to right, $color-transparent-rgba, $color-buttery-white);
         bottom: 0;
         content: ' ';
         height: 30px;

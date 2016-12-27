@@ -39,6 +39,7 @@
 
         &.event-artist-name {
           @include vertical-align(12px);
+          font-weight: bolder;
           line-height: 24px;
         }
       }

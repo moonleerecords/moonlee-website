@@ -1,6 +1,7 @@
 /*
 *= require_self
 *= require normalize-css/normalize
+*= require hover.css/css/hover-min
 */
 
 @import 'base/mixins.scss';
@@ -88,6 +89,10 @@ section {
     padding-bottom: 30px;
     padding-top: 30px;
   }
+}
+
+.hvr-glow:active, .hvr-glow:focus, .hvr-glow:hover {
+  box-shadow: 0 0 8px $color-limed-spruce !important;
 }
 
 @include respond-to(small) {

@@ -39,6 +39,7 @@
     }
   },
   "dependencies": {
+    "hover.css": "^2.0.2",
     "jspm": "^0.17.0-beta.29",
     "mdbootstrap": "^4.1.1",
     "normalize-css": "^2.3.1"
