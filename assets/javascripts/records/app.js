@@ -1,18 +1,19 @@
 "use strict";
 
-import './releases.js';
+// import './releases.js';
 import {Slider} from '../components/slider.js';
 import {Newsletter} from '../components/newsletter.js';
 
 // TODO: debugging jspm / system.js...fuck, shit, aaaaaaaa
 
 // variables
-var lastScrollTop = 0;
-var navContainer = document.querySelector('.nav-container');
-var sliderHero = document.querySelector('.slider-hero');
-var sliderReleases = document.querySelector('.slider-releases');
-var newsletterForm = document.querySelector('.newsletter-form');
+let lastScrollTop = 0;
+let navContainer = document.querySelector('.nav-container');
+let sliderHero = document.querySelector('.slider-hero');
+let sliderReleases = document.querySelector('.slider-releases');
+let newsletterForm = document.querySelector('.newsletter-form');
 
+// TODO: examples
 //import defaultMember from "module-name";
 //import * as name from "module-name";
 //import { member } from "module-name";
@@ -25,12 +26,12 @@ var newsletterForm = document.querySelector('.newsletter-form');
 
 // sticky navigation
 window.addEventListener('scroll', function () {
-    var currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
+    let currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
 
     if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
-        navContainer.classList.add('nav-container-hidden');
-    } else {
-        navContainer.classList.remove('nav-container-hidden');
+        navContainer.classList.add('smaller');
+    } else if (currentScrollTop < 100 && currentScrollTop < lastScrollTop) {
+        navContainer.classList.remove('smaller');
     }
 
     lastScrollTop = currentScrollTop;
@@ -48,19 +49,3 @@ if (sliderReleases) {
 if (newsletterForm) {
     new Newsletter(newsletterForm);
 }
-
-// export function welcome(name) {
-//     alert(greeter.greet(name));
-// }
-
-//EXAMPLE
-//import React from 'react';
-//import ReactDOM from 'react-dom';
-//import CartItem from './cartItem.jsx!';
-//
-//const order = {
-//    title: 'Fresh fruits package',
-//    image: 'http://images.all-free-download.com/images/graphiclarge/citrus_fruit_184416.jpg',
-//    initialQty: 3,
-//    price: 8
-//};

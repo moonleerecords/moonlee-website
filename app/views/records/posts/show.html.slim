@@ -14,6 +14,6 @@ section.narrower.post-show
     h2
       = @post.title
     time.post-date datetime=@post.published_at
-      = localize(@post.published_at.to_date)
+      = localize(@post.published_at)
     div.text-block.post-body
       = simple_format(@post.body)

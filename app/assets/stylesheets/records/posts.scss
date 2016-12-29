@@ -17,7 +17,6 @@
 
 .post-date {
   @extend .article-identifier;
-  color: $color-gold;
   display: block;
   margin-top: 30px;
 }
@@ -62,7 +61,6 @@
     }
 
     .post-date {
-      color: $color-gold;
       margin-top: 0;
     }
 
@@ -94,7 +92,6 @@
     padding-top: 50px;
 
     .post-date {
-      color: $color-gold;
       margin-top: 10px;
     }
   }

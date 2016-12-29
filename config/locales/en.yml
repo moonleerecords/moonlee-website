@@ -20,8 +20,8 @@ en:
       long: "%d.%m.%Y"
   time:
     formats:
-      default: "%d.%m.%Y %H:%M:%S"
-      long: "%d.%m.%Y %H:%M:%S"
+      default: "%d.%m.%Y %H:%M"
+      long: "%d.%m.%Y %H:%M"
   news: News
   public: Public
   hidden: Hidden
