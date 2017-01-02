@@ -30,7 +30,7 @@ window.addEventListener('scroll', function () {
 
     if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
         navContainer.classList.add('smaller');
-    } else if (currentScrollTop < 100 && currentScrollTop < lastScrollTop) {
+    } else if (currentScrollTop < 200 && currentScrollTop < lastScrollTop) {
         navContainer.classList.remove('smaller');
     }
 

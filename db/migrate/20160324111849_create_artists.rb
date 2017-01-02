@@ -5,7 +5,6 @@ class CreateArtists < ActiveRecord::Migration[5.0]
       t.string :slug
       t.text :description
       t.string :origin
-      t.string :genre
       t.integer :formed
       t.integer :disbanded
       t.string :booking_agent

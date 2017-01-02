@@ -3,12 +3,24 @@
   .footer-links {
 
     .brand-info {
+      @include vertical-align(-10.5px);
       float: left;
       font-size: 18px;
-      margin-top: 10px;
+      line-height: 21px;
+    }
+
+    .moonlee-icon {
+      @include vertical-align(-5px);
+      background: image-url('base/moonlee-minimal.svg') no-repeat;
+      background-size: 30px 30px;
+      display: inline-block;
+      height: 30px;
+      text-indent: -9999px;
+      width: 30px;
     }
 
     .social-media-links {
+      @include vertical-align(-6px);
       float: right;
       font-size: 16px;
 

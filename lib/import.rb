@@ -13,7 +13,7 @@ module Import
 
         artist = Artist.find_or_initialize_by(name: row['name'])
         artist.assign_attributes(row.to_hash)
-        artist.save
+        artist.save!
       end
     end
 
@@ -22,7 +22,7 @@ module Import
       csv.each do |row|
         external_link = ExternalLink.find_or_initialize_by(artist_id: row['artist'], url_type: row['url_type'])
         external_link.url = row['url']
-        external_link.save
+        external_link.save!
       end
     end
 
@@ -30,7 +30,7 @@ module Import
       csv = parse_csv_file('members.csv')
       csv.each do |row|
         member = Member.find_or_initialize_by(name: row['name'])
-        member.save
+        member.save!
 
         # save artist members
         3.times do |i|
@@ -43,7 +43,7 @@ module Import
 
           artist_member = ArtistMember.find_or_initialize_by(artist_id: artist_id, member_id: member.id)
           artist_member.role = role
-          artist_member.save
+          artist_member.save!
         end
       end
     end
@@ -61,11 +61,11 @@ module Import
 
         release = Release.find_or_initialize_by(catalog_number: row['catalog_number'])
         release.assign_attributes(row.to_hash)
-        release.save
+        release.save!
 
         release_formats.each do |release_format|
           release_type = ReleaseType.find_or_initialize_by(release_id: release.id, release_format: release_format)
-          release_type.save
+          release_type.save!
         end
       end
     end
@@ -74,7 +74,7 @@ module Import
       csv = parse_csv_file('artist_releases.csv')
       csv.each do |row|
         artist_release = ArtistRelease.find_or_initialize_by(artist_id: row['artist'], release_id: row['release'])
-        artist_release.save
+        artist_release.save!
       end
     end
 
@@ -84,7 +84,7 @@ module Import
         release_review = ReleaseReview.find_or_initialize_by(release_id: row['release'], title: row['title'])
         row.delete('release')
         release_review.assign_attributes(row.to_hash)
-        release_review.save
+        release_review.save!
       end
     end
 
@@ -101,7 +101,7 @@ module Import
           title: row['title']
         )
 
-        release_type_buy_link.save
+        release_type_buy_link.save!
       end
     end
 

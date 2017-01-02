@@ -7,6 +7,7 @@ class CreateReleases < ActiveRecord::Migration[5.0]
       t.date :release_date
       t.text :description
       t.text :tracklist
+      t.string :genre
       t.string :for_fans_of
       t.string :quote
       t.string :bandcamp_url
