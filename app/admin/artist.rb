@@ -6,7 +6,6 @@ ActiveAdmin.register Artist do
                 :image,
                 :description,
                 :origin,
-                :genre,
                 :formed,
                 :disbanded,
                 :booking_agent,
@@ -32,7 +31,6 @@ ActiveAdmin.register Artist do
       f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
       f.input :description, as: :ckeditor
       f.input :origin
-      f.input :genre
       f.input :formed
       f.input :disbanded
       f.input :booking_agent
@@ -72,7 +70,6 @@ ActiveAdmin.register Artist do
         artist.description.html_safe
       end
       row :origin
-      row :genre
       row :formed
       row :disbanded
       row :songkick_id
@@ -131,7 +128,6 @@ ActiveAdmin.register Artist do
     selectable_column
     column :name
     column :origin
-    column :genre
     column :active
     actions
   end

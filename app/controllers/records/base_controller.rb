@@ -26,6 +26,14 @@ module Records
       @social_posts = SocialPost.twitter.take(1) + SocialPost.instagram.take(2) + SocialPost.youtube.take(2)
     end
 
+    def custom_header(title, text, image = nil)
+      @custom_header = {
+        title: title,
+        text: text,
+        image: image
+      }
+    end
+
     def meta_tags(title, description = '', image = nil)
       image = '/assets/missing.png' if image.nil?
       @meta_tags = {

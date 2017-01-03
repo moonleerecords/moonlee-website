@@ -6,6 +6,7 @@ section.narrower.artist-show
     p = image_tag @artist.image.url(:small)
     p = raw(@artist.description)
     p = @artist.origin
+    p = @artist.genre
     p
       = "Years active: #{years_active(@artist.formed, @artist.disbanded)}"
     ul
@@ -20,5 +21,6 @@ section.narrower.artist-show
     ul
       - @artist.events.each do |event|
         li = event.venue.name
+
 
 /TODO: need design, use grids

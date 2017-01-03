@@ -1,5 +1,9 @@
 .event-box {
   border-bottom: 1px solid $color-white;
+
+  &:hover {
+    color: $color-white;
+  }
 }
 
 .event-location {

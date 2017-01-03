@@ -7,7 +7,7 @@
       article.event-box.event-box-artist-header.items-list-group
         div.item-column.column-1-9
         div.item-column.column-7-9.event-artist-name
-          = artist
+          = link_to artist.name, records_artist_path(artist), title: artist.name
         div.item-column.column-1-9
       - events.each do |event|
         article.event-box.items-list-group
@@ -30,4 +30,5 @@
                        title: 'Last.fm event'
             - if event.songkick_url
               = link_to event.songkick_url, class: 'icon-white-link', target: '_blank', title: 'Songkick event' do
-                i.fa.custom-songkick
+                i.fa.fa-custom-songkick
+/TODO: use grid

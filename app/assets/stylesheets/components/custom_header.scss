@@ -1,0 +1,28 @@
+.custom-header {
+  background: $color-gold;
+  height: 500px;
+  left: 0;
+  position: relative;
+  top: 74px;
+  width: 100%;
+
+  .blocks-container {
+    padding: 0 11%;
+
+    .text-side {
+      padding-top: 60px;
+
+      p {
+        padding-right: 50px;
+      }
+    }
+
+    .image-side {
+      img {
+        height: 570px;
+        margin-left: -110px;
+        margin-top: -70px;
+      }
+    }
+  }
+}

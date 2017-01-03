@@ -1,6 +1,6 @@
 - unless @artists.nil? || @artists.empty?
   section.items-list.artists-list
-    - @artists.each do |artist|
+    - @artists.active.each do |artist|
       article.item-column.marginless.column-1-2
         = link_to records_artist_path(artist),
                   class: 'artist-box',
@@ -11,4 +11,7 @@
             = artist.name
           h3.artist-quote
             = artist.quote
-/ TODO: separate active and disbanded artists
+    - @artists.inactive.each do |artist|
+      article
+        = artist.name
+        /TODO: continue

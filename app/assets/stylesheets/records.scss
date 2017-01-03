@@ -12,6 +12,7 @@
 @import 'components/newsletter.scss';
 @import 'components/social.scss';
 @import 'components/cover_header.scss';
+@import 'components/custom_header.scss';
 @import 'components/pagination.scss';
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
@@ -20,6 +21,7 @@
 @import 'records/posts.scss';
 @import 'records/releases.scss';
 @import 'records/store.scss';
+@import 'records/about.scss';
 
 body {
   background-color: $color-buttery-white;
@@ -46,7 +48,7 @@ body {
 }
 
 section {
-  padding: 0 50px 100px;
+  padding: 0 4% 100px;
 
   &.narrower {
     padding: 0 150px 100px;
@@ -54,7 +56,6 @@ section {
 }
 
 .moonlee-logo {
-  @extend .moonlee-logo;
   background: image-url('base/moonlee-logo.svg') no-repeat;
   text-indent: -9999px;
 }

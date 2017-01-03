@@ -54,7 +54,7 @@
 }
 
 .column-1-2 {
-  margin: 0;
+  margin: 0 !important;
   width: 50%;
 }
 
@@ -152,6 +152,7 @@
   .column-3-3,
   .column-2-3,
   .column-1-3 {
+    padding: 0;
     width: 100%;
   }
 
@@ -164,6 +165,7 @@
   .column-3-9,
   .column-2-9,
   .column-1-9 {
+    padding: 0;
     width: 100%;
   }
 }

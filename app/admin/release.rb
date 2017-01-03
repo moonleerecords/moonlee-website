@@ -8,6 +8,7 @@ ActiveAdmin.register Release do
                 :release_date,
                 :description,
                 :tracklist,
+                :genre,
                 :for_fans_of,
                 :quote,
                 :bandcamp_url,
@@ -42,6 +43,7 @@ ActiveAdmin.register Release do
               }
       f.input :description, as: :ckeditor
       f.input :tracklist, as: :ckeditor
+      f.input :genre
       f.input :for_fans_of
       f.input :quote
       f.input :bandcamp_url
@@ -84,6 +86,7 @@ ActiveAdmin.register Release do
       row :tracklist do
         release.tracklist.html_safe
       end
+      row :genre
       row :for_fans_of
       row :quote
       row :bandcamp_url do

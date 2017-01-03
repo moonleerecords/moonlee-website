@@ -2,8 +2,10 @@ section.narrower.release-show
   div.release-side
     .release-date
       = "Released: #{localize(@release.release_date)}"
+      /TODO: bold
       /TODO: @release.for_fans_of
-      /TODO: genre?
+      /TODO: genre - from both artists
+      /TODO: download info sheet
   div.release-main.release-info
     span.release-number = @release.catalog_number
     h2.release-artists = raw(artists_names(@release, true))
@@ -21,5 +23,8 @@ section.narrower.release-show
             = translate(release_format)
     div.text-block.release-description
       = raw(@release.description)
+/TODO: grid
 /TODO: release_reviews
 /TODO: links to other shops and digital releases
+/TODO: other releases from this band
+/TODO: link to similar releases on moonlee

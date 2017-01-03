@@ -1,0 +1,10 @@
+- if custom_header
+  div.custom-header
+    div.blocks-container.items-list.items-list-group
+      div.item-column.column-2-3.text-side
+        h2
+          = custom_header[:title]
+        p.text-block
+          = raw custom_header[:text]
+      div.item-column.column-1-3.image-side
+        = image_tag custom_header[:image]

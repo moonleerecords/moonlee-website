@@ -10,6 +10,7 @@ section.narrower.post-show
               = post.title
           time.post-date datetime=@post.published_at
             = localize(@post.published_at.to_date)
+      = link_to 'Read all news', records_posts_path, class: 'link-button more-posts'
   div.post-main
     h2
       = @post.title

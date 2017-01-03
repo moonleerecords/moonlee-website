@@ -23,11 +23,11 @@
     .moonlee-logo-header {
       background-size: 150px 100%;
       height: 100%;
-      left: 40px;
+      left: 3%;
       position: absolute;
       top: 0;
-      z-index: 99;
       width: 150px;
+      z-index: 99;
     }
 
     .navigation {
@@ -76,7 +76,7 @@
     .section-navigation {
       @include vertical-align(10px);
       position: absolute;
-      right: 50px;
+      right: 4%;
 
       a {
         color: $color-black;

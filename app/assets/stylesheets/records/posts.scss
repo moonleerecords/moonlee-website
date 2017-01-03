@@ -18,7 +18,7 @@
 .post-date {
   @extend .article-identifier;
   display: block;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .post-title {
@@ -60,10 +60,6 @@
       padding-right: 50px;
     }
 
-    .post-date {
-      margin-top: 0;
-    }
-
     .post-body {
       margin-right: -1em;
       margin-top: 30px;
@@ -90,15 +86,12 @@
     overflow: hidden;
     padding-right: 50px;
     padding-top: 50px;
-
-    .post-date {
-      margin-top: 10px;
-    }
   }
 
   .post-side {
     float: right;
     padding-top: 50px;
+    position: relative;
     width: 40%;
 
     .latest-news {
@@ -120,9 +113,13 @@
 
         .post-date {
           margin-bottom: 20px;
-          margin-top: 10px;
         }
       }
+    }
+
+    .more-posts {
+      left: 0;
+      position: absolute;
     }
   }
 }
