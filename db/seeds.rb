@@ -1,8 +1,10 @@
 require 'csv'
 
-# TODO: remove this before official release. be sure to drop database and add user by hand
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 # TODO: main image in admin is not working
+
+if Rails.env == 'development'
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
 
 importer = Import::Importer.new
 
@@ -14,6 +16,8 @@ importer.artists_releases
 importer.releases_reviews
 importer.releases_buy_links
 importer.posts
+
+# TODO: new slides
 
 # Slides
 Slide.create(

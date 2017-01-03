@@ -1,21 +1,8 @@
 ActiveAdmin.setup do |config|
-  # == Site Title
-  #
-  # Set the title that is displayed on the main layout
-  # for each of the active admin pages.
-  #
   config.site_title = 'Moonlee'
 
-  # Set the link url for the title. For example, to take
-  # users to your main site. Defaults to no link.
-  #
   config.site_title_link = '/admin'
 
-  # Set an optional image to be displayed for the header
-  # instead of a string (overrides :site_title)
-  #
-  # Note: Aim for an image that's 21px high so it fits in the header.
-  #
   # TODO: change this
   config.site_title_image = 'admin_logo.png'
 
@@ -218,42 +205,39 @@ ActiveAdmin.setup do |config|
   #     admin.add_logout_button_to_menu menu
   #   end
   # end
-  #
-  # If you wanted to add a static menu item to the default menu provided:
-  #
-  # config.namespace :admin do |admin|
-  #   admin.build_menu :default do |menu|
-  #     menu.add label: "My Great Website",
-  #              url: "http://www.mygreatwebsite.com",
-  #              html_options: { target: :blank }
-  #   end
-  # end
 
   config.namespace :admin do |admin|
     admin.build_menu :utility_navigation do |menu|
       menu.add label: 'Moonlee Records',
                url: '/',
                html_options: { target: :blank }
-      admin.add_current_user_to_menu  menu
+      admin.add_current_user_to_menu menu
       admin.add_logout_button_to_menu menu
     end
   end
 
-  config.namespace :admin do |admin|
-    admin.build_menu do |menu|
-      menu.add label: 'TODO: Shop',
-               priority: 6
-    end
-  end
+  # config.namespace :admin do |admin|
+  #   admin.build_menu do |menu|
+  #     menu.add label: 'TODO: Shop',
+  #              priority: 6
+  #   end
+  # end
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
       menu.add label: 'Shows',
-               priority: 7,
-               url: 'https://tourbox.songkick.com',
-               html_options: { target: :blank, title: 'Links to Songkick' }
+               priority: 6 do |shows|
+
+        shows.add label: 'Add shows', url: 'https://tourbox.songkick.com', html_options: { target: :blank, title: 'Links to Songkick' }
+        shows.add label: 'Fetch new shows', url: '/admin/events/fetch_upcoming_shows'
+        # shows.add label: 'Fetch new shows', url: fetch_upcoming_shows_admin_events_path
+      end
     end
   end
+
+  # config.register Post do
+  #   menu parent: "Blog"
+  # end
 
   # == Download Links
   #
