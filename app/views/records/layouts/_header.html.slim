@@ -20,6 +20,6 @@ header.page-header
             = 'Store'
   = render partial: 'records/shared/slider', locals: { slides: @slides }
   = render partial: 'records/shared/cover_header',
-           locals: { cover_image: @cover_image, cover_video: @cover_video, release: @release }
+           locals: { cover_image: @cover_image, cover_video: @cover_video, artist: @artist, release: @release }
   = render partial: 'records/shared/custom_header',
            locals: { custom_header: @custom_header }

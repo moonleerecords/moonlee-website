@@ -1,4 +1,6 @@
 .artists-list {
+  padding: 0 0 100px;
+
   .artist-box {
     background: no-repeat center center;
     background-size: cover;
@@ -8,13 +10,13 @@
     width: 100%;
 
     .artist-name {
+      bottom: 0;
       color: $color-white;
       font-weight: bold;
       left: 0;
       padding: 50px;
       position: absolute;
-      text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
-      top: 0;
+      //text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
     }
 
     .artist-quote {
@@ -23,6 +25,34 @@
       left: 0;
       padding: 50px 50px 75px;
       position: absolute;
+    }
+  }
+}
+
+.artists-list-inactive {
+  .section-title {
+    padding: 0 0 75px;
+  }
+
+  .artist-box {
+    background: no-repeat center center;
+    background-size: cover;
+    border: 1px solid $color-limed-spruce;
+    display: block;
+    height: 300px;
+    position: relative;
+    width: 100%;
+  }
+
+  .artist-name {
+    padding: 30px 30px 50px;
+  }
+}
+
+.artist-show {
+  .artist-main {
+    p {
+      padding-right: 50px;
     }
   }
 }

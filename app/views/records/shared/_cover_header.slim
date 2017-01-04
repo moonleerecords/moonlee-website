@@ -3,6 +3,9 @@
     = raw(cover_video)
 - elsif cover_image
   div.cover-header style="background-image: url('#{cover_image.url(:large)}');"
+    - unless artist.nil?
+      h2.section-title
+        = @artist.name
     - unless release.nil?
       div.bandcamp-player.holds-the-iframe
         = raw(release.bandcamp_player)

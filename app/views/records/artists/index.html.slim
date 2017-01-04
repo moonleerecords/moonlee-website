@@ -9,9 +9,19 @@
                   title: artist.name do
           h2.artist-name
             = artist.name
-          h3.artist-quote
-            = artist.quote
+          /h3.artist-quote
+          /  = artist.quote
+  section.items-list.artists-list-inactive
+    div.section-heading
+      h2.section-title
+        = 'Past Artists'
     - @artists.inactive.each do |artist|
-      article
-        = artist.name
-        /TODO: continue
+      article.item-column.column-1-3
+        = link_to '',
+                  records_artist_path(artist),
+                  class: 'artist-box',
+                  style: "background-image: url('#{artist.image.url(:medium)}');",
+                  alt: artist.name,
+                  title: artist.name
+        h3.artist-name
+          = link_to artist.name, records_artist_path(artist), title: artist.name

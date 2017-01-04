@@ -14,14 +14,6 @@
 @import 'components/cover_header.scss';
 @import 'components/custom_header.scss';
 @import 'components/pagination.scss';
-@import 'records/_header.scss';
-@import 'records/_footer.scss';
-@import 'records/artists.scss';
-@import 'records/events.scss';
-@import 'records/posts.scss';
-@import 'records/releases.scss';
-@import 'records/store.scss';
-@import 'records/about.scss';
 
 body {
   background-color: $color-buttery-white;
@@ -51,7 +43,7 @@ section {
   padding: 0 4% 100px;
 
   &.narrower {
-    padding: 0 150px 100px;
+    padding: 30px 11% 100px;
   }
 }
 
@@ -66,17 +58,12 @@ section {
 
 .section-heading {
   position: relative;
+}
 
-  .section-title {
-    color: $color-limed-spruce;
-    padding: 75px 0;
-    text-align: center;
-
-    &.section-title-page {
-      padding: 150px 0 75px;
-      // TODO: need design
-    }
-  }
+.section-title {
+  color: $color-limed-spruce;
+  padding: 75px 0;
+  text-align: center;
 }
 
 .page-footer {
@@ -107,3 +94,12 @@ section {
 @include respond-to(large) {
   // TODO: only on large
 }
+
+@import 'records/_header.scss';
+@import 'records/_footer.scss';
+@import 'records/artists.scss';
+@import 'records/events.scss';
+@import 'records/posts.scss';
+@import 'records/releases.scss';
+@import 'records/store.scss';
+@import 'records/about.scss';

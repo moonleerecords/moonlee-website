@@ -115,6 +115,7 @@ $ cap production deploy
 
 * Instagram
 * Youtube
+* Twitter
 * Songkick
 * Mailchimp
 
@@ -139,5 +140,5 @@ Design: [Antonio Karača](https://www.behance.net/antoniokaraca)
 * paperclip compression -> https://github.com/emrekutlu/paperclip-compression
 * paperclip optimizer -> https://github.com/janfoeh/paperclip-optimizer
 * tiny png (500 images month) -> https://tinypng.com/developers/reference/ruby
-* javascript dualtone -> http://www.mattkandler.com/blog/duotone-image-filter-javascript-rails
 * paperclip dualtone
+* player

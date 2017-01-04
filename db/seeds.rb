@@ -17,41 +17,25 @@ importer.releases_reviews
 importer.releases_buy_links
 importer.posts
 
-# TODO: new slides
-
 # Slides
 Slide.create(
-  title: 'Politika – a new album by Bernays Propaganda',
-  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'bernays_propaganda_01.png')),
-  url: '/artists/bernays-propaganda',
+  title: 'Repetitor released new album "Gde Ćeš"',
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'repetitor_001.png')),
+  url: '/artists/repetitor',
   records: true,
   position: 1
 )
 Slide.create(
-  title: 'Repetitor on the tour',
-  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'repetitor_01.png')),
-  url: '/artists/repetitor',
+  title: 'Debeli Precjednik / Mašinko split release out now!',
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'debeli_precjednik_001.png')),
+  url: '/artists/debeli-precjednik-fat-prezident',
   records: true,
   position: 2
 )
 Slide.create(
-  title: 'Vlasta Popić touring Balkans',
-  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'vlasta_popic_01.png')),
-  url: '/artists/vlasta-popic',
+  title: 'Bernays Propaganda with new album "Politika"',
+  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'bernays_propaganda_001.png')),
+  url: '/artists/bernays-propaganda',
   records: true,
   position: 3
-)
-Slide.create(
-  title: 'Politika – a new album by Bernays Propaganda',
-  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'bernays_propaganda_01.png')),
-  url: '/artists/bernays-propaganda',
-  booking: true,
-  position: 1
-)
-Slide.create(
-  title: 'Repetitor on the tour',
-  image: File.new(Rails.root.join('lib', 'seeds', 'images', 'slides', 'repetitor_01.png')),
-  url: '/artists/repetitor',
-  booking: true,
-  position: 2
 )

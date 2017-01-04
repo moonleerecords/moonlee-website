@@ -1,9 +1,5 @@
 .event-box {
   border-bottom: 1px solid $color-white;
-
-  &:hover {
-    color: $color-white;
-  }
 }
 
 .event-location {
@@ -28,6 +24,10 @@
 
   .event-box {
     height: 50px;
+
+    &:hover {
+      color: $color-white;
+    }
 
     &.event-box-artist-header {
       margin-top: 50px;
@@ -63,7 +63,7 @@
 
 .events-boxes {
   background-color: $color-green;
-  padding: 0 50px 50px !important;
+  padding: 0 50px 50px;
 
   .more-events {
     @include vertical-align(27px);

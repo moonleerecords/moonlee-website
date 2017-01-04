@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   has_attached_file :image,
                     styles: {
                       large: '1250x1250>',
-                      medium: '400x400>',
+                      medium: '450x450>',
                       small: '100x100>'
                     },
                     default_url: '/assets/missing.png'

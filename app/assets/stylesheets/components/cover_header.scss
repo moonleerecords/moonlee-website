@@ -7,6 +7,14 @@
   top: 74px;
   width: 100%;
 
+  .section-title {
+    //TODO: adjust
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    position: absolute;
+  }
+
   .bandcamp-player {
     background-position: center 145px;
     position: absolute;

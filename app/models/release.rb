@@ -14,10 +14,15 @@ class Release < ApplicationRecord
   accepts_nested_attributes_for :release_reviews, allow_destroy: true
 
   has_attached_file :cover,
-                    styles: { large: '1250x1250', medium: '450x450', small: '100x100' },
+                    styles: {
+                      large: '1250x1250',
+                      medium: '450x450',
+                      small: '100x100'
+                    },
                     default_url: '/assets/missing.png'
 
   # TODO: add attachment - pdf???
+
 
   validates :title, presence: true
   validates :catalog_number, presence: true
