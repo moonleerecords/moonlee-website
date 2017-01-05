@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Release do
   menu label: 'Releases', priority: 4
-  config.sort_order = 'catalog_number_asc'
+  config.sort_order = 'catalog_number_desc'
   permit_params :title,
                 :cover,
                 :catalog_number,
@@ -34,7 +34,7 @@ ActiveAdmin.register Release do
       f.input :title
       f.input :cover,
               as: :file,
-              hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
+              hint: (f.object.cover.present? ? image_tag(f.object.cover.url(:medium)) : content_tag(:span, ''))
       f.input :catalog_number
       f.input :release_date,
               as: :date_time_picker,
