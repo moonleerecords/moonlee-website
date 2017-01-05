@@ -18,11 +18,9 @@ class Release < ApplicationRecord
                       large: '1250x1250',
                       medium: '450x450',
                       small: '100x100'
-                    },
-                    default_url: '/assets/missing.png'
+                    }
 
   # TODO: add attachment - pdf???
-
 
   validates :title, presence: true
   validates :catalog_number, presence: true

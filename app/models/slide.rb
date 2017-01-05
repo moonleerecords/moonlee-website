@@ -3,9 +3,9 @@ class Slide < ApplicationRecord
 
   has_attached_file :image,
                     styles: {
+                      medium: '450x450>',
                       large: '1250x1250>'
-                    },
-                    default_url: '/assets/missing.png'
+                    }
 
   # TODO: deal with compression somehow
   # TODO: http://stackoverflow.com/questions/28412310/rails-paperclip-tinypng-gem

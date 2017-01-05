@@ -17,7 +17,9 @@ ActiveAdmin.register Slide do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
+      f.input :cover,
+              as: :file,
+              hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :url
       f.input :position
       f.input :records
@@ -32,7 +34,7 @@ ActiveAdmin.register Slide do
       row :id
       row :title
       row :image do
-        image_tag(slide.image.url(:small))
+        image_tag(slide.image.url(:medium)) if slide.image.present?
       end
       row :url
       row :position

@@ -20,7 +20,9 @@ ActiveAdmin.register Post do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
+      f.input :image,
+              as: :file,
+              hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :youtube_video
       f.input :categories,
               multiple: true,
@@ -32,7 +34,7 @@ ActiveAdmin.register Post do
               picker_options: {
                 format: 'd.m.Y H:i',
                 step: 30,
-                value: localize(f.object.published_at)
+                value: (localize(f.object.published_at) if f.object.published_at)
               }
       f.input :visibility,
               as: :select,
@@ -52,7 +54,7 @@ ActiveAdmin.register Post do
       row :title
       row :youtube_video
       row :image do
-        image_tag(post.image.url(:small))
+        image_tag(post.image.url(:medium)) if post.image.present?
       end
       row :body do
         # rubocop:disable Rails/OutputSafety

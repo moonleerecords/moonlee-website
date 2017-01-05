@@ -28,7 +28,9 @@ ActiveAdmin.register Artist do
     f.semantic_errors
     f.inputs do
       f.input :name
-      f.input :image, as: :file, hint: image_tag(f.object.image.url(:small))
+      f.input :image,
+              as: :file,
+              hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :description, as: :ckeditor
       f.input :origin
       f.input :formed
@@ -63,11 +65,11 @@ ActiveAdmin.register Artist do
       row :id
       row :name
       row :image do
-        image_tag(artist.image.url(:small))
+        image_tag(artist.image.url(:medium)) if artist.image.present?
       end
       row :description do
         # rubocop:disable Rails/OutputSafety
-        artist.description.html_safe
+        artist.description.html_safe if artist.description
       end
       row :origin
       row :formed

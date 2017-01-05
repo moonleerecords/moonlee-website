@@ -15,16 +15,17 @@ class Artist < ApplicationRecord
   has_attached_file :image,
                     styles: {
                       large: '1250x1250>',
+                      large_medium: '700x700>',
                       medium: '450x450>',
                       small: '100x100>'
                     },
-                    default_url: '/assets/missing.png',
                     convert_options: {
-                      # TODO:
-                      all: '-strip -depth 8'
+                      # -strip -depth 8
+                      all: ''
                     }
 
   # TODO: dualtone color input field
+  # TODO: compressions
 
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true

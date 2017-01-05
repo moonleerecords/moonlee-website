@@ -32,14 +32,16 @@ ActiveAdmin.register Release do
               required: true,
               collection: Artist.order(:name)
       f.input :title
-      f.input :cover, as: :file, hint: image_tag(f.object.cover.url(:small))
+      f.input :cover,
+              as: :file,
+              hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :catalog_number
       f.input :release_date,
               as: :date_time_picker,
               picker_options: {
                 timepicker: false,
                 format: 'd.m.Y',
-                value: localize(f.object.release_date)
+                value: (localize(f.object.release_date) if f.object.release_date)
               }
       f.input :description, as: :ckeditor
       f.input :tracklist, as: :ckeditor
@@ -75,7 +77,7 @@ ActiveAdmin.register Release do
       end
       row :title
       row :cover do
-        image_tag(release.cover.url(:small))
+        image_tag(release.cover.url(:medium)) if release.cover.present?
       end
       row :catalog_number
       row :release_date
