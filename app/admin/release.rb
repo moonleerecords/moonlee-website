@@ -18,7 +18,7 @@ ActiveAdmin.register Release do
                 release_types_attributes: [
                   :id,
                   :release,
-                  :format,
+                  :release_format,
                   :_destroy,
                   release_type_buy_links_attributes: [:id, :title, :source, :buy_url, :release_type, :_destroy]
                 ]
