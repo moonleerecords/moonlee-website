@@ -27,6 +27,7 @@ class Artist < ApplicationRecord
   # TODO: dualtone color input field
   # TODO: compressions
 
+
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true
 
@@ -62,5 +63,6 @@ class Artist < ApplicationRecord
     self.releases.each do |release|
       return release.genre unless release.split_release?
     end
+    self[:genre]
   end
 end
