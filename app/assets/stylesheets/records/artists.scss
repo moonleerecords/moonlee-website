@@ -16,7 +16,7 @@
       left: 0;
       padding: 50px;
       position: absolute;
-      //text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
+      text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
     }
 
     .artist-quote {
@@ -53,6 +53,20 @@
   .artist-main {
     p {
       padding-right: 50px;
+    }
+  }
+
+  .artist-side {
+    h4 {
+      margin-top: 30px;
+    }
+
+    .release-cover {
+      margin-top: 30px;
+    }
+
+    .hr-style-1 {
+      margin-top: 30px;
     }
   }
 }

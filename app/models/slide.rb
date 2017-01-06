@@ -11,6 +11,7 @@ class Slide < ApplicationRecord
   # TODO: http://stackoverflow.com/questions/28412310/rails-paperclip-tinypng-gem
   # TODO: https://github.com/benmanns/tinypng
 
+
   validates :image, presence: true
   validates :url, presence: true
   validates :position, presence: true

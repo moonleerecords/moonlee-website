@@ -4,7 +4,7 @@
       article.item-column.marginless.column-1-2
         = link_to records_artist_path(artist),
                   class: 'artist-box',
-                  style: "background-image: url('#{artist.image.url(:large)}');",
+                  style: "background-image: url('#{artist.image.url(:large_medium)}');",
                   alt: artist.name,
                   title: artist.name do
           h2.artist-name
@@ -14,7 +14,7 @@
   section.items-list.artists-list-inactive
     div.section-heading
       h2.section-title
-        = 'Past Artists'
+        = 'Inactive artists'
     - @artists.inactive.each do |artist|
       article.item-column.column-1-3
         = link_to '',

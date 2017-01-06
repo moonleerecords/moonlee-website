@@ -2,40 +2,49 @@ section.narrower.artist-show
   article.items-list.items-list-group
     div.artist-main.item-column.column-6-9.text-block
       p = raw(@artist.description)
+      - if @artist.events.count > 0
+        hr.hr-style-1
+        h4 Upcoming shows
+        ul
+          - @artist.events.first(5).each do |event|
+            li
+              = "#{localize(event.start_date)} @ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
     div.artist-side.item-column.column-3-9.text-block
-      /TODO: releases
-      /TODO: line
+      div.artist-releases
+        - @artist.releases.each do |release|
+          = link_to records_release_path(release), title: "#{release.artists_names} - #{release.title}" do
+            = image_tag release.cover.url(:medium), class: 'release-cover', alt: "#{release.artists_names} - #{release.title}"
+          div.release-info
+            span.release-number = release.catalog_number
+            h3.release-title = release.title
+            div.release-formats
+              - release.internal_buy_links.each do |release_format, buy_link|
+                - if buy_link
+                  - title = release_format == 'digital' ? 'Listen' : "Buy #{release_format}"
+                  = link_to buy_link, target: '_blank', class: 'release-format buy-link', title: title do
+                    i class="fa fa-custom-#{release_icon_format(release_format)}"
+                    = translate(release_format)
+                - else
+                  div.release-format.out-of-stock title='Out of stock'
+                    i class="fa fa-custom-#{release_icon_format(release_format)}"
+                    = translate(release_format)
+      hr.hr-style-1
       h4 Origin
       span = @artist.origin
-
-      h4 Genre
-      span = @artist.genre
-
+      - if @artist.genre
+        h4 Genre
+        span = @artist.genre
       h4 Years active
       span = years_active(@artist.formed, @artist.disbanded)
-
-      /TODO: line
-      /TODO: finish this page
-
-      h4 Members
-      ul
-        - @artist.members.each do |member|
-          li = member.name
-
-      h4 Links
-      ul
-        - @artist.external_links.each do |link|
-          li = link_to link.url_type, link.url, target: '_blank'
-
-      /TODO: shows
-
-
-    /ul
-    /  - @artist.releases.each do |release|
-    /    li = release.title
-    /ul
-    /  - @artist.external_links.each do |link|
-    /    li = link.url
-    /ul
-    /  - @artist.events.each do |event|
-    /    li = event.venue.name
+      - if @artist.members.count > 0
+        hr.hr-style-1
+        h4 Members
+        ul
+          - @artist.members.each do |member|
+            li = member.name
+      - if @artist.external_links.count > 0
+        hr.hr-style-1
+        h4 Links
+        ul
+          - @artist.external_links.each do |link|
+            li = link_to link.url_type, link.url, target: '_blank'

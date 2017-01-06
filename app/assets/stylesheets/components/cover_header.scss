@@ -8,11 +8,13 @@
   width: 100%;
 
   .section-title {
-    //TODO: adjust
-    bottom: 0;
-    left: 0;
+    bottom: 50px;
+    color: $color-white;
+    left: 11%;
     padding: 0;
     position: absolute;
+    //text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
+    //font-weight: bold;
   }
 
   .bandcamp-player {

@@ -1,9 +1,6 @@
 // basic slider
 .slider {
   height: auto;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -90,7 +87,6 @@
 
   .slider-navigation {
     bottom: 20px;
-    list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;

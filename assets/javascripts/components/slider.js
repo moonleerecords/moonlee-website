@@ -1,6 +1,8 @@
 'use strict';
 export class Slider {
     constructor(slider, options = {}) {
+        // TODO: change time, change transition effect ??
+
         this.slider = slider;
         this.slides = this.slider.querySelectorAll('.slide');
         this.previousButton = this.slider.querySelectorAll('.slider-control-previous');
