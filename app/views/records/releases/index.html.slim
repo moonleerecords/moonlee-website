@@ -1,5 +1,5 @@
 - unless @releases.nil? || @releases.empty?
-  section.items-list.releases-list
+  section.page-section.items-list.releases-list
     - @releases.each do |release|
       article.item-column.column-1-3
         = link_to records_release_path(release), title: "#{release.artists_names} - #{release.title}" do

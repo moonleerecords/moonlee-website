@@ -1,29 +1,32 @@
-section.narrower.release-show
-  div.release-side
-    .release-date
-      = "Released: #{localize(@release.release_date)}"
-      /TODO: bold
-      /TODO: @release.for_fans_of
-      /TODO: genre - from both artists
-      /TODO: download info sheet
-  div.release-main.release-info
-    span.release-number = @release.catalog_number
-    h2.release-artists = raw(artists_names(@release, true))
-    h2.release-title = @release.title
-    div.release-formats
-      - @release.internal_buy_links.each do |release_format, buy_link|
-        - if buy_link
-          - title = release_format == 'digital' ? 'Listen' : "Buy #{release_format}"
-          = link_to buy_link, target: '_blank', class: 'release-format buy-link', title: title do
-            i class="fa fa-custom-#{release_icon_format(release_format)}"
-            = translate(release_format)
-        - else
-          div.release-format.out-of-stock title='Out of stock'
-            i class="fa fa-custom-#{release_icon_format(release_format)}"
-            = translate(release_format)
-    div.text-block.release-description
-      = raw(@release.description)
-/TODO: grid
+section.page-section.narrower.release-show
+  article.items-list.items-list-group
+    div.release-main.release-info.item-column.column-6-9
+      span.release-number = @release.catalog_number
+      h2.release-artists = raw(artists_names(@release, true))
+      h2.release-title = @release.title
+      div.release-formats
+        - @release.internal_buy_links.each do |release_format, buy_link|
+          - if buy_link
+            - title = release_format == 'digital' ? 'Listen' : "Buy #{release_format}"
+            = link_to buy_link, target: '_blank', class: 'release-format buy-link', title: title do
+              i class="fa fa-custom-#{release_icon_format(release_format)}"
+              = translate(release_format)
+          - else
+            div.release-format.out-of-stock title='Out of stock'
+              i class="fa fa-custom-#{release_icon_format(release_format)}"
+              = translate(release_format)
+      div.text-block.release-description
+        = raw(@release.description)
+    div.release-side.item-column.column-3-9
+      h4 Release date
+      span = localize(@release.release_date)
+      - if @release.genre
+        h4 Genre
+        span = @release.genre
+      - if @release.for_fans_of
+        h4 Similar to
+        span = @release.for_fans_of
+/TODO: download info sheet
 /TODO: release_reviews
 /TODO: links to other shops and digital releases
 /TODO: other releases from this band

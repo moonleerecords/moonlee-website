@@ -1,5 +1,5 @@
 - unless @news.nil? || @news.empty?
-  section.narrower.items-list.posts-list
+  section.page-section.narrower.items-list.posts-list
     - @news.each_with_index do |post, index|
       article.post-item.items-list-group class=('painted' if index == 0)
         div.item-column.column-2-3

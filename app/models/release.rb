@@ -40,22 +40,8 @@ class Release < ApplicationRecord
 
   before_save :generate_bandcamp_player
 
-  def artists_names(linked = false)
-    if split_release?
-      if linked
-        self.artists.map do |artist|
-          if artist.name.index('/')
-            artist.name.slice(0..artist.name.index('/') - 1).strip
-          else
-            artist.name
-          end
-        end
-      else
-        concat_artists_names
-        self.artists.pluck(:name).map! { |name| name.index('/') ? name.slice(0..name.index('/') - 1).strip : name }
-      end
-    end
-
+  def artists_names
+    return concat_artists_names if split_release?
     self.artists[0].name
   end
 
@@ -104,6 +90,6 @@ class Release < ApplicationRecord
   private
 
   def generate_bandcamp_player
-    self.bandcamp_player = "<iframe style=\"border: 0; width: 380px; height: 750px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
+    self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
   end
 end

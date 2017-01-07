@@ -7,5 +7,8 @@
       h2.section-title
         = @artist.name
     - unless release.nil?
-      div.bandcamp-player.holds-the-iframe
-        = raw(release.bandcamp_player)
+      section.page-section.narrower
+        article.items-list.items-list-group
+          div.item-column.column-6-9
+          div.bandcamp-player.holds-the-iframe.item-column.column-3-9
+            = raw(release.bandcamp_player)

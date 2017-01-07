@@ -1,15 +1,13 @@
 'use strict';
 export class Slider {
     constructor(slider, options = {}) {
-        // TODO: change time, change transition effect ??
-
         this.slider = slider;
         this.slides = this.slider.querySelectorAll('.slide');
         this.previousButton = this.slider.querySelectorAll('.slider-control-previous');
         this.nextButton = this.slider.querySelectorAll('.slider-control-next');
         this.navigationButtons = this.slider.querySelectorAll('.slider-navigation > li');
         this.currentSlide = 0;
-        this.speed = options.speed !== undefined ? options.speed : 5000;
+        this.speed = options.speed !== undefined ? options.speed : 7000;
         this.autoplay = options.autoplay !== undefined ? options.autoplay : true;
 
         if (this.slides.length > 1) {

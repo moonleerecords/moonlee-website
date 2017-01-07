@@ -17,10 +17,17 @@
     //font-weight: bold;
   }
 
+  .page-section {
+    &.narrower {
+      padding: 0 11%;
+    }
+  }
+
   .bandcamp-player {
     background-position: center 145px;
-    position: absolute;
-    right: 150px;
-    top: 120px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
   }
 }

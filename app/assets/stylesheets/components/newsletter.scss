@@ -1,6 +1,8 @@
-.newsletter {
-  background-color: $color-gorse;
-  padding: 50px;
+.page-section {
+  &.newsletter {
+    background-color: $color-gorse;
+    padding: 4% 50px;
+  }
 }
 
 .newsletter-form {
@@ -11,6 +13,7 @@
 
   .section-title {
     margin: 7px 0;
+    padding: 0;
   }
 
   div {
@@ -42,8 +45,8 @@
     width: 100%;
 
     &.button-subscribe {
-      width: 100%;
       padding: 14px 15px;
+      width: 100%;
     }
 
     &:focus {
@@ -85,4 +88,3 @@
     }
   }
 }
-

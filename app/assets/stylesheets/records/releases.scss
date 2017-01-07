@@ -60,7 +60,6 @@
 .release-show {
   .release-main {
     overflow: hidden;
-    padding-right: 50px;
     padding-top: 20px;
 
     .release-formats {
@@ -69,9 +68,11 @@
   }
 
   .release-side {
-    float: right;
-    margin-top: 385px;
-    width: 380px;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    visibility: hidden;
   }
 }
 
