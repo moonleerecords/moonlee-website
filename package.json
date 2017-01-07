@@ -11,10 +11,10 @@
     "devDependencies": {
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4",
-      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.15",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
     },
     "overrides": {
       "github:scottjehl/Respond@1.4.2": {
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "hover.css": "^2.0.2",
-    "jspm": "^0.17.0-beta.29",
+    "jspm": "^0.17.0-beta.32",
     "mdbootstrap": "^4.1.1",
     "normalize-css": "^2.3.1"
   }

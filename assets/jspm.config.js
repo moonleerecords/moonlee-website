@@ -10,9 +10,9 @@ SystemJS.config({
     "map": {
       "babel-runtime": "npm:babel-runtime@5.8.38",
       "core-js": "npm:core-js@1.2.7",
-      "path": "github:jspm/nodelibs-path@0.2.0-alpha",
-      "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
-      "process": "github:jspm/nodelibs-process@0.2.0-alpha",
+      "path": "npm:jspm-nodelibs-path@0.2.1",
+      "fs": "npm:jspm-nodelibs-fs@0.2.0",
+      "process": "npm:jspm-nodelibs-process@0.2.0",
       "plugin-babel": "npm:systemjs-plugin-babel@0.0.15"
     },
     "packages": {

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import {Slider} from '../components/slider.js';
 import {Newsletter} from '../components/newsletter.js';

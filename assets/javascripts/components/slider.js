@@ -1,4 +1,5 @@
 'use strict';
+
 export class Slider {
     constructor(slider, options = {}) {
         this.slider = slider;

@@ -7,36 +7,30 @@
     "deps": {},
     "peerDeps": {
       "core-js": "npm:core-js@^1.2.0",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
     }
   },
   "npm:jquery@2.2.4": {
     "deps": {},
     "peerDeps": {}
   },
-  "npm:core-js@1.2.7": {
+  "npm:jspm-nodelibs-fs@0.2.0": {
     "deps": {},
-    "peerDeps": {
-      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
-    }
+    "peerDeps": {}
   },
   "npm:systemjs-plugin-babel@0.0.15": {
     "deps": {},
     "peerDeps": {}
   },
-  "github:jspm/nodelibs-fs@0.2.0-alpha": {
-    "deps": {},
-    "peerDeps": {}
-  },
-  "github:jspm/nodelibs-path@0.2.0-alpha": {
+  "npm:core-js@1.2.7": {
     "deps": {},
     "peerDeps": {
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
     }
   },
-  "github:jspm/nodelibs-process@0.2.0-alpha": {
+  "npm:jspm-nodelibs-process@0.2.0": {
     "deps": {},
     "peerDeps": {}
   },
@@ -47,5 +41,11 @@
   "github:Modernizr/Modernizr@3.3.1": {
     "deps": {},
     "peerDeps": {}
+  },
+  "npm:jspm-nodelibs-path@0.2.1": {
+    "deps": {},
+    "peerDeps": {
+      "process": "npm:jspm-nodelibs-process@^0.2.0"
+    }
   }
 }
