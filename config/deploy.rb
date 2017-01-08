@@ -11,8 +11,6 @@ set :use_sudo, false
 set :stage, :production
 set :deploy_via, :remote_cache
 
-set :jspm_build_flags, '--minify --skip-source-maps'
-
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
@@ -39,16 +37,6 @@ namespace :deploy do
   before :starting, :check_revision
   after :finishing, :cleanup
   after :finishing, :restart
-  after :updated, 'assets:precompile'
-  after :updated, 'jspm:build' do
-    invoke 'jspm:build',
-           'javascripts/records/app.js',
-           'public/assets/javascripts/records/app.min.js'
-    Rake::Task['jspm:build'].reenable
-    invoke 'jspm:build',
-           'javascripts/booking/app.js',
-           'public/assets/javascripts/booking/app.min.js'
-  end
 end
 
 namespace :assets do

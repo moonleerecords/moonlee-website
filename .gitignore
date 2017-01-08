@@ -3,7 +3,6 @@
 
 # frontend
 /node_modules
-/assets/jspm_packages/*/**
 /public/assets/
 /public/system/
 /assets/**/*.map

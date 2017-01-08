@@ -10,7 +10,6 @@
 #### Prerequisites 
 
 - [Node and NPM](https://docs.npmjs.com/getting-started/installing-node)
-- [jspm](http://jspm.io/docs/getting-started.html)
 - [PhantomJS](http://phantomjs.org/)
 
 #### Install gems
@@ -19,13 +18,12 @@
 $ bundle install
 ```
 
-#### Setup assets
+#### Setup frontend
 
-We are using npm and jspm to take care of the frontend packages. npm mostly for CSS libraries and to install jspm, and jspm in order to install and use JavaScript (ES6) libraries.
+We are using npm to take care of the frontend packages and `sprockets-es6` so that we can use ES6.
 
 ```
 $ npm install
-$ jspm install
 ```
 
 #### Setup database

@@ -41,4 +41,3 @@ exclude_paths:
 - spec/
 - test/
 - vendor/
-- assets/jspm_packages/

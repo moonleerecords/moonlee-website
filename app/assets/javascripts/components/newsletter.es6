@@ -18,8 +18,8 @@ export class Newsletter {
             this.resetMessages();
 
             if (this.valid()) {
-                var newsletterFormData = $(this.newsletter).serialize();
-                var token = $('meta[name="csrf-token"]').attr('content');
+                let newsletterFormData = $(this.newsletter).serialize();
+                let token = $('meta[name="csrf-token"]').attr('content');
 
                 $.ajax({
                     url: this.newsletter.action,
@@ -36,7 +36,7 @@ export class Newsletter {
     }
 
     valid() {
-        var isValid = true;
+        let isValid = true;
 
         if (!this.validEmail()) {
             this.emailError.innerHTML = this.emailError.dataset.message;
@@ -60,7 +60,7 @@ export class Newsletter {
     }
 
     validEmail() {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(this.emailInput.value);
     }
 
@@ -69,7 +69,7 @@ export class Newsletter {
     }
 
     showSuccessMessage() {
-        for (var i=0; i<this.newsletterDivs.length; i++) {
+        for (let i=0; i<this.newsletterDivs.length; i++) {
             this.newsletterDivs[i].classList.add('hidden');
         }
         this.successMessage.classList.remove('hidden');

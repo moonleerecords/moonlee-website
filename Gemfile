@@ -53,6 +53,11 @@ gem 'twitter'
 gem 'gibbon'
 # log management
 gem 'paper_trail'
+# sprockets for es6
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
+# browserify
+gem 'browserify-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -82,6 +87,5 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-passenger', require: false
   gem 'capistrano-npm', require: false
-  gem 'capistrano-jspm', require: false
   gem 'capistrano-rails-console', require: false
 end

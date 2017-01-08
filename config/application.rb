@@ -1,13 +1,14 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'action_view/railtie'
+require 'sprockets/railtie'
+# require 'rails/test_unit/railtie'
+require 'sprockets/es6'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
-# TODO: remove this after it's released in prod. This is here so that db can be dropped in production env
-ActiveRecord::Base.protected_environments = %w()
 
 module MoonleeWebsite
   class Application < Rails::Application

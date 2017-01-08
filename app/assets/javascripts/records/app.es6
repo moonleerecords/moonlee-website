@@ -1,8 +1,8 @@
 'use strict';
 
-import {Slider} from '../components/slider.js';
-import {Newsletter} from '../components/newsletter.js';
-import './releases.js';
+import {Slider} from '../components/slider.es6';
+import {Newsletter} from '../components/newsletter.es6';
+import './releases.es6';
 
 // variables
 let lastScrollTop = 0;

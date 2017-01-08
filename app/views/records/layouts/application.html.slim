@@ -12,7 +12,6 @@ html
     = render partial: 'records/shared/meta_tags'
     = content_for?(:meta_tags) ? yield(:meta_tags) : ''
     = stylesheet_link_tag 'records', media: 'all'
-    = javascript_include_tag 'jspm'
     = csrf_meta_tags
     link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"
     link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"
@@ -35,15 +34,7 @@ html
       div.content role='main'
         = yield
       = render partial: 'records/layouts/footer'
-
-- if Rails.env == 'development'
-  javascript:
-    System.import('javascripts/records/app.js');
-- else
-  javascript:
-    System.import('javascripts/records/app.min.js');
-
-/script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-585565aed8066c03"
+    = javascript_include_tag 'records'
 
 /[if lt IE 7]
   script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"

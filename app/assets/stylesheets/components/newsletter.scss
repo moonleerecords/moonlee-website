@@ -7,7 +7,6 @@
 
 .newsletter-form {
   opacity: 1;
-  overflow: hidden;
   position: relative;
   width: 100%;
 
@@ -76,6 +75,7 @@
       @include vertical-align(24px);
       font-size: 20px;
       left: 0;
+      margin: 20px 0 0;
       padding: 0;
       position: absolute;
       text-align: center;

@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
                 :booking,
                 :published_at,
                 :tags_raw,
-                categories: []
+                :categories_raw
 
   scope 'Records', :on_records, default: true
   scope 'Booking', :on_booking
@@ -45,8 +45,6 @@ ActiveAdmin.register Post do
     end
     f.actions
   end
-
-  # TODO: sort by published_at, edit news error
 
   show do
     attributes_table do
