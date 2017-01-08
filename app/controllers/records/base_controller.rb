@@ -36,8 +36,6 @@ module Records
 
     def meta_tags(title, description = '', image = nil)
       image = '/assets/missing.png' if image.nil?
-      # TODO: change default image to moonlee logo?
-
       @meta_tags = {
         title: title == '' ? 'Moonlee Records' : "Moonlee Records - #{title}",
         description: description == '' ? 'Moonlee Records is an independent record label from Ljubljana, Slovenia. Established in 2004.' : description,
