@@ -37,6 +37,7 @@ namespace :deploy do
   before :starting, :check_revision
   after :finishing, :cleanup
   after :finishing, :restart
+  after :updated, 'assets:precompile'
 end
 
 namespace :assets do
