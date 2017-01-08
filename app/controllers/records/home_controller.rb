@@ -7,7 +7,7 @@ module Records
     end
 
     def index
-      @news = Post.on_records.first(3)
+      @news = Post.on_records.published.first(3)
       @slides = Slide.on_records
       # TODO: use this for private (not published) posts
       # if admin_user_signed_in?

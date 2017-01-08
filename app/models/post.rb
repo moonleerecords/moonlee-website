@@ -27,9 +27,10 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :on_records, -> { where('published_at <= ?', Time.zone.now).where(records: true) }
-  scope :on_booking, -> { where('published_at <= ?', Time.zone.now).where(booking: true) }
-  scope :hidden, -> { where('published_at <= ?', Time.zone.now).where(records: false, booking: false) }
+  scope :published, -> { where('published_at <= ?', Time.zone.now) }
+  scope :on_records, -> { where(records: true) }
+  scope :on_booking, -> { where(booking: true) }
+  scope :hidden, -> { where(records: false, booking: false) }
 
   before_validation :assign_published_at
   before_save :assign_default_image

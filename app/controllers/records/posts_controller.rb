@@ -7,13 +7,13 @@ module Records
     end
 
     def index
-      @news = Post.on_records.page params[:page]
+      @news = Post.on_records.published.page params[:page]
       meta_tags('News', 'Latest news from Moonlee Records')
     end
 
     def show
       @post = Post.friendly.find(params[:id])
-      @latest_news = Post.on_records.limit(5)
+      @latest_news = Post.on_records.published.limit(5)
       @cover_image = @post.image
       if @post.youtube_video
         @cover_video = @post.youtube_iframe('100%', '100%')
