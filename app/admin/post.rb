@@ -93,9 +93,6 @@ ActiveAdmin.register Post do
     column :categories do |post|
       post.categories.map { |category| translate(category) }.join(', ')
     end
-    column :tags do |post|
-      post.tags.join(', ')
-    end
     actions
   end
 end

@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  VISIBILITY_OPTIONS = %w(public private).freeze
+  VISIBILITY_OPTIONS = %w(public hidden).freeze
   AVAILABLE_CATEGORIES = %w(news).freeze
 
   extend FriendlyId
@@ -27,7 +27,7 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :published, -> { where('published_at <= ?', Time.zone.now) }
+  scope :published, -> { where('published_at <= ?', Time.zone.now).where(visibility: 'public') }
   scope :on_records, -> { where(records: true) }
   scope :on_booking, -> { where(booking: true) }
   scope :hidden, -> { where(records: false, booking: false) }
