@@ -3,9 +3,6 @@ ActiveAdmin.setup do |config|
 
   config.site_title_link = '/admin'
 
-  # TODO: change this
-  config.site_title_image = 'admin_logo.png'
-
   # == Default Namespace
   #
   # Set the default namespace each administration resource

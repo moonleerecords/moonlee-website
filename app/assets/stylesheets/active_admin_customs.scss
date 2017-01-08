@@ -1,12 +1,9 @@
-$skinLogo: url('admin_logo.png') no-repeat 0 0;
-// TODO: change logo
-//$skinActiveColor: #001cee;
-//$skinHeaderBck: #002744;
-//$panelHeaderBck: #002744;
+$skinLogo: image-url('base/moonlee-logo.svg') no-repeat;
 
-// TODO: style for release types
-// TODO: text should be more darker (on show)
-// TODO: weird table http://localhost:3000/admin/artists/3
+.site_title {
+  -webkit-background-size: 160px 40px !important;
+  background-size: 160px 40px !important;
+}
 
 .cke_chrome {
   overflow: hidden;

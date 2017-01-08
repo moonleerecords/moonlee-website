@@ -1,7 +1,6 @@
 section.page-section.narrower.release-show
   article.items-list.items-list-group
     div.release-main.release-info.item-column.column-6-9
-      span.release-number = @release.catalog_number
       h2.release-artists = raw(artists_names(@release, true))
       h2.release-title = @release.title
       div.release-formats
@@ -15,6 +14,7 @@ section.page-section.narrower.release-show
             div.release-format.out-of-stock title='Out of stock'
               i class="fa fa-custom-#{release_icon_format(release_format)}"
               = translate(release_format)
+      div.release-number = @release.catalog_number
       div.text-block.release-description
         = raw(@release.description)
     div.release-side.item-column.column-3-9
