@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :youtube_video
       t.text :body
       t.string :visibility
-      t.boolean :records, default: false
+      t.boolean :records, default: true
       t.boolean :booking, default: false
       t.datetime :published_at
       t.string :tags, array: true, default: []

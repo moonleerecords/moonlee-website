@@ -11,10 +11,11 @@ ActiveAdmin.register Post do
                 :booking,
                 :published_at,
                 :tags_raw,
-                :categories_raw
+                { categories: [] }
 
   scope 'Records', :on_records, default: true
   scope 'Booking', :on_booking
+  scope 'Hidden', :hidden
 
   form do |f|
     f.semantic_errors
@@ -34,14 +35,15 @@ ActiveAdmin.register Post do
               picker_options: {
                 format: 'd.m.Y H:i',
                 step: 30,
-                value: (localize(f.object.published_at) if f.object.published_at)
+                value: (f.object.published_at.present? ? localize(f.object.published_at) : 'now')
               }
       f.input :visibility,
               as: :select,
               collection: Post.visibility_options.collect { |option| [translate(option), option] }
       f.input :tags_raw, label: 'Tags', as: :tags
-      f.input :records, label: 'Publish at Records'
-      f.input :booking, label: 'Publish at Booking'
+      f.input :records,
+              label: 'Publish at Records', as: :boolean
+      f.input :booking, label: 'Publish at Booking', as: :boolean
     end
     f.actions
   end

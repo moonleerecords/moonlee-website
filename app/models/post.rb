@@ -29,6 +29,7 @@ class Post < ApplicationRecord
 
   scope :on_records, -> { where('published_at <= ?', Time.zone.now).where(records: true) }
   scope :on_booking, -> { where('published_at <= ?', Time.zone.now).where(booking: true) }
+  scope :hidden, -> { where('published_at <= ?', Time.zone.now).where(records: false, booking: false) }
 
   before_validation :assign_published_at
   before_save :assign_default_image
@@ -74,7 +75,8 @@ class Post < ApplicationRecord
   end
 
   def validate_categories
-    invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
+    categories = self.categories.reject! { |c| c.empty? }
+    invalid_categories = categories - AVAILABLE_CATEGORIES
     errors.add(:categories, 'Not all the categories are valid') if invalid_categories.count > 0
   end
 end
