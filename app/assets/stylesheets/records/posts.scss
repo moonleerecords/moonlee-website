@@ -71,6 +71,10 @@
       padding-right: 1em;
       position: relative;
 
+      p {
+        margin: 0;
+      }
+
       &:before {
         background-image: linear-gradient(to right, $color-transparent-rgba, $color-buttery-white);
         bottom: 0;

@@ -42,6 +42,10 @@ class Post < ApplicationRecord
     end
   end
 
+  def body
+    self[:body].gsub('&nbsp;', ' ')
+  end
+
   def tags_raw
     tags.join(', ') unless tags.nil?
   end

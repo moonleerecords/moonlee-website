@@ -18,7 +18,7 @@ section.page-section.narrower.post-show
             = link_to records_post_path(post), title: post.title do
               h3
                 = post.title
-            time.post-date datetime=@post.published_at
+            time.post-date datetime = @post.published_at
               = localize(@post.published_at.to_date)
           - if index != @latest_news.count - 1
             hr.hr-style-1
