@@ -4,17 +4,7 @@ section.page-section.narrower.release-show
       div.release-number = @release.catalog_number
       h2.release-artists = raw(artists_names(@release, true))
       h2.release-title = @release.title
-      div.release-formats
-        - @release.internal_buy_links.each do |release_format, buy_link|
-          - if buy_link
-            - title = release_format == 'digital' ? 'Listen' : "Buy #{release_format}"
-            = link_to buy_link, target: '_blank', class: 'release-format buy-link', title: title do
-              i class="fa fa-custom-#{release_icon_format(release_format)}"
-              = translate(release_format)
-          - else
-            div.release-format.out-of-stock title='Out of stock'
-              i class="fa fa-custom-#{release_icon_format(release_format)}"
-              = translate(release_format)
+      = render partial: 'records/shared/release_formats', locals: { release: @release }
       hr.hr-style-1
       div.text-block.release-description
         = raw(@release.description)

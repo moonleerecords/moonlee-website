@@ -30,8 +30,17 @@
       display: inline;
       margin-right: 10px;
 
+      &.buy-link {
+        background-color: $color-blue;
+        border-width: 3px;
+        float: none;
+        padding: 10px 7px;
+        position: relative;
+        text-decoration: none;
+      }
+
       &.out-of-stock {
-        text-decoration: line-through;
+        opacity: .5;
       }
 
       i {

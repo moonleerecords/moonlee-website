@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106180219) do
+ActiveRecord::Schema.define(version: 20170108201020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,7 +149,7 @@ ActiveRecord::Schema.define(version: 20170106180219) do
     t.string   "youtube_video"
     t.text     "body"
     t.string   "visibility"
-    t.boolean  "records",            default: false
+    t.boolean  "records",            default: true
     t.boolean  "booking",            default: false
     t.datetime "published_at"
     t.string   "tags",               default: [],                 array: true
@@ -218,6 +218,7 @@ ActiveRecord::Schema.define(version: 20170106180219) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "artists_names"
     t.index ["slug"], name: "index_releases_on_slug", unique: true, using: :btree
   end
 

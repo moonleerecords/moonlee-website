@@ -76,6 +76,8 @@ module Import
         artist_release = ArtistRelease.find_or_initialize_by(artist_id: row['artist'], release_id: row['release'])
         artist_release.save!
       end
+
+      Release.all.each { |release| release.save! }
     end
 
     def releases_reviews

@@ -38,12 +38,7 @@ class Release < ApplicationRecord
   }
   scope :latest, -> { internal_releases.where('release_date <= ?', Time.zone.today) }
 
-  before_save :generate_bandcamp_player
-
-  def artists_names
-    return concat_artists_names if split_release?
-    self.artists[0].name
-  end
+  before_save :generate_bandcamp_player, :assign_artists_names
 
   def released_formats(separator = '/')
     released_formats = []
@@ -91,5 +86,9 @@ class Release < ApplicationRecord
 
   def generate_bandcamp_player
     self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
+  end
+
+  def assign_artists_names
+    self.artists_names = split_release? ? concat_artists_names : self.artists[0].present? ? self.artists[0].name : ''
   end
 end
