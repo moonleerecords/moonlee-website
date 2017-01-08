@@ -20,7 +20,7 @@ set :deploy_via, :remote_cache
 
 ## Linked Files & Directories (Default None):
 set :linked_files, %w(config/application.yml)
-set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets)
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets public/uploads)
 
 namespace :deploy do
   desc 'Make sure local git is in sync with remote.'

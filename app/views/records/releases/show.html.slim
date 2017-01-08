@@ -15,6 +15,7 @@ section.page-section.narrower.release-show
               i class="fa fa-custom-#{release_icon_format(release_format)}"
               = translate(release_format)
       div.release-number = @release.catalog_number
+      /TODO: adjust
       div.text-block.release-description
         = raw(@release.description)
     div.release-side.item-column.column-3-9
