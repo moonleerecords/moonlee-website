@@ -7,7 +7,7 @@ section.page-section.narrower.post-show
         = localize(@post.published_at)
       hr.hr-style-1
       div.post-body.text-block
-        = simple_format(@post.body)
+        = raw(@post.body)
     div.post-side.item-column.column-3-9
       = '<div class="fb-page holds-the-iframe" data-href="https://www.facebook.com/moonleerecords" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-height="500px" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/moonleerecords" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/moonleerecords"></a></blockquote></div>'.html_safe
       h4

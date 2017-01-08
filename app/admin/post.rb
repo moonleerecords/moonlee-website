@@ -81,7 +81,9 @@ ActiveAdmin.register Post do
 
   index do
     selectable_column
-    column :title
+    column :title do |post|
+      truncate(post.title, length: 60, separator: '...')
+    end
     column :visibility do |post|
       translate(post.visibility)
     end
