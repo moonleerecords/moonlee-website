@@ -1,7 +1,5 @@
 'use strict';
 
-import $ from 'jquery';
-
 export class Newsletter {
     constructor(newsletter) {
         this.newsletter = newsletter;

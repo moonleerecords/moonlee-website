@@ -1,5 +1,6 @@
 'use strict';
 
+import 'jquery';
 import {Slider} from '../components/slider.es6';
 import {Newsletter} from '../components/newsletter.es6';
 import './releases.es6';

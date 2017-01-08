@@ -10,7 +10,7 @@
       article.item-column.column-1-3
         = link_to records_post_path(post), title: post.title do
           div.post-image style="background-image: url(#{post.image.url(:medium)})"
-            - if post.youtube_video
+            - if post.youtube_video.present?
               div.post-with-video
                 i.fa.fa-play-circle-o.fa-4x
           time.post-date datetime=post.published_at

@@ -2,6 +2,7 @@
 *= require_self
 *= require normalize-css/normalize
 *= require hover.css/css/hover-min
+*= require cookies_eu
 */
 
 @import 'base/mixins.scss';
@@ -88,8 +89,32 @@ body {
   }
 }
 
-.hvr-glow:active, .hvr-glow:focus, .hvr-glow:hover {
+.hvr-glow:active,
+.hvr-glow:focus,
+.hvr-glow:hover {
   box-shadow: 0 0 8px $color-limed-spruce !important;
+}
+
+.cookies-eu {
+  background: $color-buttery-white !important;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  bottom: 10px !important;
+  -webkit-box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+  margin: 0 11%;
+}
+
+.cookies-eu-ok {
+  background-color: $color-gold !important;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  color: $color-black !important;
+  margin-top: -4px;
+  vertical-align: middle;
 }
 
 @include respond-to(small) {
