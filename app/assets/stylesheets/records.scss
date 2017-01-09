@@ -125,6 +125,7 @@ body {
 @import 'records/posts.scss';
 @import 'records/releases.scss';
 @import 'records/store.scss';
+@import 'records/about.scss';
 
 @include respond-to(small) {
   .page-section {

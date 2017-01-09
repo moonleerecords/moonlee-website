@@ -30,5 +30,19 @@
 @include respond-to(small) {
   .custom-header {
     top: 54px;
+
+    .blocks-container {
+      padding: 0 4%;
+
+      .text-side {
+        p {
+          padding-right: 0;
+        }
+      }
+
+      .image-side {
+        display: none;
+      }
+    }
   }
 }

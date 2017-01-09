@@ -5,10 +5,10 @@
         = 'Shows'
     - @events.each do |artist, events|
       article.event-box.event-box-artist-header.items-list-group
-        div.item-column.column-1-9
+        div.item-column.column-1-9.event-date-header
         div.item-column.column-7-9.event-artist-name
           = link_to artist.name, records_artist_path(artist), title: artist.name
-        div.item-column.column-1-9
+        div.item-column.column-1-9.event-links-header
       - events.each do |event|
         article.event-box.items-list-group
           div.item-column.column-1-9.event-date

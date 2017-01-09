@@ -1,0 +1,9 @@
+@include respond-to(small) {
+  .about-show {
+    .column-3-9,
+    .column-6-9 {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

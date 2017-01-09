@@ -167,14 +167,19 @@
 
   .events-list {
     .event-box {
+      .event-date-header,
+      .event-date {
+        width: 20.82%;
+      }
+
+      .event-artist-name,
+      .event-location {
+        width: 66.06%;
+      }
+
       .item-column {
         @include vertical-align(9px);
         line-height: 18px;
-      }
-
-      .event-date {
-        font-size: 14px;
-        font-weight: bold;
       }
     }
   }
