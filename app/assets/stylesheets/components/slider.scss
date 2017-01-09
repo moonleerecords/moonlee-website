@@ -1,7 +1,6 @@
 // basic slider
 .slider {
   height: auto;
-  min-height: 550px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -154,11 +153,11 @@
 
   .slider-control {
     &.slider-control-previous {
-      left: -50px;
+      left: -5%;
     }
 
     &.slider-control-next {
-      right: -50px;
+      right: -5%;
     }
   }
 }
@@ -212,3 +211,14 @@
   }
 }
 
+@include respond-to(medium) {
+  .slider-hero {
+    min-height: 550px;
+  }
+}
+
+@include respond-to(large) {
+  .slider-hero {
+    min-height: 550px;
+  }
+}
