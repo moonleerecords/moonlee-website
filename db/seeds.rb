@@ -1,7 +1,5 @@
 require 'csv'
 
-# TODO: main image in admin is not working
-
 if Rails.env == 'development'
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 end

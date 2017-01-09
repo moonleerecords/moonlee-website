@@ -126,6 +126,9 @@ body {
 }
 
 @include respond-to(large) {
+  .small-box {
+    //height: 70%;
+  }
   // TODO: only on large
 }
 

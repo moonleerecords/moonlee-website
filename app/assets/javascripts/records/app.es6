@@ -4,6 +4,7 @@ import 'jquery';
 import {Slider} from '../components/slider.es6';
 import {Newsletter} from '../components/newsletter.es6';
 import './releases.es6';
+import './posts.es6';
 
 // variables
 let lastScrollTop = 0;
@@ -16,7 +17,7 @@ let newsletterForm = document.querySelector('.newsletter-form');
 window.addEventListener('scroll', function () {
     let currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
 
-    if (currentScrollTop > 100 && currentScrollTop > lastScrollTop) {
+    if (currentScrollTop > 300 && currentScrollTop > lastScrollTop) {
         navContainer.classList.add('smaller');
     } else if (currentScrollTop < 300 && currentScrollTop < lastScrollTop) {
         navContainer.classList.remove('smaller');

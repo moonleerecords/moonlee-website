@@ -2,6 +2,7 @@
 
 if (document.querySelector('.release-show')) {
     adjustBandcampPlayer();
+    window.addEventListener('resize', adjustBandcampPlayer, true);
 }
 
 function adjustBandcampPlayer() {
@@ -9,6 +10,7 @@ function adjustBandcampPlayer() {
     let bandcampPlayer = document.querySelector('.bandcamp-player');
     let releaseSide = document.querySelector('.release-side');
 
+    // TODO: on big screens, 1px gets lost
     bandcampPlayer.style.marginTop = `${coverHeader.offsetHeight - bandcampPlayer.offsetWidth}px`;
     releaseSide.style.marginTop = `${bandcampPlayer.offsetHeight - bandcampPlayer.offsetWidth - 10}px`;
     releaseSide.style.visibility = 'visible';

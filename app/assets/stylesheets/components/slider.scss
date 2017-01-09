@@ -58,7 +58,6 @@
 
 // hero slider
 .slider-hero {
-
   .slide {
     background: no-repeat center center;
     background-size: cover;
@@ -122,16 +121,21 @@
     border: 5px solid $color-gold;
     height: 380px;
     left: 70%;
-    -moz-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
+    -moz-transition: left 1s;
+    -o-transition: left 1s;
+    -webkit-transition: left 1s;
+    transition: left 1s;
     width: 68%;
-    //TODO: hide text from the next one in slide
 
     &.active {
       border: 5px solid $color-white;
       left: 0;
+
+      .release {
+        .release-info {
+          display: block;
+        }
+      }
     }
 
     .release {
@@ -141,6 +145,9 @@
         width: 380px;
       }
 
+      .release-info {
+        display: none;
+      }
     }
   }
 

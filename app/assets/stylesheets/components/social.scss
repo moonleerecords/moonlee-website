@@ -16,7 +16,6 @@
     .inner-box {
       float: left;
       height: 47%;
-      margin-bottom: 6%;
       margin-right: 6%;
       position: relative;
       width: 100%;
@@ -41,6 +40,7 @@
     .small-box {
       @extend .inner-box;
       margin-bottom: 0;
+      top: 6%;
       width: 47%;
 
       &:last-child {

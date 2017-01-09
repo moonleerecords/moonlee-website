@@ -18,7 +18,7 @@
         div.event-extra
         div.event-details
           span.event-artist-name
-            = link_to event.artist.name, records_artist_path(event.artist)
+            = link_to event.artist.name, records_artist_path(event.artist), title: event.artist.name
           span.event-location
             = "@ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
         div.event-links

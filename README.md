@@ -132,11 +132,3 @@ $ cap production deploy
 Frontend and backend development: [Dražen Perić](https://echobehind.wordpress.com/)
 
 Design: [Antonio Karača](https://www.behance.net/antoniokaraca)
-
-### TODO
-
-* paperclip compression -> https://github.com/emrekutlu/paperclip-compression
-* paperclip optimizer -> https://github.com/janfoeh/paperclip-optimizer
-* tiny png (500 images month) -> https://tinypng.com/developers/reference/ruby
-* paperclip dualtone
-* player
