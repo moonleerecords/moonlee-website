@@ -1,6 +1,7 @@
 // basic slider
 .slider {
   height: auto;
+  min-height: 550px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -163,27 +164,51 @@
 }
 
 @include respond-to(small) {
-  .slider {
-    .slider-control {
-      display: none;
-    }
-  }
+  //.slider {
+  //  .slider-control {
+  //    display: none;
+  //  }
+  //}
 
   .slider-hero {
     display: none; // TODO: show and adjust text
     height: 350px;
     //max-height: 350px;
   }
-}
 
-@include respond-to(medium) {
-  .slider-hero {
-    min-height: 550px;
+  .slider-releases {
+    min-height: 420px;
+    text-align: center;
+
+    .slide {
+      width: 100%;
+
+      .release {
+        .release-cover {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        border: none;
+
+        .release {
+          .release-info {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .slider-control {
+      &.slider-control-previous {
+        left: 0;
+      }
+
+      &.slider-control-next {
+        right: 0;
+      }
+    }
   }
 }
 
-@include respond-to(large) {
-  .slider-hero {
-    min-height: 550px;
-  }
-}

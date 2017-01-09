@@ -104,6 +104,10 @@
 
 @include respond-to(small) {
   .releases-slider {
+    &.page-section {
+      padding: 0;
+    }
+
     .more-releases {
       display: inline-block;
       float: none;

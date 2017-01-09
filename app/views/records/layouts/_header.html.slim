@@ -5,6 +5,8 @@ header.page-header
     label for='navigation-trigger' class='navigation-trigger-label'
     nav.navigation.site-navigation
       ul
+        li
+          = link_to 'Home', root_path
         = navigation_link('News', records_posts_path)
         = navigation_link('Releases', records_releases_path)
         = navigation_link('Artists', records_artists_path)

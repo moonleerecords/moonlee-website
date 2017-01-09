@@ -69,6 +69,10 @@
 
       ul {
         li {
+          &:first-child {
+            display: none;
+          }
+
           &:last-child {
             display: none;
           }
@@ -119,7 +123,6 @@
     }
 
     + .navigation-trigger-label {
-      //left: 30px;
       left: 15%;
       transition: left 0.2s;
       ~ .site-navigation {
@@ -186,6 +189,10 @@
 
           li {
             display: block;
+
+            &:first-child {
+              display: block;
+            }
 
             &:last-child {
               display: block;
