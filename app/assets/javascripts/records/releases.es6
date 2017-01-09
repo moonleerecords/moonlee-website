@@ -1,8 +1,10 @@
 'use strict';
 
 if (document.querySelector('.release-show')) {
-    adjustBandcampPlayer();
-    window.addEventListener('resize', adjustBandcampPlayer, true);
+    if (! window.mobilecheck()) {
+        adjustBandcampPlayer();
+        window.addEventListener('resize', adjustBandcampPlayer, true);
+    }
 }
 
 function adjustBandcampPlayer() {

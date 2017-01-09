@@ -163,8 +163,16 @@
 }
 
 @include respond-to(small) {
+  .slider {
+    .slider-control {
+      display: none;
+    }
+  }
+
   .slider-hero {
-    min-height: 450px;
+    display: none; // TODO: show and adjust text
+    height: 350px;
+    //max-height: 350px;
   }
 }
 

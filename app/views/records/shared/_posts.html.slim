@@ -4,8 +4,8 @@
     div.section-heading
       h2.section-title
         = title
-        - if more_button
-          = link_to 'Read all news', records_posts_path, class: 'link-button more-posts'
+      - if more_button
+        = link_to 'Read all news', records_posts_path, class: 'link-button more-posts'
     - posts.each do |post|
       article.item-column.column-1-3
         = link_to records_post_path(post), title: post.title do

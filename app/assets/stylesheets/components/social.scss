@@ -66,3 +66,32 @@
     }
   }
 }
+
+@include respond-to(small) {
+  .social-boxes {
+    display: none;
+  }
+  //.social-boxes {
+  //  .social-box {
+  //    float: none;
+  //    overflow: visible;
+  //    width: 100%;
+  //
+  //    .medium-box {
+  //      bottom: 6%;
+  //      display: inline-block;
+  //      width: 100%;
+  //    }
+  //
+  //    .small-box {
+  //      bottom: 6%;
+  //      display: inline-block;
+  //      width: 100%;
+  //    }
+  //
+  //    div {
+  //      width: 100%;
+  //    }
+  //  }
+  //}
+}

@@ -4,8 +4,8 @@
     div.section-heading
       h2.section-title
         = title
-        - if more_button
-          = link_to 'See all releases', records_releases_path, class: 'link-button more-releases'
+      - if more_button
+        = link_to 'See all releases', records_releases_path, class: 'link-button more-releases'
     div.slider.slider-releases
       - releases.each_with_index do |release, index|
         div.slide class=('active' if index == 0) style="z-index: #{releases.count - index}"

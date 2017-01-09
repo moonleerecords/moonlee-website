@@ -1,7 +1,7 @@
 .cover-header {
   background: no-repeat center center;
   background-size: cover;
-  height: 500px;
+  height: 550px;
   left: 0;
   position: relative;
   top: 74px;
@@ -29,5 +29,22 @@
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+  }
+}
+
+@include respond-to(small) {
+  .cover-header {
+    height: 350px;
+    top: 54px;
+
+    .bandcamp-player {
+      //TODO: adjust
+      height: 220px;
+      margin-right: -110px;
+      overflow: hidden;
+      position: absolute;
+      right: 50%;
+      width: 220px;
+    }
   }
 }

@@ -101,3 +101,20 @@
     width: 50%;
   }
 }
+
+@include respond-to(small) {
+  .releases-slider {
+    .more-releases {
+      display: inline-block;
+      float: none;
+      position: relative;
+      top: -35px;
+    }
+  }
+
+  .releases-list {
+    .item-column {
+      margin-top: 0;
+    }
+  }
+}

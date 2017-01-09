@@ -3,8 +3,8 @@ section.page-section.store-slider
   div.section-heading
     h2.section-title
       = title
-      - if more_button
-        = link_to 'Go to store', '#', class: 'link-button more-store-items'
+    - if more_button
+      = link_to 'Go to store', '#', class: 'link-button more-store-items'
   article.store-box
     = "TODO: we don't have content for this"
       /- items.each do |item|

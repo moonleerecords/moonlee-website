@@ -2,7 +2,10 @@
 
 if (document.querySelector('.posts-list')) {
     adjustFirstArticle();
-    window.addEventListener('resize', adjustFirstArticle, true);
+
+    if (! window.mobilecheck()) {
+        window.addEventListener('resize', adjustFirstArticle, true);
+    }
 }
 
 function adjustFirstArticle() {

@@ -1,10 +1,9 @@
 'use strict';
 
 import 'jquery';
+import '../components/helpers.es6';
 import {Slider} from '../components/slider.es6';
 import {Newsletter} from '../components/newsletter.es6';
-import './releases.es6';
-import './posts.es6';
 
 // variables
 let lastScrollTop = 0;
@@ -13,18 +12,19 @@ let sliderHero = document.querySelector('.slider-hero');
 let sliderReleases = document.querySelector('.slider-releases');
 let newsletterForm = document.querySelector('.newsletter-form');
 
-// sticky navigation
-window.addEventListener('scroll', function () {
-    let currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
+if (! window.mobilecheck()) {
+    window.addEventListener('scroll', function () {
+        let currentScrollTop = (this.pageYOffset || document.documentElement.scrollTop) - (document.clientTop || 0);
 
-    if (currentScrollTop > 300 && currentScrollTop > lastScrollTop) {
-        navContainer.classList.add('smaller');
-    } else if (currentScrollTop < 300 && currentScrollTop < lastScrollTop) {
-        navContainer.classList.remove('smaller');
-    }
+        if (currentScrollTop > 300 && currentScrollTop > lastScrollTop) {
+            navContainer.classList.add('smaller');
+        } else if (currentScrollTop < 300 && currentScrollTop < lastScrollTop) {
+            navContainer.classList.remove('smaller');
+        }
 
-    lastScrollTop = currentScrollTop;
-});
+        lastScrollTop = currentScrollTop;
+    });
+}
 
 // initialize components
 if (sliderHero) {
@@ -38,3 +38,6 @@ if (sliderReleases) {
 if (newsletterForm) {
     new Newsletter(newsletterForm);
 }
+
+import './releases.es6';
+import './posts.es6';

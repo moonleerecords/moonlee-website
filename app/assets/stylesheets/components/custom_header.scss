@@ -26,3 +26,9 @@
     }
   }
 }
+
+@include respond-to(small) {
+  .custom-header {
+    top: 54px;
+  }
+}

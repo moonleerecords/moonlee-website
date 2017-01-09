@@ -64,3 +64,25 @@
     }
   }
 }
+
+@include respond-to(small) {
+  .artists-list {
+    &.page-section {
+      padding: 0;
+    }
+  }
+
+  .artists-list-inactive {
+    .section-title {
+      padding: 75px 0;
+    }
+
+    .artist-name {
+      padding: 30px;
+    }
+
+    .item-column {
+      margin: 0;
+    }
+  }
+}

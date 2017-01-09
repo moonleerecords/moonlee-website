@@ -135,3 +135,47 @@
     }
   }
 }
+
+@include respond-to(small) {
+  .events-boxes {
+    .more-events {
+      display: inline-block;
+      float: none;
+      position: relative;
+      top: -35px;
+    }
+
+    .event-box {
+      div {
+        &.event-details {
+          width: 75%;
+
+          span {
+            &.event-artist-name {
+              font-size: 22px
+            }
+          }
+        }
+
+        &.event-links {
+          width: 10%;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .events-list {
+    .event-box {
+      .item-column {
+        @include vertical-align(9px);
+        line-height: 18px;
+      }
+
+      .event-date {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -4,7 +4,6 @@
 *= require hover.css/css/hover-min
 *= require cookies_eu
 */
-
 @import 'base/mixins.scss';
 @import 'base/variables.scss';
 @import 'base/globals.scss';
@@ -21,6 +20,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: lighter;
+  overflow-x: hidden;
 }
 
 .page-section {
@@ -68,6 +68,7 @@ body {
 
 .section-heading {
   position: relative;
+  text-align: center;
 }
 
 .section-title {
@@ -102,8 +103,8 @@ body {
   border-radius: 10px;
   bottom: 10px !important;
   -webkit-box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    1px 1px 9px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 9px 0px rgba(50, 50, 50, 0.75);
   margin: 0 11%;
 }
 
@@ -117,21 +118,6 @@ body {
   vertical-align: middle;
 }
 
-@include respond-to(small) {
-  // TODO: only on small
-}
-
-@include respond-to(medium) {
-  // TODO: only on medium
-}
-
-@include respond-to(large) {
-  .small-box {
-    //height: 70%;
-  }
-  // TODO: only on large
-}
-
 @import 'records/_header.scss';
 @import 'records/_footer.scss';
 @import 'records/artists.scss';
@@ -139,3 +125,17 @@ body {
 @import 'records/posts.scss';
 @import 'records/releases.scss';
 @import 'records/store.scss';
+
+@include respond-to(small) {
+  .page-section {
+    padding: 0 4%;
+
+    &.narrower {
+      padding: 0 4% 100px;
+    }
+  }
+
+  .section-title {
+    padding-top: 25px;
+  }
+}

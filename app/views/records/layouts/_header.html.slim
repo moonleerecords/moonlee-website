@@ -1,6 +1,8 @@
 header.page-header
   div.nav-container
     = link_to '', root_path, class: 'moonlee-logo moonlee-logo-header', title: 'Navigate to home page'
+    input type='checkbox' id='navigation-trigger' class='navigation-trigger'
+    label for='navigation-trigger' class='navigation-trigger-label'
     nav.navigation.site-navigation
       ul
         = navigation_link('News', records_posts_path)
@@ -8,6 +10,8 @@ header.page-header
         = navigation_link('Artists', records_artists_path)
         = navigation_link('Shows', records_events_path)
         = navigation_link('About', records_about_path)
+        li
+          = link_to 'Store', '//store.moonleerecords.com/', target: '_blank'
     nav.navigation.section-navigation
       ul
         /li

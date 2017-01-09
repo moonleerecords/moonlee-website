@@ -125,3 +125,22 @@
     }
   }
 }
+
+@include respond-to(small) {
+  .posts-boxes {
+    .more-posts {
+      display: inline-block;
+      float: none;
+      position: relative;
+      top: -35px;
+    }
+  }
+
+  .posts-list {
+    .post-item {
+      .column-2-3 {
+        padding-right: 0;
+      }
+    }
+  }
+}
