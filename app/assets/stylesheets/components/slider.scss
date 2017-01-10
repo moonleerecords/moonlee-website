@@ -226,11 +226,11 @@
 @include respond-to(large) {
   .slider-hero {
     min-height: 550px;
-  }
 
-  .slide {
-    .slide-title {
-      font-size: 60px;
+    .slide {
+      .slide-title {
+        font-size: 60px;
+      }
     }
   }
 }
