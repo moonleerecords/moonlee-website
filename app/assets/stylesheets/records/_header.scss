@@ -6,7 +6,7 @@
   .nav-container {
     background-color: $color-gorse;
     height: 74px;
-    overflow: hidden;
+    overflow: visible;
     position: fixed;
     top: 0;
     -webkit-transition: height .2s;
@@ -61,11 +61,11 @@
       margin: 0 auto;
       @include vertical-align(10px);
       position: relative;
-      -webkit-transition: left 0.2s;
-      -moz-transition: left 0.2s;
-      -ms-transition: left 0.2s;
-      -o-transition: left 0.2s;
-      transition: left 0.2s;
+      -webkit-transition: left .2s;
+      -moz-transition: left .2s;
+      -ms-transition: left .2s;
+      -o-transition: left .2s;
+      transition: left .2s;
 
       ul {
         li {
@@ -117,17 +117,24 @@
   &:checked {
     ~ .navigation-trigger-label {
       &:after {
-        transition: left 0.2s;
-        color: white;
+        -webkit-transition: left .2s;
+        -moz-transition: left .2s;
+        -ms-transition: left .2s;
+        -o-transition: left .2s;
+        transition: left .2s;
+        color: $color-white;
       }
     }
 
     + .navigation-trigger-label {
       left: 15%;
-      transition: left 0.2s;
+      -webkit-transition: left .2s;
+      -moz-transition: left .2s;
+      -ms-transition: left .2s;
+      -o-transition: left .2s;
+      transition: left .2s;
       ~ .site-navigation {
         display: block;
-        left: 0;
       }
     }
   }
@@ -175,12 +182,12 @@
         bottom: 0;
         display: none;
         height: 100%;
-        left: -200px;
+        left: 0;
         opacity: .9;
-        position: fixed;
-        top: 0;
         padding-left: 11%;
         padding-top: 70px;
+        position: fixed;
+        top: 0;
         width: 60%;
         z-index: 99;
 
