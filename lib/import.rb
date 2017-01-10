@@ -35,7 +35,7 @@ module Import
         # save artist members
         3.times do |i|
           artist_id = row["artist#{i}"]
-          role = row["artist#{i}"]
+          role = row["role#{i}"]
 
           unless artist_id
             next
