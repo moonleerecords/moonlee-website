@@ -26,8 +26,7 @@ export class Newsletter {
                     context: this,
                     type: 'post',
                     data: newsletterFormData,
-                    dataType: 'json',
-                    format: 'js'
+                    dataType: 'json'
                 }).then(
                     this.showSuccessMessage,
                     this.showErrorMessage

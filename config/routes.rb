@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
 
-  post 'newsletter/subscribe', to: 'newsletter#subscribe'
+  post 'newsletter/subscribe', to: 'newsletter#subscribe', defaults: { format: 'json' }
 
   # records
   scope module: 'records', as: 'records' do
