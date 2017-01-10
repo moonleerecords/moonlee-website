@@ -177,6 +177,12 @@
         width: 66.06%;
       }
 
+      .event-links-header,
+      .event-links {
+        width: 9.511%;
+      }
+
+
       .item-column {
         @include vertical-align(9px);
         line-height: 18px;
