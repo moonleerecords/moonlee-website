@@ -27,7 +27,7 @@ class NewsletterController < ApplicationController
         }
       )
     rescue StandardError => e
-      Raven.capture_exception(e)
+      # Raven.capture_exception(e)
       response[:message] = e.title
       response[:status_code] = 500
     end
