@@ -166,22 +166,35 @@
   }
 
   .events-list {
+    &.page-section {
+      padding-bottom: 50px;
+    }
+
     .event-box {
       .event-date-header,
+      .event-links-header {
+        width: 0;
+      }
+
+      .event-artist-name {
+        text-align: center;
+        width: 100%;
+      }
+
       .event-date {
-        width: 20.82%;
+        width: 25%;
       }
 
-      .event-artist-name,
       .event-location {
-        width: 66.06%;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 75%;
       }
 
-      .event-links-header,
       .event-links {
-        width: 9.511%;
+        display: none;
+        width: 0;
       }
-
 
       .item-column {
         @include vertical-align(9px);

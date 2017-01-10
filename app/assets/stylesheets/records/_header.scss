@@ -123,11 +123,12 @@
         -o-transition: left .2s;
         transition: left .2s;
         color: $color-white;
+        content: ' \2715';
       }
     }
 
     + .navigation-trigger-label {
-      left: 15%;
+      left: 58%;
       -webkit-transition: left .2s;
       -moz-transition: left .2s;
       -ms-transition: left .2s;
@@ -184,8 +185,8 @@
         height: 100%;
         left: 0;
         opacity: .9;
-        padding-left: 11%;
-        padding-top: 70px;
+        padding-left: 10%;
+        padding-top: 3%;
         position: fixed;
         top: 0;
         width: 60%;

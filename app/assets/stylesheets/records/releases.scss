@@ -81,13 +81,20 @@
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-    visibility: hidden;
+
+    .bandcamp-player {
+      display: none;
+    }
   }
 }
 
 .releases-slider {
   background-color: $color-gold;
   overflow: hidden;
+
+  .slider-releases-list {
+    display: none;
+  }
 
   .more-releases {
     @include vertical-align(27px);
@@ -104,6 +111,14 @@
 
 @include respond-to(small) {
   .releases-slider {
+    .slider-releases {
+      display: none;
+    }
+
+    .slider-releases-list {
+      display: block;
+    }
+
     &.page-section {
       padding: 0;
     }
@@ -114,11 +129,27 @@
       position: relative;
       top: -35px;
     }
+
+    .release-info {
+      width: 100%;
+    }
   }
 
   .releases-list {
     .item-column {
       margin-top: 20px;
+    }
+  }
+
+  .release-show {
+    .release-main {
+      .bandcamp-player {
+        display: block;
+      }
+
+      .release-number {
+        margin-top: 20px;
+      }
     }
   }
 }

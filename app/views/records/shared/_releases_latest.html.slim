@@ -22,3 +22,5 @@
           span.slider-arrow.slider-arrow-previous
         a.slider-control.slider-control-next href='#'
           span.slider-arrow.slider-arrow-next
+    div.slider-releases-list.items-list
+      = render partial: 'records/shared/releases_list', locals: { releases: releases }

@@ -1,6 +1,6 @@
 = render partial: 'records/shared/posts',
          locals: { title: "Moonlee's News", posts: @news, more_button: true }
-= render partial: 'records/shared/releases',
+= render partial: 'records/shared/releases_latest',
          locals: { title: 'Latest Releases', releases: @latest_releases, more_button: true }
 = render partial: 'records/shared/events',
          locals: { title: 'Upcoming Shows', events: @upcoming_events, more_button: true }

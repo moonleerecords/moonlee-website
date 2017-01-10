@@ -88,3 +88,22 @@
     }
   }
 }
+
+@include respond-to(medium) {
+  .newsletter-form {
+    .title-group {
+      margin: 0;
+      width: 100%;
+    }
+
+    .email-group {
+      margin-left: 0;
+    }
+
+    .email-group,
+    .country-group,
+    .button-group {
+      width: 32.13%;
+    }
+  }
+}

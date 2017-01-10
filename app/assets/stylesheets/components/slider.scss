@@ -214,6 +214,12 @@
 @include respond-to(medium) {
   .slider-hero {
     min-height: 550px;
+
+    .slide {
+      .slide-title {
+        font-size: 46px;
+      }
+    }
   }
 }
 

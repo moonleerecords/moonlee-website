@@ -1,6 +1,8 @@
 section.page-section.narrower.release-show
   article.items-list.items-list-group
     div.release-main.release-info.item-column.column-6-9
+      div.bandcamp-player.holds-the-iframe
+        = raw(@release.bandcamp_player)
       div.release-number = @release.catalog_number
       h2.release-artists = raw(artists_names(@release, true))
       h2.release-title = @release.title

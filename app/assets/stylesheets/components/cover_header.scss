@@ -34,17 +34,12 @@
 
 @include respond-to(small) {
   .cover-header {
+    display: none;
     height: 350px;
     top: 54px;
+  }
 
-    .bandcamp-player {
-      //TODO: adjust
-      height: 220px;
-      margin-right: -110px;
-      overflow: hidden;
-      position: absolute;
-      right: 50%;
-      width: 220px;
-    }
+  .cover-header-release {
+    display: none;
   }
 }

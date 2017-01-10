@@ -32,6 +32,7 @@ section.page-section.narrower.artist-show
         ul
           - @artist.members.each do |member|
             li = member.name
+        /TODO: add roles
       - if @artist.external_links.count > 0
         hr.hr-style-1
         h4 Links
