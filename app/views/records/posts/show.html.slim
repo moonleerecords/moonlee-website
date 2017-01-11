@@ -18,8 +18,8 @@ section.page-section.narrower.post-show
             = link_to records_post_path(post), title: post.title do
               h3
                 = post.title
-            time.post-date datetime = @post.published_at
-              = localize(@post.published_at.to_date)
+            time.post-date datetime = post.published_at
+              = localize(post.published_at.to_date)
           - if index != @latest_news.count - 1
             hr.hr-style-1
         = link_to 'Read all news', records_posts_path, class: 'link-button more-posts'
