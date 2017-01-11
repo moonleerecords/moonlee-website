@@ -18,6 +18,13 @@ class NewsletterController < ApplicationController
       status_code: 200
     }
 
+    if params[:email].empty? || params[:country].empty?
+      response[:message] = 'Missing e-mail or country.'
+      response[:status_code] = 500
+
+      return response
+    end
+
     begin
       gibbon.lists(ENV['MAILCHIMP_LIST_ID']).members.create(
         body: {
