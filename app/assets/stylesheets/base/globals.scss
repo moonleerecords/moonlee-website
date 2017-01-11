@@ -111,3 +111,21 @@ input[type=submit].link-button-large {
 .hr-style-1 {
   border-top: 1px solid $color-limed-spruce;
 }
+
+@include respond-to(small) {
+  h2 {
+    font-size: 46px;
+  }
+}
+
+@include respond-to(medium) {
+  h2 {
+    font-size: 46px;
+  }
+}
+
+@include respond-to(large) {
+  h2 {
+    font-size: 60px;
+  }
+}

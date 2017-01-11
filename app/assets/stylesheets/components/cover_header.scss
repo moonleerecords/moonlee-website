@@ -36,9 +36,9 @@
   .cover-header {
     height: 350px;
     top: 54px;
-  }
 
-  .cover-header-release {
-    display: none;
+    &.cover-header-release {
+      display: none;
+    }
   }
 }
