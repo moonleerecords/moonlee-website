@@ -2,6 +2,7 @@ module Import
   class Importer
     require 'nokogiri'
     require 'open-uri'
+    require 'csv'
     include ActionView::Helpers::SanitizeHelper
 
     def artists

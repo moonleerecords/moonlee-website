@@ -34,7 +34,6 @@
 
 @include respond-to(small) {
   .cover-header {
-    display: none;
     height: 350px;
     top: 54px;
   }
