@@ -14,8 +14,8 @@ class Post < ApplicationRecord
   has_attached_file :image,
                     styles: {
                       large: '1250x1250>',
-                      medium: '450x450>',
-                      small: '100x100>'
+                      medium: '400>x400',
+                      small: '100>x100'
                     }
 
   validates :title, presence: true
