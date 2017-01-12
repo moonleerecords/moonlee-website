@@ -50,15 +50,13 @@
 }
 
 .artist-show {
+  .artist-main {
+    .artist-release {
+      padding-bottom: 30px;
+    }
+  }
+
   .artist-side {
-    h4 {
-      margin-top: 30px;
-    }
-
-    .release-cover {
-      margin-top: 30px;
-    }
-
     .hr-style-1 {
       margin-top: 30px;
     }
