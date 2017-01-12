@@ -5,7 +5,7 @@ section.page-section.narrower.artist-show
       - if @artist.events.count > 0
         hr.hr-style-1
         h4 Upcoming shows
-        ul
+        ul.artist-upcoming-shows
           - @artist.events.first(5).each do |event|
             li
               = "#{localize(event.start_date)} @ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
@@ -18,7 +18,8 @@ section.page-section.narrower.artist-show
             div.release-info
               span.release-number = release.catalog_number
               h3.release-title = release.title
-              = render partial: 'records/shared/release_formats', locals: { release: release }
+              /TODO: show this again
+              /= render partial: 'records/shared/release_formats', locals: { release: release }
     div.artist-side.item-column.column-3-9.text-block
       h4 Origin
       span = @artist.origin

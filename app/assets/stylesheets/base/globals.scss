@@ -110,6 +110,7 @@ input[type=submit].link-button-large {
 
 .hr-style-1 {
   border-top: 1px solid $color-limed-spruce;
+  margin: 10px 0;
 }
 
 @include respond-to(small) {
