@@ -71,6 +71,10 @@
     overflow: hidden;
     padding-top: 20px;
 
+    .bandcamp-player {
+      display: none;
+    }
+
     .release-formats {
       margin-bottom: 20px;
     }
@@ -81,10 +85,6 @@
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-
-    .bandcamp-player {
-      display: none;
-    }
   }
 }
 
