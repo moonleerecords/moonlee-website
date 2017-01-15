@@ -1,13 +1,13 @@
 class ReleaseType < ApplicationRecord
   default_scope { order('position ASC') }
 
-  FORMAT_CD = 'cd'
-  FORMAT_LP = 'lp'
-  FORMAT_7INCH = '7inch'
-  FORMAT_10INCH = '10inch'
-  FORMAT_LP_CD = 'lp_cd'
-  FORMAT_DIGITAL = 'digital'
-  FORMAT_DIGITAL_MERCH = 'digital_merch'
+  FORMAT_CD = 'cd'.freeze
+  FORMAT_LP = 'lp'.freeze
+  FORMAT_7INCH = '7inch'.freeze
+  FORMAT_10INCH = '10inch'.freeze
+  FORMAT_LP_CD = 'lp_cd'.freeze
+  FORMAT_DIGITAL = 'digital'.freeze
+  FORMAT_DIGITAL_MERCH = 'digital_merch'.freeze
 
   ALLOWED_FORMATS = {
     FORMAT_CD => 1,
@@ -32,8 +32,6 @@ class ReleaseType < ApplicationRecord
   def self.allowed_formats
     ALLOWED_FORMATS.keys
   end
-
-  # TODO: find by type
 
   private
 

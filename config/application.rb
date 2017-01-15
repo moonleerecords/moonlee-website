@@ -18,9 +18,11 @@ module MoonleeWebsite
       if ENV['CUSTOM_ENV_FILE']
         env_file = File.join(Rails.root, 'config', ENV['CUSTOM_ENV_FILE'])
       end
-      YAML.load(File.open(env_file)).each do |key, value|
-        ENV[key.to_s] = value.to_s
-      end if File.exist?(env_file)
+      if File.exist?(env_file)
+        YAML.load(File.open(env_file)).each do |key, value|
+          ENV[key.to_s] = value.to_s
+        end
+      end
     end
 
     # additional autoload paths

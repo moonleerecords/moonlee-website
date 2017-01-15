@@ -36,10 +36,7 @@ class Post < ApplicationRecord
   before_save :assign_default_image
 
   def youtube_iframe(width = '560', height = '315')
-    if self.youtube_video.present?
-      youtube_video_id = youtube_video_id(self.youtube_video)
-      "<iframe width='#{width}' height='#{height}' src='https://www.youtube.com/embed/#{youtube_video_id}?modestbranding=1&autohide=1&showinfo=0&controls=0' frameborder='0' allowfullscreen></iframe>"
-    end
+    "<iframe width='#{width}' height='#{height}' src='https://www.youtube.com/embed/#{youtube_video_id(youtube_video)}?modestbranding=1&autohide=1&showinfo=0&controls=0' frameborder='0' allowfullscreen></iframe>" if youtube_video.present?
   end
 
   def body
@@ -73,14 +70,11 @@ class Post < ApplicationRecord
   end
 
   def assign_default_image
-    if self.youtube_video.present?
-      youtube_video_id = youtube_video_id(self.youtube_video)
-      self.image = open("https://img.youtube.com/vi/#{youtube_video_id}/0.jpg")
-    end
+    self.image = open("https://img.youtube.com/vi/#{youtube_video_id(youtube_video)}/0.jpg") if youtube_video.present?
   end
 
   def validate_categories
-    categories = self.categories.reject! { |c| c.empty? }
+    categories = self.categories.reject!(&:empty?)
     invalid_categories = Array(categories) - AVAILABLE_CATEGORIES
     errors.add(:categories, 'Not all the categories are valid') if invalid_categories.count > 0
   end

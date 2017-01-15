@@ -3,8 +3,8 @@ class ReleaseTypeBuyLink < ApplicationRecord
 
   belongs_to :release_type
 
-  SOURCE_INTERNAL = 'internal'
-  SOURCE_EXTERNAL = 'external'
+  SOURCE_INTERNAL = 'internal'.freeze
+  SOURCE_EXTERNAL = 'external'.freeze
 
   ALLOWED_SOURCES = [SOURCE_INTERNAL, SOURCE_EXTERNAL].freeze
 
@@ -13,9 +13,9 @@ class ReleaseTypeBuyLink < ApplicationRecord
   validates :buy_url, presence: true
 
   def source_is_external?
-    self.source == 'external'
+    source == 'external'
   end
 
-  scope :internal, -> { where(source: SOURCE_INTERNAL)}
-  scope :external, -> { where(source: SOURCE_EXTERNAL)}
+  scope :internal, -> { where(source: SOURCE_INTERNAL) }
+  scope :external, -> { where(source: SOURCE_EXTERNAL) }
 end

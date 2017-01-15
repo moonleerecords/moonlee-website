@@ -40,7 +40,7 @@ module Records
         title: title == '' ? 'Moonlee Records' : "Moonlee Records - #{title}",
         description: description == '' ? 'Moonlee Records is an independent record label from Ljubljana, Slovenia. Established in 2004.' : description,
         image: "#{request.base_url}#{image}",
-        url: request.original_url,
+        url: request.original_url
       }
     end
   end

@@ -29,7 +29,7 @@ namespace :social do
   task fetch_twitter: :environment do
     twitter = Twitter::TwitterClient.new
 
-    timeline = twitter.client.user_timeline(15644443, { count: 1 })
+    timeline = twitter.client.user_timeline(15644443, count: 1)
 
     timeline.each do |post|
       social_post = find_or_create_twitter_post(post)

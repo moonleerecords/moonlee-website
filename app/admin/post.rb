@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
                 :booking,
                 :published_at,
                 :tags_raw,
-                { categories: [] }
+                categories: []
 
   scope 'Records', :on_records, default: true
   scope 'Booking', :on_booking

@@ -1,3 +1,6 @@
+# rubocop:disable Metrics/ClassLength
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/BlockLength
 module Import
   class Importer
     require 'nokogiri'
@@ -38,9 +41,7 @@ module Import
           artist_id = row["artist#{i}"]
           role = row["role#{i}"]
 
-          unless artist_id
-            next
-          end
+          next unless artist_id
 
           artist_member = ArtistMember.find_or_initialize_by(artist_id: artist_id, member_id: member.id)
           artist_member.role = role
@@ -78,7 +79,7 @@ module Import
         artist_release.save!
       end
 
-      Release.all.each { |release| release.save! }
+      Release.all.each(&:save!)
     end
 
     def releases_reviews
@@ -110,6 +111,7 @@ module Import
 
     def posts
       csv = parse_csv_file('posts.csv')
+
       csv.each do |row|
         unless row['wp_post_type'] == 'post' && row['wp_post_status'] == 'publish'
           next
@@ -159,7 +161,7 @@ module Import
 
     def parse_csv_file(file)
       csv_text = File.read(Rails.root.join('lib', 'seeds', file))
-      CSV.parse(csv_text, :headers => true)
+      CSV.parse(csv_text, headers: true)
     end
   end
 end

@@ -6,32 +6,33 @@ module Songkick
       songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
       artists = Artist.with_songkick_id
 
+      # TODO: deal with festival end date and date when band is actually performing
+      # TODO: remove unexisting event - how?
+      # TODO: write tests for class
+
       artists.each do |artist|
         songkick_events = songkick.artist_events(artist.songkick_id)
 
         next unless songkick_events.status == 'ok' && songkick_events.results.count > 0
 
-        songkick_events.results.each do |songkick_event|
-          begin
-            venue = find_or_create_venue(songkick_event)
-            venue.save!
-            event = find_or_create_event(songkick_event, venue, artist)
-            save_or_destroy_event(event, songkick_event)
-            puts "Updated event `#{event.songkick_url}` for #{artist.name}"
-          rescue StandardError => e
-            raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_event.to_json}"
-          ensure
-            next
-          end
-        end
+        update_or_save_events(songkick_events, artist)
       end
-
-      # TODO: deal with festival end date and date when band is actually performing
-      # TODO: remove unexisting event - how?
-      # TODO: write tests
     end
 
     private
+
+    def update_or_save_events(songkick_events, artist)
+      songkick_events.results.each do |songkick_event|
+        begin
+          event = find_or_create_event(songkick_event, artist)
+          logger.info "Updated event `#{event.songkick_url}` for #{artist.name}"
+        rescue StandardError => e
+          raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_event.to_json}"
+        ensure
+          next
+        end
+      end
+    end
 
     def find_or_create_venue(songkick_event)
       songkick_id = songkick_event.venue.id.nil? ? songkick_event.venue.metro_area.id : songkick_event.venue.id
@@ -42,16 +43,19 @@ module Songkick
       venue.country = songkick_event.venue.metro_area.country
       venue.country_code = country_code(songkick_event.venue.metro_area.country)
       venue.lng, venue.lat = lat_lng(songkick_event)
+      venue.save!
       venue
     end
 
-    def find_or_create_event(songkick_event, venue, artist)
+    def find_or_create_event(songkick_event, artist)
+      venue = find_or_create_venue(songkick_event)
       event = Event.find_or_create_by(songkick_id: songkick_event.id, artist: artist)
       event.artist = artist
       event.venue = venue
       event.event_type = songkick_event.type
       event.start_date = songkick_event.start.to_date
       event.songkick_url = songkick_event.uri
+      save_or_destroy_event(event, songkick_event)
       event
     end
 
@@ -77,13 +81,13 @@ module Songkick
     end
 
     def country_code(country_name)
-      country_name = country_mapper(country_name)
+      country_name = countries_mapper(country_name)
       response = Geocoder.search(country_name)
       return nil if response.nil? || response.empty?
       response[0].data['address_components'][0]['short_name']
     end
 
-    def country_mapper(country_name)
+    def countries_mapper(country_name)
       {
         'Macedonia, The Former Yugoslav Republic Of' => 'Macedonia'
       }[country_name] || country_name

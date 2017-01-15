@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Event do
   menu false
 

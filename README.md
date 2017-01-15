@@ -34,6 +34,12 @@ $ rails db:migrate
 $ rails db:seed
 ```
 
+#### Run
+
+```
+$ rails s
+```
+
 #### Config file
 
 There is a `application.yml.dist` file in `config` directory. Be sure you rename it to `application.yml` and then set parameters according to your local environment.
@@ -76,12 +82,6 @@ We use Rubocop in order to find code inconsistency. Rubocop runs on every build 
 
 ```
 $ rubocop -R -D
-```
-
-#### Run
-
-```
-$ rails s
 ```
 
 #### Random dev stuff

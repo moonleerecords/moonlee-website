@@ -67,28 +67,31 @@ class Release < ApplicationRecord
   end
 
   def bandcamp_url_http
-    uri = URI.parse(self.bandcamp_url)
-    if uri.scheme == 'https'
-      uri.scheme = 'http'
-    end
+    uri = URI.parse(bandcamp_url)
+    # TODO: get certificate and change this
+    uri.scheme = 'http' if uri.scheme == 'https'
     uri.to_s
   end
 
   def concat_artists_names
-    self.artists.pluck(:name).map! { |name| name.index('/') ? name.slice(0..name.index('/') - 1).strip : name }.join(' / ')
+    artists.pluck(:name).map! { |name| name.index('/') ? name.slice(0..name.index('/') - 1).strip : name }.join(' / ')
   end
 
   def split_release?
-    self.artists.count > 1
+    artists.count > 1
   end
 
   private
 
   def generate_bandcamp_player
-    self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{self.bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
+    self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
   end
 
   def assign_artists_names
-    self.artists_names = split_release? ? concat_artists_names : self.artists[0].present? ? self.artists[0].name : ''
+    self.artists_names = if split_release?
+                           concat_artists_names
+                         else
+                           artists[0].present? ? artists[0].name : ''
+                         end
   end
 end

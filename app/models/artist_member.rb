@@ -8,7 +8,5 @@ class ArtistMember < ApplicationRecord
   scope :active_members, -> { where(active: true) }
   scope :former_members, -> { where(active: false) }
 
-  def name
-    self.member.name
-  end
+  delegate :name, to: :member
 end

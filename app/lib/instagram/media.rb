@@ -9,8 +9,7 @@ module Instagram
     end
 
     def media
-      media_url = format(MEDIA_ENDPOINT, @username)
-      media_uri = URI(media_url)
+      media_uri = URI(format(MEDIA_ENDPOINT, @username))
 
       response = nil
       5.times do

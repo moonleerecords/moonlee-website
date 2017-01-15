@@ -4,7 +4,7 @@ section.page-section.narrower.release-show
       div.bandcamp-player.holds-the-iframe
         = raw(@release.bandcamp_player)
       div.release-number = @release.catalog_number
-      h2.release-artists = raw(artists_names(@release, true))
+      h2.release-artists = raw(artists_names_linked(@release))
       h2.release-title = @release.title
       = render partial: 'records/shared/release_formats', locals: { release: @release }
       hr.hr-style-1

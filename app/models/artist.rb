@@ -26,7 +26,7 @@ class Artist < ApplicationRecord
 
   # TODO: dualtone color input field
   # TODO: compressions
-
+  # TODO: change image sizes?
 
   accepts_nested_attributes_for :artist_members, allow_destroy: true
   accepts_nested_attributes_for :external_links, allow_destroy: true
@@ -40,27 +40,8 @@ class Artist < ApplicationRecord
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
 
-  def artists_names(linked = false)
-    if split_release?
-      if linked
-        self.artists.map do |artist|
-          if artist.name.index('/')
-            artist.name.slice(0..artist.name.index('/') - 1).strip
-          else
-            artist.name
-          end
-        end
-      else
-        concat_artists_names
-        self.artists.pluck(:name).map! { |name| name.index('/') ? name.slice(0..name.index('/') - 1).strip : name }
-      end
-    end
-
-    self.artists[0].name
-  end
-
   def genre
-    self.releases.each do |release|
+    releases.each do |release|
       return release.genre unless release.split_release?
     end
     self[:genre]

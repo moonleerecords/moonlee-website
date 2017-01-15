@@ -7,19 +7,14 @@ module ReleasesHelper
   end
 
   # artists names with or without links
-  def artists_names(release, include_links = false)
-    return release.concat_artists_names unless include_links
-
+  def artists_names_linked(release)
     release.artists.map do |artist|
-      if artist.name.index('/')
-        link_to(
-          artist.name.slice(0..artist.name.index('/') - 1).strip,
-          records_artist_path(artist),
-          title: "Navigate to #{artist.name}"
-        )
-      else
-        link_to(artist.name, records_artist_path(artist), title: "Navigate to #{artist.name}")
-      end
+      link_to(artist.name, records_artist_path(artist), title: "Navigate to #{artist.name}") unless artist.name.index('/')
+      link_to(
+        artist.name.slice(0..artist.name.index('/') - 1).strip,
+        records_artist_path(artist),
+        title: "Navigate to #{artist.name}"
+      )
     end.join(' / ')
   end
 
