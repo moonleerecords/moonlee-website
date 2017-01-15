@@ -10,11 +10,20 @@ RSpec.describe Records::ReleasesController, type: :controller do
 
   describe 'GET #show' do
     before do
+      artist = Artist.new
+      artist.name = 'Repetitor'
+      artist.save
+
       release = Release.new
       release.title = 'Dobrodošli na okean'
       release.catalog_number = 'HMRL028'
       release.release_date = Date.new(2012, 11, 29)
       release.save
+
+      ArtistRelease.create(
+        artist: artist,
+        release: release
+      )
     end
 
     it 'returns http success' do

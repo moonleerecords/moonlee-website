@@ -67,6 +67,7 @@ class Release < ApplicationRecord
   end
 
   def bandcamp_url_http
+    return nil unless bandcamp_url.present?
     uri = URI.parse(bandcamp_url)
     # TODO: get certificate and change this
     uri.scheme = 'http' if uri.scheme == 'https'
@@ -84,7 +85,7 @@ class Release < ApplicationRecord
   private
 
   def generate_bandcamp_player
-    self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>"
+    self.bandcamp_player = "<iframe style=\"border: 0; width: 100%; height: 742px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=#{bandcamp_id}/size=large/bgcol=ffffff/linkcol=333333/transparent=true/\" seamless><a href=\"#{bandcamp_url_http}\"></a></iframe>" if bandcamp_url.present?
   end
 
   def assign_artists_names
