@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 namespace :social do
   desc 'Fetch latest posts from Instagram'
   task fetch_instagram: :environment do

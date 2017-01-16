@@ -9,8 +9,8 @@ gem 'pg'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
-gem 'active_skin'
 gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
 gem 'cancancan'
 gem 'devise', '> 4.x'
 gem 'draper', '> 3.x'

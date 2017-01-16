@@ -14,18 +14,18 @@ module MoonleeWebsite
   class Application < Rails::Application
     # we set environmental variables here since they don't work in some cases when you set them in initializers
     Rails.application.config.before_configuration do
-      env_file = File.join(Rails.root, 'config', 'application.yml')
+      env_file = Rails.root.join('config', 'application.yml')
       if ENV['CUSTOM_ENV_FILE']
-        env_file = File.join(Rails.root, 'config', ENV['CUSTOM_ENV_FILE'])
+        env_file = Rails.root.join('config', ENV['CUSTOM_ENV_FILE'])
       end
       if File.exist?(env_file)
-        YAML.load(File.open(env_file)).each do |key, value|
+        YAML.safe_load(File.open(env_file)).each do |key, value|
           ENV[key.to_s] = value.to_s
         end
       end
     end
 
     # additional autoload paths
-    Rails.application.config.autoload_paths << "#{Rails.root}/lib"
+    Rails.application.config.autoload_paths << Rails.root.join('lib')
   end
 end
