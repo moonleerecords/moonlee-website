@@ -40,7 +40,7 @@ class Post < ApplicationRecord
   end
 
   def body
-    self[:body].gsub('&nbsp;', ' ')
+    self[:body].gsub('&nbsp;', ' ') if self[:body].present?
   end
 
   def tags_raw
