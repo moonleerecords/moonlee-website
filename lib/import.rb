@@ -122,6 +122,8 @@ module Import
         # if something fails, just ignore...
         begin
           image_source = nil
+          image_file = nil
+
           content_html.search('img').each do |image|
             image_source = image['src']
             image.remove
@@ -137,7 +139,12 @@ module Import
             break
           end
 
-          image_file = image_source ? open(image_source) : nil
+          # redirect to old website
+          if image_source.present?
+            image_source.gsub!('www.moonleerecords.com', 'old.moonleerecords.com')
+            image_file = open(image_source)
+          end
+
           youtube_video = video_source
 
           Post.create(
