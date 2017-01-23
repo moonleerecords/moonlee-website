@@ -1,5 +1,5 @@
 .artists-list {
-  padding: 0 0 100px;
+  padding: 0;
 
   .artist-box {
     background: no-repeat center center;
@@ -23,17 +23,13 @@
       bottom: 0;
       color: $color-white;
       left: 0;
-      padding: 50px 50px 75px;
+      padding: 50px 50px 70px;
       position: absolute;
     }
   }
 }
 
 .artists-list-inactive {
-  .section-title {
-    padding: 0 0 75px;
-  }
-
   .artist-box {
     background: no-repeat center center;
     background-size: cover;
@@ -76,7 +72,7 @@
 
   .artists-list-inactive {
     .section-title {
-      padding: 75px 0;
+      padding: 70px 0;
     }
 
     .artist-name {

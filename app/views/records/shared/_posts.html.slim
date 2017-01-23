@@ -13,7 +13,7 @@
             - if post.youtube_video.present?
               div.post-with-video
                 i.fa.fa-play-circle-o.fa-4x
-          time.post-date datetime=post.published_at
-            = localize(post.published_at.to_date)
           h3.post-title
             = post.title
+          time.post-date datetime=post.published_at
+            = localize(post.published_at.to_date)

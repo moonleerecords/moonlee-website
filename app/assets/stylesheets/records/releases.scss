@@ -6,8 +6,9 @@
   box-sizing: border-box;
 
   .release-number {
-    @extend .article-identifier;
     display: block;
+    font-size: 18px;
+    font-weight: lighter;
     margin-bottom: 5px;
     text-transform: uppercase;
   }

@@ -1,10 +1,10 @@
 section.page-section.narrower.post-show
   article.items-list.items-list-group
     div.post-main.item-column.column-6-9
-      h2.post-title
-        = @post.title
       time.post-date datetime=@post.published_at
         = localize(@post.published_at)
+      h2.post-title
+        = @post.title
       hr.hr-style-1
       div.post-body.text-block
         = raw(@post.body)

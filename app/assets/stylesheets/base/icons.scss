@@ -9,6 +9,8 @@
 .fa-custom-songkick {
   @extend .fa-custom-font-awesome-icon;
   background: image-url('icons/songkick.svg') no-repeat;
+  height: 22px;
+  width: 22px;
 }
 
 .fa-custom-cd {

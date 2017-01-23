@@ -15,16 +15,21 @@
   }
 }
 
-.post-date {
-  @extend .article-identifier;
-  display: block;
-  margin-top: 20px;
-}
-
 .post-title {
   color: $color-limed-spruce;
   display: block;
-  margin-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+}
+
+.post-date {
+  color: $color-tower-grey;
+  display: block;
+  font-size: 18px;
+  font-weight: lighter;
+  padding-left: 25px;
+  padding-top: 10px;
 }
 
 .posts-boxes {
@@ -32,6 +37,10 @@
     @include vertical-align(27px);
     position: absolute;
     right: 0;
+
+    &:hover {
+      background-color: $color-gold;
+    }
   }
 }
 

@@ -89,6 +89,12 @@
   }
 }
 
+@include respond-to(small) {
+  .item-column {
+    margin: 0;
+  }
+}
+
 @include respond-to(medium) {
   .newsletter-form {
     .title-group {
@@ -104,6 +110,28 @@
     .country-group,
     .button-group {
       width: 32.13%;
+    }
+  }
+}
+
+@include respond-to(large) {
+  .newsletter-form {
+    .title-group {
+      margin: 0 0 0 1.8%;
+      width: 23.65%;
+    }
+
+    .email-group {
+      margin: 0 0 0 1.8%;
+      width: 32.13%;
+    }
+
+    .country-group {
+      width: 23.65%;
+    }
+
+    .button-group {
+      width: 15.16%;
     }
   }
 }

@@ -25,7 +25,7 @@ body {
 }
 
 .page-section {
-  padding: 0 4% 100px;
+  padding: 0 4% 70px;
 
   &.narrower {
     padding: 30px 11% 100px;
@@ -74,7 +74,7 @@ body {
 
 .section-title {
   color: $color-limed-spruce;
-  padding: 75px 0;
+  padding: 70px 0;
   text-align: center;
 }
 
@@ -138,6 +138,6 @@ body {
   }
 
   .section-title {
-    padding-top: 25px;
+    padding: 25px 0;
   }
 }
