@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  default_scope { joins(:artist).order('start_date ASC, artists.name ASC') }
+  default_scope { joins(:artist).order('artists.name ASC, start_date ASC') }
 
   belongs_to :artist
   belongs_to :venue
