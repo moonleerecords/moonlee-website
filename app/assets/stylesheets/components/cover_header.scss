@@ -1,11 +1,10 @@
 .cover-header {
   background: no-repeat center center;
   background-size: cover;
+  box-sizing: border-box;
   height: 550px;
-  left: 0;
   position: relative;
   top: 75px;
-  width: 100%;
 
   .section-title {
     bottom: 50px;
@@ -29,6 +28,11 @@
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+  }
+
+  &.cover-header-post {
+    margin: 0 11%;
+    padding: 0 11%;
   }
 }
 

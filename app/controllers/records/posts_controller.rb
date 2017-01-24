@@ -14,7 +14,10 @@ module Records
     def show
       @post = Post.friendly.find(params[:id])
       @latest_news = Post.on_records.published.limit(5)
-      @cover_image = @post.image
+      @cover_image = {
+        image: @post.image,
+        type: 'post'
+      }
       @cover_video = @post.youtube_iframe('100%', '100%') if @post.youtube_video
       meta_tags(@post.title, @post.body, @post.image.url(:large))
     end

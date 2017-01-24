@@ -135,6 +135,10 @@
       .release {
         .release-info {
           display: block;
+
+          .release-number {
+            color: $color-limed-spruce;
+          }
         }
       }
     }

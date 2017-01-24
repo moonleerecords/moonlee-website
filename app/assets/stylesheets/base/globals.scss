@@ -67,9 +67,19 @@ section {
   font-weight: bold;
   padding: 15px 24px;
   text-transform: uppercase;
+  box-shadow: inset 0 0 0 0 $color-buttery-white;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 
   &:hover {
-    background-color: $color-buttery-white;
+    box-shadow: inset 0 100px 0 0 $color-buttery-white;
+  }
+
+  &.inactive {
+    &:hover {
+      box-shadow: inset 0 0 0 0 $color-buttery-white;
+    }
   }
 }
 

@@ -13,7 +13,10 @@ module Records
 
     def show
       @artist = Artist.friendly.find(params[:id])
-      @cover_image = @artist.image
+      @cover_image = {
+        image: @artist.image,
+        type: 'artist'
+      }
       meta_tags(@artist.name, @artist.description, @artist.image.url(:large))
     end
   end

@@ -13,7 +13,10 @@ module Records
 
     def show
       @release = Release.friendly.find(params[:id])
-      @cover_image = @release.artists.first.image
+      @cover_image = {
+        image: @release.artists.first.image,
+        type: 'release'
+      }
       meta_tags("#{@release.artists_names} - #{@release.title}", @release.description, @release.cover.url(:large))
     end
   end

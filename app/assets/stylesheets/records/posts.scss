@@ -18,9 +18,6 @@
 .post-title {
   color: $color-limed-spruce;
   display: block;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 25px;
 }
 
 .post-date {
@@ -28,19 +25,29 @@
   display: block;
   font-size: 18px;
   font-weight: lighter;
-  padding-left: 25px;
-  padding-top: 10px;
 }
 
 .posts-boxes {
   .more-posts {
     @include vertical-align(27px);
+    box-shadow: inset 0 0 0 0 $color-gold;
     position: absolute;
     right: 0;
 
     &:hover {
-      background-color: $color-gold;
+      box-shadow: inset 0 100px 0 0 $color-gold;
     }
+  }
+
+  .post-title {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+  }
+
+  .post-date {
+    padding-left: 25px;
+    padding-top: 10px;
   }
 }
 
@@ -50,16 +57,19 @@
   }
 
   .post-item {
-    padding: 25px 0;
+    padding: 70px 0;
 
     &.painted {
       background-color: $color-gold;
-      padding: 25px 0;
-      //TODO: add better transition
+      //TODO: add better transition or fix it somehow
       //-webkit-transition: padding 1s ease-in-out;
       //-moz-transition: padding 1s ease-in-out;
       //-o-transition: padding 1s ease-in-out;
       //transition: padding 1s ease-in-out;
+
+      .post-date {
+        color: $color-white;
+      }
 
       .post-body {
         &:before {
@@ -87,16 +97,6 @@
       p {
         margin: 0;
       }
-
-      &:before {
-        background-image: linear-gradient(to right, $color-transparent-rgba, $color-buttery-white);
-        bottom: 0;
-        content: ' ';
-        height: 30px;
-        position: absolute;
-        right: 0;
-        width: 15%;
-      }
     }
   }
 }
@@ -115,6 +115,7 @@
       background-position: center center;
       height: 500px;
       margin-bottom: 10px;
+      width: 100%;
     }
 
     h4 {
@@ -122,7 +123,14 @@
     }
 
     .latest-news {
+      .hr-style-1 {
+        margin: 20px 0;
+      }
       article {
+        .post-date {
+          margin-top: 10px;
+        }
+
         a {
           font-weight: lighter;
         }
@@ -130,7 +138,12 @@
     }
 
     .more-posts {
-      margin-top: 20px;
+      box-shadow: inset 0 0 0 0 $color-gold;
+      margin-top: 30px;
+
+      &:hover {
+        box-shadow: inset 0 100px 0 0 $color-gold;
+      }
     }
   }
 }

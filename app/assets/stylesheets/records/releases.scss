@@ -6,6 +6,7 @@
   box-sizing: border-box;
 
   .release-number {
+    color: $color-tower-grey;
     display: block;
     font-size: 18px;
     font-weight: lighter;
@@ -41,7 +42,7 @@
         text-decoration: none;
       }
 
-      &.out-of-stock {
+      &.inactive {
         opacity: .5;
       }
 
@@ -60,7 +61,9 @@
   padding-top: 50px;
 
   .release-info {
-    padding-top: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
   }
 
   .item-column {

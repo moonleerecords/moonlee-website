@@ -2,7 +2,7 @@
   div.cover-header
     = raw(cover_video)
 - elsif cover_image
-  div.cover-header class=('cover-header-release' if release.present?) style="background-image: url('#{cover_image.url(:large)}');"
+  div.cover-header class=("cover-header-#{cover_image[:type]}") style="background-image: url('#{cover_image[:image].url(:large)}');"
     - unless artist.nil?
       h2.section-title
         = @artist.name

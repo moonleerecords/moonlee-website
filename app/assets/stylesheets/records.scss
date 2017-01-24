@@ -28,7 +28,7 @@ body {
   padding: 0 4% 70px;
 
   &.narrower {
-    padding: 30px 11% 100px;
+    padding: 70px 11% 100px;
   }
 }
 
@@ -40,10 +40,14 @@ body {
   }
 
   a {
+    box-shadow: inset 0 -1px 0 $color-green-rgba-first;
     font-weight: lighter;
-    text-decoration: underline;
+    -webkit-transition: box-shadow .3s ease-in-out;
+    -o-transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
 
     &:hover {
+      box-shadow: inset 0 -25px 0 $color-green-rgba-second;
       text-decoration: none;
     }
   }
