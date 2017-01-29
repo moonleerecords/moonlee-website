@@ -44,7 +44,7 @@ gem 'turbolinks', '~> 5.x'
 # Geo
 gem 'geocoder'
 # songkick API wrapper
-gem 'songkickr'
+gem 'songkickr', git: 'https://github.com/moonleerecords/songkickr.git'
 # Youtube
 gem 'yt', '~> 0.26.3'
 # Twitter
