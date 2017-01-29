@@ -66,6 +66,7 @@ section {
   font-size: 12px;
   font-weight: bold;
   padding: 15px 24px;
+  position: relative;
   text-transform: uppercase;
   box-shadow: inset 0 0 0 0 $color-buttery-white;
   -webkit-transition: all ease 0.5s;
@@ -125,6 +126,14 @@ input[type=submit].link-button-large {
 @include respond-to(small) {
   h2 {
     font-size: 46px;
+  }
+
+  .link-button {
+    display: inline-block;
+    float: none;
+    margin-bottom: 25px;
+    margin-top: 0;
+    position: relative !important;
   }
 }
 

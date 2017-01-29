@@ -66,7 +66,7 @@
   padding: 0 50px 50px;
 
   .more-events {
-    @include vertical-align(27px);
+    @include vertical-align(25px);
     position: absolute;
     right: 0;
   }
@@ -138,13 +138,6 @@
 
 @include respond-to(small) {
   .events-boxes {
-    .more-events {
-      display: inline-block;
-      float: none;
-      position: relative;
-      top: -35px;
-    }
-
     .event-box {
       div {
         &.event-details {

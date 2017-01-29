@@ -29,7 +29,7 @@
 
 .posts-boxes {
   .more-posts {
-    @include vertical-align(27px);
+    @include vertical-align(25px);
     box-shadow: inset 0 0 0 0 $color-gold;
     position: absolute;
     right: 0;
@@ -149,15 +149,6 @@
 }
 
 @include respond-to(small) {
-  .posts-boxes {
-    .more-posts {
-      display: inline-block;
-      float: none;
-      position: relative;
-      top: -35px;
-    }
-  }
-
   .posts-list {
     .post-item {
       .column-2-3 {
