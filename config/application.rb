@@ -27,5 +27,9 @@ module MoonleeWebsite
 
     # additional autoload paths
     Rails.application.config.autoload_paths << Rails.root.join('lib')
+
+    # default timezone
+    Rails.application.config.time_zone = 'Europe/Ljubljana'
+    Rails.application.config.active_record.default_timezone = :local
   end
 end
