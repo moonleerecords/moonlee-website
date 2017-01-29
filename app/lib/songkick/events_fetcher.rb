@@ -2,8 +2,8 @@ require 'songkickr'
 
 module Songkick
   class EventsFetcher
-    EVENT_TYPE_CONCERT = 'Concert'
-    EVENT_TYPE_FESTIVAL = 'Festival'
+    EVENT_TYPE_CONCERT = 'Concert'.freeze
+    EVENT_TYPE_FESTIVAL = 'Festival'.freeze
 
     def fetch_upcoming_events
       songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
