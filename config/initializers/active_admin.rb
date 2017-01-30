@@ -32,12 +32,11 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu do |menu|
-      menu.add label: 'Shows',
-               priority: 6 do |shows|
-
+      menu.add label: 'Shows', priority: 6 do |shows|
         shows.add label: 'Add shows', url: 'https://tourbox.songkick.com', html_options: { target: :blank, title: 'Links to Songkick' }
         shows.add label: 'Fetch new shows', url: '/admin/events/fetch_upcoming_shows'
       end
+      menu.add label: 'Other', priority: 7
     end
   end
 end
