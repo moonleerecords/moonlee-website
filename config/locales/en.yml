@@ -1,8 +1,8 @@
 en:
   cd: "CD"
   lp: "LP"
-  7inch: '7"'
-  10inch: '10"'
+  seven_inch: '7"'
+  ten_inch: '10"'
   digital: "Digital"
   lp_cd: "LP + CD"
   digital_merch: "Digital + Merch"

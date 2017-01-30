@@ -34,10 +34,10 @@ module ReleasesHelper
   # translates original release format to the one used for icon
   def release_icon_format(release_format)
     mappings = {
-      ReleaseType::FORMAT_DIGITAL_MERCH => ReleaseType::FORMAT_DIGITAL,
-      ReleaseType::FORMAT_7INCH => ReleaseType::FORMAT_LP,
-      ReleaseType::FORMAT_10INCH => ReleaseType::FORMAT_LP,
-      ReleaseType::FORMAT_LP_CD => ReleaseType::FORMAT_LP
+      ReleaseType::ALLOWED_FORMATS[:digital_merch] => ReleaseType::ALLOWED_FORMATS[:digital],
+      ReleaseType::ALLOWED_FORMATS[:seven_inch] => ReleaseType::ALLOWED_FORMATS[:lp],
+      ReleaseType::ALLOWED_FORMATS[:ten_inch] => ReleaseType::ALLOWED_FORMATS[:lp],
+      ReleaseType::ALLOWED_FORMATS[:lp_cd] => ReleaseType::ALLOWED_FORMATS[:lp]
     }
 
     mappings[release_format].present? ? mappings[release_format] : release_format

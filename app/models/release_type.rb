@@ -1,22 +1,14 @@
 class ReleaseType < ApplicationRecord
   default_scope { order('position ASC') }
 
-  FORMAT_CD = 'cd'.freeze
-  FORMAT_LP = 'lp'.freeze
-  FORMAT_7INCH = '7inch'.freeze
-  FORMAT_10INCH = '10inch'.freeze
-  FORMAT_LP_CD = 'lp_cd'.freeze
-  FORMAT_DIGITAL = 'digital'.freeze
-  FORMAT_DIGITAL_MERCH = 'digital_merch'.freeze
-
   ALLOWED_FORMATS = {
-    FORMAT_CD => 1,
-    FORMAT_LP => 2,
-    FORMAT_7INCH => 3,
-    FORMAT_10INCH => 4,
-    FORMAT_LP_CD => 5,
-    FORMAT_DIGITAL => 6,
-    FORMAT_DIGITAL_MERCH => 7
+    cd: 1,
+    lp: 2,
+    seven_inch: 3,
+    ten_inch: 4,
+    lp_cd: 5,
+    digital: 6,
+    digital_merch: 7
   }.stringify_keys.freeze
 
   belongs_to :release
