@@ -14,6 +14,11 @@ ActiveAdmin.register Artist do
                 :active,
                 :records,
                 :booking,
+                external_links_attributes: [
+                  :id,
+                  :url_type,
+                  :url
+                ],
                 artist_members_attributes: [
                   :id,
                   :role,
@@ -82,7 +87,7 @@ ActiveAdmin.register Artist do
         panel 'Links' do
           ul do
             artist.external_links.each do |external_link|
-              li linked_icon(external_link)
+              li link_to(external_link.url_type, external_link.url, target: '_blank') unless external_link.url_type == ''
             end
           end
         end
