@@ -30,6 +30,6 @@ class ExternalLink < ApplicationRecord
   private
 
   def assign_position
-    self.position = ALLOWED_URL_TYPES[release_format]
+    self.position = ALLOWED_URL_TYPES[url_type]
   end
 end
