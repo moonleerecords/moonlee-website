@@ -63,6 +63,5 @@ end
 module ActiveAdmin
   module ViewHelpers
     include ReleasesHelper
-    include ExternalLinksHelper
   end
 end
