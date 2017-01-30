@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108201020) do
+ActiveRecord::Schema.define(version: 20170130203502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,8 +122,9 @@ ActiveRecord::Schema.define(version: 20170108201020) do
     t.string   "songkick_url"
     t.string   "facebook_url"
     t.string   "lastfm_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "active",       default: true
     t.index ["artist_id"], name: "index_events_on_artist_id", using: :btree
     t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
   end
@@ -134,6 +135,7 @@ ActiveRecord::Schema.define(version: 20170108201020) do
     t.string   "url_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "position"
     t.index ["artist_id"], name: "index_external_links_on_artist_id", using: :btree
   end
 

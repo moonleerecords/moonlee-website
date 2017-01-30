@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Member do
   menu label: 'Members', parent: 'Other'
   config.sort_order = 'name_asc'
