@@ -50,6 +50,9 @@ ActiveAdmin.register Post do
 
   show do
     attributes_table do
+      row :url do
+        link_to(records_post_path(post), records_post_path(post), target: '_blank')
+      end
       row :id
       row :title
       row :youtube_video
