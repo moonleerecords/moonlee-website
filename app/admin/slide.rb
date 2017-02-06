@@ -17,7 +17,7 @@ ActiveAdmin.register Slide do
     f.semantic_errors
     f.inputs do
       f.input :title
-      f.input :cover,
+      f.input :image,
               as: :file,
               hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :url
