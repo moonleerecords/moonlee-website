@@ -69,9 +69,9 @@ section {
   position: relative;
   text-transform: uppercase;
   box-shadow: inset 0 0 0 0 $color-buttery-white;
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  transition: all ease .5s;
 
   &:hover {
     box-shadow: inset 0 100px 0 0 $color-buttery-white;
@@ -111,6 +111,19 @@ input[type=submit].link-button-large {
   i {
     margin-right: 5px;
     vertical-align: middle;
+  }
+}
+
+.hover-item {
+  &.hover-item-border {
+    outline: 0 solid $color-gold;
+    -webkit-transition: outline ease-in-out .1s;
+    -moz-transition: outline ease-in-out .1s;
+    transition: outline ease-in-out .1s;
+
+    &:hover {
+      outline: 5px solid $color-gold;
+    }
   }
 }
 

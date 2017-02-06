@@ -30,10 +30,8 @@
 
       &.twitter-box {
         background-color: $color-summer-green;
-      }
-
-      .social-content {
-        padding: 20px;
+        box-sizing: border-box;
+        padding: 20px 20px 46px;
       }
     }
 

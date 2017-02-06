@@ -1,19 +1,20 @@
 - more_button = false if local_assigns[:more_button].nil?
 - if posts.count > 0
-  section.page-section.posts-boxes.items-list
+  section.page-section.posts-boxes
     div.section-heading
       h2.section-title
         = title
       - if more_button
         = link_to 'Read all news', records_posts_path, class: 'link-button more-posts'
-    - posts.each do |post|
-      article.item-column.column-1-3
-        = link_to records_post_path(post), title: post.title do
-          div.post-image style="background-image: url(#{post.image.url(:medium)})"
-            - if post.youtube_video.present?
-              div.post-with-video
-                i.fa.fa-play-circle-o.fa-4x
-          h3.post-title
-            = post.title
-          time.post-date datetime=post.published_at
-            = localize(post.published_at.to_date)
+    div.items-list.items-list-group
+      - posts.each do |post|
+        article.item-column.column-1-3.hover-item.hover-item-border
+          = link_to records_post_path(post), title: post.title do
+            div.post-image style="background-image: url(#{post.image.url(:medium)})"
+              - if post.youtube_video.present?
+                div.post-with-video
+                  i.fa.fa-play-circle-o.fa-4x
+            h3.post-title
+              = post.title
+            time.post-date datetime=post.published_at
+              = localize(post.published_at.to_date)

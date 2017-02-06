@@ -34,12 +34,16 @@
       margin-right: 10px;
 
       &.buy-link {
-        background-color: $color-blue;
         border-width: 3px;
+        box-shadow: inset 0 0 0 0 $color-blue;
         float: none;
-        padding: 10px 7px;
+        padding: 10px 15px;
         position: relative;
         text-decoration: none;
+
+        &:hover {
+          box-shadow: inset 0 100px 0 0 $color-blue;
+        }
       }
 
       &.inactive {
@@ -67,6 +71,7 @@
   }
 
   .item-column {
+    margin-bottom: 30px;
     padding-bottom: 30px;
   }
 }

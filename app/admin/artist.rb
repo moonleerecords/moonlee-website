@@ -70,7 +70,7 @@ ActiveAdmin.register Artist do
       row :id
       row :name
       row :image do
-        image_tag(artist.image.url(:medium)) if artist.image.present?
+        link_to(image_tag(artist.image.url(:medium)), artist.image.url(:original), target: '_blank', title: 'Click to open original image') if artist.image.present?
       end
       row :description do
         # rubocop:disable Rails/OutputSafety

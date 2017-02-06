@@ -1,7 +1,7 @@
 - releases.each do |release|
-  article.item-column.column-1-3
+  article.item-column.column-1-3.hover-item.hover-item-border
     = link_to records_release_path(release), title: "#{release.artists_names} - #{release.title}" do
-      = image_tag release.cover.url(:medium), class: 'release-cover hvr-glow', alt: "#{release.artists_names} - #{release.title}"
+      = image_tag release.cover.url(:medium), class: 'release-cover', alt: "#{release.artists_names} - #{release.title}"
       div.release-info
         span.release-number = release.catalog_number
         h3.release-artists = release.artists_names
