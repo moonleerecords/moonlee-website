@@ -44,5 +44,10 @@
     &.cover-header-release {
       display: none;
     }
+
+    &.cover-header-post {
+      margin: 0 4%;
+      padding: 0 4%;
+    }
   }
 }

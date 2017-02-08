@@ -9,6 +9,11 @@ body {
   line-height: 1.2;
 }
 
+p {
+  -webkit-margin-after: 20px;
+  -webkit-margin-before: 20px;
+}
+
 a {
   font-weight: normal;
 }
@@ -134,6 +139,7 @@ input[type=submit].link-button-large {
 .hr-style-1 {
   border-top: 1px solid $color-limed-spruce;
   margin: 10px 0;
+  width: 100%;
 }
 
 @include respond-to(small) {

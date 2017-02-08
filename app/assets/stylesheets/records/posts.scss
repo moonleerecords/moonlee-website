@@ -104,7 +104,23 @@
 
 .post-show {
   .post-main {
+    .post-title {
+      height: 500px;
+    }
+
     .post-date {
+      margin: 0;
+      position: absolute;
+      top: 460px;
+    }
+
+    .hr-style-1 {
+      margin: 0;
+      position: absolute;
+      top: 498px;
+    }
+
+    .post-body {
       margin-top: 50px;
     }
   }
@@ -115,12 +131,11 @@
     .fb-page {
       background-position: center center;
       height: 500px;
-      margin-bottom: 10px;
       width: 100%;
     }
 
     h4 {
-      margin: 20px 0;
+      margin: 50px 0;
     }
 
     .latest-news {
@@ -161,12 +176,29 @@
   .post-show {
     .post-main {
       .post-title {
+        height: auto;
         margin-top: 10px;
       }
 
       .post-date {
-        margin-top: 10px;
+        margin-top: 20px;
+        position: relative;
+        top: 0;
       }
+
+      .hr-style-1 {
+        margin-top: 10px;
+        position: relative;
+        top: 0;
+      }
+
+      .post-body {
+        margin-top: 0;
+      }
+    }
+
+    .post-side {
+      display: none;
     }
   }
 }
