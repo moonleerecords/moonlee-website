@@ -20,7 +20,7 @@
           span.event-artist-name
             = link_to event.artist.name, records_artist_path(event.artist), title: event.artist.name
           span.event-location
-            = "@ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
+            = event_location(event)
         div.event-links
           - if event.facebook_url
             = link_to fa_icon('facebook-square 2x'),

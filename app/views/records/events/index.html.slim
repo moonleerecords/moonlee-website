@@ -14,7 +14,7 @@
           div.item-column.column-1-9.event-date
             = localize(event.start_date)
           div.item-column.column-7-9.event-location
-            = "@ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
+            = event_location(event)
           div.item-column.column-1-9.event-links
             - if event.facebook_url
               = link_to fa_icon('facebook-square'),
