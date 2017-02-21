@@ -52,8 +52,12 @@ body {
     }
   }
 
-  img {
+  img:not(.not-full-width) {
     width: 100%;
+  }
+
+  .not-full-width {
+    margin-top: 20px;
   }
 
   iframe {
