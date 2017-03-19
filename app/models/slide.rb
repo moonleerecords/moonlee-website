@@ -17,8 +17,8 @@ class Slide < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :on_records, -> { where(records: true) }
-  scope :on_booking, -> { where(booking: true) }
+  scope :on_records, -> { where(active: true, records: true) }
+  scope :on_booking, -> { where(active: true, booking: true) }
 
   before_validation :assign_position
 

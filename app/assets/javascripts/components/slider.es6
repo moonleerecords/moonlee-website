@@ -46,10 +46,11 @@ export class Slider {
     }
 
     goToSlide(toSlide) {
+        toSlide = parseInt(toSlide);
+
         var nextSlide = (toSlide + this.slides.length) % this.slides.length;
 
         this.changeButtonStatus(this.currentSlide, nextSlide);
-
 
         this.slides[this.currentSlide].classList.remove('active');
         this.currentSlide = nextSlide;
