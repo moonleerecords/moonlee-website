@@ -9,3 +9,7 @@ $skinLogo: image-url('base/moonlee-logo.svg') no-repeat;
   overflow: hidden;
   width: 79.5% !important;
 }
+
+.ui-sortable-handle {
+  cursor: move;
+}

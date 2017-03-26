@@ -17,14 +17,37 @@ class Slide < ApplicationRecord
 
   validates_attachment_content_type :image, content_type: %r{\Aimage\/.*\Z}
 
-  scope :on_records, -> { where(active: true, records: true) }
-  scope :on_booking, -> { where(active: true, booking: true) }
+  scope :active, -> { where(active: true) }
+  scope :on_records, -> { where(records: true) }
+  scope :on_booking, -> { where(booking: true) }
+  scope :hidden, -> { where(records: false, booking: false) }
 
-  before_validation :assign_position
+  before_validation :assign_position, on: [:create]
+
+  def self.update_positions(slides, drag_and_drop = false)
+    if drag_and_drop
+      slides.each_with_index do |id, index|
+        self.update(id, position: index + 1)
+      end
+    else
+      slides.each do |slide|
+        slide.position += + 1
+        slide.save
+      end
+    end
+  end
 
   private
 
   def assign_position
-    self.position = 0 if position.nil?
+    self.position = 1
+
+    if self.records
+      Slide.update_positions(Slide.on_records)
+    elsif self.booking
+      Slide.update_positions(Slide.on_booking)
+    else
+      Slide.update_positions(Slide.hidden)
+    end
   end
 end

@@ -28,6 +28,7 @@ ActiveAdmin.register Artist do
 
   scope 'Records', :on_records, default: true
   scope 'Booking', :on_booking
+  scope 'Hidden', :hidden
 
   form do |f|
     f.semantic_errors

@@ -12,6 +12,7 @@ ActiveAdmin.register Slide do
 
   scope 'Records', :on_records, default: true
   scope 'Booking', :on_booking
+  scope 'Hidden', :hidden
 
   form do |f|
     f.semantic_errors
@@ -21,7 +22,6 @@ ActiveAdmin.register Slide do
               as: :file,
               hint: (f.object.image.present? ? image_tag(f.object.image.url(:medium)) : content_tag(:span, ''))
       f.input :url
-      f.input :position
       f.input :records
       f.input :booking
       f.input :active
@@ -55,9 +55,7 @@ ActiveAdmin.register Slide do
   end
 
   collection_action :sort, method: :post do
-    params[:slide].each_with_index do |id, index|
-      Slide.update(id, position: index + 1)
-    end
-    render nothing: true
+    Slide.update_positions(params[:slide], true)
+    head 200, content_type: 'text/html'
   end
 end

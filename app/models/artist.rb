@@ -37,6 +37,7 @@ class Artist < ApplicationRecord
   scope :with_songkick_id, -> { where.not(songkick_id: nil) }
   scope :on_records, -> { where(records: true) }
   scope :on_booking, -> { where(booking: true) }
+  scope :hidden, -> { where(records: false, booking: false) }
   scope :active, -> { where(active: true) }
   scope :inactive, -> { where(active: false) }
 
