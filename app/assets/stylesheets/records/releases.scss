@@ -3,7 +3,9 @@
 }
 
 .release-info {
-  box-sizing: border-box;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
 
   .release-number {
     color: $color-tower-grey;
@@ -64,12 +66,6 @@
 .releases-list {
   padding-top: 50px;
 
-  .release-info {
-    padding-left: 35px;
-    padding-right: 35px;
-    padding-top: 35px;
-  }
-
   .item-column {
     margin-bottom: 30px;
     padding-bottom: 30px;
@@ -114,8 +110,20 @@
 
   .release-info {
     float: left;
-    padding: 30px 40px;
     width: 50%;
+  }
+}
+
+.artist-show {
+  .release-info {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .release-title {
+
+    }
   }
 }
 

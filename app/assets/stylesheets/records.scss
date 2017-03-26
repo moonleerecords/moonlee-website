@@ -39,7 +39,7 @@ body {
     font-weight: normal;
   }
 
-  a {
+  a:not(.release-cover) {
     box-shadow: inset 0 -1px 0 $color-green-rgba-first;
     font-weight: lighter;
     -webkit-transition: box-shadow .3s ease-in-out;
