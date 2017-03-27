@@ -52,16 +52,18 @@ ActiveAdmin.register Release do
       f.input :bandcamp_id
       f.input :internal
       f.input :active
-      # TODO: custom add button label
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
         release_type.input :release_format,
                            as: :select,
                            collection: ReleaseType.allowed_formats.collect { |format| [translate(format), format] }
         release_type.has_many :release_type_buy_links,
                               heading: 'Buy links',
-                              allow_destroy: true do |buy_link|
+                              allow_destroy: true,
+                              new_record: 'Add new buy link' do |buy_link|
           buy_link.input :title
-          buy_link.input :source # TODO: dropdown?
+          buy_link.input :source,
+                         as: :select,
+                         collection: ReleaseTypeBuyLink.allowed_sources.collect { |source| [translate(source), source ] }
           buy_link.input :buy_url
         end
       end

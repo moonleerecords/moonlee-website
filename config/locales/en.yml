@@ -25,3 +25,5 @@ en:
   news: News
   public: Public
   hidden: Hidden
+  internal: Internal
+  external: External

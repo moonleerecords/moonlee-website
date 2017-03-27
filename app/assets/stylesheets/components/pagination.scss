@@ -3,10 +3,7 @@
   text-align: center;
 
   .page {
-    &.current {
-      color: $color-gold;
-      //TODO: change color to links color
-    }
+    margin-right: 10px;
   }
 
   .first {

@@ -7,7 +7,7 @@ module Records
     end
 
     def index
-      @news = Post.on_records.published.page params[:page]
+      @news = admin_user_signed_in? ? Post.on_records.page(params[:page]) : Post.on_records.published.page(params[:page])
       meta_tags('News', 'Latest news from Moonlee Records')
     end
 

@@ -24,7 +24,6 @@ class Artist < ApplicationRecord
                       all: ''
                     }
 
-  # TODO: dualtone color input field
   # TODO: compressions
   # TODO: change image sizes?
 

@@ -54,8 +54,6 @@ ActiveAdmin.register Artist do
         external_link.input :url
       end
       f.has_many :artist_members, heading: 'Members', allow_destroy: true do |artist_member|
-        # TODO: possibility to additional members (new ones)
-        # TODO: either "add new below dropdown", either redirect to separate page for adding
         artist_member.input :member,
                             as: :select,
                             collection: Member.all.collect { |member| [member.name, member.id] }

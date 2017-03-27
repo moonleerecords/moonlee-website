@@ -80,10 +80,9 @@
       border-bottom: 0;
     }
 
-    div {
+    .item-column {
       display: table-cell;
       vertical-align: middle;
-      //TODO: use grids
 
       &.event-date {
         text-align: center;

@@ -7,7 +7,7 @@ class Slide < ApplicationRecord
                       large: '1250x1250>'
                     }
 
-  # TODO: deal with compression somehow
+  # TODO: deal with compression
   # TODO: http://stackoverflow.com/questions/28412310/rails-paperclip-tinypng-gem
   # TODO: https://github.com/benmanns/tinypng
 

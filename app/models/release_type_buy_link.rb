@@ -12,8 +12,12 @@ class ReleaseTypeBuyLink < ApplicationRecord
   validates :title, presence: true, if: :source_is_external?
   validates :buy_url, presence: true
 
+  def self.allowed_sources
+    ALLOWED_SOURCES
+  end
+
   def source_is_external?
-    source == 'external'
+    source == SOURCE_EXTERNAL
   end
 
   scope :internal, -> { where(source: SOURCE_INTERNAL) }

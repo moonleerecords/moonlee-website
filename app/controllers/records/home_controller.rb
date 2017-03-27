@@ -9,10 +9,6 @@ module Records
     def index
       @news = Post.on_records.published.first(3)
       @slides = Slide.on_records.active
-      # TODO: use this for private (not published) posts
-      # if admin_user_signed_in?
-      #   puts 'hello mr. admin'
-      # end
       meta_tags('', '')
     end
   end

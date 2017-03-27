@@ -17,5 +17,9 @@ module Records
       )
       meta_tags('About', 'Get in touch with us!')
     end
+
+    def press
+      # TODO: show press photos from artists
+    end
   end
 end
