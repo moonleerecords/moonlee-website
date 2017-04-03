@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :releases, only: [:index, :show]
     resources :events, only: [:index]
     get 'about', to: 'statics#about'
+    get 'press', to: 'statics#press'
   end
 
   # booking

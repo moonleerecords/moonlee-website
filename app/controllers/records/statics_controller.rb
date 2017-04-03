@@ -19,7 +19,8 @@ module Records
     end
 
     def press
-      # TODO: show press photos from artists
+      @artists = Artist.on_records.order(:name)
+      meta_tags('Press Photos', "Moonlee's bands press photos.")
     end
   end
 end

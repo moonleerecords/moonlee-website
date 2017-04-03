@@ -1,0 +1,8 @@
+section.page-section.narrower.press-show
+  article.items-list.items-list-group
+    div.about-main.item-column.column-3-9.text-block
+      - @artists.each do |artist|
+        h3 = artist.name
+        = link_to artist.image.url(:original), title: artist.name, target: '_blank' do
+          = image_tag artist.image.url(:medium), alt: artist.name, title: artist.name
+        br
