@@ -8,20 +8,20 @@
         = link_to 'See all shows', records_events_path, class: 'link-button more-events'
     - events.each do |event|
       article.event-box
-        div.event-date
+        div.item-column.event-date
           span.event-date-month
             = Date::ABBR_MONTHNAMES[event.start_date.month]
           span.event-date-day
             = sprintf('%02i', event.start_date.day)
           span.event-date-year
             = event.start_date.year
-        div.event-extra
-        div.event-details
+        div.item-column.event-extra
+        div.item-column.event-details
           span.event-artist-name
             = link_to event.artist.name, records_artist_path(event.artist), title: event.artist.name
           span.event-location
             = event_location(event)
-        div.event-links
+        div.item-column.event-links
           - if event.facebook_url
             = link_to fa_icon('facebook-square 2x'),
                       event.facebook_url,
