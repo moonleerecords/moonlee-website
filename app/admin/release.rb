@@ -63,7 +63,7 @@ ActiveAdmin.register Release do
           buy_link.input :title
           buy_link.input :source,
                          as: :select,
-                         collection: ReleaseTypeBuyLink.allowed_sources.collect { |source| [translate(source), source ] }
+                         collection: ReleaseTypeBuyLink.allowed_sources.collect { |source| [translate(source), source] }
           buy_link.input :buy_url
         end
       end

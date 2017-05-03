@@ -40,8 +40,6 @@ module ReleasesHelper
       ReleaseType::FORMAT_LP_CD => ReleaseType::FORMAT_LP
     }
 
-    puts ReleaseType::ALLOWED_FORMATS.inspect
-
     mappings[release_format].present? ? mappings[release_format] : release_format
   end
 end

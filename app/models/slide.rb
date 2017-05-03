@@ -27,7 +27,7 @@ class Slide < ApplicationRecord
   def self.update_positions(slides, drag_and_drop = false)
     if drag_and_drop
       slides.each_with_index do |id, index|
-        self.update(id, position: index + 1)
+        update(id, position: index + 1)
       end
     else
       slides.each do |slide|
@@ -42,9 +42,9 @@ class Slide < ApplicationRecord
   def assign_position
     self.position = 1
 
-    if self.records
+    if records
       Slide.update_positions(Slide.on_records)
-    elsif self.booking
+    elsif booking
       Slide.update_positions(Slide.on_booking)
     else
       Slide.update_positions(Slide.hidden)
