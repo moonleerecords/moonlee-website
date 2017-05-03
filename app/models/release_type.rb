@@ -10,13 +10,13 @@ class ReleaseType < ApplicationRecord
   FORMAT_DIGITAL_MERCH = 'digital_merch'.freeze
 
   ALLOWED_FORMATS = {
-    FORMAT_CD: 1,
-    FORMAT_LP: 2,
-    FORMAT_SEVEN_INCH: 3,
-    FORMAT_TEN_INCH: 4,
-    FORMAT_LP_CD: 5,
-    FORMAT_DIGITAL: 6,
-    FORMAT_DIGITAL_MERCH: 7
+    FORMAT_CD => 1,
+    FORMAT_LP => 2,
+    FORMAT_SEVEN_INCH => 3,
+    FORMAT_TEN_INCH => 4,
+    FORMAT_LP_CD => 5,
+    FORMAT_DIGITAL => 6,
+    FORMAT_DIGITAL_MERCH => 7
   }.stringify_keys.freeze
 
   belongs_to :release

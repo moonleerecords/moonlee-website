@@ -12,6 +12,10 @@ RSpec.describe ReleaseTypeBuyLink, type: :model do
     @release_type.release = @release
     @release_type.release_format = 'cd'
     @release_type.save
+
+    puts @release_type.errors.inspect
+
+    puts ReleaseType.allowed_formats
   end
 
   context 'on saving' do
