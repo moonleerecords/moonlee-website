@@ -3,9 +3,8 @@
 }
 
 .release-info {
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 35px;
+  margin-left: 35px;
+  margin-top: 35px;
 
   .release-number {
     color: $color-tower-grey;
@@ -110,16 +109,15 @@
 
   .release-info {
     float: left;
-    width: 50%;
   }
 }
 
 .artist-show {
   .release-info {
+    padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
 
     .release-title {
 

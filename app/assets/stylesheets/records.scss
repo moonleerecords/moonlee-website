@@ -142,3 +142,13 @@ body {
     padding: 25px 0;
   }
 }
+
+@include respond-to(medium-large) {
+  .container {
+    padding: 0 6%;
+  }
+
+  .section-title {
+    font-size: 55px;
+  }
+}
