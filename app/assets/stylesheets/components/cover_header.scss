@@ -29,11 +29,6 @@
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
   }
-
-  &.cover-header-post {
-    margin: 0 11%;
-    padding: 0 11%;
-  }
 }
 
 @include respond-to(small) {
@@ -43,11 +38,6 @@
 
     &.cover-header-release {
       display: none;
-    }
-
-    &.cover-header-post {
-      margin: 0 4%;
-      padding: 0 4%;
     }
   }
 }

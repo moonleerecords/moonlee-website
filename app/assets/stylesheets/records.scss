@@ -16,12 +16,16 @@
 @import 'components/pagination.scss';
 
 body {
-  background-color: $color-buttery-white;
+  background-color: $color-lemon-chiffon;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: lighter;
   overflow-x: hidden;
   position: relative;
+}
+
+.container {
+  padding: 0 10%;
 }
 
 .page-section {
@@ -122,6 +126,10 @@ body {
 @import 'records/about.scss';
 
 @include respond-to(small) {
+  .container {
+    padding: 0 8%;
+  }
+
   .page-section {
     padding: 0 4%;
 

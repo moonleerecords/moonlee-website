@@ -1,4 +1,5 @@
 set :repo_url, 'git@github.com:moonleerecords/moonlee-website.git'
+set :repository, 'git@github.com:moonleerecords/moonlee-website.git'
 set :application, 'moonlee-website'
 
 # deploy from local
