@@ -8,7 +8,7 @@ section.page-section.narrower.artist-show
         ul.artist-upcoming-shows
           - @artist.events.first(5).each do |event|
             li
-              = "#{localize(event.start_date)} @ #{event.venue.city}, #{event.venue.name} (#{event.venue.country_code})"
+              = "#{localize(event.start_date)} @ #{event.venue.name}, #{event.venue.city} (#{event.venue.country_code})"
       - if @artist.releases.count > 0
         hr.hr-style-1
         div.artist-releases.items-list.items-list-group
