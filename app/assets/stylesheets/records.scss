@@ -125,9 +125,19 @@ body {
 @import 'records/store.scss';
 @import 'records/about.scss';
 
+@include respond-to(medium-large) {
+  .container {
+    padding: 0 6%;
+  }
+
+  .section-title {
+    font-size: 55px;
+  }
+}
+
 @include respond-to(small) {
   .container {
-    padding: 0 8%;
+    padding: 0;
   }
 
   .page-section {
@@ -143,12 +153,3 @@ body {
   }
 }
 
-@include respond-to(medium-large) {
-  .container {
-    padding: 0 6%;
-  }
-
-  .section-title {
-    font-size: 55px;
-  }
-}
