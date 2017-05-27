@@ -10,6 +10,7 @@ module Songkick
       artists = Artist.with_songkick_id
 
       # TODO: remove unexisting event. Need administration
+      # EXample of cancelled event: https://www.songkick.com/concerts/29403949-repetitor-at-unknown-venue?utm_source=20659&utm_medium=partner
       # TODO: write tests for class
 
       artists.each do |artist|
@@ -84,7 +85,10 @@ module Songkick
     end
 
     def artist_performance_date(songkick_performance, songkick_event)
-      songkick_event.type == EVENT_TYPE_FESTIVAL ? songkick_performance.date.to_date : songkick_event.start.to_date
+      if songkick_event.type == EVENT_TYPE_FESTIVAL
+        return songkick_performance.date.to_date if songkick_performance.date
+      end
+      songkick_event.start.to_date
     end
 
     def country_code(country_name)
