@@ -7,14 +7,14 @@
     background-color: $color-gorse;
     height: 75px;
     overflow: visible;
-    position: absolute;
+    position: fixed;
     top: 0;
     -webkit-transition: height .2s;
     -moz-transition: height .2s;
     -ms-transition: height .2s;
     -o-transition: height .2s;
     transition: height .2s;
-    width: 100%;
+    width: 80%;
     z-index: 99;
 
     &.smaller {
@@ -172,6 +172,7 @@
 
     .nav-container {
       height: 54px;
+      width: 100%;
 
       .moonlee-logo-header {
         left: 50%;
