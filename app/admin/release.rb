@@ -30,7 +30,7 @@ ActiveAdmin.register Release do
               as: :select,
               multiple: true,
               required: true,
-              collection: Artist.all
+              collection: Artist.reorder('name')
       f.input :title
       f.input :cover,
               as: :file,
