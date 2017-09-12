@@ -49,7 +49,7 @@ ActiveAdmin.register Release do
       f.input :for_fans_of
       f.input :quote
       f.input :bandcamp_url
-      f.input :bandcamp_id
+      f.input :bandcamp_id, label: 'Bandcamp ID'
       f.input :internal
       f.input :active
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
