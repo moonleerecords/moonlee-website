@@ -18,8 +18,7 @@ module Records
 
     def promoted_releases(latest_count = 5)
       @upcoming_releases = Release.upcoming
-      @fresh_releases = Release.fresh
-      @latest_releases = (Release.latest - @fresh_releases).take(latest_count)
+      @latest_releases = (@upcoming_releases | Release.latest).take(latest_count)
     end
 
     def social_posts
