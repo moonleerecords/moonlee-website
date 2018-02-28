@@ -1,4 +1,4 @@
-class CreateReleaseReviews < ActiveRecord::Migration[5.0]
+class CreateReleaseReviews < ActiveRecord::Migration[5.1]
   def change
     create_table :release_reviews do |t|
       t.references :release, foreign_key: true

@@ -1,4 +1,4 @@
-class CreateArtistsReleases < ActiveRecord::Migration[5.0]
+class CreateArtistsReleases < ActiveRecord::Migration[5.1]
   def change
     create_table :artists_releases, id: false do |t|
       t.belongs_to :artist, index: true

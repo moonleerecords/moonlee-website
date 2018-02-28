@@ -1,4 +1,4 @@
-class CreateSocialPosts < ActiveRecord::Migration[5.0]
+class CreateSocialPosts < ActiveRecord::Migration[5.1]
   def change
     create_table :social_posts do |t|
       t.string :source

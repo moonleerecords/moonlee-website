@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.1.rc2', '< 5.1'
+gem 'rails', '5.1.4'
 # Postgres as the database for active record
-gem 'pg'
+gem 'pg', '~> 0.20'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
@@ -16,7 +16,7 @@ gem 'devise', '> 4.x'
 gem 'draper', '> 3.x'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
+gem 'kaminari', '>= 1.x'
 gem 'ransack',    github: 'activerecord-hackery/ransack'
 # To fix a Draper deprecation error
 gem 'activeadmin_addons'
@@ -61,7 +61,9 @@ gem 'browserify-rails'
 # cookies law
 gem 'cookies_eu'
 # nokogiri
-gem 'nokogiri', '>= 1.6'
+gem 'nokogiri', '>= 1.8.1'
+# coffee
+gem 'coffee-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
