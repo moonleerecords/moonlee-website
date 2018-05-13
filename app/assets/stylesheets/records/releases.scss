@@ -3,7 +3,7 @@
 }
 
 .release-info {
-  margin-left: 35px;
+  margin-left: 415px;
   margin-top: 35px;
 
   .release-number {
@@ -105,10 +105,6 @@
     @include vertical-align(25px);
     position: absolute;
     right: 0;
-  }
-
-  .release-info {
-    float: left;
   }
 }
 
