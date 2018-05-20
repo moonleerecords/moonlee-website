@@ -7,7 +7,7 @@ namespace :social do
     media = instagram_media.media
 
     if media
-      media['items'].first(2).each do |media_item|
+      media['data'].first(2).each do |media_item|
         social_post = find_or_create_instagram_post(media_item)
         social_post.save!
         puts "Updated `#{social_post.url}` from Instagram"
