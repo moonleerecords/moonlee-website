@@ -10,11 +10,11 @@
       - posts.each do |post|
         article.item-column.column-1-3.hover-item.hover-item-border
           = link_to records_post_path(post), title: post.title do
-            h3.post-title
-              = post.title
-            time.post-date datetime=post.published_at
-              = localize(post.published_at.to_date)
             div.post-image style="background-image: url(#{post.image.url(:medium)})"
               - if post.youtube_video.present?
                 div.post-with-video
                   i.fa.fa-play-circle-o.fa-4x
+            h3.post-title
+              = post.title
+            time.post-date datetime=post.published_at
+              = localize(post.published_at.to_date)
