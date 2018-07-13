@@ -31,8 +31,9 @@
     font-size: 16px;
 
     .release-format {
-      display: inline;
+      display: inline-block;
       margin-right: 10px;
+      margin-top: 10px;
 
       &.buy-link {
         border-width: 3px;
@@ -135,6 +136,7 @@
     }
 
     .release-info {
+      margin-left: 35px;
       width: 100%;
     }
   }
