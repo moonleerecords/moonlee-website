@@ -121,11 +121,11 @@ $ cap production deploy
 
 #### Records
 
-[www.moonleerecords.com](www.moonleerecords.com)
+[www.moonleerecords.com](https://www.moonleerecords.com)
 
 #### Booking
 
-[booking.moonleerecords.com](booking.moonleerecords.com)
+[booking.moonleerecords.com](https://booking.moonleerecords.com)
 
 ### Credits
 
