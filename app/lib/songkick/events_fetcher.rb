@@ -93,7 +93,7 @@ module Songkick
       country_name = countries_mapper(country_name)
       response = Geocoder.search(country_name)
       return nil if response.nil? || response.empty?
-      response.first.country_code
+      response.first.country_code.upcase
     end
 
     def countries_mapper(country_name)
