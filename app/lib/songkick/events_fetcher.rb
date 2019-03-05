@@ -9,8 +9,8 @@ module Songkick
       songkick = Songkickr::Remote.new ENV['SONGKICK_API_KEY']
       artists = Artist.with_songkick_id
 
-      # TODO: remove unexisting event. Need administration
-      # EXample of cancelled event: https://www.songkick.com/concerts/29403949-repetitor-at-unknown-venue?utm_source=20659&utm_medium=partner
+      # TODO: remove unexisting/cancelled event. Need administration
+      # Example of cancelled event: https://www.songkick.com/concerts/29403949-repetitor-at-unknown-venue?utm_source=20659&utm_medium=partner
       # TODO: write tests for class
 
       artists.each do |artist|
@@ -78,6 +78,7 @@ module Songkick
     def lat_lng(songkick_event)
       if songkick_event.venue.lat.nil? && songkick_event.venue.lng.nil?
         response = Geocoder.search(songkick_event.location.city.split(',')[0])
+        puts "umrl"
         return 0, 0 if response.nil? || response.empty?
         return response[0].data['geometry']['location']['lat'], response[0].data['geometry']['location']['lng']
       end
