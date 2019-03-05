@@ -14,25 +14,23 @@ module Songkick
       # TODO: write tests for class
 
       artists.each do |artist|
-        songkick_performances = songkick.artist_performances(artist.songkick_id)
+        performances = songkick.artist_performances(artist.songkick_id)
 
-        next unless songkick_performances.status == 'ok' && songkick_performances.results.count > 0
+        next unless performances.status == 'ok' && performances.results.count > 0
 
-        update_or_save_events(songkick_performances, artist)
+        update_or_save_events(performances, artist)
       end
     end
 
     private
 
-    def update_or_save_events(songkick_performances, artist)
-      songkick_performances.results.each do |songkick_performance|
+    def update_or_save_events(performances, artist)
+      performances.results.each do |songkick_performance|
         begin
           event = find_or_create_event(songkick_performance, artist)
-          logger.info "Updated event `#{event.songkick_url}` for #{artist.name}"
+          Rails.logger.info "Updated event `#{event.songkick_url}` for #{artist.name}"
         rescue StandardError => e
-          raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`\n#{songkick_performance.to_json}"
-        ensure
-          next
+          raise Exceptions::SongkickError, "An error of type `#{e.class}` happened, message is `#{e.message}`"
         end
       end
     end
@@ -78,9 +76,8 @@ module Songkick
     def lat_lng(songkick_event)
       if songkick_event.venue.lat.nil? && songkick_event.venue.lng.nil?
         response = Geocoder.search(songkick_event.location.city.split(',')[0])
-        puts "umrl"
         return 0, 0 if response.nil? || response.empty?
-        return response[0].data['geometry']['location']['lat'], response[0].data['geometry']['location']['lng']
+        return response.first.coordinates
       end
       [songkick_event.venue.lat, songkick_event.venue.lng]
     end
@@ -96,7 +93,7 @@ module Songkick
       country_name = countries_mapper(country_name)
       response = Geocoder.search(country_name)
       return nil if response.nil? || response.empty?
-      response[0].data['address_components'][0]['short_name']
+      response.first.country_code
     end
 
     def countries_mapper(country_name)
