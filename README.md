@@ -129,6 +129,5 @@ $ cap production deploy
 
 ### Credits
 
-Frontend and backend development: [Dražen Perić](https://echobehind.wordpress.com/)
-
-Design: [Antonio Karača](https://www.behance.net/antoniokaraca)
+* Development: [Dražen Perić](https://echobehind.wordpress.com/)
+* Design: [Antonio Karača](https://www.behance.net/antoniokaraca)
