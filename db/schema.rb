@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20170130203502) do
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.string "genre"
     t.index ["slug"], name: "index_artists_on_slug", unique: true
@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(version: 20170130203502) do
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.index ["categories"], name: "index_posts_on_categories", using: :gin
     t.index ["tags"], name: "index_posts_on_tags", using: :gin
@@ -218,7 +218,7 @@ ActiveRecord::Schema.define(version: 20170130203502) do
     t.datetime "updated_at", null: false
     t.string "cover_file_name"
     t.string "cover_content_type"
-    t.integer "cover_file_size"
+    t.bigint "cover_file_size"
     t.datetime "cover_updated_at"
     t.string "artists_names"
     t.index ["slug"], name: "index_releases_on_slug", unique: true
@@ -235,7 +235,7 @@ ActiveRecord::Schema.define(version: 20170130203502) do
     t.datetime "updated_at", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
   end
 
