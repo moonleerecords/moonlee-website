@@ -21,10 +21,10 @@ module Import
       end
     end
 
-    def external_links
-      csv = parse_csv_file('external_links.csv')
+    def artists_external_links
+      csv = parse_csv_file('artists_external_links.csv')
       csv.each do |row|
-        external_link = ExternalLink.find_or_initialize_by(artist_id: row['artist'], url_type: row['url_type'])
+        external_link = ExternalLink.find_or_initialize_by(linkable_id: row['artist'], linkable_type: 'Artist', url_type: row['url_type'])
         external_link.url = row['url']
         external_link.save!
       end
@@ -69,6 +69,15 @@ module Import
           release_type = ReleaseType.find_or_initialize_by(release_id: release.id, release_format: release_format)
           release_type.save!
         end
+      end
+    end
+
+    def releases_external_links
+      csv = parse_csv_file('releases_external_links.csv')
+      csv.each do |row|
+        external_link = ExternalLink.find_or_initialize_by(linkable_id: row['release'], linkable_type: 'Release', url_type: row['url_type'])
+        external_link.url = row['url']
+        external_link.save!
       end
     end
 

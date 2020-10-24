@@ -9,9 +9,11 @@ class Release < ApplicationRecord
   has_many :release_reviews, dependent: :destroy
   has_many :artist_releases
   has_many :artists, through: :artist_releases
+  has_many :external_links, as: :linkable, dependent: :destroy
 
   accepts_nested_attributes_for :release_types, allow_destroy: true
   accepts_nested_attributes_for :release_reviews, allow_destroy: true
+  accepts_nested_attributes_for :external_links, allow_destroy: true
 
   has_attached_file :cover,
                     styles: {

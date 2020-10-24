@@ -5,7 +5,7 @@ end
 importer = Import::Importer.new
 
 importer.artists
-importer.external_links
+importer.artists_external_links
 importer.members
 importer.releases
 importer.artists_releases

@@ -10,7 +10,12 @@ section.page-section.narrower.release-show
       hr.hr-style-1
       div.text-block.release-description
         = raw(@release.description)
-    div.release-side.item-column.column-3-9
+    div.release-side.item-column.column-3-9.text-block
+      - if @release.external_links.count > 0
+        h4 Links
+        ul
+          - @release.external_links.each do |link|
+            li = link_to t(link.url_type), link.url, target: '_blank'
       h4 Release date
       span = localize(@release.release_date)
       - if @release.genre

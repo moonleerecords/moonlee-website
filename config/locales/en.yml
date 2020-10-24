@@ -14,6 +14,11 @@ en:
   bandcamp: "Bandcamp"
   soundcloud: "Soundcloud"
   discogs: "Discogs"
+  google_music: "Google Music"
+  youtube_music: "YouTube Music"
+  apple_music: "Apple Music"
+  deezer: "Deezer"
+  tidal: "Tidal"
   date:
     formats:
       default: "%d.%m.%Y"

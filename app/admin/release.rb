@@ -21,6 +21,12 @@ ActiveAdmin.register Release do
                   :release_format,
                   :_destroy,
                   release_type_buy_links_attributes: [:id, :title, :source, :buy_url, :release_type, :_destroy]
+                ],
+                external_links_attributes: [
+                    :id,
+                    :url_type,
+                    :url,
+                    :_destroy
                 ]
 
   form do |f|
@@ -52,6 +58,12 @@ ActiveAdmin.register Release do
       f.input :bandcamp_id, label: 'Bandcamp ID'
       f.input :internal
       f.input :active
+      f.has_many :external_links, heading: 'Links', allow_destroy: true do |external_link|
+        external_link.input :url_type,
+                            as: :select,
+                            collection: ExternalLink.allowed_url_types.collect { |type| [translate(type), type] }
+        external_link.input :url
+      end
       f.has_many :release_types, heading: 'Formats', allow_destroy: true do |release_type|
         release_type.input :release_format,
                            as: :select,
@@ -98,6 +110,15 @@ ActiveAdmin.register Release do
       end
       row :bandcamp_id
       row :internal
+      if release.external_links.count > 0
+        panel 'Links' do
+          ul do
+            release.external_links.each do |external_link|
+              li link_to(t(external_link.url_type), external_link.url, target: '_blank') unless external_link.url_type == ''
+            end
+          end
+        end
+      end
       row 'Formats' do
         release.release_types.each do |release_type|
           div translate(release_type.release_format) do

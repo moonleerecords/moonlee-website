@@ -15,9 +15,10 @@ ActiveAdmin.register Artist do
                 :records,
                 :booking,
                 external_links_attributes: [
-                  :id,
-                  :url_type,
-                  :url
+                    :id,
+                    :url_type,
+                    :url,
+                    :_destroy
                 ],
                 artist_members_attributes: [
                   :id,
@@ -50,7 +51,7 @@ ActiveAdmin.register Artist do
       f.has_many :external_links, heading: 'Links', allow_destroy: true do |external_link|
         external_link.input :url_type,
                             as: :select,
-                            collection: ExternalLink.allowed_url_types.collect { |type| [translate(type), type] }
+                            collection: ExternalLink.allowed_url_types.collect { |type| [t(type), type] }
         external_link.input :url
       end
       f.has_many :artist_members, heading: 'Members', allow_destroy: true do |artist_member|
@@ -86,7 +87,7 @@ ActiveAdmin.register Artist do
         panel 'Links' do
           ul do
             artist.external_links.each do |external_link|
-              li link_to(external_link.url_type, external_link.url, target: '_blank') unless external_link.url_type == ''
+              li link_to(t(external_link.url_type), external_link.url, target: '_blank') unless external_link.url_type == ''
             end
           end
         end

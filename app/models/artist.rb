@@ -5,9 +5,9 @@ class Artist < ApplicationRecord
 
   default_scope { order('artists.active DESC, artists.name ASC') }
 
-  has_many :artist_members, counter_cache: true, dependent: :destroy
+  has_many :artist_members, dependent: :destroy
   has_many :members, through: :artist_members
-  has_many :external_links, dependent: :destroy
+  has_many :external_links, as: :linkable, dependent: :destroy
   has_many :artist_releases
   has_many :releases, through: :artist_releases
   has_many :events
