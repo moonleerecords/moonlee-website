@@ -22,12 +22,13 @@
     }
 
     .moonlee-logo-header {
-      background-size: 140px 100%;
+      background-size: 268px 36px;
       height: 100%;
       left: 3%;
+      margin-top: -18px;
       position: absolute;
-      top: 0;
-      width: 140px;
+      top: 50%;
+      width: 268px;
       z-index: 99;
     }
 
@@ -158,6 +159,20 @@
     position: absolute;
     right: .25em;
     top: -8px;
+  }
+}
+
+@include respond-to(medium-large) {
+  .page-header {
+    .nav-container {
+      width: 88%;
+
+      .moonlee-logo-header {
+        background-size: 200px 26px;
+        margin-top: -13px;
+        width: 200px;
+      }
+    }
   }
 }
 
