@@ -117,15 +117,15 @@ $ cap production deploy
 * Songkick
 * Mailchimp
 
-### Sections
+### Links
 
 #### Records
 
-[www.moonleerecords.com](https://www.moonleerecords.com)
+[https://www.moonleerecords.com](https://www.moonleerecords.com)
 
-#### Booking
+#### Store
 
-[booking.moonleerecords.com](https://booking.moonleerecords.com)
+[https://store.moonleerecords.com](https://store.moonleerecords.com)
 
 ### Credits
 
