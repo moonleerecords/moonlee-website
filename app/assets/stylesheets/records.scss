@@ -42,7 +42,7 @@ body {
     font-weight: normal;
   }
 
-  a:not(.release-cover) {
+  a:not(.release-cover, .streaming-links) {
     @extend %custom-links;
   }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .moonlee-logo {
-  background: image-url('base/moonlee-logo.png') no-repeat;
+  background: image-url('base/moonlee-logo.svg') no-repeat;
   text-indent: -9999px;
 }
 
