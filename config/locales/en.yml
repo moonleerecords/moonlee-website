@@ -19,6 +19,7 @@ en:
   apple_music: "Apple Music"
   deezer: "Deezer"
   tidal: "Tidal"
+  spotify: "Spotify"
   date:
     formats:
       default: "%d.%m.%Y"
