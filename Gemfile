@@ -9,15 +9,12 @@ gem 'pg', '~> 0.20'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
-gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', '2.0.0'
 gem 'active_skin'
 gem 'cancancan'
 gem 'devise', '> 4.x'
-gem 'draper', '> 3.x'
-gem 'formtastic', github: 'justinfrench/formtastic'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'draper', '3.0.1'
 gem 'kaminari', '>= 1.x'
-gem 'ransack',    github: 'activerecord-hackery/ransack'
 # To fix a Draper deprecation error
 gem 'activeadmin_addons'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
@@ -64,6 +61,8 @@ gem 'cookies_eu'
 gem 'nokogiri', '>= 1.8.1'
 # coffee
 gem 'coffee-rails'
+# mimemagic
+gem 'mimemagic', '0.3.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
