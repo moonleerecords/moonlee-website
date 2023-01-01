@@ -9,7 +9,7 @@ gem 'pg', '~> 0.20'
 # Slim templating
 gem 'slim'
 # activeadmin for administration and its dependencies
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'active_skin'
 gem 'cancancan'
 gem 'devise', '> 4.x'
