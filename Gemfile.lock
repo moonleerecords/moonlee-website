@@ -5,15 +5,6 @@ GIT
     songkickr (0.5.5)
       httparty (>= 0.5.0)
 
-GIT
-  remote: https://github.com/rails/activemodel-serializers-xml.git
-  revision: 32841fdf59c2297436177a8e6d84f4f17e048005
-  specs:
-    activemodel-serializers-xml (1.0.2)
-      activemodel (>= 5.0.0.a)
-      activesupport (>= 5.0.0.a)
-      builder (~> 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,6 +57,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.1.4)
       activesupport (= 5.1.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.1.4)
       activemodel (= 5.1.4)
       activesupport (= 5.1.4)
@@ -449,7 +444,6 @@ DEPENDENCIES
   active_skin
   activeadmin (= 2.0.0)
   activeadmin_addons
-  activemodel-serializers-xml!
   better_errors
   browserify-rails
   byebug

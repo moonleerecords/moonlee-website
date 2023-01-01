@@ -17,7 +17,6 @@ gem 'draper', '3.0.1'
 gem 'kaminari', '>= 1.x'
 # To fix a Draper deprecation error
 gem 'activeadmin_addons'
-gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'ckeditor'
 gem 'pundit'
 # Use SCSS for stylesheets
